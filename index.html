@@ -3,288 +3,215 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-
-<!-- ═══ PRIMARY SEO ═══ -->
 <title>Q Property Cambodia | Buy, Sell & Rent Real Estate in Phnom Penh, Siem Reap</title>
-<meta name="description" content="Q Property — Cambodia's #1 real estate portal. Find villas, apartments, condos, offices and land for sale or rent across all 25 provinces. Trusted by thousands of buyers and renters."/>
-<meta name="keywords" content="property for sale Cambodia, house for rent Phnom Penh, apartment Cambodia, condo Phnom Penh, land for sale Cambodia, villa Siem Reap, office space Phnom Penh, real estate Cambodia 2025, buy property Cambodia, ទ្រព្យសម្បត្តិ, ផ្ទះជួល"/>
+<meta name="description" content="Q Property — Cambodia's #1 real estate portal. Find villas, apartments, condos, offices and land for sale or rent across all 25 provinces."/>
+<meta name="keywords" content="property for sale Cambodia, house for rent Phnom Penh, apartment Cambodia, condo Phnom Penh, land for sale Cambodia, villa Siem Reap, real estate Cambodia 2025, buy property Cambodia, ទ្រព្យសម្បត្តិ, ផ្ទះជួល"/>
 <meta name="author" content="Q Property Cambodia"/>
 <meta name="robots" content="index, follow"/>
 <link rel="canonical" href="https://jquan096-sys.github.io/Q.github.io/"/>
-
-<!-- ═══ OPEN GRAPH ═══ -->
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://jquan096-sys.github.io/Q.github.io/"/>
 <meta property="og:title" content="Q Property Cambodia | Buy, Sell & Rent Real Estate"/>
 <meta property="og:description" content="Find your perfect property in Cambodia. Villas, apartments, condos, land across all provinces."/>
-<meta property="og:image" content="https://jquan096-sys.github.io/Q.github.io/og.jpg"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Q Property Cambodia"/>
-<meta name="twitter:description" content="Cambodia's trusted real estate portal — buy, sell, rent."/>
-
-<!-- ═══ SCHEMA.ORG ═══ -->
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"RealEstateAgent",
  "name":"Q Property Cambodia","url":"https://jquan096-sys.github.io/Q.github.io/",
- "description":"Cambodia's trusted real estate portal for buying, selling and renting property",
+ "description":"Cambodia's trusted real estate portal",
  "areaServed":{"@type":"Country","name":"Cambodia"},
  "address":{"@type":"PostalAddress","addressCountry":"KH","addressLocality":"Phnom Penh"}}
 </script>
-
-<!-- ═══ FONTS ═══ -->
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400;1,700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-
 <style>
 :root{
   --ink:#08111E;--ink2:#0F1F35;--gold:#C8A85A;--gold2:#E8CC88;
-  --cream:#F8F4ED;--white:#fff;--muted:#94A3B8;--border:#E2DDD5;
-  --r:14px;--sh:0 8px 40px rgba(8,17,30,.13);
+  --cream:#F8F4ED;--white:#fff;--muted:#6B7280;--border:#E2DDD5;
+  --r:14px;--sh:0 8px 40px rgba(8,17,30,.11);
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;font-size:16px}
-body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;font-size:16px;line-height:1.6;background:var(--cream);color:var(--ink);overflow-x:hidden}
 
-/* ═══ CUSTOM CURSOR ═══ */
+/* ── CURSOR ── */
 *{cursor:none!important}
-#cursor{position:fixed;width:12px;height:12px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .1s,width .2s,height .2s;mix-blend-mode:difference}
-#cursor-ring{position:fixed;width:36px;height:36px;border:1.5px solid var(--gold);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:left .12s ease,top .12s ease,width .2s,height .2s;opacity:.5}
+#cur{position:fixed;width:10px;height:10px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .15s,height .15s;mix-blend-mode:difference}
+#cur-r{position:fixed;width:32px;height:32px;border:1.5px solid rgba(200,168,90,.6);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:left .1s ease,top .1s ease}
+@media(max-width:768px){*{cursor:auto!important}#cur,#cur-r{display:none}}
 
-/* ═══ SCROLLBAR ═══ */
-::-webkit-scrollbar{width:5px}
-::-webkit-scrollbar-track{background:var(--ink)}
-::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--ink)}::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px}
 
-/* ═══ HERO CANVAS ═══ */
-#hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:var(--ink)}
-#bg-canvas{position:absolute;inset:0;width:100%;height:100%}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,17,30,.2) 0%,rgba(8,17,30,.6) 60%,rgba(8,17,30,.92) 100%)}
-
-/* ═══ HEADER ═══ */
-header{
-  position:fixed;top:0;left:0;right:0;z-index:500;
-  padding:0 40px;height:72px;
-  display:flex;align-items:center;justify-content:space-between;
-  transition:background .4s,backdrop-filter .4s,box-shadow .4s;
-}
-header.scrolled{
-  background:rgba(8,17,30,.92);
-  backdrop-filter:blur(20px);
-  box-shadow:0 1px 0 rgba(200,168,90,.2);
-}
-.logo{font-family:'Bodoni Moda',serif;font-size:26px;font-weight:700;color:var(--white);text-decoration:none;display:flex;align-items:baseline;gap:1px;letter-spacing:-1px}
-.logo .q{background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:34px}
-nav{display:flex;align-items:center;gap:32px}
-nav a{color:rgba(255,255,255,.65);font-size:14px;font-weight:400;text-decoration:none;letter-spacing:.3px;transition:color .2s;position:relative}
+/* ── HEADER ── */
+header{position:fixed;top:0;left:0;right:0;z-index:500;padding:0 40px;height:70px;display:flex;align-items:center;justify-content:space-between;transition:all .35s}
+header.on{background:rgba(8,17,30,.94);backdrop-filter:blur(18px);box-shadow:0 1px 0 rgba(200,168,90,.18)}
+.logo{font-family:'Bodoni Moda',serif;font-size:22px;font-weight:700;color:var(--white);text-decoration:none;display:flex;align-items:baseline;gap:2px;letter-spacing:-.5px}
+.logo .q{background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:30px}
+nav{display:flex;align-items:center;gap:28px}
+nav a{color:rgba(255,255,255,.65);font-size:15px;font-weight:400;text-decoration:none;transition:color .2s;position:relative}
 nav a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width .2s}
-nav a:hover{color:var(--white)}
-nav a:hover::after{width:100%}
-.nav-cta{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--ink)!important;padding:10px 24px;border-radius:7px;font-weight:600!important;font-size:13px!important;letter-spacing:.3px}
-.nav-cta::after{display:none!important}
-.nav-cta:hover{opacity:.88;transform:translateY(-1px)}
+nav a:hover{color:var(--white)}nav a:hover::after{width:100%}
+.nav-btn{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--ink)!important;padding:10px 22px;border-radius:7px;font-weight:600!important;font-size:14px!important}
+.nav-btn::after{display:none!important}
+@media(max-width:768px){nav{display:none}header{padding:0 20px}}
 
-/* ═══ HERO CONTENT ═══ */
-.hero-inner{position:relative;z-index:10;max-width:1200px;width:100%;margin:0 auto;padding:0 40px;padding-top:72px}
-.hero-label{
-  display:inline-flex;align-items:center;gap:8px;
-  background:rgba(200,168,90,.15);border:1px solid rgba(200,168,90,.35);
-  color:var(--gold2);font-size:11px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;
-  padding:8px 20px;border-radius:30px;margin-bottom:28px;
-  animation:fadeUp .8s ease both;
-}
-.hero-title{
-  font-family:'Bodoni Moda',serif;
-  font-size:clamp(44px,6.5vw,82px);
-  font-weight:700;color:var(--white);
-  line-height:1.05;margin-bottom:20px;
-  animation:fadeUp .8s .12s ease both;
-}
-.hero-title em{color:var(--gold);font-style:italic}
-.hero-sub{
-  color:rgba(255,255,255,.55);font-size:17px;font-weight:300;
-  margin-bottom:52px;max-width:540px;line-height:1.7;
-  animation:fadeUp .8s .22s ease both;
-}
+/* ── HERO ── */
+#hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:var(--ink)}
+#bgc{position:absolute;inset:0;width:100%;height:100%}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(175deg,rgba(8,17,30,.1) 0%,rgba(8,17,30,.55) 55%,rgba(8,17,30,.95) 100%)}
+.hero-in{position:relative;z-index:10;max-width:1160px;width:100%;margin:0 auto;padding:0 40px;padding-top:70px}
+.h-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(200,168,90,.12);border:1px solid rgba(200,168,90,.3);color:var(--gold2);font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;padding:8px 18px;border-radius:30px;margin-bottom:26px;animation:fu .8s ease both}
+.h-title{font-family:'Bodoni Moda',serif;font-size:clamp(36px,5.5vw,72px);font-weight:700;color:var(--white);line-height:1.07;margin-bottom:18px;animation:fu .8s .1s ease both}
+.h-title em{color:var(--gold);font-style:italic}
+.h-sub{color:rgba(255,255,255,.55);font-size:clamp(15px,1.8vw,18px);font-weight:300;margin-bottom:48px;max-width:520px;line-height:1.75;animation:fu .8s .2s ease both}
 
-/* ═══ SEARCH CARD ═══ */
-.search-card{
-  background:rgba(255,255,255,.97);
-  backdrop-filter:blur(20px);
-  border-radius:20px;
-  padding:32px 32px 28px;
-  box-shadow:0 32px 100px rgba(0,0,0,.45);
-  animation:fadeUp .8s .32s ease both;
-  max-width:860px;
-}
-.tab-bar{display:flex;gap:4px;background:var(--cream);border-radius:10px;padding:5px;margin-bottom:28px;width:fit-content}
-.tab{padding:9px 28px;border-radius:7px;border:none;font-family:'Outfit',sans-serif;font-size:14px;font-weight:500;cursor:none;color:var(--muted);background:none;transition:all .2s}
-.tab.active{background:var(--ink);color:var(--white)}
-
-.fields{display:grid;grid-template-columns:repeat(4,1fr) auto;gap:12px;align-items:end}
-.fg{display:flex;flex-direction:column;gap:7px}
+/* ── SEARCH CARD ── */
+.sc{background:rgba(255,255,255,.97);border-radius:18px;padding:30px 30px 26px;box-shadow:0 28px 80px rgba(0,0,0,.4);animation:fu .8s .3s ease both;max-width:820px}
+.tabs{display:flex;gap:4px;background:var(--cream);border-radius:9px;padding:5px;margin-bottom:26px;width:fit-content}
+.tab{padding:9px 26px;border-radius:6px;border:none;font-family:'Outfit',sans-serif;font-size:14px;font-weight:500;cursor:none;color:var(--muted);background:none;transition:all .2s}
+.tab.on{background:var(--ink);color:var(--white)}
+.flds{display:grid;grid-template-columns:repeat(4,1fr) auto;gap:11px;align-items:end}
+.fg{display:flex;flex-direction:column;gap:6px}
 .fl{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted)}
-.fg select{
-  border:1.5px solid var(--border);border-radius:9px;
-  padding:12px 38px 12px 14px;font-size:14px;
-  font-family:'Outfit',sans-serif;color:var(--ink);
-  background:var(--white);appearance:none;cursor:none;
-  background-image:url("data:image/svg+xml,%3Csvg width='11' height='7' viewBox='0 0 11 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5.5 5.5L10 1' stroke='%2394A3B8' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:right 14px center;
-  transition:border-color .2s,box-shadow .2s;
-}
-.fg select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,168,90,.12)}
-.btn-s{
-  background:linear-gradient(135deg,var(--gold),var(--gold2));
-  color:var(--ink);border:none;
-  padding:13px 28px;border-radius:9px;
-  font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;
-  cursor:none;white-space:nowrap;
-  box-shadow:0 6px 24px rgba(200,168,90,.45);
-  transition:transform .15s,box-shadow .15s;
-}
-.btn-s:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(200,168,90,.6)}
+.fg select{border:1.5px solid var(--border);border-radius:9px;padding:12px 36px 12px 14px;font-size:14px;font-family:'Outfit',sans-serif;color:var(--ink);background:var(--white);appearance:none;cursor:none;background-image:url("data:image/svg+xml,%3Csvg width='11' height='7' viewBox='0 0 11 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5.5 5.5L10 1' stroke='%2394A3B8' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;transition:border-color .2s}
+.fg select:focus{outline:none;border-color:var(--gold)}
+.btn-s{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--ink);border:none;padding:13px 26px;border-radius:9px;font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;cursor:none;white-space:nowrap;box-shadow:0 6px 20px rgba(200,168,90,.4);transition:transform .15s,box-shadow .15s}
+.btn-s:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(200,168,90,.55)}
+@media(max-width:900px){.flds{grid-template-columns:1fr 1fr;gap:10px}.btn-s{width:100%}}
+@media(max-width:480px){.flds{grid-template-columns:1fr}.hero-in{padding:0 20px;padding-top:70px}}
 
-/* ═══ STATS RIBBON ═══ */
-.stats-ribbon{
-  background:var(--gold);padding:28px 0;
-  display:flex;justify-content:center;gap:0;
-}
-.st{text-align:center;padding:0 52px;border-right:1px solid rgba(8,17,30,.18)}
-.st:last-child{border-right:none}
-.st-n{font-family:'Bodoni Moda',serif;font-size:36px;font-weight:700;color:var(--ink);display:block;line-height:1}
-.st-l{font-size:12px;color:rgba(8,17,30,.65);margin-top:4px;font-weight:500;letter-spacing:.3px}
+/* ── MARKET INFO RIBBON (replaces stats) ── */
+.market-ribbon{background:var(--ink);padding:0}
+.mr-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr}
+.mr-card{padding:44px 52px;position:relative;overflow:hidden}
+.mr-card:first-child{border-right:1px solid rgba(255,255,255,.08)}
+.mr-card::before{content:'';position:absolute;top:-40px;right:-40px;width:180px;height:180px;border-radius:50%;background:rgba(200,168,90,.06);pointer-events:none}
+.mr-icon{font-size:32px;margin-bottom:14px;display:block}
+.mr-title{font-family:'Bodoni Moda',serif;font-size:22px;font-weight:700;color:var(--white);margin-bottom:18px;display:flex;align-items:center;gap:10px}
+.mr-title span{font-family:'Outfit',sans-serif;font-size:12px;font-weight:500;background:rgba(200,168,90,.2);color:var(--gold2);padding:3px 10px;border-radius:20px;letter-spacing:.5px}
+.area-tags{display:flex;flex-wrap:wrap;gap:9px}
+.area-tag{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.8);font-size:14px;font-weight:400;padding:8px 16px;border-radius:8px;transition:all .2s;cursor:none}
+.area-tag:hover{background:rgba(200,168,90,.15);border-color:rgba(200,168,90,.4);color:var(--white)}
+.yield-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.yc{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:14px 16px;transition:all .2s;cursor:none}
+.yc:hover{background:rgba(200,168,90,.1);border-color:rgba(200,168,90,.3)}
+.yc-label{font-size:12px;color:rgba(255,255,255,.45);font-weight:400;margin-bottom:5px;letter-spacing:.3px}
+.yc-val{font-family:'Bodoni Moda',serif;font-size:22px;font-weight:700;color:var(--gold2)}
+.yc-sub{font-size:11px;color:rgba(255,255,255,.35);margin-top:3px}
+@media(max-width:768px){.mr-inner{grid-template-columns:1fr}.mr-card:first-child{border-right:none;border-bottom:1px solid rgba(255,255,255,.08)}.mr-card{padding:36px 24px}.yield-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.yield-grid{grid-template-columns:1fr}}
 
-/* ═══ SECTIONS ═══ */
+/* ── AD ── */
+.ad{background:rgba(255,255,255,.65);backdrop-filter:blur(6px);border:1.5px dashed var(--border);border-radius:var(--r);padding:18px;text-align:center;color:var(--muted);font-size:13px;margin:32px 0}
+.adl{font-size:10px;letter-spacing:2px;text-transform:uppercase;opacity:.4;margin-bottom:4px}
+
+/* ── SECTIONS ── */
 .sec{padding:88px 0}
 .wrap{max-width:1160px;margin:0 auto;padding:0 32px}
 .sh{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:44px;flex-wrap:wrap;gap:16px}
-.st2{font-family:'Bodoni Moda',serif;font-size:clamp(26px,3.5vw,42px);font-weight:700;color:var(--ink);line-height:1.15}
-.st2 span{color:var(--gold);font-style:italic}
-.st2-sub{color:var(--muted);font-size:14px;margin-top:8px}
-.va{color:var(--gold);font-size:14px;font-weight:500;text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:2px;transition:opacity .2s;white-space:nowrap}
+.st2{font-family:'Bodoni Moda',serif;font-size:clamp(28px,3.5vw,42px);font-weight:700;color:var(--ink);line-height:1.15}
+.st2 em{color:var(--gold);font-style:italic}
+.st2-sub{color:var(--muted);font-size:15px;margin-top:8px}
+.va{color:var(--gold);font-size:15px;font-weight:500;text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:2px;transition:opacity .2s;white-space:nowrap}
 .va:hover{opacity:.65}
+@media(max-width:600px){.wrap{padding:0 20px}.sec{padding:64px 0}}
 
-/* ═══ TYPE PILLS ═══ */
-.type-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:52px}
-.tp{
-  display:flex;align-items:center;gap:8px;
-  background:var(--white);border:1.5px solid var(--border);
-  border-radius:40px;padding:11px 22px;
-  font-size:14px;font-weight:500;color:var(--ink);
-  cursor:none;transition:all .2s;
-}
+/* ── TYPE PILLS ── */
+.trow{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:44px}
+.tp{display:flex;align-items:center;gap:8px;background:var(--white);border:1.5px solid var(--border);border-radius:40px;padding:11px 22px;font-size:14px;font-weight:500;color:var(--ink);cursor:none;transition:all .2s;white-space:nowrap}
 .tp:hover,.tp.on{background:var(--ink);border-color:var(--ink);color:var(--white);transform:translateY(-2px);box-shadow:var(--sh)}
 
-/* ═══ PROPERTY GRID ═══ */
-.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.pc{
-  background:var(--white);border-radius:18px;overflow:hidden;
-  box-shadow:var(--sh);transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s;
-  cursor:none;
-}
-.pc:hover{transform:translateY(-6px);box-shadow:0 24px 64px rgba(8,17,30,.18)}
-.pi{height:230px;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--ink2),#1E3A5A);display:flex;align-items:center;justify-content:center}
-.pi-em{font-size:64px;opacity:.25;transition:transform .4s,opacity .4s}
-.pc:hover .pi-em{transform:scale(1.1);opacity:.35}
-.pi-b1{position:absolute;top:14px;left:14px;padding:5px 14px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+/* ── PROPERTY GRID ── */
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.pc{background:var(--white);border-radius:18px;overflow:hidden;box-shadow:var(--sh);transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s;cursor:none}
+.pc:hover{transform:translateY(-6px);box-shadow:0 24px 64px rgba(8,17,30,.17)}
+.pi{height:220px;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--ink2),#1E3A5A);display:flex;align-items:center;justify-content:center}
+.pi-em{font-size:64px;opacity:.22;transition:transform .4s,opacity .4s}
+.pc:hover .pi-em{transform:scale(1.1);opacity:.32}
+.pi-b{position:absolute;top:14px;left:14px;padding:5px 13px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
 .b-rent{background:rgba(200,168,90,.9);color:var(--ink)}
-.b-sale{background:rgba(8,17,30,.8);color:var(--white)}
+.b-sale{background:rgba(8,17,30,.82);color:var(--white)}
 .pi-hot{position:absolute;top:14px;right:14px;background:#E83C2A;color:#fff;padding:4px 12px;border-radius:20px;font-size:10px;font-weight:700;letter-spacing:.5px}
 .pb{padding:22px}
-.pp{font-family:'Bodoni Moda',serif;font-size:24px;font-weight:700;color:var(--ink)}
-.pp span{font-family:'Outfit',sans-serif;font-size:13px;font-weight:400;color:var(--muted)}
-.pt{font-size:15px;font-weight:500;color:var(--ink);margin:6px 0;line-height:1.4}
-.pl{display:flex;align-items:center;gap:4px;color:var(--muted);font-size:13px;margin-bottom:12px}
-.pd{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:14px}
-.pf{display:flex;gap:14px;padding-top:14px;border-top:1px solid var(--border)}
-.pft{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:4px}
+.pp{font-family:'Bodoni Moda',serif;font-size:26px;font-weight:700;color:var(--ink)}
+.pp span{font-family:'Outfit',sans-serif;font-size:14px;font-weight:400;color:var(--muted)}
+.pt{font-size:16px;font-weight:500;color:var(--ink);margin:7px 0 6px;line-height:1.4}
+.pl{display:flex;align-items:center;gap:4px;color:var(--muted);font-size:14px;margin-bottom:10px}
+.pd{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:14px}
+.pf{display:flex;gap:12px;padding-top:14px;border-top:1px solid var(--border);flex-wrap:wrap}
+.pft{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:4px}
+@media(max-width:900px){.pg{grid-template-columns:1fr 1fr;gap:18px}}
+@media(max-width:600px){.pg{grid-template-columns:1fr}}
 
-/* ═══ WHY Q PROPERTY ═══ */
+/* ── WHY SECTION ── */
 .why{background:var(--ink);padding:88px 0}
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:52px}
-.wc{
-  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
-  border-radius:18px;padding:36px 32px;
-  transition:background .2s,border-color .2s,transform .2s;
-}
+.wgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:52px}
+.wc{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:36px 30px;transition:all .25s}
 .wc:hover{background:rgba(200,168,90,.07);border-color:rgba(200,168,90,.25);transform:translateY(-4px)}
-.wi{font-size:40px;margin-bottom:20px;display:block}
+.wi{font-size:38px;display:block;margin-bottom:18px}
 .wt{font-family:'Bodoni Moda',serif;font-size:20px;font-weight:700;color:var(--white);margin-bottom:10px}
-.wd{color:rgba(255,255,255,.5);font-size:14px;line-height:1.7}
+.wd{color:rgba(255,255,255,.5);font-size:15px;line-height:1.75}
+@media(max-width:900px){.wgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.wgrid{grid-template-columns:1fr}}
 
-/* ═══ PROVINCE MAP ═══ */
-.prov-sec{background:linear-gradient(160deg,var(--ink) 0%,#0E2240 100%);padding:88px 0}
-.prov-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:44px}
-.prov{
-  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);
-  border-radius:12px;padding:16px;
-  cursor:none;transition:all .2s;
-  display:flex;align-items:center;gap:10px;
-}
+/* ── PROVINCES ── */
+.prov-sec{background:linear-gradient(150deg,var(--ink) 0%,#0E2240 100%);padding:88px 0}
+.pgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:44px}
+.prov{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:15px 12px;cursor:none;transition:all .2s;display:flex;align-items:center;gap:9px}
 .prov:hover{background:rgba(200,168,90,.12);border-color:rgba(200,168,90,.35);transform:scale(1.03)}
-.prov-em{font-size:22px}
-.prov-n{font-size:13px;color:rgba(255,255,255,.75);font-weight:400}
-.prov-c{font-size:11px;color:var(--gold);margin-top:2px}
+.pe{font-size:20px}
+.pn{font-size:13px;color:rgba(255,255,255,.75);font-weight:400}
+.pc2{font-size:11px;color:var(--gold);margin-top:2px}
+@media(max-width:900px){.pgrid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:480px){.pgrid{grid-template-columns:repeat(2,1fr)}}
 
-/* ═══ AD ═══ */
-.ad{background:rgba(255,255,255,.7);backdrop-filter:blur(8px);border:1.5px dashed var(--border);border-radius:var(--r);padding:20px;text-align:center;color:var(--muted);font-size:12px;margin:36px 0}
-.adl{font-size:10px;letter-spacing:2px;text-transform:uppercase;opacity:.45;margin-bottom:4px}
+/* ── SEO TEXT ── */
+.seo-sec{background:var(--white);padding:88px 0}
+.seo-body{max-width:820px;margin:0 auto;color:#4B5563;font-size:16px;line-height:1.9;display:grid;gap:22px}
+.seo-body p strong{color:var(--ink)}
+.seo-2col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+.seo-box{background:var(--cream);border-radius:12px;padding:22px}
+.seo-box h4{font-weight:600;margin-bottom:10px;color:var(--ink);font-size:16px}
+.seo-box p{font-size:14px;color:#6B7280;line-height:1.9}
+@media(max-width:600px){.seo-2col{grid-template-columns:1fr}}
 
-/* ═══ FOOTER ═══ */
-footer{background:var(--ink);padding:72px 0 36px;border-top:1px solid rgba(200,168,90,.15)}
-.fg4{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:52px;margin-bottom:56px}
-.fb p{color:rgba(255,255,255,.4);font-size:14px;line-height:1.8;max-width:300px;margin-top:14px}
-.fc h5{color:var(--gold);font-size:11px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;margin-bottom:18px}
-.fc a{display:block;color:rgba(255,255,255,.5);font-size:14px;margin-bottom:11px;text-decoration:none;transition:color .2s}
+/* ── CHAT PULSE ── */
+.chat-float{position:fixed;bottom:88px;right:24px;z-index:600;display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.chat-tip{background:var(--gold);color:var(--ink);padding:10px 18px;border-radius:20px 20px 4px 20px;font-size:14px;font-weight:600;animation:pulse 3s ease infinite;box-shadow:0 4px 20px rgba(200,168,90,.5);cursor:none}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);padding:72px 0 36px;border-top:1px solid rgba(200,168,90,.12)}
+.fg4{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:52px;margin-bottom:52px}
+.fb-desc{color:rgba(255,255,255,.4);font-size:15px;line-height:1.8;max-width:300px;margin-top:14px}
+.fc h5{color:var(--gold);font-size:12px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;margin-bottom:18px}
+.fc a{display:block;color:rgba(255,255,255,.5);font-size:15px;margin-bottom:12px;text-decoration:none;transition:color .2s}
 .fc a:hover{color:var(--white)}
-.fbot{border-top:1px solid rgba(255,255,255,.07);padding-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
-.fbot p{color:rgba(255,255,255,.3);font-size:13px}
+.fbot{border-top:1px solid rgba(255,255,255,.07);padding-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+.fbot p{color:rgba(255,255,255,.3);font-size:14px}
+@media(max-width:900px){.fg4{grid-template-columns:1fr 1fr;gap:36px}}
+@media(max-width:600px){.fg4{grid-template-columns:1fr}}
 
-/* ═══ ANIMATIONS ═══ */
-@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
-.reveal.in{opacity:1;transform:none}
-.reveal:nth-child(2){transition-delay:.1s}
-.reveal:nth-child(3){transition-delay:.18s}
-.reveal:nth-child(4){transition-delay:.26s}
-.reveal:nth-child(5){transition-delay:.34s}
-.reveal:nth-child(6){transition-delay:.42s}
+/* ── REVEAL ── */
+@keyframes fu{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.rev{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.rev.in{opacity:1;transform:none}
+.rev:nth-child(2){transition-delay:.08s}.rev:nth-child(3){transition-delay:.16s}
+.rev:nth-child(4){transition-delay:.24s}.rev:nth-child(5){transition-delay:.32s}
+.rev:nth-child(6){transition-delay:.40s}
 
-/* ═══ LIVE CHAT PULSE ═══ */
-.chat-pulse{position:fixed;bottom:90px;right:24px;z-index:600;display:flex;flex-direction:column;align-items:flex-end;gap:8px}
-.chat-bubble{background:var(--gold);color:var(--ink);padding:10px 18px;border-radius:20px 20px 4px 20px;font-size:13px;font-weight:600;animation:pulsePop 3s ease infinite;box-shadow:0 4px 20px rgba(200,168,90,.5);cursor:none}
-@keyframes pulsePop{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
-
-/* ═══ MOBILE ═══ */
-@media(max-width:960px){
-  .fields{grid-template-columns:1fr 1fr;gap:10px}
-  .btn-s{width:100%}
-  .pg{grid-template-columns:1fr 1fr;gap:20px}
-  .why-grid{grid-template-columns:1fr 1fr}
-  .prov-grid{grid-template-columns:repeat(3,1fr)}
-  .fg4{grid-template-columns:1fr 1fr}
-  nav{display:none}
-}
-@media(max-width:600px){
-  .pg{grid-template-columns:1fr}
-  .prov-grid{grid-template-columns:repeat(2,1fr)}
-  .why-grid{grid-template-columns:1fr}
-  .fg4{grid-template-columns:1fr}
-  .hero-title{font-size:40px}
-  .fields{grid-template-columns:1fr}
-  header{padding:0 20px}
-  .hero-inner{padding:0 20px;padding-top:72px}
-  *{cursor:auto!important}#cursor,#cursor-ring{display:none}
-}
+/* ── LOADING ── */
+.ld{text-align:center;padding:60px;color:var(--muted);grid-column:1/-1}
+.sp{width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 14px}
+@keyframes spin{to{transform:rotate(360deg)}}
 </style>
 </head>
 <body>
 
-<!-- CUSTOM CURSOR -->
-<div id="cursor"></div>
-<div id="cursor-ring"></div>
+<div id="cur"></div>
+<div id="cur-r"></div>
 
-<!-- ═══ HEADER ═══ -->
+<!-- HEADER -->
 <header id="hdr">
   <a class="logo" href="/"><span class="q">Q</span> Property</a>
   <nav>
@@ -292,52 +219,47 @@ footer{background:var(--ink);padding:72px 0 36px;border-top:1px solid rgba(200,1
     <a href="#properties">Rent</a>
     <a href="#provinces">Provinces</a>
     <a href="#why">Why Us</a>
-    <a href="#" class="nav-cta">+ List Property</a>
+    <a href="#" class="nav-btn">+ List Property</a>
   </nav>
 </header>
 
-<!-- ═══ HERO + LIVE CANVAS ═══ -->
+<!-- HERO -->
 <div id="hero">
-  <canvas id="bg-canvas"></canvas>
-  <div class="hero-overlay"></div>
-  <div class="hero-inner">
-    <div class="hero-label">🇰🇭 Cambodia's Premier Property Portal</div>
-    <h1 class="hero-title">Find Your Dream<br><em>Property in Cambodia</em></h1>
-    <p class="hero-sub">Buy, sell or rent villas, apartments, condos, offices and land across all 25 provinces — trusted, verified listings every day.</p>
+  <canvas id="bgc"></canvas>
+  <div class="hero-ov"></div>
+  <div class="hero-in">
+    <div class="h-tag">🇰🇭 Cambodia's Premier Property Portal</div>
+    <h1 class="h-title">Find Your Dream<br><em>Property in Cambodia</em></h1>
+    <p class="h-sub">Buy, sell or rent villas, apartments, condos, offices and land across all 25 provinces — trusted, verified listings every day.</p>
 
-    <div class="search-card">
-      <div class="tab-bar">
-        <button class="tab active" onclick="setTab('rent',this)">🏠 Rent</button>
+    <div class="sc">
+      <div class="tabs">
+        <button class="tab on" onclick="setTab('rent',this)">🏠 Rent</button>
         <button class="tab" onclick="setTab('buy',this)">🔑 Buy</button>
         <button class="tab" onclick="setTab('all',this)">✦ All</button>
       </div>
-      <div class="fields">
+      <div class="flds">
         <div class="fg">
           <label class="fl">Property Type</label>
           <select id="f-type" onchange="doFilter()">
             <option value="">Any Type</option>
-            <option>🏡 Villa</option><option>🏢 Apartment</option>
-            <option>🏙️ Condo</option><option>🏬 Office</option>
-            <option>🌿 Land</option><option>🏗️ Building</option>
-            <option>💼 Business</option>
+            <option>Villa</option><option>Apartment</option>
+            <option>Condo</option><option>Office</option>
+            <option>Land</option><option>Building</option><option>Business</option>
           </select>
         </div>
         <div class="fg">
           <label class="fl">Province</label>
           <select id="f-loc" onchange="doFilter()">
             <option value="">Any Province</option>
-            <option>Phnom Penh</option><option>Siem Reap</option>
-            <option>Sihanoukville</option><option>Battambang</option>
-            <option>Kampong Cham</option><option>Kampong Chhnang</option>
-            <option>Kampong Speu</option><option>Kampong Thom</option>
-            <option>Kampot</option><option>Kandal</option>
-            <option>Kep</option><option>Koh Kong</option>
-            <option>Kratie</option><option>Mondulkiri</option>
-            <option>Oddar Meanchey</option><option>Pailin</option>
-            <option>Preah Vihear</option><option>Prey Veng</option>
-            <option>Pursat</option><option>Ratanakiri</option>
-            <option>Stung Treng</option><option>Svay Rieng</option>
-            <option>Takeo</option><option>Tboung Khmum</option>
+            <option>Phnom Penh</option><option>Siem Reap</option><option>Sihanoukville</option>
+            <option>Battambang</option><option>Kampong Cham</option><option>Kampong Chhnang</option>
+            <option>Kampong Speu</option><option>Kampong Thom</option><option>Kampot</option>
+            <option>Kandal</option><option>Kep</option><option>Koh Kong</option>
+            <option>Kratie</option><option>Mondulkiri</option><option>Oddar Meanchey</option>
+            <option>Pailin</option><option>Preah Vihear</option><option>Prey Veng</option>
+            <option>Pursat</option><option>Ratanakiri</option><option>Stung Treng</option>
+            <option>Svay Rieng</option><option>Takeo</option><option>Tboung Khmum</option>
             <option>Banteay Meanchey</option>
           </select>
         </div>
@@ -349,15 +271,15 @@ footer{background:var(--ink);padding:72px 0 36px;border-top:1px solid rgba(200,1
             <option value="500-1000">$500 – $1,000</option>
             <option value="1000-3000">$1,000 – $3,000</option>
             <option value="3000-10000">$3,000 – $10,000</option>
-            <option value="10000-99999999">$10,000+</option>
+            <option value="10000-9999999">Above $10,000</option>
           </select>
         </div>
         <div class="fg">
           <label class="fl">Bedrooms</label>
           <select id="f-beds" onchange="doFilter()">
             <option value="">Any</option>
-            <option value="1">1 Bed</option><option value="2">2 Beds</option>
-            <option value="3">3 Beds</option><option value="4">4+ Beds</option>
+            <option value="1">1 Bedroom</option><option value="2">2 Bedrooms</option>
+            <option value="3">3 Bedrooms</option><option value="4">4+ Bedrooms</option>
           </select>
         </div>
         <button class="btn-s" onclick="doFilter()">🔍 Search</button>
@@ -366,80 +288,134 @@ footer{background:var(--ink);padding:72px 0 36px;border-top:1px solid rgba(200,1
   </div>
 </div>
 
-<!-- ═══ STATS RIBBON ═══ -->
-<div class="stats-ribbon">
-  <div class="st"><span class="st-n" data-count="1240">0</span><div class="st-l">Active Listings</div></div>
-  <div class="st"><span class="st-n" data-count="25">0</span><div class="st-l">Provinces</div></div>
-  <div class="st"><span class="st-n" data-count="7">0</span><div class="st-l">Property Types</div></div>
-  <div class="st"><span class="st-n" data-count="4800">0</span><div class="st-l">Happy Clients</div></div>
+<!-- ══ MARKET INFO RIBBON (replaces old stats) ══ -->
+<div class="market-ribbon">
+  <div class="mr-inner">
+
+    <!-- Card 1: Popular Areas -->
+    <div class="mr-card rev">
+      <div class="mr-title">
+        🏙️ Popular Areas to Buy
+        <span>Phnom Penh</span>
+      </div>
+      <div class="area-tags">
+        <div class="area-tag">BKK1</div>
+        <div class="area-tag">Toul Tom Poung</div>
+        <div class="area-tag">Koh Pich</div>
+        <div class="area-tag">Sen Sok</div>
+        <div class="area-tag">Chroy Changvar</div>
+        <div class="area-tag">Toul Kork</div>
+        <div class="area-tag">Chamkarmon</div>
+        <div class="area-tag">Daun Penh</div>
+        <div class="area-tag">7 Makara</div>
+        <div class="area-tag">Boeng Keng Kang</div>
+      </div>
+    </div>
+
+    <!-- Card 2: Rental Yields -->
+    <div class="mr-card rev">
+      <div class="mr-title">
+        📈 Average Rental Yields
+        <span>Cambodia 2025</span>
+      </div>
+      <div class="yield-grid">
+        <div class="yc">
+          <div class="yc-label">Condominium</div>
+          <div class="yc-val">6 – 9%</div>
+          <div class="yc-sub">per year</div>
+        </div>
+        <div class="yc">
+          <div class="yc-label">Villa / House</div>
+          <div class="yc-val">5 – 7%</div>
+          <div class="yc-sub">per year</div>
+        </div>
+        <div class="yc">
+          <div class="yc-label">Shophouse</div>
+          <div class="yc-val">7 – 10%</div>
+          <div class="yc-sub">per year</div>
+        </div>
+        <div class="yc">
+          <div class="yc-label">Office Space</div>
+          <div class="yc-val">7 – 9%</div>
+          <div class="yc-sub">per year</div>
+        </div>
+        <div class="yc" style="grid-column:1/-1">
+          <div class="yc-label">Land Appreciation</div>
+          <div class="yc-val">8 – 12%</div>
+          <div class="yc-sub">per year average</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>
 
-<!-- ═══ PROPERTIES ═══ -->
+<!-- PROPERTIES -->
 <div class="sec" id="properties">
   <div class="wrap">
-    <div class="ad"><div class="adl">Advertisement</div><p style="opacity:.35;font-size:12px">Google AdSense 728×90 — replace with your code</p></div>
+    <div class="ad"><div class="adl">Advertisement</div><p style="opacity:.35;font-size:13px">Google AdSense — replace with your publisher code</p></div>
     <div class="sh">
-      <div><div class="st2">Latest <span>Properties</span></div><div class="st2-sub" id="res-count">Showing all properties</div></div>
+      <div><div class="st2">Latest <em>Properties</em></div><div class="st2-sub" id="res-count">Showing all properties</div></div>
       <a href="#" class="va">View all →</a>
     </div>
-    <div class="type-row">
-      <div class="tp on" onclick="tFilter('',this)">🏠 All</div>
-      <div class="tp" onclick="tFilter('Villa',this)">🏡 Villa</div>
-      <div class="tp" onclick="tFilter('Apartment',this)">🏢 Apartment</div>
-      <div class="tp" onclick="tFilter('Condo',this)">🏙️ Condo</div>
-      <div class="tp" onclick="tFilter('Office',this)">🏬 Office</div>
-      <div class="tp" onclick="tFilter('Land',this)">🌿 Land</div>
-      <div class="tp" onclick="tFilter('Building',this)">🏗️ Building</div>
-      <div class="tp" onclick="tFilter('Business',this)">💼 Business</div>
+    <div class="trow">
+      <div class="tp on" onclick="tF('',this)">🏠 All</div>
+      <div class="tp" onclick="tF('Villa',this)">🏡 Villa</div>
+      <div class="tp" onclick="tF('Apartment',this)">🏢 Apartment</div>
+      <div class="tp" onclick="tF('Condo',this)">🏙️ Condo</div>
+      <div class="tp" onclick="tF('Office',this)">🏬 Office</div>
+      <div class="tp" onclick="tF('Land',this)">🌿 Land</div>
+      <div class="tp" onclick="tF('Building',this)">🏗️ Building</div>
+      <div class="tp" onclick="tF('Business',this)">💼 Business</div>
     </div>
-    <div class="pg" id="pg"></div>
-    <div class="ad" style="margin-top:48px"><div class="adl">Advertisement</div><p style="opacity:.35;font-size:12px">Google AdSense 728×90</p></div>
+    <div class="pg" id="pg"><div class="ld"><div class="sp"></div><p>Loading properties...</p></div></div>
+    <div class="ad" style="margin-top:44px"><div class="adl">Advertisement</div><p style="opacity:.35;font-size:13px">Google AdSense 728×90</p></div>
   </div>
 </div>
 
-<!-- ═══ WHY Q PROPERTY ═══ -->
+<!-- WHY -->
 <div class="why" id="why">
   <div class="wrap">
-    <div class="st2" style="color:#fff">Why Choose <span>Q Property</span></div>
-    <div class="why-grid">
-      <div class="wc reveal"><span class="wi">✅</span><div class="wt">Verified Listings</div><div class="wd">Every property is manually verified by our team. No fake listings, no ghost properties — real addresses, real owners.</div></div>
-      <div class="wc reveal"><span class="wi">🇰🇭</span><div class="wt">All 25 Provinces</div><div class="wd">From Phnom Penh penthouses to Mondulkiri eco-retreats — we cover every corner of Cambodia.</div></div>
-      <div class="wc reveal"><span class="wi">💰</span><div class="wt">Free for Buyers & Renters</div><div class="wd">Browse, contact agents and visit properties at zero cost. We never charge buyers or renters a single dollar.</div></div>
-      <div class="wc reveal"><span class="wi">📱</span><div class="wt">Telegram Alerts</div><div class="wd">Get instant property alerts on Telegram. New listings matching your criteria delivered the moment they go live.</div></div>
-      <div class="wc reveal"><span class="wi">🤝</span><div class="wt">Trusted Agents</div><div class="wd">Work with licensed, reviewed agents who know the Cambodian market, legal process and foreign ownership rules.</div></div>
-      <div class="wc reveal"><span class="wi">🔒</span><div class="wt">Hard Title Available</div><div class="wd">We flag every listing with its land title type — Hard Title, Soft Title, LMAP — so you always know what you're buying.</div></div>
+    <div class="st2" style="color:#fff">Why Choose <em>Q Property</em></div>
+    <div class="wgrid">
+      <div class="wc rev"><span class="wi">✅</span><div class="wt">Verified Listings</div><div class="wd">Every property is verified by our team. No fake listings, no ghost properties — real addresses and real owners only.</div></div>
+      <div class="wc rev"><span class="wi">🇰🇭</span><div class="wt">All 25 Provinces</div><div class="wd">From Phnom Penh penthouses to Mondulkiri eco-retreats — we cover every corner of Cambodia.</div></div>
+      <div class="wc rev"><span class="wi">💰</span><div class="wt">Free for Buyers & Renters</div><div class="wd">Browse, contact agents and visit properties at zero cost. We never charge buyers or renters a single dollar.</div></div>
+      <div class="wc rev"><span class="wi">📱</span><div class="wt">Telegram Alerts</div><div class="wd">Get instant property alerts on Telegram. New listings matching your criteria delivered the moment they go live.</div></div>
+      <div class="wc rev"><span class="wi">🤝</span><div class="wt">Trusted Local Agents</div><div class="wd">Work with licensed, reviewed agents who know the Cambodian market, legal process and foreign ownership rules.</div></div>
+      <div class="wc rev"><span class="wi">🔒</span><div class="wt">Hard Title Available</div><div class="wd">We flag every listing with its land title type — Hard Title, Soft Title, LMAP — so you always know what you're buying.</div></div>
     </div>
   </div>
 </div>
 
-<!-- ═══ PROVINCES ═══ -->
+<!-- PROVINCES -->
 <div class="prov-sec" id="provinces">
   <div class="wrap">
     <div class="sh">
-      <div><div class="st2" style="color:#fff">Explore by <span>Province</span></div><div class="st2-sub" style="color:rgba(255,255,255,.4)">Properties across all 25 provinces of Cambodia</div></div>
+      <div><div class="st2" style="color:#fff">Explore by <em>Province</em></div><div class="st2-sub" style="color:rgba(255,255,255,.4);font-size:15px">Properties across all 25 provinces of Cambodia</div></div>
     </div>
-    <div class="prov-grid" id="prov-grid"></div>
+    <div class="pgrid" id="pgrid"></div>
   </div>
 </div>
 
-<!-- ═══ SEO CONTENT SECTION ═══ -->
-<div class="sec" style="background:var(--white)">
+<!-- SEO CONTENT -->
+<div class="seo-sec">
   <div class="wrap">
-    <div style="max-width:780px;margin:0 auto">
-      <div class="st2" style="margin-bottom:28px">Real Estate in <span>Cambodia 2025</span></div>
-      <div style="color:#555;font-size:15px;line-height:1.9;display:grid;gap:20px">
-        <p><strong style="color:var(--ink)">Cambodia's property market</strong> continues to grow as one of Southeast Asia's most dynamic real estate destinations. With no foreign ownership restrictions on condominiums and a rapidly expanding middle class, both local and international buyers are finding exceptional value in Cambodian property.</p>
-        <p><strong style="color:var(--ink)">Phnom Penh</strong> remains the most active market, offering everything from luxury penthouses on Koh Pich (Diamond Island) to affordable serviced apartments in BKK1 and Toul Tom Poung. Rental yields of 6–9% annually make buy-to-let investment particularly attractive.</p>
-        <p><strong style="color:var(--ink)">Siem Reap</strong> is experiencing a tourism-driven revival, with villa rentals and boutique properties near Angkor Wat generating strong demand. <strong style="color:var(--ink)">Sihanoukville</strong> and the <strong style="color:var(--ink)">South Coast</strong> offer beachfront land and resort development opportunities at competitive prices.</p>
-        <p><strong style="color:var(--ink)">Foreign buyers</strong> can legally own condominiums (strata title) up to 70% of any building. Land must be held through a Cambodian company or long-term lease. Q Property connects you with experienced legal advisors who guide the process.</p>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px">
-          <div style="background:var(--cream);border-radius:12px;padding:20px">
-            <div style="font-weight:600;margin-bottom:8px;color:var(--ink)">🏙️ Popular Areas to Buy</div>
-            <div style="font-size:13px;color:#666;line-height:2">BKK1 · Toul Tom Poung · Koh Pich · Sen Sok · Chroy Changvar · Toul Kork · Chamkarmon</div>
+    <div style="max-width:820px;margin:0 auto">
+      <div class="st2" style="margin-bottom:32px">Real Estate in <em>Cambodia 2025</em></div>
+      <div class="seo-body">
+        <p><strong>Cambodia's property market</strong> continues to grow as one of Southeast Asia's most dynamic real estate destinations. With no foreign ownership restrictions on condominiums and a rapidly expanding middle class, both local and international buyers are finding exceptional value.</p>
+        <p><strong>Phnom Penh</strong> remains the most active market, offering everything from luxury penthouses on Koh Pich (Diamond Island) to affordable serviced apartments in BKK1 and Toul Tom Poung. Rental yields of 6–9% annually make buy-to-let investment particularly attractive.</p>
+        <p><strong>Siem Reap</strong> is experiencing a tourism-driven revival with villa rentals near Angkor Wat. <strong>Sihanoukville</strong> and the South Coast offer beachfront land and resort development opportunities at competitive prices.</p>
+        <p><strong>Foreign buyers</strong> can legally own condominiums (strata title) up to 70% of any building. Land must be held through a Cambodian company or long-term lease. Q Property connects you with experienced legal advisors who guide the process.</p>
+        <div class="seo-2col">
+          <div class="seo-box">
+            <h4>🏙️ Popular Areas to Buy</h4>
+            <p>BKK1 · Toul Tom Poung · Koh Pich · Sen Sok · Chroy Changvar · Toul Kork · Chamkarmon · Daun Penh</p>
           </div>
-          <div style="background:var(--cream);border-radius:12px;padding:20px">
-            <div style="font-weight:600;margin-bottom:8px;color:var(--ink)">📈 Average Rental Yields</div>
-            <div style="font-size:13px;color:#666;line-height:2">Condo: 6–9% · Villa: 5–7% · Shophouse: 7–10% · Office: 7–9% · Land appreciation: 8–12%/yr</div>
+          <div class="seo-box">
+            <h4>📈 Average Rental Yields</h4>
+            <p>Condo: 6–9% · Villa: 5–7% · Shophouse: 7–10% · Office: 7–9% · Land appreciation: 8–12%/yr</p>
           </div>
         </div>
       </div>
@@ -447,172 +423,108 @@ footer{background:var(--ink);padding:72px 0 36px;border-top:1px solid rgba(200,1
   </div>
 </div>
 
-<!-- ═══ LIVE CHAT CTA ═══ -->
-<div class="chat-pulse">
-  <div class="chat-bubble">💬 Live Chat — Ask Us Anything</div>
+<!-- CHAT -->
+<div class="chat-float">
+  <div class="chat-tip">💬 Live Chat — Ask Us Anything</div>
 </div>
 
-<!-- ═══ FOOTER ═══ -->
+<!-- FOOTER -->
 <footer>
   <div class="wrap">
     <div class="fg4">
-      <div class="fb">
-        <a class="logo" href="/" style="font-size:24px;display:flex"><span class="q">Q</span> Property</a>
-        <p>Cambodia's trusted real estate portal. Find your perfect property to buy, rent or sell — verified listings, experienced agents, all provinces.</p>
-        <div style="display:flex;gap:12px;margin-top:20px">
-          <a href="https://t.me/QjobKh" style="color:var(--gold);font-size:22px;text-decoration:none" target="_blank">✈️</a>
-        </div>
+      <div>
+        <a class="logo" href="/" style="font-size:22px;display:flex"><span class="q">Q</span> Property</a>
+        <p class="fb-desc">Cambodia's trusted real estate portal. Find your perfect property to buy, rent or sell — verified listings, all provinces.</p>
+        <a href="https://t.me/QjobKh" style="color:var(--gold);font-size:24px;text-decoration:none;display:inline-block;margin-top:16px" target="_blank">✈️</a>
       </div>
       <div class="fc"><h5>Property</h5><a href="#">Villa</a><a href="#">Apartment</a><a href="#">Condo</a><a href="#">Office</a><a href="#">Land</a><a href="#">Building</a><a href="#">Business</a></div>
       <div class="fc"><h5>Top Cities</h5><a href="#">Phnom Penh</a><a href="#">Siem Reap</a><a href="#">Sihanoukville</a><a href="#">Battambang</a><a href="#">Kampot</a><a href="#">Kep</a></div>
-      <div class="fc"><h5>Company</h5><a href="#">About Q Property</a><a href="#">List Your Property</a><a href="#">Agent Directory</a><a href="#">Contact Us</a><a href="https://t.me/QjobKh" target="_blank">Telegram Channel</a><a href="#">Privacy Policy</a></div>
+      <div class="fc"><h5>Company</h5><a href="#">About Us</a><a href="#">List Property</a><a href="#">Agent Directory</a><a href="#">Contact</a><a href="https://t.me/QjobKh" target="_blank">Telegram</a><a href="#">Privacy</a></div>
     </div>
     <div class="fbot">
-      <p>© 2025 <span style="color:var(--gold)">Q Property</span> Cambodia — All rights reserved</p>
-      <p style="font-size:11px;opacity:.3">property for sale Cambodia · apartment rent Phnom Penh · ទ្រព្យសម្បត្តិ · ផ្ទះជួល · condo Cambodia · land Cambodia</p>
+      <p>© 2025 <span style="color:var(--gold)">Q Property</span> Cambodia</p>
+      <p style="font-size:12px;opacity:.3">property for sale Cambodia · apartment rent Phnom Penh · ទ្រព្យសម្បត្តិ · ផ្ទះជួល</p>
     </div>
   </div>
 </footer>
 
-<!-- ═══ TAWK.TO LIVE CHAT (FREE) ═══ -->
-<!-- Sign up free at tawk.to → get your Property ID → replace XXXXXXX below -->
+<!-- Tawk.to Live Chat — sign up free at tawk.to, replace XXXX with your ID -->
 <!--
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{},Tawk_LoadStart=new Date();
-(function(){var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;s1.src='https://embed.tawk.to/XXXXXXXXXXXXXXXX/default';
-s1.charset='UTF-8';s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);})();
-</script>
+<script>var Tawk_API=Tawk_API||{};(function(){var s=document.createElement("script");s.async=true;s.src='https://embed.tawk.to/XXXXXXXX/default';s.charset='UTF-8';s.setAttribute('crossorigin','*');document.head.appendChild(s);})();</script>
 -->
 
 <script>
-// ═══════════════════════════════════════════════════════════════════
-//  LIVE CANVAS BACKGROUND
-// ═══════════════════════════════════════════════════════════════════
+/* ══ LIVE CANVAS BACKGROUND ══════════════════════════════════════════ */
 (function(){
-  const canvas=document.getElementById('bg-canvas');
-  const ctx=canvas.getContext('2d');
-  let W,H,pts;
-
-  function resize(){
-    W=canvas.width=canvas.offsetWidth;
-    H=canvas.height=canvas.offsetHeight;
-    init();
-  }
-
-  function init(){
-    pts=Array.from({length:6},(_,i)=>({
-      x:Math.random()*W, y:Math.random()*H,
-      vx:(Math.random()-.5)*.4, vy:(Math.random()-.5)*.4,
-      r: 280+Math.random()*220,
-      hue: i%2===0 ? [200,168,90] : [14,32,52],
-      a: .12+Math.random()*.1
+  const cv=document.getElementById('bgc'),ctx=cv.getContext('2d');
+  let W,H,orbs;
+  function rs(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight;mk()}
+  function mk(){
+    orbs=Array.from({length:7},(_,i)=>({
+      x:Math.random()*W,y:Math.random()*H,
+      vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,
+      r:260+Math.random()*200,
+      rgb:i%2===0?[200,168,90]:[30,58,100],
+      a:.09+Math.random()*.08
     }));
   }
-
-  function draw(){
+  function dr(){
     ctx.clearRect(0,0,W,H);
-    // Base gradient
+    // base
     const bg=ctx.createLinearGradient(0,0,W,H);
-    bg.addColorStop(0,'#08111E');
-    bg.addColorStop(1,'#0F2035');
-    ctx.fillStyle=bg; ctx.fillRect(0,0,W,H);
-
-    // Orbs
-    pts.forEach(p=>{
-      const g=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r);
-      const [r,g2,b]=p.hue;
-      g.addColorStop(0,`rgba(${r},${g2},${b},${p.a})`);
-      g.addColorStop(1,'rgba(0,0,0,0)');
-      ctx.beginPath();
-      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-      ctx.fillStyle=g; ctx.fill();
-
-      p.x+=p.vx; p.y+=p.vy;
-      if(p.x<-p.r||p.x>W+p.r) p.vx*=-1;
-      if(p.y<-p.r||p.y>H+p.r) p.vy*=-1;
-    });
-
-    // Grid lines
-    ctx.strokeStyle='rgba(200,168,90,.04)';
-    ctx.lineWidth=1;
+    bg.addColorStop(0,'#08111E');bg.addColorStop(1,'#0D1F38');
+    ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+    // grid
+    ctx.strokeStyle='rgba(200,168,90,.04)';ctx.lineWidth=1;
     for(let x=0;x<W;x+=80){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke()}
     for(let y=0;y<H;y+=80){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke()}
-
-    requestAnimationFrame(draw);
+    // orbs
+    orbs.forEach(o=>{
+      const g=ctx.createRadialGradient(o.x,o.y,0,o.x,o.y,o.r);
+      const[r,g2,b]=o.rgb;
+      g.addColorStop(0,`rgba(${r},${g2},${b},${o.a})`);
+      g.addColorStop(1,'rgba(0,0,0,0)');
+      ctx.beginPath();ctx.arc(o.x,o.y,o.r,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();
+      o.x+=o.vx;o.y+=o.vy;
+      if(o.x<-o.r||o.x>W+o.r)o.vx*=-1;
+      if(o.y<-o.r||o.y>H+o.r)o.vy*=-1;
+    });
+    requestAnimationFrame(dr);
   }
-
-  window.addEventListener('resize',resize);
-  resize(); draw();
+  window.addEventListener('resize',rs);rs();dr();
 })();
 
-// ═══════════════════════════════════════════════════════════════════
-//  CURSOR
-// ═══════════════════════════════════════════════════════════════════
-const cur=document.getElementById('cursor');
-const ring=document.getElementById('cursor-ring');
+/* ══ CURSOR ══════════════════════════════════════════════════════════ */
+const cur=document.getElementById('cur'),ring=document.getElementById('cur-r');
 let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{
-  mx=e.clientX; my=e.clientY;
-  cur.style.left=mx+'px'; cur.style.top=my+'px';
-});
-(function animCursor(){
-  rx+=(mx-rx)*.12; ry+=(my-ry)*.12;
-  ring.style.left=rx+'px'; ring.style.top=ry+'px';
-  requestAnimationFrame(animCursor);
-})();
-document.querySelectorAll('a,button,.tp,.pc,.prov,.wc,.type-card').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{cur.style.width='20px';cur.style.height='20px';ring.style.width='52px';ring.style.height='52px'});
-  el.addEventListener('mouseleave',()=>{cur.style.width='12px';cur.style.height='12px';ring.style.width='36px';ring.style.height='36px'});
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
+(function ac(){rx+=(mx-rx)*.11;ry+=(my-ry)*.11;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(ac);})();
+document.querySelectorAll('a,button,.tp,.pc,.prov,.wc,.yc,.area-tag').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.style.width='18px';cur.style.height='18px';ring.style.width='48px';ring.style.height='48px';});
+  el.addEventListener('mouseleave',()=>{cur.style.width='10px';cur.style.height='10px';ring.style.width='32px';ring.style.height='32px';});
 });
 
-// ═══════════════════════════════════════════════════════════════════
-//  HEADER SCROLL
-// ═══════════════════════════════════════════════════════════════════
-window.addEventListener('scroll',()=>{
-  document.getElementById('hdr').classList.toggle('scrolled',window.scrollY>50);
-});
+/* ══ HEADER SCROLL ════════════════════════════════════════════════════ */
+window.addEventListener('scroll',()=>document.getElementById('hdr').classList.toggle('on',scrollY>50));
 
-// ═══════════════════════════════════════════════════════════════════
-//  REVEAL ON SCROLL
-// ═══════════════════════════════════════════════════════════════════
-const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.15});
-document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+/* ══ REVEAL ON SCROLL ════════════════════════════════════════════════ */
+const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.12});
+document.querySelectorAll('.rev').forEach(el=>ro.observe(el));
 
-// ═══════════════════════════════════════════════════════════════════
-//  ANIMATED COUNTERS
-// ═══════════════════════════════════════════════════════════════════
-const co=new IntersectionObserver(es=>es.forEach(e=>{
-  if(e.isIntersecting){
-    const el=e.target, target=+el.dataset.count;
-    let n=0; const step=Math.ceil(target/60);
-    const t=setInterval(()=>{
-      n=Math.min(n+step,target);
-      el.textContent=n.toLocaleString()+(target>100?'+':'');
-      if(n>=target){clearInterval(t); el.textContent=target.toLocaleString()+(target>100?'+':'')}
-    },28);
-    co.unobserve(el);
-  }
-}),{threshold:.5});
-document.querySelectorAll('[data-count]').forEach(el=>co.observe(el));
-
-// ═══════════════════════════════════════════════════════════════════
-//  PROPERTY DATA
-// ═══════════════════════════════════════════════════════════════════
+/* ══ PROPERTIES DATA ════════════════════════════════════════════════ */
 const PROPS=[
-  {id:1,type:"Apartment",listing:"rent",title:"Modern Studio — BKK1, Phnom Penh",loc:"Phnom Penh",price:650,beds:1,baths:1,size:45,em:"🏢",hot:true,desc:"Fully furnished studio near Aeon Mall. City view, gym and pool included."},
+  {id:1,type:"Apartment",listing:"rent",title:"Modern Studio Apartment — BKK1",loc:"Phnom Penh",price:650,beds:1,baths:1,size:45,em:"🏢",hot:true,desc:"Fully furnished studio near Aeon Mall. City view, gym and pool included."},
   {id:2,type:"Villa",listing:"sale",title:"Luxury Pool Villa — Sala Kamreuk",loc:"Siem Reap",price:280000,beds:4,baths:3,size:350,em:"🏡",hot:false,desc:"4-bed villa with private pool 10 min from Angkor Wat. Hard title available."},
-  {id:3,type:"Condo",listing:"rent",title:"Penthouse — Diamond Island (Koh Pich)",loc:"Phnom Penh",price:2200,beds:3,baths:2,size:180,em:"🏙️",hot:true,desc:"High-floor penthouse with panoramic Mekong river views. Fully furnished."},
+  {id:3,type:"Condo",listing:"rent",title:"Penthouse Condo — Diamond Island",loc:"Phnom Penh",price:2200,beds:3,baths:2,size:180,em:"🏙️",hot:true,desc:"High-floor penthouse with panoramic Mekong river views. Fully furnished."},
   {id:4,type:"Land",listing:"sale",title:"Beachfront Land — Ochheuteal Beach",loc:"Sihanoukville",price:550000,beds:0,baths:0,size:1200,em:"🌿",hot:false,desc:"1,200 sqm beachfront. Hard title. Perfect for hotel or resort development."},
   {id:5,type:"Office",listing:"rent",title:"Grade A Office — BKK1 Tower",loc:"Phnom Penh",price:1800,beds:0,baths:2,size:120,em:"🏬",hot:false,desc:"Fully fitted 8th-floor office. 24/7 security, parking, fiber internet."},
   {id:6,type:"Apartment",listing:"rent",title:"2BR Serviced Apartment — Daun Penh",loc:"Phnom Penh",price:900,beds:2,baths:1,size:85,em:"🏢",hot:false,desc:"Central location. Walking distance to riverfront and embassies."},
   {id:7,type:"Villa",listing:"rent",title:"Riverside Villa with Garden — Kampot",loc:"Kampot",price:1100,beds:3,baths:2,size:220,em:"🏡",hot:true,desc:"Charming villa with mountain views and large garden. Popular expat area."},
   {id:8,type:"Building",listing:"sale",title:"Commercial Shophouse — Main Street",loc:"Battambang",price:185000,beds:0,baths:0,size:400,em:"🏗️",hot:false,desc:"4-storey shophouse on main street. Currently tenanted. Good ROI."},
-  {id:9,type:"Condo",listing:"sale",title:"1BR Condo — Sen Sok City",loc:"Phnom Penh",price:75000,beds:1,baths:1,size:55,em:"🏙️",hot:false,desc:"Brand new condo near AEON Mall 2. Modern design, good rental yield."},
+  {id:9,type:"Condo",listing:"sale",title:"1BR Condo — Sen Sok City",loc:"Phnom Penh",price:75000,beds:1,baths:1,size:55,em:"🏙️",hot:false,desc:"Brand new condo near AEON Mall 2. Good rental yield expected."},
 ];
 
-const PROV=[
+const PROVS=[
   {n:"Phnom Penh",e:"🏙️"},{n:"Siem Reap",e:"🛕"},{n:"Sihanoukville",e:"🏖️"},
   {n:"Battambang",e:"🌾"},{n:"Kampong Cham",e:"🌿"},{n:"Kampong Chhnang",e:"⛵"},
   {n:"Kampong Speu",e:"🌄"},{n:"Kampong Thom",e:"🗿"},{n:"Kampot",e:"🏞️"},
@@ -624,56 +536,42 @@ const PROV=[
   {n:"Banteay Meanchey",e:"🛕"},
 ];
 
-// ═══════════════════════════════════════════════════════════════════
-//  FILTER STATE
-// ═══════════════════════════════════════════════════════════════════
-let TAB='rent', TTYPE='';
-
-function setTab(t,btn){
-  TAB=t;
-  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active'); doFilter();
-}
-function tFilter(t,btn){
-  TTYPE=t;
-  document.querySelectorAll('.tp').forEach(b=>b.classList.remove('on'));
-  btn.classList.add('on');
-  document.getElementById('f-type').value=t; doFilter();
-}
+/* ══ FILTER STATE ════════════════════════════════════════════════════ */
+let TAB='rent', TT='';
+function setTab(t,btn){TAB=t;document.querySelectorAll('.tab').forEach(b=>b.classList.remove('on'));btn.classList.add('on');doFilter();}
+function tF(t,btn){TT=t;document.querySelectorAll('.tp').forEach(b=>b.classList.remove('on'));btn.classList.add('on');document.getElementById('f-type').value=t;doFilter();}
 function doFilter(){
-  const type=TTYPE||document.getElementById('f-type').value.replace(/^[^\w]*/,'');
-  const loc=document.getElementById('f-loc').value;
+  const ty=TT||document.getElementById('f-type').value;
+  const lo=document.getElementById('f-loc').value;
   const pr=document.getElementById('f-price').value;
-  const beds=document.getElementById('f-beds').value;
+  const bd=document.getElementById('f-beds').value;
   let list=PROPS.filter(p=>{
-    if(TAB==='rent'&&p.listing!=='rent') return false;
-    if(TAB==='buy'&&p.listing!=='sale') return false;
-    if(type&&!p.type.includes(type)) return false;
-    if(loc&&p.loc!==loc) return false;
-    if(beds&&p.beds<+beds) return false;
-    if(pr){const[lo,hi]=pr.split('-').map(Number);if(p.price<lo||p.price>hi)return false;}
+    if(TAB==='rent'&&p.listing!=='rent')return false;
+    if(TAB==='buy'&&p.listing!=='sale')return false;
+    if(ty&&p.type!==ty)return false;
+    if(lo&&p.loc!==lo)return false;
+    if(bd&&p.beds<+bd)return false;
+    if(pr){const[a,b]=pr.split('-').map(Number);if(p.price<a||p.price>b)return false;}
     return true;
   });
-  render(list);
+  renderProps(list);
 }
 
 function fmt(p,l){
-  return l==='rent'
-    ? `$${p.toLocaleString()}<span>/mo</span>`
-    : `$${p.toLocaleString()}`;
+  return l==='rent'?`$${p.toLocaleString()}<span>/mo</span>`:`$${p.toLocaleString()}`;
 }
 
-function render(list){
+function renderProps(list){
   document.getElementById('res-count').textContent=`${list.length} propert${list.length===1?'y':'ies'} found`;
   if(!list.length){
-    document.getElementById('pg').innerHTML=`<div style="grid-column:1/-1;text-align:center;padding:60px;color:var(--muted)"><p style="font-size:36px;margin-bottom:12px">🏠</p><p>No properties match. Try different filters.</p></div>`;
+    document.getElementById('pg').innerHTML=`<div class="ld"><p style="font-size:40px;margin-bottom:14px">🏠</p><p style="font-size:16px">No properties match. Try different filters.</p></div>`;
     return;
   }
   document.getElementById('pg').innerHTML=list.map((p,i)=>`
-    <div class="pc reveal" style="transition-delay:${i*.07}s">
+    <div class="pc rev" style="transition-delay:${i*.07}s">
       <div class="pi">
         <span class="pi-em">${p.em}</span>
-        <span class="pi-b1 ${p.listing==='rent'?'b-rent':'b-sale'}">${p.listing==='rent'?'For Rent':'For Sale'}</span>
+        <span class="pi-b ${p.listing==='rent'?'b-rent':'b-sale'}">${p.listing==='rent'?'For Rent':'For Sale'}</span>
         ${p.hot?'<span class="pi-hot">🔥 HOT</span>':''}
       </div>
       <div class="pb">
@@ -682,38 +580,33 @@ function render(list){
         <div class="pl">📍 ${p.loc}</div>
         <div class="pd">${p.desc}</div>
         <div class="pf">
-          ${p.beds?`<span class="pft">🛏 ${p.beds}bd</span>`:''}
-          ${p.baths?`<span class="pft">🚿 ${p.baths}ba</span>`:''}
-          ${p.size?`<span class="pft">📐 ${p.size}m²</span>`:''}
-          <span class="pft" style="margin-left:auto;color:var(--gold)">${p.type}</span>
+          ${p.beds?`<span class="pft">🛏 ${p.beds} Bed${p.beds>1?'s':''}</span>`:''}
+          ${p.baths?`<span class="pft">🚿 ${p.baths} Bath${p.baths>1?'s':''}</span>`:''}
+          ${p.size?`<span class="pft">📐 ${p.size} m²</span>`:''}
+          <span class="pft" style="margin-left:auto;color:var(--gold);font-weight:500">${p.type}</span>
         </div>
       </div>
     </div>`).join('');
-  // Re-observe new cards
-  document.querySelectorAll('.pc.reveal:not(.in)').forEach(el=>ro.observe(el));
+  document.querySelectorAll('.pc.rev:not(.in)').forEach(el=>ro.observe(el));
 }
 
-// ═══════════════════════════════════════════════════════════════════
-//  PROVINCES
-// ═══════════════════════════════════════════════════════════════════
-document.getElementById('prov-grid').innerHTML=PROV.map(p=>`
-  <div class="prov" onclick="goProvince('${p.n}')">
-    <span class="prov-em">${p.e}</span>
+/* ══ PROVINCES ══════════════════════════════════════════════════════ */
+document.getElementById('pgrid').innerHTML=PROVS.map(p=>`
+  <div class="prov" onclick="goProv('${p.n}')">
+    <span class="pe">${p.e}</span>
     <div>
-      <div class="prov-n">${p.n}</div>
-      <div class="prov-c">${PROPS.filter(x=>x.loc===p.n).length||'—'} listings</div>
+      <div class="pn">${p.n}</div>
+      <div class="pc2">${PROPS.filter(x=>x.loc===p.n).length||'—'} listings</div>
     </div>
   </div>`).join('');
 
-function goProvince(n){
+function goProv(n){
   document.getElementById('f-loc').value=n;
   document.getElementById('properties').scrollIntoView({behavior:'smooth'});
   doFilter();
 }
 
-// ═══════════════════════════════════════════════════════════════════
-//  INIT
-// ═══════════════════════════════════════════════════════════════════
+/* ══ INIT ══════════════════════════════════════════════════════════ */
 doFilter();
 </script>
 </body>
