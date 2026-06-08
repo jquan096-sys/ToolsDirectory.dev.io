@@ -1,613 +1,1442 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Q Property Cambodia | Buy, Sell & Rent Real Estate in Phnom Penh, Siem Reap</title>
-<meta name="description" content="Q Property — Cambodia's #1 real estate portal. Find villas, apartments, condos, offices and land for sale or rent across all 25 provinces."/>
-<meta name="keywords" content="property for sale Cambodia, house for rent Phnom Penh, apartment Cambodia, condo Phnom Penh, land for sale Cambodia, villa Siem Reap, real estate Cambodia 2025, buy property Cambodia, ទ្រព្យសម្បត្តិ, ផ្ទះជួល"/>
-<meta name="author" content="Q Property Cambodia"/>
-<meta name="robots" content="index, follow"/>
-<link rel="canonical" href="https://jquan096-sys.github.io/Q.github.io/"/>
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="https://jquan096-sys.github.io/Q.github.io/"/>
-<meta property="og:title" content="Q Property Cambodia | Buy, Sell & Rent Real Estate"/>
-<meta property="og:description" content="Find your perfect property in Cambodia. Villas, apartments, condos, land across all provinces."/>
-<meta name="twitter:card" content="summary_large_image"/>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"RealEstateAgent",
- "name":"Q Property Cambodia","url":"https://jquan096-sys.github.io/Q.github.io/",
- "description":"Cambodia's trusted real estate portal",
- "areaServed":{"@type":"Country","name":"Cambodia"},
- "address":{"@type":"PostalAddress","addressCountry":"KH","addressLocality":"Phnom Penh"}}
-</script>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400;1,700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-<style>
-:root{
-  --ink:#08111E;--ink2:#0F1F35;--gold:#C8A85A;--gold2:#E8CC88;
-  --cream:#F8F4ED;--white:#fff;--muted:#6B7280;--border:#E2DDD5;
-  --r:14px;--sh:0 8px 40px rgba(8,17,30,.11);
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Outfit',sans-serif;font-size:16px;line-height:1.6;background:var(--cream);color:var(--ink);overflow-x:hidden}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tools Directory</title>
+    <style>
+        :root {
+            /* Light Mode */
+            --bg-primary: #f8f9fa;
+            --bg-secondary: #ffffff;
+            --bg-card: #ffffff;
+            --bg-hover: #f1f3f4;
+            --bg-input: #f1f3f4;
+            --text-primary: #1a1a2e;
+            --text-secondary: #5f6368;
+            --text-muted: #80868b;
+            --text-inverse: #ffffff;
+            --accent-blue: #2563eb;
+            --accent-blue-light: #3b82f6;
+            --accent-purple: #7c3aed;
+            --accent-purple-light: #8b5cf6;
+            --border-color: #e5e7eb;
+            --border-hover: #d1d5db;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --success: #059669;
+            --success-bg: rgba(5, 150, 105, 0.08);
+            --warning: #d97706;
+            --warning-bg: rgba(217, 119, 6, 0.08);
+            --danger: #dc2626;
+            --danger-bg: rgba(220, 38, 38, 0.08);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-/* ── CURSOR ── */
-*{cursor:none!important}
-#cur{position:fixed;width:10px;height:10px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .15s,height .15s;mix-blend-mode:difference}
-#cur-r{position:fixed;width:32px;height:32px;border:1.5px solid rgba(200,168,90,.6);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:left .1s ease,top .1s ease}
-@media(max-width:768px){*{cursor:auto!important}#cur,#cur-r{display:none}}
+        [data-theme="dark"] {
+            --bg-primary: #0f0f0f;
+            --bg-secondary: #1a1a1a;
+            --bg-card: #1c1c1c;
+            --bg-hover: #252525;
+            --bg-input: #252525;
+            --text-primary: #f5f5f5;
+            --text-secondary: #a0a0a0;
+            --text-muted: #666666;
+            --text-inverse: #1a1a2e;
+            --border-color: #2a2a2a;
+            --border-hover: #3a3a3a;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+            --success-bg: rgba(34, 197, 94, 0.12);
+            --warning-bg: rgba(245, 158, 11, 0.12);
+            --danger-bg: rgba(239, 68, 68, 0.12);
+        }
 
-/* ── SCROLLBAR ── */
-::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--ink)}::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* ── HEADER ── */
-header{position:fixed;top:0;left:0;right:0;z-index:500;padding:0 40px;height:70px;display:flex;align-items:center;justify-content:space-between;transition:all .35s}
-header.on{background:rgba(8,17,30,.94);backdrop-filter:blur(18px);box-shadow:0 1px 0 rgba(200,168,90,.18)}
-.logo{font-family:'Bodoni Moda',serif;font-size:22px;font-weight:700;color:var(--white);text-decoration:none;display:flex;align-items:baseline;gap:2px;letter-spacing:-.5px}
-.logo .q{background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:30px}
-nav{display:flex;align-items:center;gap:28px}
-nav a{color:rgba(255,255,255,.65);font-size:15px;font-weight:400;text-decoration:none;transition:color .2s;position:relative}
-nav a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width .2s}
-nav a:hover{color:var(--white)}nav a:hover::after{width:100%}
-.nav-btn{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--ink)!important;padding:10px 22px;border-radius:7px;font-weight:600!important;font-size:14px!important}
-.nav-btn::after{display:none!important}
-@media(max-width:768px){nav{display:none}header{padding:0 20px}}
+        html {
+            scroll-behavior: smooth;
+        }
 
-/* ── HERO ── */
-#hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:var(--ink)}
-#bgc{position:absolute;inset:0;width:100%;height:100%}
-.hero-ov{position:absolute;inset:0;background:linear-gradient(175deg,rgba(8,17,30,.1) 0%,rgba(8,17,30,.55) 55%,rgba(8,17,30,.95) 100%)}
-.hero-in{position:relative;z-index:10;max-width:1160px;width:100%;margin:0 auto;padding:0 40px;padding-top:70px}
-.h-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(200,168,90,.12);border:1px solid rgba(200,168,90,.3);color:var(--gold2);font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;padding:8px 18px;border-radius:30px;margin-bottom:26px;animation:fu .8s ease both}
-.h-title{font-family:'Bodoni Moda',serif;font-size:clamp(36px,5.5vw,72px);font-weight:700;color:var(--white);line-height:1.07;margin-bottom:18px;animation:fu .8s .1s ease both}
-.h-title em{color:var(--gold);font-style:italic}
-.h-sub{color:rgba(255,255,255,.55);font-size:clamp(15px,1.8vw,18px);font-weight:300;margin-bottom:48px;max-width:520px;line-height:1.75;animation:fu .8s .2s ease both}
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
 
-/* ── SEARCH CARD ── */
-.sc{background:rgba(255,255,255,.97);border-radius:18px;padding:30px 30px 26px;box-shadow:0 28px 80px rgba(0,0,0,.4);animation:fu .8s .3s ease both;max-width:820px}
-.tabs{display:flex;gap:4px;background:var(--cream);border-radius:9px;padding:5px;margin-bottom:26px;width:fit-content}
-.tab{padding:9px 26px;border-radius:6px;border:none;font-family:'Outfit',sans-serif;font-size:14px;font-weight:500;cursor:none;color:var(--muted);background:none;transition:all .2s}
-.tab.on{background:var(--ink);color:var(--white)}
-.flds{display:grid;grid-template-columns:repeat(4,1fr) auto;gap:11px;align-items:end}
-.fg{display:flex;flex-direction:column;gap:6px}
-.fl{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted)}
-.fg select{border:1.5px solid var(--border);border-radius:9px;padding:12px 36px 12px 14px;font-size:14px;font-family:'Outfit',sans-serif;color:var(--ink);background:var(--white);appearance:none;cursor:none;background-image:url("data:image/svg+xml,%3Csvg width='11' height='7' viewBox='0 0 11 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5.5 5.5L10 1' stroke='%2394A3B8' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;transition:border-color .2s}
-.fg select:focus{outline:none;border-color:var(--gold)}
-.btn-s{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--ink);border:none;padding:13px 26px;border-radius:9px;font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;cursor:none;white-space:nowrap;box-shadow:0 6px 20px rgba(200,168,90,.4);transition:transform .15s,box-shadow .15s}
-.btn-s:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(200,168,90,.55)}
-@media(max-width:900px){.flds{grid-template-columns:1fr 1fr;gap:10px}.btn-s{width:100%}}
-@media(max-width:480px){.flds{grid-template-columns:1fr}.hero-in{padding:0 20px;padding-top:70px}}
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
 
-/* ── MARKET INFO RIBBON (replaces stats) ── */
-.market-ribbon{background:var(--ink);padding:0}
-.mr-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr}
-.mr-card{padding:44px 52px;position:relative;overflow:hidden}
-.mr-card:first-child{border-right:1px solid rgba(255,255,255,.08)}
-.mr-card::before{content:'';position:absolute;top:-40px;right:-40px;width:180px;height:180px;border-radius:50%;background:rgba(200,168,90,.06);pointer-events:none}
-.mr-icon{font-size:32px;margin-bottom:14px;display:block}
-.mr-title{font-family:'Bodoni Moda',serif;font-size:22px;font-weight:700;color:var(--white);margin-bottom:18px;display:flex;align-items:center;gap:10px}
-.mr-title span{font-family:'Outfit',sans-serif;font-size:12px;font-weight:500;background:rgba(200,168,90,.2);color:var(--gold2);padding:3px 10px;border-radius:20px;letter-spacing:.5px}
-.area-tags{display:flex;flex-wrap:wrap;gap:9px}
-.area-tag{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.8);font-size:14px;font-weight:400;padding:8px 16px;border-radius:8px;transition:all .2s;cursor:none}
-.area-tag:hover{background:rgba(200,168,90,.15);border-color:rgba(200,168,90,.4);color:var(--white)}
-.yield-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.yc{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:14px 16px;transition:all .2s;cursor:none}
-.yc:hover{background:rgba(200,168,90,.1);border-color:rgba(200,168,90,.3)}
-.yc-label{font-size:12px;color:rgba(255,255,255,.45);font-weight:400;margin-bottom:5px;letter-spacing:.3px}
-.yc-val{font-family:'Bodoni Moda',serif;font-size:22px;font-weight:700;color:var(--gold2)}
-.yc-sub{font-size:11px;color:rgba(255,255,255,.35);margin-top:3px}
-@media(max-width:768px){.mr-inner{grid-template-columns:1fr}.mr-card:first-child{border-right:none;border-bottom:1px solid rgba(255,255,255,.08)}.mr-card{padding:36px 24px}.yield-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:480px){.yield-grid{grid-template-columns:1fr}}
+        /* Navigation */
+        .navbar {
+            background-color: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            transition: var(--transition);
+        }
 
-/* ── AD ── */
-.ad{background:rgba(255,255,255,.65);backdrop-filter:blur(6px);border:1.5px dashed var(--border);border-radius:var(--r);padding:18px;text-align:center;color:var(--muted);font-size:13px;margin:32px 0}
-.adl{font-size:10px;letter-spacing:2px;text-transform:uppercase;opacity:.4;margin-bottom:4px}
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
 
-/* ── SECTIONS ── */
-.sec{padding:88px 0}
-.wrap{max-width:1160px;margin:0 auto;padding:0 32px}
-.sh{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:44px;flex-wrap:wrap;gap:16px}
-.st2{font-family:'Bodoni Moda',serif;font-size:clamp(28px,3.5vw,42px);font-weight:700;color:var(--ink);line-height:1.15}
-.st2 em{color:var(--gold);font-style:italic}
-.st2-sub{color:var(--muted);font-size:15px;margin-top:8px}
-.va{color:var(--gold);font-size:15px;font-weight:500;text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:2px;transition:opacity .2s;white-space:nowrap}
-.va:hover{opacity:.65}
-@media(max-width:600px){.wrap{padding:0 20px}.sec{padding:64px 0}}
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            text-decoration: none;
+            cursor: pointer;
+            letter-spacing: -0.02em;
+        }
 
-/* ── TYPE PILLS ── */
-.trow{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:44px}
-.tp{display:flex;align-items:center;gap:8px;background:var(--white);border:1.5px solid var(--border);border-radius:40px;padding:11px 22px;font-size:14px;font-weight:500;color:var(--ink);cursor:none;transition:all .2s;white-space:nowrap}
-.tp:hover,.tp.on{background:var(--ink);border-color:var(--ink);color:var(--white);transform:translateY(-2px);box-shadow:var(--sh)}
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+        }
 
-/* ── PROPERTY GRID ── */
-.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
-.pc{background:var(--white);border-radius:18px;overflow:hidden;box-shadow:var(--sh);transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s;cursor:none}
-.pc:hover{transform:translateY(-6px);box-shadow:0 24px 64px rgba(8,17,30,.17)}
-.pi{height:220px;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--ink2),#1E3A5A);display:flex;align-items:center;justify-content:center}
-.pi-em{font-size:64px;opacity:.22;transition:transform .4s,opacity .4s}
-.pc:hover .pi-em{transform:scale(1.1);opacity:.32}
-.pi-b{position:absolute;top:14px;left:14px;padding:5px 13px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
-.b-rent{background:rgba(200,168,90,.9);color:var(--ink)}
-.b-sale{background:rgba(8,17,30,.82);color:var(--white)}
-.pi-hot{position:absolute;top:14px;right:14px;background:#E83C2A;color:#fff;padding:4px 12px;border-radius:20px;font-size:10px;font-weight:700;letter-spacing:.5px}
-.pb{padding:22px}
-.pp{font-family:'Bodoni Moda',serif;font-size:26px;font-weight:700;color:var(--ink)}
-.pp span{font-family:'Outfit',sans-serif;font-size:14px;font-weight:400;color:var(--muted)}
-.pt{font-size:16px;font-weight:500;color:var(--ink);margin:7px 0 6px;line-height:1.4}
-.pl{display:flex;align-items:center;gap:4px;color:var(--muted);font-size:14px;margin-bottom:10px}
-.pd{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:14px}
-.pf{display:flex;gap:12px;padding-top:14px;border-top:1px solid var(--border);flex-wrap:wrap}
-.pft{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:4px}
-@media(max-width:900px){.pg{grid-template-columns:1fr 1fr;gap:18px}}
-@media(max-width:600px){.pg{grid-template-columns:1fr}}
+        .logo span {
+            color: var(--accent-blue);
+        }
 
-/* ── WHY SECTION ── */
-.why{background:var(--ink);padding:88px 0}
-.wgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:52px}
-.wc{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:36px 30px;transition:all .25s}
-.wc:hover{background:rgba(200,168,90,.07);border-color:rgba(200,168,90,.25);transform:translateY(-4px)}
-.wi{font-size:38px;display:block;margin-bottom:18px}
-.wt{font-family:'Bodoni Moda',serif;font-size:20px;font-weight:700;color:var(--white);margin-bottom:10px}
-.wd{color:rgba(255,255,255,.5);font-size:15px;line-height:1.75}
-@media(max-width:900px){.wgrid{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.wgrid{grid-template-columns:1fr}}
+        .nav-center {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
 
-/* ── PROVINCES ── */
-.prov-sec{background:linear-gradient(150deg,var(--ink) 0%,#0E2240 100%);padding:88px 0}
-.pgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:44px}
-.prov{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:15px 12px;cursor:none;transition:all .2s;display:flex;align-items:center;gap:9px}
-.prov:hover{background:rgba(200,168,90,.12);border-color:rgba(200,168,90,.35);transform:scale(1.03)}
-.pe{font-size:20px}
-.pn{font-size:13px;color:rgba(255,255,255,.75);font-weight:400}
-.pc2{font-size:11px;color:var(--gold);margin-top:2px}
-@media(max-width:900px){.pgrid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:480px){.pgrid{grid-template-columns:repeat(2,1fr)}}
+        .nav-links {
+            display: flex;
+            gap: 0.5rem;
+            list-style: none;
+        }
 
-/* ── SEO TEXT ── */
-.seo-sec{background:var(--white);padding:88px 0}
-.seo-body{max-width:820px;margin:0 auto;color:#4B5563;font-size:16px;line-height:1.9;display:grid;gap:22px}
-.seo-body p strong{color:var(--ink)}
-.seo-2col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
-.seo-box{background:var(--cream);border-radius:12px;padding:22px}
-.seo-box h4{font-weight:600;margin-bottom:10px;color:var(--ink);font-size:16px}
-.seo-box p{font-size:14px;color:#6B7280;line-height:1.9}
-@media(max-width:600px){.seo-2col{grid-template-columns:1fr}}
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+        }
 
-/* ── CHAT PULSE ── */
-.chat-float{position:fixed;bottom:88px;right:24px;z-index:600;display:flex;flex-direction:column;align-items:flex-end;gap:8px}
-.chat-tip{background:var(--gold);color:var(--ink);padding:10px 18px;border-radius:20px 20px 4px 20px;font-size:14px;font-weight:600;animation:pulse 3s ease infinite;box-shadow:0 4px 20px rgba(200,168,90,.5);cursor:none}
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+        .nav-links a:hover {
+            color: var(--text-primary);
+            background-color: var(--bg-hover);
+        }
 
-/* ── FOOTER ── */
-footer{background:var(--ink);padding:72px 0 36px;border-top:1px solid rgba(200,168,90,.12)}
-.fg4{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:52px;margin-bottom:52px}
-.fb-desc{color:rgba(255,255,255,.4);font-size:15px;line-height:1.8;max-width:300px;margin-top:14px}
-.fc h5{color:var(--gold);font-size:12px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;margin-bottom:18px}
-.fc a{display:block;color:rgba(255,255,255,.5);font-size:15px;margin-bottom:12px;text-decoration:none;transition:color .2s}
-.fc a:hover{color:var(--white)}
-.fbot{border-top:1px solid rgba(255,255,255,.07);padding-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
-.fbot p{color:rgba(255,255,255,.3);font-size:14px}
-@media(max-width:900px){.fg4{grid-template-columns:1fr 1fr;gap:36px}}
-@media(max-width:600px){.fg4{grid-template-columns:1fr}}
+        .nav-links a.active {
+            color: var(--accent-blue);
+            background-color: var(--bg-hover);
+            font-weight: 600;
+        }
 
-/* ── REVEAL ── */
-@keyframes fu{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
-.rev{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
-.rev.in{opacity:1;transform:none}
-.rev:nth-child(2){transition-delay:.08s}.rev:nth-child(3){transition-delay:.16s}
-.rev:nth-child(4){transition-delay:.24s}.rev:nth-child(5){transition-delay:.32s}
-.rev:nth-child(6){transition-delay:.40s}
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
 
-/* ── LOADING ── */
-.ld{text-align:center;padding:60px;color:var(--muted);grid-column:1/-1}
-.sp{width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 14px}
-@keyframes spin{to{transform:rotate(360deg)}}
-</style>
+        .theme-toggle {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-secondary);
+            color: var(--text-secondary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--bg-hover);
+            color: var(--text-primary);
+            border-color: var(--border-hover);
+        }
+
+        .btn-submit {
+            background-color: var(--text-primary);
+            border: none;
+            color: var(--text-inverse);
+            padding: 0.6rem 1.25rem;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+            opacity: 0.9;
+        }
+
+        /* Page Container */
+        .page {
+            display: none;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem;
+            animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Concept Label */
+        .concept-label {
+            color: var(--text-muted);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            font-family: 'SF Mono', Monaco, monospace;
+        }
+
+        /* Homepage Styles */
+        .hero {
+            text-align: center;
+            padding: 4rem 0 2.5rem;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        [data-theme="dark"] .hero h1 {
+            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.15rem;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+        }
+
+        .search-box {
+            position: relative;
+            max-width: 640px;
+            margin: 0 auto 2rem;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 1.1rem 1.25rem 1.1rem 3.25rem;
+            background-color: var(--bg-input);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-xl);
+            color: var(--text-primary);
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .search-box input:focus {
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1), var(--shadow-md);
+        }
+
+        .search-box input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .categories {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+
+        .category-pill {
+            padding: 0.6rem 1.25rem;
+            border-radius: 100px;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-secondary);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .category-pill:hover {
+            background-color: var(--bg-hover);
+            color: var(--text-primary);
+            border-color: var(--border-hover);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .category-pill.active {
+            background-color: var(--text-primary);
+            color: var(--text-inverse);
+            border-color: var(--text-primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            padding: 1.5rem;
+            background-color: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stat-item {
+            text-align: center;
+            position: relative;
+        }
+
+        .stat-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: -1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 40px;
+            background-color: var(--border-color);
+        }
+
+        .stat-number {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--accent-blue);
+            line-height: 1;
+            letter-spacing: -0.02em;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.35rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 600;
+        }
+
+        /* Tool Cards Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .tool-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 1.75rem;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .tool-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .tool-card:hover::before {
+            opacity: 1;
+        }
+
+        .tool-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .tool-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            flex-shrink: 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .tool-icon.chatgpt { background: linear-gradient(135deg, #10a37f, #0d8c6d); }
+        .tool-icon.cursor { background: linear-gradient(135deg, #6366f1, #4f46e5); }
+        .tool-icon.perplexity { background: linear-gradient(135deg, #22d3ee, #06b6d4); }
+        .tool-icon.claude { background: linear-gradient(135deg, #d97706, #b45309); }
+        .tool-icon.notion { background: linear-gradient(135deg, #000000, #333333); }
+        .tool-icon.make { background: linear-gradient(135deg, #7c3aed, #a855f7); }
+        .tool-icon.zapier { background: linear-gradient(135deg, #ff4a00, #ff6b35); }
+        .tool-icon.n8n { background: linear-gradient(135deg, #ff6d5a, #ff8f7f); }
+        .tool-icon.bardeen { background: linear-gradient(135deg, #6366f1, #818cf8); }
+        .tool-icon.automate { background: linear-gradient(135deg, #0ea5e9, #38bdf8); }
+
+        .tool-title-group h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+            letter-spacing: -0.01em;
+        }
+
+        .tool-title-group .category {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .tool-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.25rem;
+        }
+
+        .tool-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .pricing-badge {
+            padding: 0.35rem 0.85rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        .pricing-badge.free {
+            background-color: var(--success-bg);
+            color: var(--success);
+        }
+
+        .pricing-badge.freemium {
+            background-color: var(--warning-bg);
+            color: var(--warning);
+        }
+
+        .pricing-badge.paid {
+            background-color: var(--danger-bg);
+            color: var(--danger);
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            color: #f59e0b;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        /* Tool Detail Page */
+        .detail-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            gap: 2rem;
+        }
+
+        .detail-title-group {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            flex: 1;
+        }
+
+        .detail-title-group .tool-icon {
+            width: 72px;
+            height: 72px;
+            font-size: 2.25rem;
+            border-radius: 18px;
+        }
+
+        .detail-title-group h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.4rem;
+            letter-spacing: -0.02em;
+        }
+
+        .detail-title-group .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.5;
+            max-width: 500px;
+        }
+
+        .detail-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 0.4rem 0.85rem;
+            background-color: var(--bg-hover);
+            border-radius: 100px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .tag:hover {
+            background-color: var(--bg-primary);
+            border-color: var(--border-hover);
+        }
+
+        .detail-actions {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            border: none;
+            color: #ffffff;
+            padding: 0.85rem 1.75rem;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .price-note {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .detail-section {
+            margin-bottom: 2rem;
+        }
+
+        .detail-section h3 {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+            font-weight: 700;
+            font-family: 'SF Mono', Monaco, monospace;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            padding: 0.65rem 0;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-list li::before {
+            content: "";
+            width: 20px;
+            height: 20px;
+            background-color: var(--success-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23059669' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .pricing-table {
+            width: 100%;
+            background-color: var(--bg-secondary);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .pricing-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .pricing-row:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-row:hover {
+            background-color: var(--bg-hover);
+        }
+
+        .pricing-row .tier {
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .pricing-row .price {
+            color: var(--accent-blue);
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .pros-cons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .pro-con-tag {
+            padding: 0.45rem 0.9rem;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: var(--transition);
+        }
+
+        .pro-con-tag:hover {
+            transform: translateY(-1px);
+        }
+
+        .pro-con-tag.pro {
+            background-color: var(--success-bg);
+            color: var(--success);
+            border: 1px solid rgba(5, 150, 105, 0.2);
+        }
+
+        .pro-con-tag.con {
+            background-color: var(--danger-bg);
+            color: var(--danger);
+            border: 1px solid rgba(220, 38, 38, 0.2);
+        }
+
+        .best-for-text {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 0.95rem;
+            background-color: var(--bg-secondary);
+            padding: 1.25rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Comparison Page */
+        .compare-header {
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .compare-header h1 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .compare-header .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .compare-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .compare-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .compare-card:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .compare-card.winner {
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 1px var(--accent-blue), var(--shadow-lg);
+        }
+
+        .compare-card.winner:hover {
+            box-shadow: 0 0 0 1px var(--accent-blue), var(--shadow-xl);
+        }
+
+        .editor-pick {
+            position: absolute;
+            top: -1px;
+            left: 2rem;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 0 0 10px 10px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .compare-card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .compare-card-header .tool-icon {
+            width: 56px;
+            height: 56px;
+            font-size: 1.75rem;
+        }
+
+        .compare-card-header h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .compare-card-header .byline {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .metric {
+            margin-bottom: 1.5rem;
+        }
+
+        .metric-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.6rem;
+            font-size: 0.9rem;
+        }
+
+        .metric-label span:first-child {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .metric-label span:last-child {
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .metric-bar {
+            height: 8px;
+            background-color: var(--bg-hover);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .metric-bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .metric-bar-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 20px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3));
+            border-radius: 0 4px 4px 0;
+        }
+
+        .metric-bar-fill.chatgpt { background: linear-gradient(90deg, var(--accent-blue), var(--accent-blue-light)); }
+        .metric-bar-fill.claude { background: linear-gradient(90deg, var(--accent-purple), var(--accent-purple-light)); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .detail-grid,
+            .compare-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .detail-header {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .detail-actions {
+                text-align: left;
+                width: 100%;
+                align-items: flex-start;
+            }
+
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .stats-bar {
+                gap: 1.5rem;
+                padding: 1rem;
+            }
+
+            .stat-number {
+                font-size: 1.5rem;
+            }
+
+            .stat-item:not(:last-child)::after {
+                display: none;
+            }
+        }
+    </style>
+<base target="_blank">
 </head>
 <body>
 
-<div id="cur"></div>
-<div id="cur-r"></div>
-
-<!-- HEADER -->
-<header id="hdr">
-  <a class="logo" href="/"><span class="q">Q</span> Property</a>
-  <nav>
-    <a href="#properties">Buy</a>
-    <a href="#properties">Rent</a>
-    <a href="#provinces">Provinces</a>
-    <a href="#why">Why Us</a>
-    <a href="#" class="nav-btn">+ List Property</a>
-  </nav>
-</header>
-
-<!-- HERO -->
-<div id="hero">
-  <canvas id="bgc"></canvas>
-  <div class="hero-ov"></div>
-  <div class="hero-in">
-    <div class="h-tag">🇰🇭 Cambodia's Premier Property Portal</div>
-    <h1 class="h-title">Find Your Dream<br><em>Property in Cambodia</em></h1>
-    <p class="h-sub">Buy, sell or rent villas, apartments, condos, offices and land across all 25 provinces — trusted, verified listings every day.</p>
-
-    <div class="sc">
-      <div class="tabs">
-        <button class="tab on" onclick="setTab('rent',this)">🏠 Rent</button>
-        <button class="tab" onclick="setTab('buy',this)">🔑 Buy</button>
-        <button class="tab" onclick="setTab('all',this)">✦ All</button>
-      </div>
-      <div class="flds">
-        <div class="fg">
-          <label class="fl">Property Type</label>
-          <select id="f-type" onchange="doFilter()">
-            <option value="">Any Type</option>
-            <option>Villa</option><option>Apartment</option>
-            <option>Condo</option><option>Office</option>
-            <option>Land</option><option>Building</option><option>Business</option>
-          </select>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a class="logo" onclick="navigateTo('home')">
+                <div class="logo-icon">🧠</div>
+                AI Tools <span>.directory</span>
+            </a>
+            <ul class="nav-links">
+                <li><a onclick="navigateTo('home')" id="nav-tools">Tools</a></li>
+                <li><a onclick="navigateTo('compare')" id="nav-compare">Compare</a></li>
+                <li><a href="#">Best for</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">
+                    <span id="theme-icon">🌙</span>
+                </button>
+                <button class="btn-submit">Submit a tool</button>
+            </div>
         </div>
-        <div class="fg">
-          <label class="fl">Province</label>
-          <select id="f-loc" onchange="doFilter()">
-            <option value="">Any Province</option>
-            <option>Phnom Penh</option><option>Siem Reap</option><option>Sihanoukville</option>
-            <option>Battambang</option><option>Kampong Cham</option><option>Kampong Chhnang</option>
-            <option>Kampong Speu</option><option>Kampong Thom</option><option>Kampot</option>
-            <option>Kandal</option><option>Kep</option><option>Koh Kong</option>
-            <option>Kratie</option><option>Mondulkiri</option><option>Oddar Meanchey</option>
-            <option>Pailin</option><option>Preah Vihear</option><option>Prey Veng</option>
-            <option>Pursat</option><option>Ratanakiri</option><option>Stung Treng</option>
-            <option>Svay Rieng</option><option>Takeo</option><option>Tboung Khmum</option>
-            <option>Banteay Meanchey</option>
-          </select>
+    </nav>
+
+    <!-- Page 1: Homepage -->
+    <div id="page-home" class="page active">
+        <div class="concept-label">Concept 1 — Homepage</div>
+
+        <div class="hero">
+            <h1>Find the right AI tool for every job</h1>
+            <p class="hero-subtitle">1,200+ tools reviewed · updated weekly · honest comparisons</p>
+
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="Search tools, categories, use cases...">
+            </div>
+
+            <div class="categories">
+                <button class="category-pill active">All</button>
+                <button class="category-pill">Writing</button>
+                <button class="category-pill">Coding</button>
+                <button class="category-pill">Video</button>
+                <button class="category-pill">Automation</button>
+                <button class="category-pill">Marketing</button>
+                <button class="category-pill">Design</button>
+            </div>
         </div>
-        <div class="fg">
-          <label class="fl">Price Range</label>
-          <select id="f-price" onchange="doFilter()">
-            <option value="">Any Price</option>
-            <option value="0-500">Under $500/mo</option>
-            <option value="500-1000">$500 – $1,000</option>
-            <option value="1000-3000">$1,000 – $3,000</option>
-            <option value="3000-10000">$3,000 – $10,000</option>
-            <option value="10000-9999999">Above $10,000</option>
-          </select>
+
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-number">247</div>
+                <div class="stat-label">Automation Tools</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">89</div>
+                <div class="stat-label">Workflow Builders</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">5,000+</div>
+                <div class="stat-label">Integrations</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">4.6</div>
+                <div class="stat-label">Avg Rating</div>
+            </div>
         </div>
-        <div class="fg">
-          <label class="fl">Bedrooms</label>
-          <select id="f-beds" onchange="doFilter()">
-            <option value="">Any</option>
-            <option value="1">1 Bedroom</option><option value="2">2 Bedrooms</option>
-            <option value="3">3 Bedrooms</option><option value="4">4+ Bedrooms</option>
-          </select>
+
+        <div class="tools-grid">
+            <div class="tool-card" onclick="navigateTo('detail')">
+                <div class="tool-header">
+                    <div class="tool-icon make">🔗</div>
+                    <div class="tool-title-group">
+                        <h3>Make</h3>
+                        <div class="category">Automation · Workflow</div>
+                    </div>
+                </div>
+                <p class="tool-description">Visual automation platform connecting apps and services with no-code workflows.</p>
+                <div class="tool-footer">
+                    <span class="pricing-badge freemium">Freemium</span>
+                    <div class="rating">★ 4.6</div>
+                </div>
+            </div>
+
+            <div class="tool-card" onclick="navigateTo('detail')">
+                <div class="tool-header">
+                    <div class="tool-icon zapier">⚡</div>
+                    <div class="tool-title-group">
+                        <h3>Zapier</h3>
+                        <div class="category">Automation · Integration</div>
+                    </div>
+                </div>
+                <p class="tool-description">Connect your apps and automate workflows with 5,000+ integrations.</p>
+                <div class="tool-footer">
+                    <span class="pricing-badge freemium">Freemium</span>
+                    <div class="rating">★ 4.4</div>
+                </div>
+            </div>
+
+            <div class="tool-card" onclick="navigateTo('detail')">
+                <div class="tool-header">
+                    <div class="tool-icon n8n">🔄</div>
+                    <div class="tool-title-group">
+                        <h3>n8n</h3>
+                        <div class="category">Automation · Open Source</div>
+                    </div>
+                </div>
+                <p class="tool-description">Fair-code workflow automation tool with 400+ integrations and self-hosting options.</p>
+                <div class="tool-footer">
+                    <span class="pricing-badge free">Free plan</span>
+                    <div class="rating">★ 4.7</div>
+                </div>
+            </div>
+
+            <div class="tool-card" onclick="navigateTo('detail')">
+                <div class="tool-header">
+                    <div class="tool-icon bardeen">🤖</div>
+                    <div class="tool-title-group">
+                        <h3>Bardeen</h3>
+                        <div class="category">Automation · Browser</div>
+                    </div>
+                </div>
+                <p class="tool-description">Browser automation with AI that builds workflows from natural language descriptions.</p>
+                <div class="tool-footer">
+                    <span class="pricing-badge freemium">Freemium</span>
+                    <div class="rating">★ 4.5</div>
+                </div>
+            </div>
+
+            <div class="tool-card" onclick="navigateTo('detail')">
+                <div class="tool-header">
+                    <div class="tool-icon automate">🔧</div>
+                    <div class="tool-title-group">
+                        <h3>Microsoft Power Automate</h3>
+                        <div class="category">Automation · Enterprise</div>
+                    </div>
+                </div>
+                <p class="tool-description">Enterprise-grade automation platform with deep Microsoft 365 and Azure integration.</p>
+                <div class="tool-footer">
+                    <span class="pricing-badge paid">Paid</span>
+                    <div class="rating">★ 4.3</div>
+                </div>
+            </div>
+
+            <div class="tool-card" onclick="navigateTo('detail')">
+                <div class="tool-header">
+                    <div class="tool-icon chatgpt">💬</div>
+                    <div class="tool-title-group">
+                        <h3>ChatGPT</h3>
+                        <div class="category">AI Writing · Chatbot</div>
+                    </div>
+                </div>
+                <p class="tool-description">Versatile AI assistant for writing, coding, research, and brainstorming.</p>
+                <div class="tool-footer">
+                    <span class="pricing-badge free">Free plan</span>
+                    <div class="rating">★ 4.8</div>
+                </div>
+            </div>
+
+            <div class="tool-card" onclick="navigateTo('detail')">
+                <div class="tool-header">
+                    <div class="tool-icon cursor">⚡</div>
+                    <div class="tool-title-group">
+                        <h3>Cursor</h3>
+                        <div class="category">AI Coding</div>
+                    </div>
+                </div>
+                <p class="tool-description">AI-native code editor that understands your entire codebase.</p>
+                <div class="tool-footer">
+                    <span class="pricing-badge freemium">Freemium</span>
+                    <div class="rating">★ 4.7</div>
+                </div>
+            </div>
+
+            <div class="tool-card" onclick="navigateTo('detail')">
+                <div class="tool-header">
+                    <div class="tool-icon perplexity">🔍</div>
+                    <div class="tool-title-group">
+                        <h3>Perplexity</h3>
+                        <div class="category">AI Search</div>
+                    </div>
+                </div>
+                <p class="tool-description">AI-powered search engine with real-time web access and citations.</p>
+                <div class="tool-footer">
+                    <span class="pricing-badge free">Free plan</span>
+                    <div class="rating">★ 4.6</div>
+                </div>
+            </div>
+
+            <div class="tool-card" onclick="navigateTo('detail')">
+                <div class="tool-header">
+                    <div class="tool-icon claude">✨</div>
+                    <div class="tool-title-group">
+                        <h3>Claude</h3>
+                        <div class="category">AI Writing · Assistant</div>
+                    </div>
+                </div>
+                <p class="tool-description">Anthropic's AI assistant with exceptional reasoning and writing capabilities.</p>
+                <div class="tool-footer">
+                    <span class="pricing-badge free">Free plan</span>
+                    <div class="rating">★ 4.9</div>
+                </div>
+            </div>
+
+            <div class="tool-card" onclick="navigateTo('detail')">
+                <div class="tool-header">
+                    <div class="tool-icon notion">📝</div>
+                    <div class="tool-title-group">
+                        <h3>Notion AI</h3>
+                        <div class="category">Productivity · Writing</div>
+                    </div>
+                </div>
+                <p class="tool-description">AI-powered workspace for notes, docs, and team collaboration.</p>
+                <div class="tool-footer">
+                    <span class="pricing-badge freemium">Freemium</span>
+                    <div class="rating">★ 4.5</div>
+                </div>
+            </div>
         </div>
-        <button class="btn-s" onclick="doFilter()">🔍 Search</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ══ MARKET INFO RIBBON (replaces old stats) ══ -->
-<div class="market-ribbon">
-  <div class="mr-inner">
-
-    <!-- Card 1: Popular Areas -->
-    <div class="mr-card rev">
-      <div class="mr-title">
-        🏙️ Popular Areas to Buy
-        <span>Phnom Penh</span>
-      </div>
-      <div class="area-tags">
-        <div class="area-tag">BKK1</div>
-        <div class="area-tag">Toul Tom Poung</div>
-        <div class="area-tag">Koh Pich</div>
-        <div class="area-tag">Sen Sok</div>
-        <div class="area-tag">Chroy Changvar</div>
-        <div class="area-tag">Toul Kork</div>
-        <div class="area-tag">Chamkarmon</div>
-        <div class="area-tag">Daun Penh</div>
-        <div class="area-tag">7 Makara</div>
-        <div class="area-tag">Boeng Keng Kang</div>
-      </div>
     </div>
 
-    <!-- Card 2: Rental Yields -->
-    <div class="mr-card rev">
-      <div class="mr-title">
-        📈 Average Rental Yields
-        <span>Cambodia 2025</span>
-      </div>
-      <div class="yield-grid">
-        <div class="yc">
-          <div class="yc-label">Condominium</div>
-          <div class="yc-val">6 – 9%</div>
-          <div class="yc-sub">per year</div>
+    <!-- Page 2: Tool Detail -->
+    <div id="page-detail" class="page">
+        <div class="concept-label">Concept 2 — Tool Detail Page (/tools/chatgpt)</div>
+
+        <div class="detail-header">
+            <div class="detail-title-group">
+                <div class="tool-icon chatgpt">💬</div>
+                <div>
+                    <h1>ChatGPT</h1>
+                    <p class="subtitle">The world's most popular AI assistant for writing, coding, research, and analysis.</p>
+                    <div class="detail-tags">
+                        <span class="tag">Writing</span>
+                        <span class="tag">Coding</span>
+                        <span class="tag">Chatbot</span>
+                        <span class="tag">OpenAI</span>
+                    </div>
+                </div>
+            </div>
+            <div class="detail-actions">
+                <button class="btn-primary">
+                    Try free ↗
+                </button>
+                <p class="price-note">From $20/mo</p>
+            </div>
         </div>
-        <div class="yc">
-          <div class="yc-label">Villa / House</div>
-          <div class="yc-val">5 – 7%</div>
-          <div class="yc-sub">per year</div>
+
+        <div class="detail-grid">
+            <div class="detail-left">
+                <div class="detail-section">
+                    <h3>Key Features</h3>
+                    <ul class="feature-list">
+                        <li>GPT-4o multimodal model</li>
+                        <li>Web browsing & real-time data</li>
+                        <li>Image generation (DALL-E)</li>
+                        <li>Custom GPTs & plugins</li>
+                        <li>Code interpreter</li>
+                    </ul>
+                </div>
+
+                <div class="detail-section">
+                    <h3>Pros & Cons</h3>
+                    <div class="pros-cons">
+                        <span class="pro-con-tag pro">✓ Best ecosystem</span>
+                        <span class="pro-con-tag pro">✓ Free tier</span>
+                        <span class="pro-con-tag pro">✓ Huge community</span>
+                        <span class="pro-con-tag con">✕ Can hallucinate</span>
+                        <span class="pro-con-tag con">✕ Rate limits</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-right">
+                <div class="detail-section">
+                    <h3>Pricing</h3>
+                    <div class="pricing-table">
+                        <div class="pricing-row">
+                            <span class="tier">Free</span>
+                            <span class="price">$0/mo</span>
+                        </div>
+                        <div class="pricing-row">
+                            <span class="tier">Plus</span>
+                            <span class="price">$20/mo</span>
+                        </div>
+                        <div class="pricing-row">
+                            <span class="tier">Team</span>
+                            <span class="price">$25/user</span>
+                        </div>
+                        <div class="pricing-row">
+                            <span class="tier">Enterprise</span>
+                            <span class="price">Custom</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detail-section">
+                    <h3>Best For</h3>
+                    <p class="best-for-text">
+                        Students, marketers, developers, and anyone needing a general-purpose AI assistant for everyday tasks.
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="yc">
-          <div class="yc-label">Shophouse</div>
-          <div class="yc-val">7 – 10%</div>
-          <div class="yc-sub">per year</div>
+    </div>
+
+    <!-- Page 3: Comparison -->
+    <div id="page-compare" class="page">
+        <div class="concept-label">Concept 3 — Comparison Page (/compare/chatgpt-vs-claude)</div>
+
+        <div class="compare-header">
+            <h1>ChatGPT vs Claude</h1>
+            <p class="subtitle">Side-by-side comparison · last updated June 2025</p>
         </div>
-        <div class="yc">
-          <div class="yc-label">Office Space</div>
-          <div class="yc-val">7 – 9%</div>
-          <div class="yc-sub">per year</div>
+
+        <div class="compare-grid">
+            <div class="compare-card">
+                <div class="compare-card-header">
+                    <div class="tool-icon chatgpt">💬</div>
+                    <div>
+                        <h3>ChatGPT</h3>
+                        <div class="byline">by OpenAI</div>
+                    </div>
+                </div>
+
+                <div class="metric">
+                    <div class="metric-label">
+                        <span>Ease of use</span>
+                        <span>9.0</span>
+                    </div>
+                    <div class="metric-bar">
+                        <div class="metric-bar-fill chatgpt" data-width="90"></div>
+                    </div>
+                </div>
+
+                <div class="metric">
+                    <div class="metric-label">
+                        <span>Writing quality</span>
+                        <span>8.2</span>
+                    </div>
+                    <div class="metric-bar">
+                        <div class="metric-bar-fill chatgpt" data-width="82"></div>
+                    </div>
+                </div>
+
+                <div class="metric">
+                    <div class="metric-label">
+                        <span>Coding</span>
+                        <span>8.8</span>
+                    </div>
+                    <div class="metric-bar">
+                        <div class="metric-bar-fill chatgpt" data-width="88"></div>
+                    </div>
+                </div>
+
+                <div class="metric">
+                    <div class="metric-label">
+                        <span>Value</span>
+                        <span>8.0</span>
+                    </div>
+                    <div class="metric-bar">
+                        <div class="metric-bar-fill chatgpt" data-width="80"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="compare-card winner">
+                <div class="editor-pick">Editor's pick</div>
+                <div class="compare-card-header">
+                    <div class="tool-icon claude">✨</div>
+                    <div>
+                        <h3>Claude</h3>
+                        <div class="byline">by Anthropic</div>
+                    </div>
+                </div>
+
+                <div class="metric">
+                    <div class="metric-label">
+                        <span>Ease of use</span>
+                        <span>8.8</span>
+                    </div>
+                    <div class="metric-bar">
+                        <div class="metric-bar-fill claude" data-width="88"></div>
+                    </div>
+                </div>
+
+                <div class="metric">
+                    <div class="metric-label">
+                        <span>Writing quality</span>
+                        <span>9.5</span>
+                    </div>
+                    <div class="metric-bar">
+                        <div class="metric-bar-fill claude" data-width="95"></div>
+                    </div>
+                </div>
+
+                <div class="metric">
+                    <div class="metric-label">
+                        <span>Coding</span>
+                        <span>9.0</span>
+                    </div>
+                    <div class="metric-bar">
+                        <div class="metric-bar-fill claude" data-width="90"></div>
+                    </div>
+                </div>
+
+                <div class="metric">
+                    <div class="metric-label">
+                        <span>Value</span>
+                        <span>8.5</span>
+                    </div>
+                    <div class="metric-bar">
+                        <div class="metric-bar-fill claude" data-width="85"></div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="yc" style="grid-column:1/-1">
-          <div class="yc-label">Land Appreciation</div>
-          <div class="yc-val">8 – 12%</div>
-          <div class="yc-sub">per year average</div>
-        </div>
-      </div>
     </div>
 
-  </div>
-</div>
+    <script>
+        // Theme management
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateThemeIcon(savedTheme);
+        }
 
-<!-- PROPERTIES -->
-<div class="sec" id="properties">
-  <div class="wrap">
-    <div class="ad"><div class="adl">Advertisement</div><p style="opacity:.35;font-size:13px">Google AdSense — replace with your publisher code</p></div>
-    <div class="sh">
-      <div><div class="st2">Latest <em>Properties</em></div><div class="st2-sub" id="res-count">Showing all properties</div></div>
-      <a href="#" class="va">View all →</a>
-    </div>
-    <div class="trow">
-      <div class="tp on" onclick="tF('',this)">🏠 All</div>
-      <div class="tp" onclick="tF('Villa',this)">🏡 Villa</div>
-      <div class="tp" onclick="tF('Apartment',this)">🏢 Apartment</div>
-      <div class="tp" onclick="tF('Condo',this)">🏙️ Condo</div>
-      <div class="tp" onclick="tF('Office',this)">🏬 Office</div>
-      <div class="tp" onclick="tF('Land',this)">🌿 Land</div>
-      <div class="tp" onclick="tF('Building',this)">🏗️ Building</div>
-      <div class="tp" onclick="tF('Business',this)">💼 Business</div>
-    </div>
-    <div class="pg" id="pg"><div class="ld"><div class="sp"></div><p>Loading properties...</p></div></div>
-    <div class="ad" style="margin-top:44px"><div class="adl">Advertisement</div><p style="opacity:.35;font-size:13px">Google AdSense 728×90</p></div>
-  </div>
-</div>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        }
 
-<!-- WHY -->
-<div class="why" id="why">
-  <div class="wrap">
-    <div class="st2" style="color:#fff">Why Choose <em>Q Property</em></div>
-    <div class="wgrid">
-      <div class="wc rev"><span class="wi">✅</span><div class="wt">Verified Listings</div><div class="wd">Every property is verified by our team. No fake listings, no ghost properties — real addresses and real owners only.</div></div>
-      <div class="wc rev"><span class="wi">🇰🇭</span><div class="wt">All 25 Provinces</div><div class="wd">From Phnom Penh penthouses to Mondulkiri eco-retreats — we cover every corner of Cambodia.</div></div>
-      <div class="wc rev"><span class="wi">💰</span><div class="wt">Free for Buyers & Renters</div><div class="wd">Browse, contact agents and visit properties at zero cost. We never charge buyers or renters a single dollar.</div></div>
-      <div class="wc rev"><span class="wi">📱</span><div class="wt">Telegram Alerts</div><div class="wd">Get instant property alerts on Telegram. New listings matching your criteria delivered the moment they go live.</div></div>
-      <div class="wc rev"><span class="wi">🤝</span><div class="wt">Trusted Local Agents</div><div class="wd">Work with licensed, reviewed agents who know the Cambodian market, legal process and foreign ownership rules.</div></div>
-      <div class="wc rev"><span class="wi">🔒</span><div class="wt">Hard Title Available</div><div class="wd">We flag every listing with its land title type — Hard Title, Soft Title, LMAP — so you always know what you're buying.</div></div>
-    </div>
-  </div>
-</div>
+        function updateThemeIcon(theme) {
+            const icon = document.getElementById('theme-icon');
+            icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+        }
 
-<!-- PROVINCES -->
-<div class="prov-sec" id="provinces">
-  <div class="wrap">
-    <div class="sh">
-      <div><div class="st2" style="color:#fff">Explore by <em>Province</em></div><div class="st2-sub" style="color:rgba(255,255,255,.4);font-size:15px">Properties across all 25 provinces of Cambodia</div></div>
-    </div>
-    <div class="pgrid" id="pgrid"></div>
-  </div>
-</div>
+        // Navigation
+        function navigateTo(page) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById('page-' + page).classList.add('active');
 
-<!-- SEO CONTENT -->
-<div class="seo-sec">
-  <div class="wrap">
-    <div style="max-width:820px;margin:0 auto">
-      <div class="st2" style="margin-bottom:32px">Real Estate in <em>Cambodia 2025</em></div>
-      <div class="seo-body">
-        <p><strong>Cambodia's property market</strong> continues to grow as one of Southeast Asia's most dynamic real estate destinations. With no foreign ownership restrictions on condominiums and a rapidly expanding middle class, both local and international buyers are finding exceptional value.</p>
-        <p><strong>Phnom Penh</strong> remains the most active market, offering everything from luxury penthouses on Koh Pich (Diamond Island) to affordable serviced apartments in BKK1 and Toul Tom Poung. Rental yields of 6–9% annually make buy-to-let investment particularly attractive.</p>
-        <p><strong>Siem Reap</strong> is experiencing a tourism-driven revival with villa rentals near Angkor Wat. <strong>Sihanoukville</strong> and the South Coast offer beachfront land and resort development opportunities at competitive prices.</p>
-        <p><strong>Foreign buyers</strong> can legally own condominiums (strata title) up to 70% of any building. Land must be held through a Cambodian company or long-term lease. Q Property connects you with experienced legal advisors who guide the process.</p>
-        <div class="seo-2col">
-          <div class="seo-box">
-            <h4>🏙️ Popular Areas to Buy</h4>
-            <p>BKK1 · Toul Tom Poung · Koh Pich · Sen Sok · Chroy Changvar · Toul Kork · Chamkarmon · Daun Penh</p>
-          </div>
-          <div class="seo-box">
-            <h4>📈 Average Rental Yields</h4>
-            <p>Condo: 6–9% · Villa: 5–7% · Shophouse: 7–10% · Office: 7–9% · Land appreciation: 8–12%/yr</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+            document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
+            if (page === 'home' || page === 'detail') {
+                document.getElementById('nav-tools').classList.add('active');
+            } else if (page === 'compare') {
+                document.getElementById('nav-compare').classList.add('active');
+            }
 
-<!-- CHAT -->
-<div class="chat-float">
-  <div class="chat-tip">💬 Live Chat — Ask Us Anything</div>
-</div>
+            window.scrollTo(0, 0);
 
-<!-- FOOTER -->
-<footer>
-  <div class="wrap">
-    <div class="fg4">
-      <div>
-        <a class="logo" href="/" style="font-size:22px;display:flex"><span class="q">Q</span> Property</a>
-        <p class="fb-desc">Cambodia's trusted real estate portal. Find your perfect property to buy, rent or sell — verified listings, all provinces.</p>
-        <a href="https://t.me/QjobKh" style="color:var(--gold);font-size:24px;text-decoration:none;display:inline-block;margin-top:16px" target="_blank">✈️</a>
-      </div>
-      <div class="fc"><h5>Property</h5><a href="#">Villa</a><a href="#">Apartment</a><a href="#">Condo</a><a href="#">Office</a><a href="#">Land</a><a href="#">Building</a><a href="#">Business</a></div>
-      <div class="fc"><h5>Top Cities</h5><a href="#">Phnom Penh</a><a href="#">Siem Reap</a><a href="#">Sihanoukville</a><a href="#">Battambang</a><a href="#">Kampot</a><a href="#">Kep</a></div>
-      <div class="fc"><h5>Company</h5><a href="#">About Us</a><a href="#">List Property</a><a href="#">Agent Directory</a><a href="#">Contact</a><a href="https://t.me/QjobKh" target="_blank">Telegram</a><a href="#">Privacy</a></div>
-    </div>
-    <div class="fbot">
-      <p>© 2025 <span style="color:var(--gold)">Q Property</span> Cambodia</p>
-      <p style="font-size:12px;opacity:.3">property for sale Cambodia · apartment rent Phnom Penh · ទ្រព្យសម្បត្តិ · ផ្ទះជួល</p>
-    </div>
-  </div>
-</footer>
+            // Animate metric bars if on compare page
+            if (page === 'compare') {
+                setTimeout(animateMetricBars, 100);
+            }
+        }
 
-<!-- Tawk.to Live Chat — sign up free at tawk.to, replace XXXX with your ID -->
-<!--
-<script>var Tawk_API=Tawk_API||{};(function(){var s=document.createElement("script");s.async=true;s.src='https://embed.tawk.to/XXXXXXXX/default';s.charset='UTF-8';s.setAttribute('crossorigin','*');document.head.appendChild(s);})();</script>
--->
+        // Animate metric bars
+        function animateMetricBars() {
+            document.querySelectorAll('.metric-bar-fill').forEach(bar => {
+                const width = bar.getAttribute('data-width');
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.width = width + '%';
+                }, 50);
+            });
+        }
 
-<script>
-/* ══ LIVE CANVAS BACKGROUND ══════════════════════════════════════════ */
-(function(){
-  const cv=document.getElementById('bgc'),ctx=cv.getContext('2d');
-  let W,H,orbs;
-  function rs(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight;mk()}
-  function mk(){
-    orbs=Array.from({length:7},(_,i)=>({
-      x:Math.random()*W,y:Math.random()*H,
-      vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,
-      r:260+Math.random()*200,
-      rgb:i%2===0?[200,168,90]:[30,58,100],
-      a:.09+Math.random()*.08
-    }));
-  }
-  function dr(){
-    ctx.clearRect(0,0,W,H);
-    // base
-    const bg=ctx.createLinearGradient(0,0,W,H);
-    bg.addColorStop(0,'#08111E');bg.addColorStop(1,'#0D1F38');
-    ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
-    // grid
-    ctx.strokeStyle='rgba(200,168,90,.04)';ctx.lineWidth=1;
-    for(let x=0;x<W;x+=80){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke()}
-    for(let y=0;y<H;y+=80){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke()}
-    // orbs
-    orbs.forEach(o=>{
-      const g=ctx.createRadialGradient(o.x,o.y,0,o.x,o.y,o.r);
-      const[r,g2,b]=o.rgb;
-      g.addColorStop(0,`rgba(${r},${g2},${b},${o.a})`);
-      g.addColorStop(1,'rgba(0,0,0,0)');
-      ctx.beginPath();ctx.arc(o.x,o.y,o.r,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();
-      o.x+=o.vx;o.y+=o.vy;
-      if(o.x<-o.r||o.x>W+o.r)o.vx*=-1;
-      if(o.y<-o.r||o.y>H+o.r)o.vy*=-1;
-    });
-    requestAnimationFrame(dr);
-  }
-  window.addEventListener('resize',rs);rs();dr();
-})();
+        // Category pill interaction
+        document.querySelectorAll('.category-pill').forEach(pill => {
+            pill.addEventListener('click', function() {
+                document.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
 
-/* ══ CURSOR ══════════════════════════════════════════════════════════ */
-const cur=document.getElementById('cur'),ring=document.getElementById('cur-r');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
-(function ac(){rx+=(mx-rx)*.11;ry+=(my-ry)*.11;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(ac);})();
-document.querySelectorAll('a,button,.tp,.pc,.prov,.wc,.yc,.area-tag').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{cur.style.width='18px';cur.style.height='18px';ring.style.width='48px';ring.style.height='48px';});
-  el.addEventListener('mouseleave',()=>{cur.style.width='10px';cur.style.height='10px';ring.style.width='32px';ring.style.height='32px';});
-});
+        // Initialize
+        initTheme();
+        navigateTo('home');
+    </script>
 
-/* ══ HEADER SCROLL ════════════════════════════════════════════════════ */
-window.addEventListener('scroll',()=>document.getElementById('hdr').classList.toggle('on',scrollY>50));
-
-/* ══ REVEAL ON SCROLL ════════════════════════════════════════════════ */
-const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.12});
-document.querySelectorAll('.rev').forEach(el=>ro.observe(el));
-
-/* ══ PROPERTIES DATA ════════════════════════════════════════════════ */
-const PROPS=[
-  {id:1,type:"Apartment",listing:"rent",title:"Modern Studio Apartment — BKK1",loc:"Phnom Penh",price:650,beds:1,baths:1,size:45,em:"🏢",hot:true,desc:"Fully furnished studio near Aeon Mall. City view, gym and pool included."},
-  {id:2,type:"Villa",listing:"sale",title:"Luxury Pool Villa — Sala Kamreuk",loc:"Siem Reap",price:280000,beds:4,baths:3,size:350,em:"🏡",hot:false,desc:"4-bed villa with private pool 10 min from Angkor Wat. Hard title available."},
-  {id:3,type:"Condo",listing:"rent",title:"Penthouse Condo — Diamond Island",loc:"Phnom Penh",price:2200,beds:3,baths:2,size:180,em:"🏙️",hot:true,desc:"High-floor penthouse with panoramic Mekong river views. Fully furnished."},
-  {id:4,type:"Land",listing:"sale",title:"Beachfront Land — Ochheuteal Beach",loc:"Sihanoukville",price:550000,beds:0,baths:0,size:1200,em:"🌿",hot:false,desc:"1,200 sqm beachfront. Hard title. Perfect for hotel or resort development."},
-  {id:5,type:"Office",listing:"rent",title:"Grade A Office — BKK1 Tower",loc:"Phnom Penh",price:1800,beds:0,baths:2,size:120,em:"🏬",hot:false,desc:"Fully fitted 8th-floor office. 24/7 security, parking, fiber internet."},
-  {id:6,type:"Apartment",listing:"rent",title:"2BR Serviced Apartment — Daun Penh",loc:"Phnom Penh",price:900,beds:2,baths:1,size:85,em:"🏢",hot:false,desc:"Central location. Walking distance to riverfront and embassies."},
-  {id:7,type:"Villa",listing:"rent",title:"Riverside Villa with Garden — Kampot",loc:"Kampot",price:1100,beds:3,baths:2,size:220,em:"🏡",hot:true,desc:"Charming villa with mountain views and large garden. Popular expat area."},
-  {id:8,type:"Building",listing:"sale",title:"Commercial Shophouse — Main Street",loc:"Battambang",price:185000,beds:0,baths:0,size:400,em:"🏗️",hot:false,desc:"4-storey shophouse on main street. Currently tenanted. Good ROI."},
-  {id:9,type:"Condo",listing:"sale",title:"1BR Condo — Sen Sok City",loc:"Phnom Penh",price:75000,beds:1,baths:1,size:55,em:"🏙️",hot:false,desc:"Brand new condo near AEON Mall 2. Good rental yield expected."},
-];
-
-const PROVS=[
-  {n:"Phnom Penh",e:"🏙️"},{n:"Siem Reap",e:"🛕"},{n:"Sihanoukville",e:"🏖️"},
-  {n:"Battambang",e:"🌾"},{n:"Kampong Cham",e:"🌿"},{n:"Kampong Chhnang",e:"⛵"},
-  {n:"Kampong Speu",e:"🌄"},{n:"Kampong Thom",e:"🗿"},{n:"Kampot",e:"🏞️"},
-  {n:"Kandal",e:"🌊"},{n:"Kep",e:"🦀"},{n:"Koh Kong",e:"🌴"},
-  {n:"Kratie",e:"🐬"},{n:"Mondulkiri",e:"🐘"},{n:"Oddar Meanchey",e:"🌅"},
-  {n:"Pailin",e:"💎"},{n:"Preah Vihear",e:"⛰️"},{n:"Prey Veng",e:"🌾"},
-  {n:"Pursat",e:"🏔️"},{n:"Ratanakiri",e:"🌳"},{n:"Stung Treng",e:"🌊"},
-  {n:"Svay Rieng",e:"🌿"},{n:"Takeo",e:"🌺"},{n:"Tboung Khmum",e:"🌱"},
-  {n:"Banteay Meanchey",e:"🛕"},
-];
-
-/* ══ FILTER STATE ════════════════════════════════════════════════════ */
-let TAB='rent', TT='';
-function setTab(t,btn){TAB=t;document.querySelectorAll('.tab').forEach(b=>b.classList.remove('on'));btn.classList.add('on');doFilter();}
-function tF(t,btn){TT=t;document.querySelectorAll('.tp').forEach(b=>b.classList.remove('on'));btn.classList.add('on');document.getElementById('f-type').value=t;doFilter();}
-function doFilter(){
-  const ty=TT||document.getElementById('f-type').value;
-  const lo=document.getElementById('f-loc').value;
-  const pr=document.getElementById('f-price').value;
-  const bd=document.getElementById('f-beds').value;
-  let list=PROPS.filter(p=>{
-    if(TAB==='rent'&&p.listing!=='rent')return false;
-    if(TAB==='buy'&&p.listing!=='sale')return false;
-    if(ty&&p.type!==ty)return false;
-    if(lo&&p.loc!==lo)return false;
-    if(bd&&p.beds<+bd)return false;
-    if(pr){const[a,b]=pr.split('-').map(Number);if(p.price<a||p.price>b)return false;}
-    return true;
-  });
-  renderProps(list);
-}
-
-function fmt(p,l){
-  return l==='rent'?`$${p.toLocaleString()}<span>/mo</span>`:`$${p.toLocaleString()}`;
-}
-
-function renderProps(list){
-  document.getElementById('res-count').textContent=`${list.length} propert${list.length===1?'y':'ies'} found`;
-  if(!list.length){
-    document.getElementById('pg').innerHTML=`<div class="ld"><p style="font-size:40px;margin-bottom:14px">🏠</p><p style="font-size:16px">No properties match. Try different filters.</p></div>`;
-    return;
-  }
-  document.getElementById('pg').innerHTML=list.map((p,i)=>`
-    <div class="pc rev" style="transition-delay:${i*.07}s">
-      <div class="pi">
-        <span class="pi-em">${p.em}</span>
-        <span class="pi-b ${p.listing==='rent'?'b-rent':'b-sale'}">${p.listing==='rent'?'For Rent':'For Sale'}</span>
-        ${p.hot?'<span class="pi-hot">🔥 HOT</span>':''}
-      </div>
-      <div class="pb">
-        <div class="pp">${fmt(p.price,p.listing)}</div>
-        <div class="pt">${p.title}</div>
-        <div class="pl">📍 ${p.loc}</div>
-        <div class="pd">${p.desc}</div>
-        <div class="pf">
-          ${p.beds?`<span class="pft">🛏 ${p.beds} Bed${p.beds>1?'s':''}</span>`:''}
-          ${p.baths?`<span class="pft">🚿 ${p.baths} Bath${p.baths>1?'s':''}</span>`:''}
-          ${p.size?`<span class="pft">📐 ${p.size} m²</span>`:''}
-          <span class="pft" style="margin-left:auto;color:var(--gold);font-weight:500">${p.type}</span>
-        </div>
-      </div>
-    </div>`).join('');
-  document.querySelectorAll('.pc.rev:not(.in)').forEach(el=>ro.observe(el));
-}
-
-/* ══ PROVINCES ══════════════════════════════════════════════════════ */
-document.getElementById('pgrid').innerHTML=PROVS.map(p=>`
-  <div class="prov" onclick="goProv('${p.n}')">
-    <span class="pe">${p.e}</span>
-    <div>
-      <div class="pn">${p.n}</div>
-      <div class="pc2">${PROPS.filter(x=>x.loc===p.n).length||'—'} listings</div>
-    </div>
-  </div>`).join('');
-
-function goProv(n){
-  document.getElementById('f-loc').value=n;
-  document.getElementById('properties').scrollIntoView({behavior:'smooth'});
-  doFilter();
-}
-
-/* ══ INIT ══════════════════════════════════════════════════════════ */
-doFilter();
-</script>
 </body>
 </html>
