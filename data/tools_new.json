@@ -1,0 +1,434 @@
+[
+  {
+    "id": "48423114",
+    "title": "UK banks blocked from cyber AI tool Mythos get offer from rival OpenAI",
+    "url": "https://www.bbc.com/news/articles/cm2p3j6lvn7o",
+    "source": "HackerNews",
+    "points": 3,
+    "date": "2026-06-08",
+    "summary": "UK banks blocked from cyber AI tool Mythos get offer from rival OpenAI",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48417448",
+    "title": "Writing vs. Shipping: Productivity Effects Across Generations of AI Coding Tools",
+    "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6843118",
+    "source": "HackerNews",
+    "points": 3,
+    "date": "2026-06-08",
+    "summary": "Writing vs. Shipping: Productivity Effects Across Generations of AI Coding Tools",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48411503",
+    "title": "AI Hiring Tools Can Yield Racial Bias and Systemic Rejection",
+    "url": "https://hai.stanford.edu/news/ai-hiring-tools-can-yield-racial-bias-and-systemic-rejection",
+    "source": "HackerNews",
+    "points": 2,
+    "date": "2026-06-08",
+    "summary": "AI Hiring Tools Can Yield Racial Bias and Systemic Rejection",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48410792",
+    "title": "Productivity effects across generations of AI coding tools [pdf]",
+    "url": "https://www.nber.org/papers/w35275",
+    "source": "HackerNews",
+    "points": 1,
+    "date": "2026-06-08",
+    "summary": "Productivity effects across generations of AI coding tools [pdf]",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48413629",
+    "title": "Ask HN: What is your (AI) dev tech stack / workflow?",
+    "url": "https://news.ycombinator.com/item?id=48413629",
+    "source": "HackerNews",
+    "points": 159,
+    "date": "2026-06-08",
+    "summary": "Ask HN: What is your (AI) dev tech stack / workflow?",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48432990",
+    "title": "Ask HN: Who here still codes without AI, and why?",
+    "url": "https://news.ycombinator.com/item?id=48432990",
+    "source": "HackerNews",
+    "points": 1,
+    "date": "2026-06-08",
+    "summary": "Ask HN: Who here still codes without AI, and why?",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48414029",
+    "title": "A curated list of AI for developers",
+    "url": "https://github.com/ai-for-developers/awesome-ai-coding-tools",
+    "source": "HackerNews",
+    "points": 4,
+    "date": "2026-06-08",
+    "summary": "A curated list of AI for developers",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48419675",
+    "title": "Tell HN: AI software development workflow, stack-ranked from HN discussion",
+    "url": "https://codeberg.org/jro/Knowledge/src/branch/main/2026-06-05_ai-development-workflow-tools.md",
+    "source": "HackerNews",
+    "points": 1,
+    "date": "2026-06-08",
+    "summary": "Tell HN: AI software development workflow, stack-ranked from HN discussion",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48442995",
+    "title": "Show HN: Tool you give AI agents to sneak in prompts or connect multiple agents",
+    "url": "https://apps.apple.com/us/app/promptgate/id6772730472",
+    "source": "HackerNews",
+    "points": 1,
+    "date": "2026-06-08",
+    "summary": "Show HN: Tool you give AI agents to sneak in prompts or connect multiple agents",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48419614",
+    "title": "Show HN: I nerfed our coding agents on purpose",
+    "url": "https://news.ycombinator.com/item?id=48419614",
+    "source": "HackerNews",
+    "points": 26,
+    "date": "2026-06-08",
+    "summary": "Show HN: I nerfed our coding agents on purpose",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48420827",
+    "title": "Ask HN: Why is the HN crowd so anti-AI?",
+    "url": "https://news.ycombinator.com/item?id=48420827",
+    "source": "HackerNews",
+    "points": 449,
+    "date": "2026-06-08",
+    "summary": "Ask HN: Why is the HN crowd so anti-AI?",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48438180",
+    "title": "Show HN: Nightwatch, The open-source, read-only AI SRE",
+    "url": "https://github.com/ninoxAI/nightwatch",
+    "source": "HackerNews",
+    "points": 18,
+    "date": "2026-06-08",
+    "summary": "Show HN: Nightwatch, The open-source, read-only AI SRE",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48441267",
+    "title": "Show HN: Web Speed – A shared web-map registry for AI agents (MCP, open source)",
+    "url": "https://www.getwebspeed.io/",
+    "source": "HackerNews",
+    "points": 5,
+    "date": "2026-06-08",
+    "summary": "Show HN: Web Speed – A shared web-map registry for AI agents (MCP, open source)",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48422121",
+    "title": "Show HN: Summarize YT Video by pasting url into AI chat[video]",
+    "url": "https://www.youtube.com/watch?v=BblwmuFhhOI",
+    "source": "HackerNews",
+    "points": 2,
+    "date": "2026-06-08",
+    "summary": "Show HN: Summarize YT Video by pasting url into AI chat[video]",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48415595",
+    "title": "Show HN: PMB – Local-first memory for AI coding agents",
+    "url": "https://github.com/oleksiijko/pmb",
+    "source": "HackerNews",
+    "points": 2,
+    "date": "2026-06-08",
+    "summary": "Show HN: PMB – Local-first memory for AI coding agents",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "3829138",
+    "title": "AI Won't Replace Humans — It'll Just Make Us Pickier",
+    "url": "https://dev.to/markofrei919/ai-wont-replace-humans-itll-just-make-us-pickier-2iij",
+    "source": "Dev.to",
+    "points": 13,
+    "date": "2026-06-08",
+    "summary": "Every few weeks someone posts the same screenshot: an AI writing a whole app from a one-line prompt,...",
+    "category": "Other",
+    "tags": [
+      "ai",
+      "discuss",
+      "career",
+      "productivity"
+    ]
+  },
+  {
+    "id": "3831289",
+    "title": "I Tried to Fix a Vulnerability. A $1,400,000 AI System Said No. Twenty Days Later, That Vulnerability Cost $4,200,000.",
+    "url": "https://dev.to/xulingfeng/i-tried-to-fix-a-vulnerability-a-1400000-ai-system-said-no-twenty-days-later-that-5d1m",
+    "source": "Dev.to",
+    "points": 26,
+    "date": "2026-06-08",
+    "summary": "This story was shared by a fellow developer on DEV who asked to remain anonymous. If you've got a...",
+    "category": "Other",
+    "tags": [
+      "ai",
+      "programming",
+      "discuss",
+      "career"
+    ]
+  },
+  {
+    "id": "3840063",
+    "title": "Our VP Said AI Would Test Itself. Day 3 Cost $2.8M. I Had the Screenshots Ready.",
+    "url": "https://dev.to/xulingfeng/our-vp-said-ai-would-test-itself-i-raised-my-hand-i-got-reassigned-day-3-cost-28m-i-had-the-555j",
+    "source": "Dev.to",
+    "points": 14,
+    "date": "2026-06-08",
+    "summary": "Based on real software development trends. About a VP of Engineering who believed AI would verify...",
+    "category": "Other",
+    "tags": [
+      "ai",
+      "discuss",
+      "programming",
+      "career"
+    ]
+  },
+  {
+    "id": "3836725",
+    "title": "MindPal: finishing the AI support app that remembers what matters",
+    "url": "https://dev.to/m1rw/mindpal-finishing-the-ai-support-app-that-remembers-what-matters-4ne5",
+    "source": "Dev.to",
+    "points": 7,
+    "date": "2026-06-08",
+    "summary": "This is a submission for the GitHub Finish-Up-A-Thon Challenge           What I Built   I built...",
+    "category": "Other",
+    "tags": [
+      "devchallenge",
+      "githubchallenge",
+      "ai",
+      "webdev"
+    ]
+  },
+  {
+    "id": "3839818",
+    "title": "Beyond the 8x Productivity Myth: A 40-Year Perspective on Recursive AI and the \"Craft\" of Engineering",
+    "url": "https://dev.to/bumbulik0/beyond-the-8x-productivity-myth-a-40-year-perspective-on-recursive-ai-and-the-craft-of-bk8",
+    "source": "Dev.to",
+    "points": 7,
+    "date": "2026-06-08",
+    "summary": "Introduction: The Ghost in the Codebase   I started my professional journey in 1986. It was...",
+    "category": "Other",
+    "tags": [
+      "ai",
+      "devops",
+      "vibecoding",
+      "discuss"
+    ]
+  },
+  {
+    "id": "3837715",
+    "title": "Run Coding Agents on Local AI — Zero Cloud, Full Control",
+    "url": "https://dev.to/dalenguyen/run-coding-agents-on-local-ai-zero-cloud-full-control-5e9e",
+    "source": "Dev.to",
+    "points": 0,
+    "date": "2026-06-08",
+    "summary": "Coding agents — Codex CLI, Claude Code, Cursor, and Pi — are productivity multipliers. But they all...",
+    "category": "Other",
+    "tags": [
+      "ollama",
+      "ai",
+      "programming",
+      "devtools"
+    ]
+  },
+  {
+    "id": "3833998",
+    "title": "I Opened My Old Repository Again After 315 Days",
+    "url": "https://dev.to/chibbythecoder/i-opened-my-old-repository-again-after-315-days-65b",
+    "source": "Dev.to",
+    "points": 2,
+    "date": "2026-06-08",
+    "summary": "Table of Contents    What I Built The Project Slowly Fell Apart Revisiting the Repository...",
+    "category": "Other",
+    "tags": [
+      "devchallenge",
+      "githubchallenge",
+      "ai",
+      "productivity"
+    ]
+  },
+  {
+    "id": "3820561",
+    "title": "What a true AI-native company feels like (3 months at n8n)",
+    "url": "https://dev.to/alexandergekov/what-a-true-ai-native-company-feels-like-3-months-at-n8n-4jnf",
+    "source": "Dev.to",
+    "points": 0,
+    "date": "2026-06-08",
+    "summary": "The most AI-forward company I've worked at automates boring stuff first.  I joined n8n three months...",
+    "category": "Other",
+    "tags": [
+      "career",
+      "ai",
+      "automation"
+    ]
+  },
+  {
+    "id": "3822232",
+    "title": "Inference Theft: Your AI Endpoint Is Someone Else's Free Model",
+    "url": "https://dev.to/morganwilliscloud/inference-theft-your-ai-endpoint-is-someone-elses-free-model-579p",
+    "source": "Dev.to",
+    "points": 16,
+    "date": "2026-06-08",
+    "summary": "How to defend AI endpoints against inference theft and denial-of-wallet attacks: bot detection, guardrails, cost-aware routing, and budget controls.",
+    "category": "Other",
+    "tags": [
+      "aws",
+      "ai",
+      "security",
+      "architecture"
+    ]
+  },
+  {
+    "id": "3839245",
+    "title": "How to access AI from a blocked region? From 2022 to 2026, a Chinese developer's perspective",
+    "url": "https://dev.to/ccc40/how-to-access-ai-from-a-blocked-region-from-2022-to-2026-a-chinese-developers-perspective-1ik",
+    "source": "Dev.to",
+    "points": 2,
+    "date": "2026-06-08",
+    "summary": "Not long ago, I saw articles analyzing how Chinese people obtain US model API at low prices through...",
+    "category": "Other",
+    "tags": [
+      "ai",
+      "agents",
+      "llm"
+    ]
+  },
+  {
+    "id": "3845295",
+    "title": "I Built an Adversarial Eval Framework and Attacked 5 LLMs — Every Single One Failed",
+    "url": "https://dev.to/saurav_bhattacharya/i-built-an-adversarial-eval-framework-and-attacked-5-llms-every-single-one-failed-1j81",
+    "source": "Dev.to",
+    "points": 3,
+    "date": "2026-06-08",
+    "summary": "10 adversarial scenarios, 64 assertions, 3-tier evaluation pyramid. Llama, Qwen, GPT-OSS — none scored above 63%. Here's what broke them.",
+    "category": "Other",
+    "tags": [
+      "ai",
+      "llm",
+      "security",
+      "testing"
+    ]
+  },
+  {
+    "id": "3830314",
+    "title": "I Spent $200 in Two Hours Watching a Coding Agent Guess",
+    "url": "https://dev.to/muggleai/i-spent-200-in-two-hours-watching-a-coding-agent-guess-285o",
+    "source": "Dev.to",
+    "points": 1,
+    "date": "2026-06-08",
+    "summary": "I spent $200 in two hours and the bug was still there at the end of it.           One bug. Two hours....",
+    "category": "Other",
+    "tags": [
+      "ai",
+      "testing",
+      "vibecoding",
+      "agents"
+    ]
+  },
+  {
+    "id": "3832042",
+    "title": "My Claude Code hook silently ate every Korean character, and it took me an hour to figure out why",
+    "url": "https://dev.to/codingjhj/my-claude-code-hook-silently-ate-every-korean-character-and-it-took-me-an-hour-to-figure-out-why-3ii4",
+    "source": "Dev.to",
+    "points": 1,
+    "date": "2026-06-08",
+    "summary": "I spent an hour last week debugging a hook that wasn't broken.  Here's the setup: I run Claude Code...",
+    "category": "Other",
+    "tags": [
+      "claude",
+      "powershell",
+      "windows",
+      "ai"
+    ]
+  },
+  {
+    "id": "3836661",
+    "title": "Signed Is Not Fresh: Why Authority Verification Needs Both *AI Memory Judgment — CLAIM-25*",
+    "url": "https://dev.to/zep1997/signed-is-not-fresh-why-authority-verification-needs-both-ai-memory-judgment-claim-25-2791",
+    "source": "Dev.to",
+    "points": 1,
+    "date": "2026-06-08",
+    "summary": "An AI agent can hold a grant that is still inside its time-to-live while the source conditions that...",
+    "category": "Other",
+    "tags": [
+      "ai",
+      "agents",
+      "machinelearning",
+      "security"
+    ]
+  }
+]
