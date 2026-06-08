@@ -430,5 +430,111 @@
       "machinelearning",
       "security"
     ]
+  },
+  {
+    "id": "48444057",
+    "title": "Productivity Effects Across Generations of AI Coding Tools [pdf]",
+    "url": "https://www.nber.org/system/files/working_papers/w35275/w35275.pdf",
+    "source": "HackerNews",
+    "points": 2,
+    "date": "2026-06-08",
+    "summary": "Productivity Effects Across Generations of AI Coding Tools [pdf]",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48443961",
+    "title": "Show HN: OrchAPI – AI tools shaped by the use of the useless",
+    "url": "https://orchapi.com/",
+    "source": "HackerNews",
+    "points": 1,
+    "date": "2026-06-08",
+    "summary": "Show HN: OrchAPI – AI tools shaped by the use of the useless",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48445171",
+    "title": "Launch HN: Intuned (YC S22) – Build and run reliable browser automations as code",
+    "url": "https://intunedhq.com",
+    "source": "HackerNews",
+    "points": 81,
+    "date": "2026-06-08",
+    "summary": "Launch HN: Intuned (YC S22) – Build and run reliable browser automations as code",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "3696340",
+    "title": "🎥AI Chat, AI Cheering Messages, and Animation Editor Hyper (AI Avatar v10: VS Code and Chrome Extension)",
+    "url": "https://dev.to/webdeveloperhyper/ai-chat-ai-cheering-messages-and-animation-editor-hyper-ai-avatar-v10-vs-code-and-chrome-1noo",
+    "source": "Dev.to",
+    "points": 27,
+    "date": "2026-06-08",
+    "summary": "Intro   AI Avatar is a completely free app that lets your VRoid (VRM) 3D avatar animate in...",
+    "category": "Other",
+    "tags": [
+      "ai",
+      "webdev",
+      "productivity",
+      "discuss"
+    ]
+  },
+  {
+    "id": "3844423",
+    "title": "🛡️ My Neighbour's ₹2 Lakh Insurance Claim Was Rejected. I Built an AI to Make Sure It Never Happens Again.",
+    "url": "https://dev.to/sharma-sugurthi/my-neighbours-2-lakh-insurance-claim-was-rejected-i-built-an-ai-to-make-sure-it-never-happens-go4",
+    "source": "Dev.to",
+    "points": 6,
+    "date": "2026-06-08",
+    "summary": "This is a submission for the GitHub Finish-Up-A-Thon Challenge           What I Built   SecureShield...",
+    "category": "Other",
+    "tags": [
+      "devchallenge",
+      "githubchallenge",
+      "ai",
+      "webdev"
+    ]
+  },
+  {
+    "id": "3844964",
+    "title": "My company packaged 12 years of my experience into an AI Skill, then laid me off. When it crashed, the CTO called at 5x my salary.",
+    "url": "https://dev.to/xulingfeng/my-company-packaged-12-years-of-my-experience-into-an-ai-skill-then-laid-me-off-when-it-crashed-4b3e",
+    "source": "Dev.to",
+    "points": 16,
+    "date": "2026-06-08",
+    "summary": "A story about knowledge extraction, Kafka consumer rebalance, and what happens when a company...",
+    "category": "Other",
+    "tags": [
+      "ai",
+      "career",
+      "discuss",
+      "programming"
+    ]
+  },
+  {
+    "id": "3840292",
+    "title": "Taming AI API Rate Limits with Asyncio Queues",
+    "url": "https://dev.to/__c1b9e06dc90a7e0a676b/taming-ai-api-rate-limits-with-asyncio-queues-2a16",
+    "source": "Dev.to",
+    "points": 1,
+    "date": "2026-06-08",
+    "summary": "Last month, I spent three days banging my head against the wall because of API rate limits.   I was...",
+    "category": "Other",
+    "tags": [
+      "python",
+      "api",
+      "webdev",
+      "ai"
+    ]
   }
 ]

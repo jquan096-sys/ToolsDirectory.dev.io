@@ -138,5 +138,61 @@
       "AI",
       "HackerNews"
     ]
+  },
+  {
+    "id": "48444057",
+    "title": "Productivity Effects Across Generations of AI Coding Tools [pdf]",
+    "url": "https://www.nber.org/system/files/working_papers/w35275/w35275.pdf",
+    "source": "HackerNews",
+    "points": 2,
+    "date": "2026-06-08",
+    "summary": "Productivity Effects Across Generations of AI Coding Tools [pdf]",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48443961",
+    "title": "Show HN: OrchAPI – AI tools shaped by the use of the useless",
+    "url": "https://orchapi.com/",
+    "source": "HackerNews",
+    "points": 1,
+    "date": "2026-06-08",
+    "summary": "Show HN: OrchAPI – AI tools shaped by the use of the useless",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48420827",
+    "title": "Ask HN: Why is the HN crowd so anti-AI?",
+    "url": "https://news.ycombinator.com/item?id=48420827",
+    "source": "HackerNews",
+    "points": 452,
+    "date": "2026-06-08",
+    "summary": "Ask HN: Why is the HN crowd so anti-AI?",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48438180",
+    "title": "Show HN: Nightwatch, The open-source, read-only AI SRE",
+    "url": "https://github.com/ninoxAI/nightwatch",
+    "source": "HackerNews",
+    "points": 27,
+    "date": "2026-06-08",
+    "summary": "Show HN: Nightwatch, The open-source, read-only AI SRE",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
   }
 ]
