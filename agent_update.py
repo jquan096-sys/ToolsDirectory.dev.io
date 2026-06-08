@@ -5,7 +5,7 @@ Auto-update agent for https://jquan096-sys.github.io/ToolsDirectory.dev.io/
 
 What it does:
   1. Fetches latest AI tool news from free APIs (HackerNews, Product Hunt RSS, Dev.to)
-  2. Uses Claude API to summarize + categorize each tool/news item
+  2. Uses Google Gemini API (gemini-1.5-flash) to summarize + categorize each item
   3. Writes output to  data/news.json  and  data/tools_new.json
   4. GitHub Actions commits + pushes the updated JSON files automatically
 
@@ -14,8 +14,9 @@ Free APIs used (no key required):
   - Dev.to API              → dev.to/api/articles
   - Product Hunt RSS        → producthunt.com/feed  (via rss2json)
 
-Optional (add ANTHROPIC_API_KEY secret in GitHub repo settings):
-  - Claude claude-haiku-20240307 → cheap summarization (~$0.001/run)
+AI enrichment (add GEMINI_API_KEY secret in GitHub repo settings):
+  - Google Gemini 1.5 Flash → FREE tier: 1,500 req/day, 1M tokens/min
+  - Get your free key at: https://aistudio.google.com/apikey
 """
 
 import os
@@ -25,17 +26,18 @@ import urllib.request
 import urllib.parse
 
 # ── CONFIG ────────────────────────────────────────────────────────────────────
-ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")   # Set in GitHub Secrets
-MAX_ITEMS         = 10    # how many news/tool items to keep
-OUTPUT_DIR        = "data"
-NEWS_FILE         = f"{OUTPUT_DIR}/news.json"
-TOOLS_FILE        = f"{OUTPUT_DIR}/tools_new.json"
-TODAY             = datetime.date.today().isoformat()
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")   # Set in GitHub Secrets
+GEMINI_MODEL   = "gemini-1.5-flash"                # Free tier model
+MAX_ITEMS      = 10    # how many news/tool items per run
+OUTPUT_DIR     = "data"
+NEWS_FILE      = f"{OUTPUT_DIR}/news.json"
+TOOLS_FILE     = f"{OUTPUT_DIR}/tools_new.json"
+TODAY          = datetime.date.today().isoformat()
 
 AI_KEYWORDS = [
     "AI", "artificial intelligence", "LLM", "GPT", "Claude", "Gemini",
     "machine learning", "automation", "agent", "chatbot", "copilot",
-    "generative", "openai", "anthropic", "mistral", "llama"
+    "generative", "openai", "anthropic", "mistral", "llama", "deepseek"
 ]
 
 CATEGORIES = ["Writing", "Coding", "Automation", "Design", "Video",
@@ -68,13 +70,13 @@ def clean_text(text: str, max_len: int = 300) -> str:
 
 # ── DATA SOURCES ──────────────────────────────────────────────────────────────
 def fetch_hackernews() -> list[dict]:
-    """Fetch AI-related Show HN / Ask HN posts from HackerNews."""
+    """Fetch AI-related posts from HackerNews (last 3 days)."""
     print("📡 Fetching HackerNews…")
     items = []
+    cutoff = int(datetime.datetime.now().timestamp()) - 86400 * 3
     url = (
         "https://hn.algolia.com/api/v1/search"
-        "?query=AI+tools&tags=story&numericFilters=created_at_i>"
-        + str(int(datetime.datetime.now().timestamp()) - 86400 * 3)  # last 3 days
+        f"?query=AI+tools&tags=story&numericFilters=created_at_i>{cutoff}"
     )
     data = fetch_json(url)
     if not data:
@@ -84,15 +86,15 @@ def fetch_hackernews() -> list[dict]:
         if not is_ai_related(title):
             continue
         items.append({
-            "id":      hit.get("objectID", ""),
-            "title":   title,
-            "url":     hit.get("url") or f"https://news.ycombinator.com/item?id={hit.get('objectID')}",
-            "source":  "HackerNews",
-            "points":  hit.get("points", 0),
-            "date":    TODAY,
-            "summary": clean_text(title),
+            "id":       hit.get("objectID", ""),
+            "title":    title,
+            "url":      hit.get("url") or f"https://news.ycombinator.com/item?id={hit.get('objectID')}",
+            "source":   "HackerNews",
+            "points":   hit.get("points", 0),
+            "date":     TODAY,
+            "summary":  clean_text(title),
             "category": "Other",
-            "tags":    ["AI", "HackerNews"],
+            "tags":     ["AI", "HackerNews"],
         })
     print(f"  → {len(items)} items from HackerNews")
     return items
@@ -111,15 +113,15 @@ def fetch_devto() -> list[dict]:
         if not is_ai_related(title):
             continue
         items.append({
-            "id":      str(art.get("id", "")),
-            "title":   title,
-            "url":     art.get("url", ""),
-            "source":  "Dev.to",
-            "points":  art.get("public_reactions_count", 0),
-            "date":    TODAY,
-            "summary": clean_text(art.get("description", title)),
+            "id":       str(art.get("id", "")),
+            "title":    title,
+            "url":      art.get("url", ""),
+            "source":   "Dev.to",
+            "points":   art.get("public_reactions_count", 0),
+            "date":     TODAY,
+            "summary":  clean_text(art.get("description", title)),
             "category": "Other",
-            "tags":    art.get("tag_list", ["AI"]),
+            "tags":     art.get("tag_list", ["AI"]),
         })
     print(f"  → {len(items)} items from Dev.to")
     return items
@@ -129,8 +131,8 @@ def fetch_producthunt_rss() -> list[dict]:
     """Fetch Product Hunt RSS via rss2json free tier (10k req/month)."""
     print("📡 Fetching Product Hunt RSS…")
     items = []
-    rss_url  = "https://www.producthunt.com/feed"
-    api_url  = f"https://api.rss2json.com/v1/api.json?rss_url={urllib.parse.quote(rss_url)}&count=20"
+    rss_url = "https://www.producthunt.com/feed"
+    api_url = f"https://api.rss2json.com/v1/api.json?rss_url={urllib.parse.quote(rss_url)}&count=20"
     data = fetch_json(api_url)
     if not data or data.get("status") != "ok":
         return items
@@ -139,32 +141,42 @@ def fetch_producthunt_rss() -> list[dict]:
         if not is_ai_related(title + entry.get("description", "")):
             continue
         items.append({
-            "id":      entry.get("guid", entry.get("link", "")),
-            "title":   title,
-            "url":     entry.get("link", ""),
-            "source":  "Product Hunt",
-            "points":  0,
-            "date":    TODAY,
-            "summary": clean_text(entry.get("description", "")),
+            "id":       entry.get("guid", entry.get("link", "")),
+            "title":    title,
+            "url":      entry.get("link", ""),
+            "source":   "Product Hunt",
+            "points":   0,
+            "date":     TODAY,
+            "summary":  clean_text(entry.get("description", "")),
             "category": "Other",
-            "tags":    ["AI", "Product Hunt"],
+            "tags":     ["AI", "Product Hunt"],
         })
     print(f"  → {len(items)} items from Product Hunt")
     return items
 
 
-# ── CLAUDE AI ENRICHMENT (optional) ──────────────────────────────────────────
-def enrich_with_claude(items: list[dict]) -> list[dict]:
+# ── GEMINI AI ENRICHMENT ──────────────────────────────────────────────────────
+def enrich_with_gemini(items: list[dict]) -> list[dict]:
     """
-    Use Claude Haiku to add better summaries + categories.
-    Only runs when ANTHROPIC_API_KEY is set.
+    Use Google Gemini 1.5 Flash to write better summaries + pick categories.
+    Only runs when GEMINI_API_KEY is set.
+
+    Free tier limits (as of 2025):
+      - gemini-1.5-flash: 1,500 requests/day, 1,000,000 tokens/min — more than enough.
+    Get a free key at: https://aistudio.google.com/apikey
     """
-    if not ANTHROPIC_API_KEY:
-        print("⚠️  ANTHROPIC_API_KEY not set — skipping AI enrichment")
+    if not GEMINI_API_KEY:
+        print("⚠️  GEMINI_API_KEY not set — skipping AI enrichment")
         return items
 
-    print("🤖 Enriching with Claude Haiku…")
+    print(f"✨ Enriching {len(items)} items with Gemini 1.5 Flash…")
     cats_str = ", ".join(CATEGORIES)
+
+    # Gemini REST endpoint
+    api_url = (
+        f"https://generativelanguage.googleapis.com/v1beta/models/"
+        f"{GEMINI_MODEL}:generateContent?key={GEMINI_API_KEY}"
+    )
 
     for item in items:
         prompt = (
@@ -172,37 +184,45 @@ def enrich_with_claude(items: list[dict]) -> list[dict]:
             f"Summary: {item['summary']}\n\n"
             f"1. Write a 1-sentence description (max 120 chars) for an AI tools directory.\n"
             f"2. Pick the best category from: {cats_str}\n\n"
-            f"Reply ONLY as JSON: {{\"summary\": \"...\", \"category\": \"...\"}}"
+            f"Reply ONLY as valid JSON with no markdown fences:\n"
+            f"{{\"summary\": \"...\", \"category\": \"...\"}}"
         )
+
         payload = json.dumps({
-            "model": "claude-haiku-20240307",
-            "max_tokens": 150,
-            "messages": [{"role": "user", "content": prompt}]
+            "contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {
+                "temperature":    0.2,
+                "maxOutputTokens": 150,
+            }
         }).encode()
 
         try:
             req = urllib.request.Request(
-                "https://api.anthropic.com/v1/messages",
+                api_url,
                 data=payload,
-                headers={
-                    "Content-Type":      "application/json",
-                    "x-api-key":         ANTHROPIC_API_KEY,
-                    "anthropic-version": "2023-06-01",
-                },
+                headers={"Content-Type": "application/json"},
                 method="POST",
             )
-            with urllib.request.urlopen(req, timeout=15) as resp:
+            with urllib.request.urlopen(req, timeout=20) as resp:
                 result = json.loads(resp.read().decode())
-            text = result["content"][0]["text"].strip()
-            # Strip markdown fences if present
-            text = text.replace("```json", "").replace("```", "").strip()
+
+            # Extract text from Gemini response structure
+            text = (
+                result["candidates"][0]["content"]["parts"][0]["text"]
+                .strip()
+                .replace("```json", "")
+                .replace("```", "")
+                .strip()
+            )
             enriched = json.loads(text)
             item["summary"]  = enriched.get("summary",  item["summary"])
             item["category"] = enriched.get("category", item["category"])
-        except Exception as e:
-            print(f"  [WARN] Claude enrichment failed for '{item['title']}': {e}")
+            print(f"  ✔ [{item['category']}] {item['title'][:60]}")
 
-    print(f"  → Enriched {len(items)} items")
+        except Exception as e:
+            print(f"  [WARN] Gemini enrichment failed for '{item['title'][:50]}': {e}")
+
+    print(f"  → Done enriching {len(items)} items")
     return items
 
 
@@ -216,7 +236,7 @@ def load_existing(filepath: str) -> list[dict]:
 
 
 def merge_and_dedup(existing: list[dict], new_items: list[dict]) -> list[dict]:
-    seen_ids  = {item["id"] for item in existing}
+    seen_ids  = {item["id"]  for item in existing}
     seen_urls = {item["url"] for item in existing}
     merged = list(existing)
     for item in new_items:
@@ -224,9 +244,8 @@ def merge_and_dedup(existing: list[dict], new_items: list[dict]) -> list[dict]:
             merged.append(item)
             seen_ids.add(item["id"])
             seen_urls.add(item["url"])
-    # Sort by date desc, keep latest MAX_ITEMS * 5 total (rolling window)
     merged.sort(key=lambda x: x.get("date", ""), reverse=True)
-    return merged[:MAX_ITEMS * 5]
+    return merged[:MAX_ITEMS * 5]   # rolling window: keep last 50 items
 
 
 # ── WRITE JSON ────────────────────────────────────────────────────────────────
@@ -241,6 +260,7 @@ def save_json(filepath: str, data) -> None:
 def main():
     print(f"\n{'='*55}")
     print(f"  ToolsDirectory Agent  —  {TODAY}")
+    print(f"  AI engine: Gemini 1.5 Flash (FREE tier)")
     print(f"{'='*55}\n")
 
     # 1. Collect from all free sources
@@ -255,41 +275,41 @@ def main():
         return
 
     # 2. Deduplicate within this batch
-    seen = set()
-    unique = []
+    seen, unique = set(), []
     for item in raw:
         key = item["url"] or item["title"]
         if key not in seen:
             seen.add(key)
             unique.append(item)
 
-    # 3. AI enrichment (optional)
-    unique = enrich_with_claude(unique)
+    # 3. Gemini AI enrichment (optional, free)
+    unique = enrich_with_gemini(unique)
 
-    # 4. Take top MAX_ITEMS for the "latest news" feed
+    # 4. Latest news feed (top N items)
     latest = unique[:MAX_ITEMS]
 
-    # 5. Merge with existing data (rolling history)
+    # 5. Merge with existing rolling history
     existing_news  = load_existing(NEWS_FILE)
     existing_tools = load_existing(TOOLS_FILE)
     merged_news    = merge_and_dedup(existing_news,  latest)
     merged_tools   = merge_and_dedup(existing_tools, unique)
 
-    # 6. Save
+    # 6. Save JSON files
     print()
     save_json(NEWS_FILE,  merged_news)
     save_json(TOOLS_FILE, merged_tools)
 
-    # 7. Write a simple metadata file the site can read for "last updated"
+    # 7. Metadata file (site reads this for "last updated" badge)
     meta = {
         "last_updated": datetime.datetime.utcnow().isoformat() + "Z",
         "total_news":   len(merged_news),
         "total_tools":  len(merged_tools),
+        "ai_engine":    f"Gemini {GEMINI_MODEL}" if GEMINI_API_KEY else "none",
         "sources":      ["HackerNews", "Dev.to", "Product Hunt"],
     }
     save_json(f"{OUTPUT_DIR}/meta.json", meta)
 
-    print(f"\n🎉 Done! Files written to /{OUTPUT_DIR}/")
+    print(f"\n🎉 Done! Files written to /{OUTPUT_DIR}/\n")
 
 
 if __name__ == "__main__":
