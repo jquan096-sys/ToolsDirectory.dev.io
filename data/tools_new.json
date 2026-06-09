@@ -1,5 +1,251 @@
 [
   {
+    "id": "48455519",
+    "title": "Configuring Agentic AI Coding Tools: An Exploratory Study",
+    "url": "https://arxiv.org/abs/2602.14690",
+    "source": "HackerNews",
+    "points": 3,
+    "date": "2026-06-09",
+    "summary": "Configuring Agentic AI Coding Tools: An Exploratory Study",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48459561",
+    "title": "Apple failed to make its AI tool to comply to EU regulations, EU Commission says",
+    "url": "https://www.reuters.com/business/apple-failed-make-its-ai-tool-comply-eu-regulations-eu-commission-says-2026-06-09/",
+    "source": "HackerNews",
+    "points": 1,
+    "date": "2026-06-09",
+    "summary": "Apple failed to make its AI tool to comply to EU regulations, EU Commission says",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48457151",
+    "title": "Productivity Effects Across Generations of AI Coding Tools",
+    "url": "http://muratbuffalo.blogspot.com/2026/06/writing-code-vs-shipping-code.html",
+    "source": "HackerNews",
+    "points": 1,
+    "date": "2026-06-09",
+    "summary": "Productivity Effects Across Generations of AI Coding Tools",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48460210",
+    "title": "Show HN: We post-trained a model that pen tests instead of refusing your code",
+    "url": "https://www.argusred.com/cli",
+    "source": "HackerNews",
+    "points": 9,
+    "date": "2026-06-09",
+    "summary": "Show HN: We post-trained a model that pen tests instead of refusing your code",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48463576",
+    "title": "Ask HN: How are you preserving your skills while using AI?",
+    "url": "https://news.ycombinator.com/item?id=48463576",
+    "source": "HackerNews",
+    "points": 3,
+    "date": "2026-06-09",
+    "summary": "Ask HN: How are you preserving your skills while using AI?",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48460584",
+    "title": "Zentral+|+Dang.ai",
+    "url": "https://dang.ai/tool/zentral-ai-erp-crm-suite",
+    "source": "HackerNews",
+    "points": 1,
+    "date": "2026-06-09",
+    "summary": "Zentral+|+Dang.ai",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48454470",
+    "title": "Show HN: Web tools an AI agent pays for per call in USDC, no API key (x402+MCP)",
+    "url": "https://superhighway.walls.sh",
+    "source": "HackerNews",
+    "points": 4,
+    "date": "2026-06-09",
+    "summary": "Show HN: Web tools an AI agent pays for per call in USDC, no API key (x402+MCP)",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48459824",
+    "title": "Apple Outlines AI and Developer Tool Updates at Platforms State of the Union",
+    "url": "https://www.macrumors.com/2026/06/09/apple-outlines-major-ai-and-developer-tool-updates/",
+    "source": "HackerNews",
+    "points": 1,
+    "date": "2026-06-09",
+    "summary": "Apple Outlines AI and Developer Tool Updates at Platforms State of the Union",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48455479",
+    "title": "Bringing the latest Gemini models to Apple developers",
+    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/bringing-gemini-models-to-apple-developers/",
+    "source": "HackerNews",
+    "points": 2,
+    "date": "2026-06-09",
+    "summary": "Bringing the latest Gemini models to Apple developers",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48462964",
+    "title": "Show HN: Tool to extract AI-generated fonts from image sheets into TTFs",
+    "url": "https://github.com/wyattmattoe/Image-to-font-extractor",
+    "source": "HackerNews",
+    "points": 1,
+    "date": "2026-06-09",
+    "summary": "Show HN: Tool to extract AI-generated fonts from image sheets into TTFs",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48457516",
+    "title": "Show HN: CalmSEO – Keyword and Google Search Console Tools for Your AI Agent",
+    "url": "https://calmseo.com/",
+    "source": "HackerNews",
+    "points": 1,
+    "date": "2026-06-09",
+    "summary": "Show HN: CalmSEO – Keyword and Google Search Console Tools for Your AI Agent",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48448467",
+    "title": "A Git/LFS-backed unified tool-output format for AI agents, with 95% token cut",
+    "url": "https://old.reddit.com/r/codex/comments/1u0amqg/a_gitlfsbacked_unified_format_of_tool_output_for/",
+    "source": "HackerNews",
+    "points": 2,
+    "date": "2026-06-09",
+    "summary": "A Git/LFS-backed unified tool-output format for AI agents, with 95% token cut",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "3856985",
+    "title": "Build a Realtime Translation App with Gemini Live API, LiveKit, & Google Cloud Run",
+    "url": "https://dev.to/googleai/build-a-realtime-translation-app-with-gemini-live-api-livekit-google-cloud-run-5474",
+    "source": "Dev.to",
+    "points": 20,
+    "date": "2026-06-09",
+    "summary": "Imagine speaking in English, and having listeners from all over the world hear you translated into...",
+    "category": "Other",
+    "tags": [
+      "ai",
+      "gemini",
+      "nextjs",
+      "tutorial"
+    ]
+  },
+  {
+    "id": "3845336",
+    "title": "Skill, MCP, Plugin, or just a CLI: how I pick a Claude Code extension, lightest first",
+    "url": "https://dev.to/rapls/skill-mcp-plugin-or-just-a-cli-how-i-pick-a-claude-code-extension-lightest-first-3hon",
+    "source": "Dev.to",
+    "points": 13,
+    "date": "2026-06-09",
+    "summary": "I was building a plugin release with Claude Code, and the changelog draft came together nicely. Pull...",
+    "category": "Other",
+    "tags": [
+      "claudecode",
+      "ai",
+      "productivity",
+      "mcp"
+    ]
+  },
+  {
+    "id": "3857930",
+    "title": "AI Bots Are Driving Up Your Hosting Bill. I have a WordPress fix",
+    "url": "https://dev.to/phalkmin/ai-bots-are-driving-up-your-hosting-bill-i-have-a-wordpress-fix-7ih",
+    "source": "Dev.to",
+    "points": 4,
+    "date": "2026-06-09",
+    "summary": "A client called me last month, half panicked, after getting an email from his hosting provider. The...",
+    "category": "Other",
+    "tags": [
+      "wordpress",
+      "ai"
+    ]
+  },
+  {
+    "id": "3853825",
+    "title": "Stop Feeding Agents Raw Data",
+    "url": "https://dev.to/copyleftdev/stop-feeding-agents-raw-data-2kif",
+    "source": "Dev.to",
+    "points": 3,
+    "date": "2026-06-09",
+    "summary": "I used to think the problem was the agent.  I would hand it a large JSON export and ask a reasonable...",
+    "category": "Other",
+    "tags": [
+      "ai",
+      "rust",
+      "agents",
+      "data"
+    ]
+  },
+  {
+    "id": "3849672",
+    "title": "I Got Tired of Reading Strangers’ Codebases, So I Built an AI That Reads Them For Me",
+    "url": "https://dev.to/nithiin7/i-got-tired-of-reading-strangers-codebases-so-i-built-an-ai-that-reads-them-for-me-3l3d",
+    "source": "Dev.to",
+    "points": 5,
+    "date": "2026-06-09",
+    "summary": "Every developer knows this feeling: you open a repo you've never seen before — maybe for a new job, a...",
+    "category": "Other",
+    "tags": [
+      "ai",
+      "opensource",
+      "rag",
+      "productivity"
+    ]
+  },
+  {
     "id": "48423114",
     "title": "UK banks blocked from cyber AI tool Mythos get offer from rival OpenAI",
     "url": "https://www.bbc.com/news/articles/cm2p3j6lvn7o",
@@ -487,54 +733,6 @@
       "webdev",
       "productivity",
       "discuss"
-    ]
-  },
-  {
-    "id": "3844423",
-    "title": "🛡️ My Neighbour's ₹2 Lakh Insurance Claim Was Rejected. I Built an AI to Make Sure It Never Happens Again.",
-    "url": "https://dev.to/sharma-sugurthi/my-neighbours-2-lakh-insurance-claim-was-rejected-i-built-an-ai-to-make-sure-it-never-happens-go4",
-    "source": "Dev.to",
-    "points": 6,
-    "date": "2026-06-08",
-    "summary": "This is a submission for the GitHub Finish-Up-A-Thon Challenge           What I Built   SecureShield...",
-    "category": "Other",
-    "tags": [
-      "devchallenge",
-      "githubchallenge",
-      "ai",
-      "webdev"
-    ]
-  },
-  {
-    "id": "3844964",
-    "title": "My company packaged 12 years of my experience into an AI Skill, then laid me off. When it crashed, the CTO called at 5x my salary.",
-    "url": "https://dev.to/xulingfeng/my-company-packaged-12-years-of-my-experience-into-an-ai-skill-then-laid-me-off-when-it-crashed-4b3e",
-    "source": "Dev.to",
-    "points": 16,
-    "date": "2026-06-08",
-    "summary": "A story about knowledge extraction, Kafka consumer rebalance, and what happens when a company...",
-    "category": "Other",
-    "tags": [
-      "ai",
-      "career",
-      "discuss",
-      "programming"
-    ]
-  },
-  {
-    "id": "3840292",
-    "title": "Taming AI API Rate Limits with Asyncio Queues",
-    "url": "https://dev.to/__c1b9e06dc90a7e0a676b/taming-ai-api-rate-limits-with-asyncio-queues-2a16",
-    "source": "Dev.to",
-    "points": 1,
-    "date": "2026-06-08",
-    "summary": "Last month, I spent three days banging my head against the wall because of API rate limits.   I was...",
-    "category": "Other",
-    "tags": [
-      "python",
-      "api",
-      "webdev",
-      "ai"
     ]
   }
 ]
