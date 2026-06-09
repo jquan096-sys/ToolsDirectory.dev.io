@@ -246,6 +246,38 @@
     ]
   },
   {
+    "id": "3844964",
+    "title": "My company packaged 12 years of my experience into an AI Skill, then laid me off. When it crashed, the CTO called at 5x my salary.",
+    "url": "https://dev.to/xulingfeng/my-company-packaged-12-years-of-my-experience-into-an-ai-skill-then-laid-me-off-when-it-crashed-4b3e",
+    "source": "Dev.to",
+    "points": 44,
+    "date": "2026-06-09",
+    "summary": "A story about knowledge extraction, Kafka consumer rebalance, and what happens when a company...",
+    "category": "Other",
+    "tags": [
+      "ai",
+      "career",
+      "discuss",
+      "programming"
+    ]
+  },
+  {
+    "id": "3844423",
+    "title": "🛡️ My Neighbour's ₹2 Lakh Insurance Claim Was Rejected. I Built an AI to Make Sure It Never Happens Again.",
+    "url": "https://dev.to/sharma-sugurthi/my-neighbours-2-lakh-insurance-claim-was-rejected-i-built-an-ai-to-make-sure-it-never-happens-go4",
+    "source": "Dev.to",
+    "points": 6,
+    "date": "2026-06-09",
+    "summary": "This is a submission for the GitHub Finish-Up-A-Thon Challenge           What I Built   SecureShield...",
+    "category": "Other",
+    "tags": [
+      "devchallenge",
+      "githubchallenge",
+      "ai",
+      "webdev"
+    ]
+  },
+  {
     "id": "48423114",
     "title": "UK banks blocked from cyber AI tool Mythos get offer from rival OpenAI",
     "url": "https://www.bbc.com/news/articles/cm2p3j6lvn7o",
@@ -703,36 +735,6 @@
     "tags": [
       "AI",
       "HackerNews"
-    ]
-  },
-  {
-    "id": "48445171",
-    "title": "Launch HN: Intuned (YC S22) – Build and run reliable browser automations as code",
-    "url": "https://intunedhq.com",
-    "source": "HackerNews",
-    "points": 81,
-    "date": "2026-06-08",
-    "summary": "Launch HN: Intuned (YC S22) – Build and run reliable browser automations as code",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "3696340",
-    "title": "🎥AI Chat, AI Cheering Messages, and Animation Editor Hyper (AI Avatar v10: VS Code and Chrome Extension)",
-    "url": "https://dev.to/webdeveloperhyper/ai-chat-ai-cheering-messages-and-animation-editor-hyper-ai-avatar-v10-vs-code-and-chrome-1noo",
-    "source": "Dev.to",
-    "points": 27,
-    "date": "2026-06-08",
-    "summary": "Intro   AI Avatar is a completely free app that lets your VRoid (VRM) 3D avatar animate in...",
-    "category": "Other",
-    "tags": [
-      "ai",
-      "webdev",
-      "productivity",
-      "discuss"
     ]
   }
 ]
