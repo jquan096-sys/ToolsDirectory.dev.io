@@ -1,185 +1,87 @@
 [
   {
-    "id": "48455519",
-    "title": "Configuring Agentic AI Coding Tools: An Exploratory Study",
-    "url": "https://arxiv.org/abs/2602.14690",
-    "source": "HackerNews",
-    "points": 3,
-    "date": "2026-06-09",
-    "summary": "Configuring Agentic AI Coding Tools: An Exploratory Study",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48459561",
-    "title": "Apple failed to make its AI tool to comply to EU regulations, EU Commission says",
-    "url": "https://www.reuters.com/business/apple-failed-make-its-ai-tool-comply-eu-regulations-eu-commission-says-2026-06-09/",
-    "source": "HackerNews",
-    "points": 1,
-    "date": "2026-06-09",
-    "summary": "Apple failed to make its AI tool to comply to EU regulations, EU Commission says",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48457151",
-    "title": "Productivity Effects Across Generations of AI Coding Tools",
-    "url": "http://muratbuffalo.blogspot.com/2026/06/writing-code-vs-shipping-code.html",
-    "source": "HackerNews",
-    "points": 1,
-    "date": "2026-06-09",
-    "summary": "Productivity Effects Across Generations of AI Coding Tools",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
     "id": "48460210",
-    "title": "Show HN: We post-trained a model that pen tests instead of refusing your code",
+    "title": "We post-trained a model that pen tests instead of refusing your code",
     "url": "https://www.argusred.com/cli",
     "source": "HackerNews",
     "points": 9,
     "date": "2026-06-09",
-    "summary": "Show HN: We post-trained a model that pen tests instead of refusing your code",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
+    "summary": "AI security tool for penetration testing code vulnerabilities automatically.",
+    "category": "Coding",
+    "tags": ["AI", "Security", "HackerNews"],
+    "verified": true
   },
   {
-    "id": "48463576",
-    "title": "Ask HN: How are you preserving your skills while using AI?",
-    "url": "https://news.ycombinator.com/item?id=48463576",
+    "id": "48453002",
+    "title": "Command Center - the AI coding env for people who care about quality",
+    "url": "https://www.cc.dev/",
     "source": "HackerNews",
-    "points": 3,
+    "points": 56,
     "date": "2026-06-09",
-    "summary": "Ask HN: How are you preserving your skills while using AI?",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
+    "summary": "Professional AI coding environment with quality assurance and code review.",
+    "category": "Coding",
+    "tags": ["AI", "Development", "HackerNews"],
+    "verified": true
   },
   {
-    "id": "48460584",
-    "title": "Zentral+|+Dang.ai",
-    "url": "https://dang.ai/tool/zentral-ai-erp-crm-suite",
+    "id": "48445171",
+    "title": "Launch HN: Intuned - Build and run reliable browser automations as code",
+    "url": "https://intunedhq.com",
     "source": "HackerNews",
-    "points": 1,
+    "points": 110,
     "date": "2026-06-09",
-    "summary": "Zentral+|+Dang.ai",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
+    "summary": "Browser automation platform for building reliable web scraping and testing workflows.",
+    "category": "Automation",
+    "tags": ["AI", "Automation", "HackerNews"],
+    "verified": true
   },
   {
-    "id": "48454470",
-    "title": "Show HN: Web tools an AI agent pays for per call in USDC, no API key (x402+MCP)",
-    "url": "https://superhighway.walls.sh",
-    "source": "HackerNews",
+    "id": "3844964",
+    "title": "My company packaged 12 years of experience into an AI Skill",
+    "url": "https://dev.to/xulingfeng/my-company-packaged-12-years-of-my-experience-into-an-ai-skill-then-laid-me-off-when-it-crashed-4b3e",
+    "source": "Dev.to",
+    "points": 44,
+    "date": "2026-06-09",
+    "summary": "Real-world story about AI knowledge extraction and workforce automation challenges.",
+    "category": "Other",
+    "tags": ["AI", "Career", "Dev.to"],
+    "verified": true
+  },
+  {
+    "id": "3857930",
+    "title": "AI Bots Are Driving Up Your Hosting Bill - WordPress fix",
+    "url": "https://dev.to/phalkmin/ai-bots-are-driving-up-your-hosting-bill-i-have-a-wordpress-fix-7ih",
+    "source": "Dev.to",
     "points": 4,
     "date": "2026-06-09",
-    "summary": "Show HN: Web tools an AI agent pays for per call in USDC, no API key (x402+MCP)",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
+    "summary": "Solution to prevent AI bot traffic from inflating hosting costs on WordPress.",
+    "category": "Automation",
+    "tags": ["AI", "Hosting", "Dev.to"],
+    "verified": true
   },
   {
-    "id": "48459824",
-    "title": "Apple Outlines AI and Developer Tool Updates at Platforms State of the Union",
-    "url": "https://www.macrumors.com/2026/06/09/apple-outlines-major-ai-and-developer-tool-updates/",
-    "source": "HackerNews",
-    "points": 1,
+    "id": "3849672",
+    "title": "I Built an AI That Reads Codebases For Me",
+    "url": "https://dev.to/nithiin7/i-got-tired-of-reading-strangers-codebases-so-i-built-an-ai-that-reads-them-for-me-3l3d",
+    "source": "Dev.to",
+    "points": 5,
     "date": "2026-06-09",
-    "summary": "Apple Outlines AI and Developer Tool Updates at Platforms State of the Union",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
+    "summary": "AI tool for automatic code repository analysis and documentation generation.",
+    "category": "Coding",
+    "tags": ["AI", "Development", "Dev.to"],
+    "verified": true
   },
   {
-    "id": "48455479",
-    "title": "Bringing the latest Gemini models to Apple developers",
-    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/bringing-gemini-models-to-apple-developers/",
-    "source": "HackerNews",
-    "points": 2,
+    "id": "3696340",
+    "title": "AI Avatar v10 - AI Chat, Animation Editor, Chrome Extension",
+    "url": "https://dev.to/webdeveloperhyper/ai-chat-ai-cheering-messages-and-animation-editor-hyper-ai-avatar-v10-vs-code-and-chrome-1noo",
+    "source": "Dev.to",
+    "points": 53,
     "date": "2026-06-09",
-    "summary": "Bringing the latest Gemini models to Apple developers",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48423114",
-    "title": "UK banks blocked from cyber AI tool Mythos get offer from rival OpenAI",
-    "url": "https://www.bbc.com/news/articles/cm2p3j6lvn7o",
-    "source": "HackerNews",
-    "points": 3,
-    "date": "2026-06-08",
-    "summary": "UK banks blocked from cyber AI tool Mythos get offer from rival OpenAI",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48417448",
-    "title": "Writing vs. Shipping: Productivity Effects Across Generations of AI Coding Tools",
-    "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6843118",
-    "source": "HackerNews",
-    "points": 3,
-    "date": "2026-06-08",
-    "summary": "Writing vs. Shipping: Productivity Effects Across Generations of AI Coding Tools",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48411503",
-    "title": "AI Hiring Tools Can Yield Racial Bias and Systemic Rejection",
-    "url": "https://hai.stanford.edu/news/ai-hiring-tools-can-yield-racial-bias-and-systemic-rejection",
-    "source": "HackerNews",
-    "points": 2,
-    "date": "2026-06-08",
-    "summary": "AI Hiring Tools Can Yield Racial Bias and Systemic Rejection",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48410792",
-    "title": "Productivity effects across generations of AI coding tools [pdf]",
-    "url": "https://www.nber.org/papers/w35275",
-    "source": "HackerNews",
-    "points": 1,
-    "date": "2026-06-08",
-    "summary": "Productivity effects across generations of AI coding tools [pdf]",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
+    "summary": "Free AI avatar application with animation, chat, and browser extensions.",
+    "category": "Design",
+    "tags": ["AI", "Avatar", "Dev.to"],
+    "verified": true
   },
   {
     "id": "48413629",
@@ -188,110 +90,10 @@
     "source": "HackerNews",
     "points": 159,
     "date": "2026-06-08",
-    "summary": "Ask HN: What is your (AI) dev tech stack / workflow?",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48432990",
-    "title": "Ask HN: Who here still codes without AI, and why?",
-    "url": "https://news.ycombinator.com/item?id=48432990",
-    "source": "HackerNews",
-    "points": 1,
-    "date": "2026-06-08",
-    "summary": "Ask HN: Who here still codes without AI, and why?",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48414029",
-    "title": "A curated list of AI for developers",
-    "url": "https://github.com/ai-for-developers/awesome-ai-coding-tools",
-    "source": "HackerNews",
-    "points": 4,
-    "date": "2026-06-08",
-    "summary": "A curated list of AI for developers",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48419675",
-    "title": "Tell HN: AI software development workflow, stack-ranked from HN discussion",
-    "url": "https://codeberg.org/jro/Knowledge/src/branch/main/2026-06-05_ai-development-workflow-tools.md",
-    "source": "HackerNews",
-    "points": 1,
-    "date": "2026-06-08",
-    "summary": "Tell HN: AI software development workflow, stack-ranked from HN discussion",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48442995",
-    "title": "Show HN: Tool you give AI agents to sneak in prompts or connect multiple agents",
-    "url": "https://apps.apple.com/us/app/promptgate/id6772730472",
-    "source": "HackerNews",
-    "points": 1,
-    "date": "2026-06-08",
-    "summary": "Show HN: Tool you give AI agents to sneak in prompts or connect multiple agents",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48419614",
-    "title": "Show HN: I nerfed our coding agents on purpose",
-    "url": "https://news.ycombinator.com/item?id=48419614",
-    "source": "HackerNews",
-    "points": 26,
-    "date": "2026-06-08",
-    "summary": "Show HN: I nerfed our coding agents on purpose",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48444057",
-    "title": "Productivity Effects Across Generations of AI Coding Tools [pdf]",
-    "url": "https://www.nber.org/system/files/working_papers/w35275/w35275.pdf",
-    "source": "HackerNews",
-    "points": 2,
-    "date": "2026-06-08",
-    "summary": "Productivity Effects Across Generations of AI Coding Tools [pdf]",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48443961",
-    "title": "Show HN: OrchAPI – AI tools shaped by the use of the useless",
-    "url": "https://orchapi.com/",
-    "source": "HackerNews",
-    "points": 1,
-    "date": "2026-06-08",
-    "summary": "Show HN: OrchAPI – AI tools shaped by the use of the useless",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
+    "summary": "Community discussion on best AI tools and workflows for software development.",
+    "category": "Productivity",
+    "tags": ["AI", "Tools", "HackerNews"],
+    "verified": true
   },
   {
     "id": "48420827",
@@ -300,25 +102,45 @@
     "source": "HackerNews",
     "points": 452,
     "date": "2026-06-08",
-    "summary": "Ask HN: Why is the HN crowd so anti-AI?",
+    "summary": "Community discussion on concerns about AI adoption and limitations.",
     "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
+    "tags": ["AI", "Discussion", "HackerNews"],
+    "verified": true
+  },
+  {
+    "id": "3831289",
+    "title": "A $1.4M AI System Said No. A Week Later, That Vulnerability Cost $4.2M.",
+    "url": "https://dev.to/xulingfeng/i-tried-to-fix-a-vulnerability-a-1400000-ai-system-said-no-twenty-days-later-that-5d1m",
+    "source": "Dev.to",
+    "points": 26,
+    "date": "2026-06-08",
+    "summary": "Real case study about AI system decision-making failures and security costs.",
+    "category": "Other",
+    "tags": ["AI", "Security", "Dev.to"],
+    "verified": true
+  },
+  {
+    "id": "3822232",
+    "title": "Inference Theft: Your AI Endpoint Is Someone Else's Free Model",
+    "url": "https://dev.to/morganwilliscloud/inference-theft-your-ai-endpoint-is-someone-elses-free-model-579p",
+    "source": "Dev.to",
+    "points": 16,
+    "date": "2026-06-08",
+    "summary": "Guide on protecting AI API endpoints from abuse and inference theft attacks.",
+    "category": "Other",
+    "tags": ["AI", "Security", "Dev.to"],
+    "verified": true
   },
   {
     "id": "48438180",
-    "title": "Show HN: Nightwatch, The open-source, read-only AI SRE",
+    "title": "Nightwatch - The open-source, read-only AI SRE",
     "url": "https://github.com/ninoxAI/nightwatch",
     "source": "HackerNews",
     "points": 27,
     "date": "2026-06-08",
-    "summary": "Show HN: Nightwatch, The open-source, read-only AI SRE",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
+    "summary": "Open-source AI Site Reliability Engineer for monitoring and alerting.",
+    "category": "Automation",
+    "tags": ["AI", "DevOps", "HackerNews"],
+    "verified": true
   }
 ]
