@@ -1,8 +1,8 @@
 {
-  "last_updated": "2026-06-09T17:50:32.961507Z",
+  "last_updated": "2026-06-09T17:56:33.121401Z",
   "total_news": 21,
   "total_tools": 50,
-  "ai_engine": "Gemini gemini-1.5-flash",
+  "ai_engine": "Gemini gemini-2.0-flash",
   "sources": [
     "HackerNews",
     "Dev.to",
