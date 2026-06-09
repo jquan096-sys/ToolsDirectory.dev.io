@@ -2,14 +2,11 @@ name: 🤖 Auto-Update AI Tools News (Gemini)
 
 on:
   schedule:
-    # Every day at 08:00 UTC — change to your preferred time
     - cron: "0 8 * * *"
-
-  # Manual trigger from GitHub → Actions tab
   workflow_dispatch:
 
 permissions:
-  contents: write   # needed to commit + push data files
+  contents: write
 
 jobs:
   update-tools:
@@ -29,24 +26,14 @@ jobs:
 
       - name: 🚀 Run agent_update.py
         env:
-          # Add GEMINI_API_KEY in: repo Settings → Secrets → Actions → New secret
-          # Free key at: https://aistudio.google.com/apikey
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python agent_update.py
 
       - name: 💾 Commit and push data files
         run: |
-          git config --global user.name  "tools-bot"
+          git config --global user.name "tools-bot"
           git config --global user.email "tools-bot@users.noreply.github.com"
-
-                - name: 💾 Commit and push data files
-        run: |
-          git config --global user.name  "tools-bot"
-          git config --global user.email "tools-bot@users.noreply.github.com"
-
-          # Stage all modified files (data/* and index.html)
-          git add -A data/ index.html || true
-
+          git add -A data/ index.html 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "✅ No changes — nothing to commit."
             exit 0
