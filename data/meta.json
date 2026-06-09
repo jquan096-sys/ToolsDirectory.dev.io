@@ -1,9 +1,10 @@
 {
-  "last_updated": "2026-06-09T18:20:20.879517Z",
+  "last_updated": "2026-06-09T18:36:01.636964Z",
   "date": "2026-06-09",
   "total_news": 23,
   "total_tools": 59,
-  "ai_engine": "none (key missing)",
+  "ai_engine": "none (keys missing)",
+  "agent": "ToolsDirectoryBot/3.0-Dual",
   "sources": [
     "HackerNews",
     "Dev.to",
