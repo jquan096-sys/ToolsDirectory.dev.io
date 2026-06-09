@@ -20,7 +20,7 @@ Self-healing features:
 
 import os, json, datetime, urllib.request, urllib.parse, re, shutil
 
-# ── CONFIG ────────────────────────────────────────────────────────────────────
+# ── CONFIG ─────────────────────────────────────────────────────────────
 GEMINI_API_KEY  = os.getenv("GEMINI_API_KEY", "")
 GEMINI_MODELS   = ["gemini-2.0-flash", "gemini-2.0-flash-lite", "gemini-1.5-flash"]
 MAX_NEWS        = 12    # latest news cards shown on site
@@ -43,7 +43,7 @@ AI_KEYWORDS = [
 CATEGORIES = ["Writing","Coding","Automation","Design","Video",
               "Marketing","Productivity","Search","Research","Other"]
 
-# ── HELPERS ───────────────────────────────────────────────────────────────────
+# ── HELPERS ────────────────────────────────────────────────────────────
 def fetch_json(url, timeout=10):
     try:
         req = urllib.request.Request(url, headers={"User-Agent":"ToolsDirectoryBot/2.0"})
@@ -72,7 +72,7 @@ def save_json(path, data):
         json.dump(data, f, ensure_ascii=False, indent=2)
     print(f"  ✅ {path}  ({len(data) if isinstance(data,list) else '—'} items)")
 
-# ── DATA SOURCES ──────────────────────────────────────────────────────────────
+# ── DATA SOURCES ───────────────────────────────────────────────────────────
 def fetch_hackernews():
     print("📡 HackerNews…")
     cutoff = int(datetime.datetime.now().timestamp()) - 86400*3
@@ -122,10 +122,11 @@ def fetch_producthunt():
     print(f"  → {len(items)}")
     return items
 
-# ── GEMINI ENRICHMENT ─────────────────────────────────────────────────────────
+# ── GEMINI ENRICHMENT ────────────────────────────────────────────────────────
 def find_gemini_model():
     """Test each model, return the first one that responds."""
     if not GEMINI_API_KEY:
+        print("  ⚠️  No GEMINI_API_KEY set")
         return None
     for model in GEMINI_MODELS:
         url = (f"https://generativelanguage.googleapis.com/v1beta/models/"
@@ -203,7 +204,7 @@ def patch_index_html(news_items):
         if(!el)return;
         var cards=NEWS.map(function(n){{
           var clr=SRC_COLOR[n.s]||"#888";
-          return '<a class="news-card" href="'+esc(n.u)+'" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:6px;padding:16px;border:1px solid var(--border-color,#e5e7eb);border-radius:12px;background:var(--bg-card,#fff);text-decoration:none;color:inherit;transition:box-shadow .18s,transform .18s;" onmouseover="this.style.transform=\'translateY(-2px)\';this.style.boxShadow=\'0 6px 24px rgba(0,0,0,.1)\'" onmouseout="this.style.transform=\'\';this.style.boxShadow=\'\'">'
+          return '<a class="news-card" href="'+esc(n.u)+'" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:6px;padding:16px;border:1px solid var(--border-color,#e5e7eb);border-radius:8px;background:var(--card-bg,#fff);transition:all .2s;text-decoration:none;color:inherit">'
             +'<span style="display:inline-block;padding:2px 8px;border-radius:99px;font-size:11px;font-weight:600;color:#fff;background:'+clr+';width:fit-content">'+esc(n.s)+'</span>'
             +'<span style="font-size:11px;font-weight:700;color:#6366f1;text-transform:uppercase;letter-spacing:.05em">'+esc(n.c)+'</span>'
             +'<strong style="font-size:14px;line-height:1.35;color:var(--text-primary,#1a1a2e)">'+esc(n.t)+'</strong>'
@@ -241,7 +242,7 @@ def patch_index_html(news_items):
         f.write(html)
     print(f"  ✅ {INDEX_FILE} patched with {len(compact)} news items")
 
-# ── MERGE HELPERS ─────────────────────────────────────────────────────────────
+# ── MERGE HELPERS ──────────────────────────────────────────────────────────
 def merge(existing, new_items, max_keep):
     seen_ids  = {i["id"]  for i in existing}
     seen_urls = {i["url"] for i in existing}
@@ -254,7 +255,7 @@ def merge(existing, new_items, max_keep):
     merged.sort(key=lambda x: x.get("date",""), reverse=True)
     return merged[:max_keep]
 
-# ── MAIN ──────────────────────────────────────────────────────────────────────
+# ── MAIN ────────────────────────────────────────────────────────────
 def main():
     print(f"\n{'='*58}")
     print(f"  ToolsDirectory Autonomous Agent  —  {TODAY}")
@@ -312,4 +313,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-PYEOF
