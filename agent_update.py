@@ -1,28 +1,41 @@
-
 """
-agent_update.py  —  FULL AUTONOMOUS VERSION
-============================================
+agent_update.py  —  ENHANCED AUTONOMOUS VERSION
+================================================
 Site: https://jquan096-sys.github.io/ToolsDirectory.dev.io/
 
-What it does every day (via GitHub Actions cron):
+What it does (via GitHub Actions cron):
   1. Fetches latest AI news from HackerNews, Dev.to, Product Hunt (all free)
-  2. Uses Gemini 2.0 Flash to summarize & categorize each item (free tier)
+  2. Uses Gemini 2.0 Flash or DeepSeek for summarize & categorize (free tiers)
   3. Rewrites data/news.json, data/tools_new.json, data/meta.json
   4. AUTO-PATCHES index.html to inject a fresh <script> block with today's tools
-  5. GitHub Actions commits & pushes everything — site updates itself daily
+  5. GitHub Actions commits & pushes everything — site updates itself hourly
 
 Self-healing features:
-  - Tries 3 Gemini models in order, uses first working one
-  - Gracefully skips enrichment if API key missing/invalid
+  - Tries Gemini models first, fallback to DeepSeek
+  - Gracefully skips enrichment if API keys missing/invalid
   - Never crashes on bad JSON or network errors
-  - Idempotent: safe to run multiple times per day
+  - Idempotent: safe to run multiple times per hour
 """
 
 import os, json, datetime, urllib.request, urllib.parse, re, shutil
 
 # ── CONFIG ─────────────────────────────────────────────────────────────
-GEMINI_API_KEY  = os.getenv("GEMINI_API_KEY", "")
-GEMINI_MODELS   = ["gemini-2.0-flash", "gemini-2.0-flash-lite", "gemini-1.5-flash"]
+GEMINI_API_KEY   = os.getenv("GEMINI_API_KEY", "")
+DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY", "")
+AGENT_NAME       = os.getenv("AGENT_NAME", "ToolsDirectoryBot/2.0")
+
+# Model configurations with fallback hierarchy
+GEMINI_MODELS = [
+    "gemini-2.0-flash",        # Latest, fastest, best free tier
+    "gemini-2.0-flash-lite",   # Lightweight alternative
+    "gemini-1.5-flash"         # Fallback
+]
+
+DEEPSEEK_MODELS = [
+    "deepseek-chat",           # Full-featured model
+    "deepseek-coder"           # Alternative if chat unavailable
+]
+
 MAX_NEWS        = 12    # latest news cards shown on site
 MAX_HISTORY     = 60    # rolling history kept in tools_new.json
 OUTPUT_DIR      = "data"
@@ -46,7 +59,7 @@ CATEGORIES = ["Writing","Coding","Automation","Design","Video",
 # ── HELPERS ────────────────────────────────────────────────────────────
 def fetch_json(url, timeout=10):
     try:
-        req = urllib.request.Request(url, headers={"User-Agent":"ToolsDirectoryBot/2.0"})
+        req = urllib.request.Request(url, headers={"User-Agent": AGENT_NAME})
         with urllib.request.urlopen(req, timeout=timeout) as r:
             return json.loads(r.read().decode())
     except Exception as e:
@@ -124,7 +137,7 @@ def fetch_producthunt():
 
 # ── GEMINI ENRICHMENT ────────────────────────────────────────────────────────
 def find_gemini_model():
-    """Test each model, return the first one that responds."""
+    """Test each Gemini model, return the first one that responds."""
     if not GEMINI_API_KEY:
         print("  ⚠️  No GEMINI_API_KEY set")
         return None
@@ -138,19 +151,41 @@ def find_gemini_model():
                 headers={"Content-Type":"application/json"}, method="POST")
             with urllib.request.urlopen(req, timeout=10): pass
             print(f"  ✅ Gemini model: {model}")
-            return model
+            return ("gemini", model)
         except Exception as e:
             print(f"  [INFO] {model} unavailable: {e}")
     return None
 
-def enrich(items, model):
-    if not model:
-        print("⚠️  No Gemini model — skipping enrichment")
-        return items
+# ── DEEPSEEK ENRICHMENT ────────────────────────────────────────────────────────
+def find_deepseek_model():
+    """Test each DeepSeek model, return the first one that responds."""
+    if not DEEPSEEK_API_KEY:
+        print("  ⚠️  No DEEPSEEK_API_KEY set")
+        return None
+    for model in DEEPSEEK_MODELS:
+        url = "https://api.deepseek.com/chat/completions"
+        payload = json.dumps({
+            "model": model,
+            "messages": [{"role": "user", "content": "Say OK"}],
+            "max_tokens": 5
+        }).encode()
+        try:
+            req = urllib.request.Request(url, data=payload,
+                headers={"Content-Type":"application/json",
+                        "Authorization": f"Bearer {DEEPSEEK_API_KEY}"}, method="POST")
+            with urllib.request.urlopen(req, timeout=10): pass
+            print(f"  ✅ DeepSeek model: {model}")
+            return ("deepseek", model)
+        except Exception as e:
+            print(f"  [INFO] DeepSeek {model} unavailable: {e}")
+    return None
+
+def enrich_with_gemini(items, model):
+    """Enrich items using Gemini API."""
     cats = ", ".join(CATEGORIES)
     url  = (f"https://generativelanguage.googleapis.com/v1beta/models/"
             f"{model}:generateContent?key={GEMINI_API_KEY}")
-    print(f"✨ Enriching {len(items)} items with {model}…")
+    print(f"✨ Enriching {len(items)} items with Gemini ({model})…")
     for item in items:
         prompt = (f"Title: {item['title']}\nSummary: {item['summary']}\n\n"
                   f"1. Write a 1-sentence description (max 120 chars) for an AI tools directory.\n"
@@ -174,6 +209,59 @@ def enrich(items, model):
             print(f"  [WARN] enrich fail '{item['title'][:45]}': {e}")
     return items
 
+def enrich_with_deepseek(items, model):
+    """Enrich items using DeepSeek API."""
+    cats = ", ".join(CATEGORIES)
+    url = "https://api.deepseek.com/chat/completions"
+    print(f"✨ Enriching {len(items)} items with DeepSeek ({model})…")
+    for item in items:
+        prompt = (f"Title: {item['title']}\nSummary: {item['summary']}\n\n"
+                  f"1. Write a 1-sentence description (max 120 chars) for an AI tools directory.\n"
+                  f"2. Pick the best category from: {cats}\n\n"
+                  f"Reply ONLY as valid JSON (no markdown):\n"
+                  f"{{\"summary\":\"...\",\"category\":\"...\"}}")
+        payload = json.dumps({
+            "model": model,
+            "messages": [{"role": "user", "content": prompt}],
+            "temperature": 0.2,
+            "max_tokens": 150
+        }).encode()
+        try:
+            req = urllib.request.Request(url, data=payload,
+                headers={"Content-Type":"application/json",
+                        "Authorization": f"Bearer {DEEPSEEK_API_KEY}"}, method="POST")
+            with urllib.request.urlopen(req, timeout=20) as r:
+                result = json.loads(r.read().decode())
+            text = result["choices"][0]["message"]["content"].strip()
+            text = text.replace("```json","").replace("```","").strip()
+            enriched = json.loads(text)
+            item["summary"]  = enriched.get("summary",  item["summary"])
+            item["category"] = enriched.get("category", item["category"])
+            print(f"  ✔ [{item['category']}] {item['title'][:55]}")
+        except Exception as e:
+            print(f"  [WARN] DeepSeek enrich fail '{item['title'][:45]}': {e}")
+    return items
+
+def enrich(items):
+    """Auto-select best available AI engine (Gemini > DeepSeek)."""
+    print("\n🔍 Finding working AI engine…")
+    
+    # Try Gemini first (generally faster & more reliable free tier)
+    gemini_result = find_gemini_model()
+    if gemini_result:
+        engine_type, model = gemini_result
+        return enrich_with_gemini(items, model), f"Gemini {model}"
+    
+    # Fallback to DeepSeek
+    deepseek_result = find_deepseek_model()
+    if deepseek_result:
+        engine_type, model = deepseek_result
+        return enrich_with_deepseek(items, model), f"DeepSeek {model}"
+    
+    # No engines available
+    print("⚠️  No AI engines available (missing API keys) — skipping enrichment")
+    return items, "none (keys missing)"
+
 # ── AUTO-PATCH index.html ─────────────────────────────────────────────────────
 def patch_index_html(news_items):
     """
@@ -193,7 +281,7 @@ def patch_index_html(news_items):
     data_js = json.dumps(compact, ensure_ascii=False)
 
     injected = f"""
-    <!-- AUTO_NEWS_START — regenerated {TODAY} by agent_update.py — do not edit -->
+    <!-- AUTO_NEWS_START — regenerated {NOW_UTC} by {AGENT_NAME} — do not edit -->
     <script>
     (function(){{
       var NEWS={data_js};
@@ -204,7 +292,7 @@ def patch_index_html(news_items):
         if(!el)return;
         var cards=NEWS.map(function(n){{
           var clr=SRC_COLOR[n.s]||"#888";
-          return '<a class="news-card" href="'+esc(n.u)+'" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:6px;padding:16px;border:1px solid var(--border-color,#e5e7eb);border-radius:8px;background:var(--card-bg,#fff);transition:all .2s;text-decoration:none;color:inherit">'
+          return '<a class="news-card" href="'+esc(n.u)+'" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:6px;padding:16px;border:1px solid var(--border-color,#e5e7eb);border-radius:6px;text-decoration:none;color:inherit;transition:all .2s">'
             +'<span style="display:inline-block;padding:2px 8px;border-radius:99px;font-size:11px;font-weight:600;color:#fff;background:'+clr+';width:fit-content">'+esc(n.s)+'</span>'
             +'<span style="font-size:11px;font-weight:700;color:#6366f1;text-transform:uppercase;letter-spacing:.05em">'+esc(n.c)+'</span>'
             +'<strong style="font-size:14px;line-height:1.35;color:var(--text-primary,#1a1a2e)">'+esc(n.t)+'</strong>'
@@ -212,7 +300,7 @@ def patch_index_html(news_items):
             +'<span style="font-size:11px;color:var(--text-muted,#80868b);margin-top:auto">'+esc(n.d)+'</span>'
             +'</a>';
         }}).join("");
-        el.innerHTML='<p style="font-size:12px;color:var(--text-muted,#80868b);margin-bottom:12px">🔄 Updated: <strong>{TODAY}</strong></p>'
+        el.innerHTML='<p style="font-size:12px;color:var(--text-muted,#80868b);margin-bottom:12px">🔄 Updated: <strong>{NOW_UTC}</strong></p>'
           +'<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px">'+cards+'</div>';
       }}
       if(document.readyState==="loading"){{document.addEventListener("DOMContentLoaded",render);}}else{{render();}}
@@ -257,9 +345,10 @@ def merge(existing, new_items, max_keep):
 
 # ── MAIN ────────────────────────────────────────────────────────────
 def main():
-    print(f"\n{'='*58}")
-    print(f"  ToolsDirectory Autonomous Agent  —  {TODAY}")
-    print(f"{'='*58}\n")
+    print(f"\n{'='*70}")
+    print(f"  ToolsDirectory Autonomous Agent  —  {NOW_UTC}")
+    print(f"  Agent: {AGENT_NAME}")
+    print(f"{'='*70}\n")
 
     # 1. Collect
     raw = fetch_hackernews() + fetch_devto() + fetch_producthunt()
@@ -276,10 +365,8 @@ def main():
             seen.add(k)
             unique.append(item)
 
-    # 3. Enrich with Gemini (self-healing model selection)
-    print("\n🔍 Finding working Gemini model…")
-    model = find_gemini_model()
-    unique = enrich(unique, model)
+    # 3. Enrich with best available AI engine
+    unique, engine_used = enrich(unique)
 
     # 4. Latest slice for news feed
     latest = unique[:MAX_NEWS]
@@ -299,7 +386,8 @@ def main():
         "date":         TODAY,
         "total_news":   len(merged_news),
         "total_tools":  len(merged_tools),
-        "ai_engine":    f"Gemini {model}" if model else "none (key missing)",
+        "ai_engine":    engine_used,
+        "agent":        AGENT_NAME,
         "sources":      ["HackerNews","Dev.to","Product Hunt"],
         "items_today":  len(unique),
     })
