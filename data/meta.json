@@ -1,11 +1,13 @@
 {
-  "last_updated": "2026-06-09T17:56:33.121401Z",
-  "total_news": 21,
-  "total_tools": 50,
-  "ai_engine": "Gemini gemini-2.0-flash",
+  "last_updated": "2026-06-09T18:20:20.879517Z",
+  "date": "2026-06-09",
+  "total_news": 23,
+  "total_tools": 59,
+  "ai_engine": "none (key missing)",
   "sources": [
     "HackerNews",
     "Dev.to",
     "Product Hunt"
-  ]
+  ],
+  "items_today": 38
 }
