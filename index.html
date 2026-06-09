@@ -1,915 +1,555 @@
-cat > /mnt/user-data/outputs/agent-project/index.html << 'HTMLEOF'
+cat > /home/claude/toolsdir/index.html << 'HTMLEOF'
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Tools Directory</title>
-
-    <!-- ✅ ADD 1 of 3: Link news-styles.css in <head> -->
-    <link rel="stylesheet" href="news-styles.css">
-
-    <style>
-        :root {
-            --bg-primary: #f8f9fa;
-            --bg-secondary: #ffffff;
-            --bg-card: #ffffff;
-            --bg-hover: #f1f3f4;
-            --bg-input: #f1f3f4;
-            --text-primary: #1a1a2e;
-            --text-secondary: #5f6368;
-            --text-muted: #80868b;
-            --text-inverse: #ffffff;
-            --accent-blue: #2563eb;
-            --accent-blue-light: #3b82f6;
-            --accent-purple: #7c3aed;
-            --accent-purple-light: #8b5cf6;
-            --border-color: #e5e7eb;
-            --border-hover: #d1d5db;
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            --success: #059669;
-            --success-bg: rgba(5, 150, 105, 0.08);
-            --warning: #d97706;
-            --warning-bg: rgba(217, 119, 6, 0.08);
-            --danger: #dc2626;
-            --danger-bg: rgba(220, 38, 38, 0.08);
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 16px;
-            --radius-xl: 24px;
-            --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        [data-theme="dark"] {
-            --bg-primary: #0f0f0f;
-            --bg-secondary: #1a1a1a;
-            --bg-card: #1c1c1c;
-            --bg-hover: #252525;
-            --bg-input: #252525;
-            --text-primary: #f5f5f5;
-            --text-secondary: #a0a0a0;
-            --text-muted: #666666;
-            --text-inverse: #1a1a2e;
-            --border-color: #2a2a2a;
-            --border-hover: #3a3a3a;
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
-            --success-bg: rgba(34, 197, 94, 0.12);
-            --warning-bg: rgba(245, 158, 11, 0.12);
-            --danger-bg: rgba(239, 68, 68, 0.12);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            min-height: 100vh;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: var(--bg-primary); }
-        ::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
-
-        .navbar {
-            background-color: var(--bg-secondary);
-            border-bottom: 1px solid var(--border-color);
-            padding: 0 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            transition: var(--transition);
-        }
-
-        .nav-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 64px;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1.25rem;
-            font-weight: 800;
-            color: var(--text-primary);
-            text-decoration: none;
-            cursor: pointer;
-            letter-spacing: -0.02em;
-        }
-
-        .logo-icon {
-            width: 36px;
-            height: 36px;
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
-        }
-
-        .logo span { color: var(--accent-blue); }
-
-        .nav-center { display: flex; align-items: center; gap: 2rem; }
-
-        .nav-links { display: flex; gap: 0.5rem; list-style: none; }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            padding: 0.5rem 1rem;
-            border-radius: var(--radius-sm);
-            transition: var(--transition);
-            cursor: pointer;
-        }
-
-        .nav-links a:hover { color: var(--text-primary); background-color: var(--bg-hover); }
-        .nav-links a.active { color: var(--accent-blue); background-color: var(--bg-hover); font-weight: 600; }
-
-        .nav-actions { display: flex; align-items: center; gap: 1rem; }
-
-        .theme-toggle {
-            width: 40px; height: 40px;
-            border-radius: 10px;
-            border: 1px solid var(--border-color);
-            background-color: var(--bg-secondary);
-            color: var(--text-secondary);
-            cursor: pointer;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.1rem;
-            transition: var(--transition);
-        }
-
-        .theme-toggle:hover { background-color: var(--bg-hover); color: var(--text-primary); border-color: var(--border-hover); }
-
-        .btn-submit {
-            background-color: var(--text-primary);
-            border: none;
-            color: var(--text-inverse);
-            padding: 0.6rem 1.25rem;
-            border-radius: var(--radius-sm);
-            font-weight: 600;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: var(--transition);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .btn-submit:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); opacity: 0.9; }
-
-        .page {
-            display: none;
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 2rem;
-            animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .page.active { display: block; }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(12px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .concept-label {
-            color: var(--text-muted);
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-            font-family: 'SF Mono', Monaco, monospace;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 4rem 0 2.5rem;
-            max-width: 720px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 0.75rem;
-            letter-spacing: -0.03em;
-            line-height: 1.1;
-            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        [data-theme="dark"] .hero h1 {
-            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-        }
-
-        .hero-subtitle { color: var(--text-secondary); font-size: 1.15rem; margin-bottom: 2.5rem; font-weight: 400; }
-
-        .search-box { position: relative; max-width: 640px; margin: 0 auto 2rem; }
-
-        .search-box input {
-            width: 100%;
-            padding: 1.1rem 1.25rem 1.1rem 3.25rem;
-            background-color: var(--bg-input);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-xl);
-            color: var(--text-primary);
-            font-size: 1rem;
-            outline: none;
-            transition: var(--transition);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .search-box input:focus { border-color: var(--accent-blue); box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1), var(--shadow-md); }
-        .search-box input::placeholder { color: var(--text-muted); }
-
-        .search-icon { position: absolute; left: 1.25rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 1.1rem; }
-
-        .categories { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
-
-        .category-pill {
-            padding: 0.6rem 1.25rem;
-            border-radius: 100px;
-            border: 1px solid var(--border-color);
-            background-color: var(--bg-secondary);
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: var(--transition);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .category-pill:hover { background-color: var(--bg-hover); color: var(--text-primary); border-color: var(--border-hover); transform: translateY(-1px); box-shadow: var(--shadow-md); }
-        .category-pill.active { background-color: var(--text-primary); color: var(--text-inverse); border-color: var(--text-primary); box-shadow: var(--shadow-md); }
-
-        .stats-bar {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-bottom: 3rem;
-            padding: 1.5rem;
-            background-color: var(--bg-secondary);
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--border-color);
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .stat-item { text-align: center; position: relative; }
-
-        .stat-item:not(:last-child)::after {
-            content: '';
-            position: absolute;
-            right: -1.5rem;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 1px;
-            height: 40px;
-            background-color: var(--border-color);
-        }
-
-        .stat-number { font-size: 1.75rem; font-weight: 800; color: var(--accent-blue); line-height: 1; letter-spacing: -0.02em; }
-        .stat-label { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.35rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
-
-        .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
-
-        .tool-card {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            padding: 1.75rem;
-            cursor: pointer;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .tool-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .tool-card:hover { border-color: var(--border-hover); transform: translateY(-4px); box-shadow: var(--shadow-xl); }
-        .tool-card:hover::before { opacity: 1; }
-
-        .tool-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
-
-        .tool-icon {
-            width: 52px; height: 52px;
-            border-radius: 14px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.6rem;
-            flex-shrink: 0;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .tool-icon.chatgpt { background: linear-gradient(135deg, #10a37f, #0d8c6d); }
-        .tool-icon.cursor { background: linear-gradient(135deg, #6366f1, #4f46e5); }
-        .tool-icon.perplexity { background: linear-gradient(135deg, #22d3ee, #06b6d4); }
-        .tool-icon.claude { background: linear-gradient(135deg, #d97706, #b45309); }
-        .tool-icon.notion { background: linear-gradient(135deg, #000000, #333333); }
-        .tool-icon.make { background: linear-gradient(135deg, #7c3aed, #a855f7); }
-        .tool-icon.zapier { background: linear-gradient(135deg, #ff4a00, #ff6b35); }
-        .tool-icon.n8n { background: linear-gradient(135deg, #ff6d5a, #ff8f7f); }
-        .tool-icon.bardeen { background: linear-gradient(135deg, #6366f1, #818cf8); }
-        .tool-icon.automate { background: linear-gradient(135deg, #0ea5e9, #38bdf8); }
-
-        .tool-title-group h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.2rem; letter-spacing: -0.01em; }
-        .tool-title-group .category { color: var(--text-muted); font-size: 0.85rem; font-weight: 500; }
-        .tool-description { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.25rem; }
-        .tool-footer { display: flex; align-items: center; justify-content: space-between; }
-
-        .pricing-badge { padding: 0.35rem 0.85rem; border-radius: 100px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.02em; }
-        .pricing-badge.free { background-color: var(--success-bg); color: var(--success); }
-        .pricing-badge.freemium { background-color: var(--warning-bg); color: var(--warning); }
-        .pricing-badge.paid { background-color: var(--danger-bg); color: var(--danger); }
-
-        .rating { display: flex; align-items: center; gap: 0.35rem; color: #f59e0b; font-weight: 700; font-size: 0.95rem; }
-
-        /* ── News section heading ── */
-        .news-section-heading {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin: 3rem 0 1rem;
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 1px solid var(--border-color);
-            letter-spacing: -0.01em;
-        }
-
-        /* Dark mode override for news cards */
-        [data-theme="dark"] .news-card {
-            background: var(--bg-card) !important;
-            border-color: var(--border-color) !important;
-            color: var(--text-primary) !important;
-        }
-        [data-theme="dark"] .news-title { color: var(--text-primary) !important; }
-        [data-theme="dark"] .news-summary { color: var(--text-secondary) !important; }
-
-        /* Detail Page */
-        .detail-header {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            margin-bottom: 2.5rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid var(--border-color);
-            gap: 2rem;
-        }
-
-        .detail-title-group { display: flex; align-items: center; gap: 1.25rem; flex: 1; }
-        .detail-title-group .tool-icon { width: 72px; height: 72px; font-size: 2.25rem; border-radius: 18px; }
-        .detail-title-group h1 { font-size: 2rem; font-weight: 800; margin-bottom: 0.4rem; letter-spacing: -0.02em; }
-        .detail-title-group .subtitle { color: var(--text-secondary); font-size: 1.05rem; line-height: 1.5; max-width: 500px; }
-
-        .detail-tags { display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap; }
-
-        .tag {
-            padding: 0.4rem 0.85rem;
-            background-color: var(--bg-hover);
-            border-radius: 100px;
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-            border: 1px solid var(--border-color);
-            transition: var(--transition);
-        }
-        .tag:hover { background-color: var(--bg-primary); border-color: var(--border-hover); }
-
-        .detail-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem; flex-shrink: 0; }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-            border: none;
-            color: #ffffff;
-            padding: 0.85rem 1.75rem;
-            border-radius: var(--radius-sm);
-            font-weight: 600;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: var(--transition);
-            display: inline-flex; align-items: center; gap: 0.5rem;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-        }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4); }
-        .btn-primary:active { transform: translateY(0); }
-
-        .price-note { color: var(--text-muted); font-size: 0.85rem; font-weight: 500; }
-
-        .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
-
-        .detail-section { margin-bottom: 2rem; }
-        .detail-section h3 { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-muted); margin-bottom: 1.25rem; font-weight: 700; font-family: 'SF Mono', Monaco, monospace; }
-
-        .feature-list { list-style: none; }
-        .feature-list li { display: flex; align-items: center; gap: 0.85rem; padding: 0.65rem 0; color: var(--text-secondary); font-size: 0.95rem; border-bottom: 1px solid var(--border-color); }
-        .feature-list li:last-child { border-bottom: none; }
-        .feature-list li::before {
-            content: "";
-            width: 20px; height: 20px;
-            background-color: var(--success-bg);
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            flex-shrink: 0;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23059669' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-
-        .pricing-table { width: 100%; background-color: var(--bg-secondary); border-radius: var(--radius-md); border: 1px solid var(--border-color); overflow: hidden; }
-        .pricing-row { display: flex; justify-content: space-between; padding: 1rem 1.25rem; border-bottom: 1px solid var(--border-color); transition: var(--transition); }
-        .pricing-row:last-child { border-bottom: none; }
-        .pricing-row:hover { background-color: var(--bg-hover); }
-        .pricing-row .tier { color: var(--text-secondary); font-weight: 500; font-size: 0.95rem; }
-        .pricing-row .price { color: var(--accent-blue); font-weight: 700; font-size: 0.95rem; }
-
-        .pros-cons { display: flex; flex-wrap: wrap; gap: 0.6rem; }
-        .pro-con-tag { padding: 0.45rem 0.9rem; border-radius: 100px; font-size: 0.85rem; font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem; transition: var(--transition); }
-        .pro-con-tag:hover { transform: translateY(-1px); }
-        .pro-con-tag.pro { background-color: var(--success-bg); color: var(--success); border: 1px solid rgba(5, 150, 105, 0.2); }
-        .pro-con-tag.con { background-color: var(--danger-bg); color: var(--danger); border: 1px solid rgba(220, 38, 38, 0.2); }
-
-        .best-for-text { color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem; background-color: var(--bg-secondary); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); }
-
-        /* Compare Page */
-        .compare-header { margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); }
-        .compare-header h1 { font-size: 1.75rem; font-weight: 800; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
-        .compare-header .subtitle { color: var(--text-secondary); font-size: 0.95rem; }
-
-        .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-
-        .compare-card { background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2rem; position: relative; transition: var(--transition); }
-        .compare-card:hover { box-shadow: var(--shadow-lg); }
-        .compare-card.winner { border-color: var(--accent-blue); box-shadow: 0 0 0 1px var(--accent-blue), var(--shadow-lg); }
-        .compare-card.winner:hover { box-shadow: 0 0 0 1px var(--accent-blue), var(--shadow-xl); }
-
-        .editor-pick { position: absolute; top: -1px; left: 2rem; background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); color: white; padding: 0.4rem 1rem; border-radius: 0 0 10px 10px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; box-shadow: var(--shadow-sm); }
-
-        .compare-card-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
-        .compare-card-header .tool-icon { width: 56px; height: 56px; font-size: 1.75rem; }
-        .compare-card-header h3 { font-size: 1.2rem; font-weight: 700; }
-        .compare-card-header .byline { color: var(--text-muted); font-size: 0.85rem; font-weight: 500; }
-
-        .metric { margin-bottom: 1.5rem; }
-        .metric-label { display: flex; justify-content: space-between; margin-bottom: 0.6rem; font-size: 0.9rem; }
-        .metric-label span:first-child { color: var(--text-secondary); font-weight: 500; }
-        .metric-label span:last-child { font-weight: 700; font-size: 1rem; }
-        .metric-bar { height: 8px; background-color: var(--bg-hover); border-radius: 4px; overflow: hidden; position: relative; }
-        .metric-bar-fill { height: 100%; border-radius: 4px; transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1); position: relative; }
-        .metric-bar-fill::after { content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 20px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3)); border-radius: 0 4px 4px 0; }
-        .metric-bar-fill.chatgpt { background: linear-gradient(90deg, var(--accent-blue), var(--accent-blue-light)); }
-        .metric-bar-fill.claude { background: linear-gradient(90deg, var(--accent-purple), var(--accent-purple-light)); }
-
-        @media (max-width: 768px) {
-            .navbar { padding: 0 1rem; }
-            .nav-links { display: none; }
-            .detail-grid, .compare-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-            .detail-header { flex-direction: column; gap: 1.5rem; }
-            .detail-actions { text-align: left; width: 100%; align-items: flex-start; }
-            .tools-grid { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 2rem; }
-            .stats-bar { gap: 1.5rem; padding: 1rem; }
-            .stat-number { font-size: 1.5rem; }
-            .stat-item:not(:last-child)::after { display: none; }
-        }
-    </style>
-    <base target="_blank">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Tools Directory — Find the Best AI Tools</title>
+  <meta name="description" content="Discover 1,000+ AI tools reviewed and compared. Find the best AI writing, coding, video, and automation tools.">
+  <style>
+    :root {
+      --bg-primary:#f8f9fa;--bg-secondary:#ffffff;--bg-card:#ffffff;--bg-hover:#f1f3f4;
+      --bg-input:#f1f3f4;--text-primary:#1a1a2e;--text-secondary:#5f6368;--text-muted:#80868b;
+      --text-inverse:#ffffff;--accent-blue:#2563eb;--accent-purple:#7c3aed;
+      --border-color:#e5e7eb;--border-hover:#d1d5db;
+      --shadow-sm:0 1px 2px 0 rgba(0,0,0,0.05);--shadow-md:0 4px 6px -1px rgba(0,0,0,0.1);
+      --shadow-lg:0 10px 15px -3px rgba(0,0,0,0.1);--success:#059669;--success-bg:rgba(5,150,105,0.08);
+      --warning:#d97706;--warning-bg:rgba(217,119,6,0.08);--danger:#dc2626;--danger-bg:rgba(220,38,38,0.08);
+      --radius-sm:8px;--radius-md:12px;--radius-lg:16px;--radius-xl:24px;
+      --transition:all 0.2s cubic-bezier(0.4,0,0.2,1);
+    }
+    [data-theme="dark"] {
+      --bg-primary:#0f0f0f;--bg-secondary:#1a1a1a;--bg-card:#1c1c1c;--bg-hover:#252525;
+      --bg-input:#252525;--text-primary:#f5f5f5;--text-secondary:#a0a0a0;--text-muted:#666666;
+      --text-inverse:#1a1a2e;--border-color:#2a2a2a;--border-hover:#3a3a3a;
+      --shadow-sm:0 1px 2px 0 rgba(0,0,0,0.3);--shadow-md:0 4px 6px -1px rgba(0,0,0,0.4);
+      --shadow-lg:0 10px 15px -3px rgba(0,0,0,0.5);
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background-color:var(--bg-primary);color:var(--text-primary);line-height:1.6;min-height:100vh;transition:background-color 0.3s ease,color 0.3s ease;}
+    ::-webkit-scrollbar{width:8px;}
+    ::-webkit-scrollbar-track{background:var(--bg-primary);}
+    ::-webkit-scrollbar-thumb{background:var(--border-color);border-radius:4px;}
+
+    /* NAV */
+    .navbar{background-color:var(--bg-secondary);border-bottom:1px solid var(--border-color);padding:0 2rem;position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+    .nav-container{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;}
+    .logo{display:flex;align-items:center;gap:.5rem;font-size:1.25rem;font-weight:800;color:var(--text-primary);text-decoration:none;cursor:pointer;letter-spacing:-.02em;}
+    .logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--accent-blue),var(--accent-purple));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+    .logo span{color:var(--accent-blue);}
+    .nav-links{display:flex;gap:.5rem;list-style:none;}
+    .nav-links a{color:var(--text-secondary);text-decoration:none;font-weight:500;font-size:.95rem;padding:.5rem 1rem;border-radius:var(--radius-sm);transition:var(--transition);cursor:pointer;}
+    .nav-links a:hover{color:var(--text-primary);background-color:var(--bg-hover);}
+    .nav-links a.active{color:var(--accent-blue);background-color:var(--bg-hover);font-weight:600;}
+    .nav-actions{display:flex;align-items:center;gap:1rem;}
+    .theme-toggle{width:40px;height:40px;border-radius:10px;border:1px solid var(--border-color);background-color:var(--bg-secondary);color:var(--text-secondary);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:var(--transition);}
+    .theme-toggle:hover{background-color:var(--bg-hover);}
+    .btn-submit{background-color:var(--text-primary);border:none;color:var(--text-inverse);padding:.6rem 1.25rem;border-radius:var(--radius-sm);font-weight:600;font-size:.9rem;cursor:pointer;transition:var(--transition);}
+    .btn-submit:hover{opacity:.85;}
+
+    /* PAGES */
+    .page{display:none;max-width:1280px;margin:0 auto;padding:2rem;animation:fadeIn .4s ease;}
+    .page.active{display:block;}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+
+    /* HERO */
+    .hero{text-align:center;padding:4rem 0 2.5rem;max-width:720px;margin:0 auto;}
+    .hero h1{font-size:3rem;font-weight:800;margin-bottom:.75rem;letter-spacing:-.03em;line-height:1.1;background:linear-gradient(135deg,var(--text-primary) 0%,var(--text-secondary) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    [data-theme="dark"] .hero h1{background:linear-gradient(135deg,#ffffff 0%,#a0a0a0 100%);-webkit-background-clip:text;background-clip:text;}
+    .hero-subtitle{color:var(--text-secondary);font-size:1.15rem;margin-bottom:2.5rem;}
+
+    /* SEARCH */
+    .search-box{position:relative;max-width:640px;margin:0 auto 2rem;}
+    .search-box input{width:100%;padding:1.1rem 1.25rem 1.1rem 3.25rem;background-color:var(--bg-input);border:1px solid var(--border-color);border-radius:var(--radius-xl);color:var(--text-primary);font-size:1rem;outline:none;transition:var(--transition);}
+    .search-box input:focus{border-color:var(--accent-blue);box-shadow:0 0 0 3px rgba(37,99,235,0.1);}
+    .search-box input::placeholder{color:var(--text-muted);}
+    .search-icon{position:absolute;left:1.25rem;top:50%;transform:translateY(-50%);color:var(--text-muted);font-size:1.1rem;}
+
+    /* CATEGORY PILLS */
+    .categories{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem;}
+    .category-pill{padding:.6rem 1.25rem;border-radius:100px;border:1px solid var(--border-color);background-color:var(--bg-secondary);color:var(--text-secondary);font-size:.9rem;font-weight:500;cursor:pointer;transition:var(--transition);}
+    .category-pill:hover{background-color:var(--bg-hover);color:var(--text-primary);transform:translateY(-1px);}
+    .category-pill.active{background-color:var(--text-primary);color:var(--text-inverse);border-color:var(--text-primary);}
+
+    /* STATS */
+    .stats-bar{display:flex;justify-content:center;gap:3rem;margin:0 auto 3rem;padding:1.5rem;background-color:var(--bg-secondary);border-radius:var(--radius-lg);border:1px solid var(--border-color);max-width:700px;}
+    .stat-item{text-align:center;position:relative;}
+    .stat-item:not(:last-child)::after{content:'';position:absolute;right:-1.5rem;top:50%;transform:translateY(-50%);width:1px;height:40px;background-color:var(--border-color);}
+    .stat-number{font-size:1.75rem;font-weight:800;color:var(--text-primary);letter-spacing:-.02em;}
+    .stat-label{font-size:.8rem;color:var(--text-muted);font-weight:500;text-transform:uppercase;letter-spacing:.05em;}
+
+    /* TOOLS GRID */
+    .section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;}
+    .section-title{font-size:1.25rem;font-weight:700;color:var(--text-primary);}
+    .view-all{color:var(--accent-blue);font-size:.9rem;font-weight:500;cursor:pointer;text-decoration:none;padding:.4rem .8rem;border-radius:var(--radius-sm);transition:var(--transition);}
+    .view-all:hover{background-color:var(--bg-hover);}
+    .tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem;margin-bottom:3rem;}
+    .tool-card{background-color:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.5rem;cursor:pointer;transition:var(--transition);box-shadow:var(--shadow-sm);}
+    .tool-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:var(--border-hover);}
+    .tool-card-header{display:flex;align-items:center;gap:.875rem;margin-bottom:1rem;}
+    .tool-icon{width:48px;height:48px;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;}
+    .tool-icon.chatgpt{background:linear-gradient(135deg,#10a37f,#1a7f64);}
+    .tool-icon.claude{background:linear-gradient(135deg,#d97706,#b45309);}
+    .tool-icon.perplexity{background:linear-gradient(135deg,#2563eb,#1d4ed8);}
+    .tool-icon.cursor{background:linear-gradient(135deg,#7c3aed,#5b21b6);}
+    .tool-icon.midjourney{background:linear-gradient(135deg,#dc2626,#991b1b);}
+    .tool-icon.notion{background:linear-gradient(135deg,#1a1a1a,#374151);}
+    .tool-icon.default{background:linear-gradient(135deg,var(--accent-blue),var(--accent-purple));}
+    .tool-name{font-size:1rem;font-weight:700;color:var(--text-primary);}
+    .tool-category{font-size:.8rem;color:var(--text-muted);font-weight:500;}
+    .tool-description{font-size:.9rem;color:var(--text-secondary);line-height:1.5;margin-bottom:1rem;}
+    .tool-footer{display:flex;align-items:center;justify-content:space-between;}
+    .pricing-badge{font-size:.75rem;font-weight:600;padding:.3rem .75rem;border-radius:100px;}
+    .pricing-badge.free{background-color:var(--success-bg);color:var(--success);}
+    .pricing-badge.freemium{background-color:var(--warning-bg);color:var(--warning);}
+    .pricing-badge.paid{background-color:var(--danger-bg);color:var(--danger);}
+    .rating{font-size:.9rem;color:var(--warning);font-weight:600;}
+
+    /* NEWS */
+    .news-section-heading{font-size:1.25rem;font-weight:700;margin:2.5rem 0 1.25rem;color:var(--text-primary);}
+    #ai-news{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem;margin-bottom:2rem;}
+    .news-card{background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.25rem;transition:var(--transition);}
+    .news-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);border-color:var(--border-hover);}
+    .news-source{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:.2rem .6rem;border-radius:100px;display:inline-block;margin-bottom:.75rem;}
+    .news-source.hackernews{background:rgba(255,102,0,.12);color:#ff6600;}
+    .news-source.devto{background:rgba(59,130,246,.12);color:#3b82f6;}
+    .news-source.producthunt{background:rgba(220,38,38,.12);color:#dc2626;}
+    .news-source.default{background:var(--bg-hover);color:var(--text-muted);}
+    .news-card h4{font-size:.95rem;font-weight:600;color:var(--text-primary);margin-bottom:.5rem;line-height:1.4;}
+    .news-card p{font-size:.85rem;color:var(--text-secondary);line-height:1.5;margin-bottom:.75rem;}
+    .news-meta{display:flex;align-items:center;justify-content:space-between;font-size:.8rem;color:var(--text-muted);}
+    .news-meta a{color:var(--accent-blue);text-decoration:none;font-weight:500;}
+    .news-meta a:hover{text-decoration:underline;}
+    .news-loading{text-align:center;padding:2rem;color:var(--text-muted);font-size:.95rem;}
+    .news-empty{text-align:center;padding:2rem;color:var(--text-muted);font-style:italic;}
+    .last-updated{font-size:.75rem;color:var(--text-muted);margin-top:1rem;text-align:right;}
+
+    /* DETAIL PAGE */
+    .detail-header{display:flex;align-items:flex-start;justify-content:space-between;gap:2rem;margin-bottom:2rem;padding:2rem;background-color:var(--bg-secondary);border-radius:var(--radius-lg);border:1px solid var(--border-color);}
+    .detail-title-group{display:flex;align-items:flex-start;gap:1.25rem;}
+    .detail-title-group h1{font-size:2rem;font-weight:800;margin-bottom:.5rem;}
+    .subtitle{color:var(--text-secondary);font-size:1rem;margin-bottom:1rem;}
+    .detail-tags{display:flex;gap:.5rem;flex-wrap:wrap;}
+    .tag{padding:.3rem .75rem;border-radius:100px;background-color:var(--bg-hover);color:var(--text-secondary);font-size:.8rem;font-weight:500;}
+    .detail-actions{text-align:right;flex-shrink:0;}
+    .btn-primary{background:linear-gradient(135deg,var(--accent-blue),var(--accent-purple));color:#fff;border:none;padding:.75rem 1.5rem;border-radius:var(--radius-sm);font-weight:600;cursor:pointer;font-size:1rem;}
+    .price-note{font-size:.85rem;color:var(--text-muted);margin-top:.5rem;}
+    .detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+    .detail-section{background-color:var(--bg-secondary);border-radius:var(--radius-lg);border:1px solid var(--border-color);padding:1.5rem;margin-bottom:1.5rem;}
+    .detail-section h3{font-size:1rem;font-weight:700;margin-bottom:1rem;color:var(--text-primary);}
+    .feature-list{list-style:none;}
+    .feature-list li{padding:.5rem 0;border-bottom:1px solid var(--border-color);font-size:.9rem;color:var(--text-secondary);}
+    .feature-list li:last-child{border-bottom:none;}
+    .feature-list li::before{content:"✓ ";color:var(--success);font-weight:700;}
+    .pros-cons{display:flex;flex-wrap:wrap;gap:.5rem;}
+    .pro-con-tag{padding:.35rem .8rem;border-radius:100px;font-size:.8rem;font-weight:600;}
+    .pro-con-tag.pro{background-color:var(--success-bg);color:var(--success);}
+    .pro-con-tag.con{background-color:var(--danger-bg);color:var(--danger);}
+    .pricing-table{display:flex;flex-direction:column;gap:0;}
+    .pricing-row{display:flex;justify-content:space-between;padding:.75rem 0;border-bottom:1px solid var(--border-color);font-size:.9rem;}
+    .pricing-row:last-child{border-bottom:none;}
+    .tier{color:var(--text-secondary);}
+    .price{font-weight:700;color:var(--text-primary);}
+    .best-for-text{font-size:.9rem;color:var(--text-secondary);line-height:1.6;}
+
+    /* COMPARE PAGE */
+    .compare-header{text-align:center;margin-bottom:2rem;}
+    .compare-header h1{font-size:2.5rem;font-weight:800;margin-bottom:.5rem;}
+    .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem;}
+    .compare-card{background-color:var(--bg-secondary);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.5rem;}
+    .compare-card.winner{border:2px solid var(--accent-blue);}
+    .editor-pick{font-size:.75rem;font-weight:700;background:rgba(37,99,235,.1);color:var(--accent-blue);padding:.3rem .75rem;border-radius:100px;display:inline-block;margin-bottom:1rem;}
+    .compare-card-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;}
+    .compare-card-header h3{font-size:1.1rem;font-weight:700;}
+    .byline{font-size:.85rem;color:var(--text-muted);}
+    .metric{margin-bottom:1rem;}
+    .metric-label{display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:.4rem;color:var(--text-secondary);}
+    .metric-bar{height:6px;background-color:var(--bg-hover);border-radius:3px;overflow:hidden;}
+    .metric-bar-fill{height:100%;border-radius:3px;transition:width .8s cubic-bezier(.4,0,.2,1);width:0;}
+    .metric-bar-fill.chatgpt{background:linear-gradient(90deg,#10a37f,#1a7f64);}
+    .metric-bar-fill.claude{background:linear-gradient(90deg,var(--accent-blue),var(--accent-purple));}
+    .verdict-box{background-color:var(--bg-secondary);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.5rem;display:flex;gap:1rem;align-items:flex-start;}
+    .verdict-icon{font-size:1.5rem;flex-shrink:0;}
+    .verdict-text{font-size:.95rem;color:var(--text-secondary);line-height:1.6;}
+
+    /* FOOTER */
+    footer{background-color:var(--bg-secondary);border-top:1px solid var(--border-color);padding:2rem;text-align:center;color:var(--text-muted);font-size:.85rem;margin-top:4rem;}
+    footer a{color:var(--accent-blue);text-decoration:none;}
+
+    @media(max-width:768px){
+      .hero h1{font-size:2rem;}
+      .tools-grid{grid-template-columns:1fr;}
+      .detail-grid,.compare-grid{grid-template-columns:1fr;}
+      .stats-bar{gap:1.5rem;flex-wrap:wrap;}
+      .nav-center{display:none;}
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a class="logo" onclick="navigateTo('home')">
-                <div class="logo-icon">🧠</div>
-                AI Tools <span>.directory</span>
-            </a>
-            <ul class="nav-links">
-                <li><a onclick="navigateTo('home')" id="nav-tools">Tools</a></li>
-                <li><a onclick="navigateTo('compare')" id="nav-compare">Compare</a></li>
-                <li><a href="#">Best for</a></li>
-            </ul>
-            <div class="nav-actions">
-                <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">
-                    <span id="theme-icon">🌙</span>
-                </button>
-                <button class="btn-submit">Submit a tool</button>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Page 1: Homepage -->
-    <div id="page-home" class="page active">
-        <div class="concept-label">Concept 1 — Homepage</div>
-
-        <div class="hero">
-            <h1>Find the right AI tool for every job</h1>
-            <p class="hero-subtitle">1,200+ tools reviewed · updated weekly · honest comparisons</p>
-
-            <div class="search-box">
-                <span class="search-icon">🔍</span>
-                <input type="text" placeholder="Search tools, categories, use cases...">
-            </div>
-
-            <div class="categories">
-                <button class="category-pill active">All</button>
-                <button class="category-pill">Writing</button>
-                <button class="category-pill">Coding</button>
-                <button class="category-pill">Video</button>
-                <button class="category-pill">Automation</button>
-                <button class="category-pill">Marketing</button>
-                <button class="category-pill">Design</button>
-            </div>
-        </div>
-
-        <div class="stats-bar">
-            <div class="stat-item">
-                <div class="stat-number">247</div>
-                <div class="stat-label">Automation Tools</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">89</div>
-                <div class="stat-label">Workflow Builders</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">5,000+</div>
-                <div class="stat-label">Integrations</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">4.6</div>
-                <div class="stat-label">Avg Rating</div>
-            </div>
-        </div>
-
-        <div class="tools-grid">
-            <div class="tool-card" onclick="navigateTo('detail')">
-                <div class="tool-header">
-                    <div class="tool-icon make">🔗</div>
-                    <div class="tool-title-group">
-                        <h3>Make</h3>
-                        <div class="category">Automation · Workflow</div>
-                    </div>
-                </div>
-                <p class="tool-description">Visual automation platform connecting apps and services with no-code workflows.</p>
-                <div class="tool-footer">
-                    <span class="pricing-badge freemium">Freemium</span>
-                    <div class="rating">★ 4.6</div>
-                </div>
-            </div>
-
-            <div class="tool-card" onclick="navigateTo('detail')">
-                <div class="tool-header">
-                    <div class="tool-icon zapier">⚡</div>
-                    <div class="tool-title-group">
-                        <h3>Zapier</h3>
-                        <div class="category">Automation · Integration</div>
-                    </div>
-                </div>
-                <p class="tool-description">Connect your apps and automate workflows with 5,000+ integrations.</p>
-                <div class="tool-footer">
-                    <span class="pricing-badge freemium">Freemium</span>
-                    <div class="rating">★ 4.4</div>
-                </div>
-            </div>
-
-            <div class="tool-card" onclick="navigateTo('detail')">
-                <div class="tool-header">
-                    <div class="tool-icon n8n">🔄</div>
-                    <div class="tool-title-group">
-                        <h3>n8n</h3>
-                        <div class="category">Automation · Open Source</div>
-                    </div>
-                </div>
-                <p class="tool-description">Fair-code workflow automation tool with 400+ integrations and self-hosting options.</p>
-                <div class="tool-footer">
-                    <span class="pricing-badge free">Free plan</span>
-                    <div class="rating">★ 4.7</div>
-                </div>
-            </div>
-
-            <div class="tool-card" onclick="navigateTo('detail')">
-                <div class="tool-header">
-                    <div class="tool-icon bardeen">🤖</div>
-                    <div class="tool-title-group">
-                        <h3>Bardeen</h3>
-                        <div class="category">Automation · Browser</div>
-                    </div>
-                </div>
-                <p class="tool-description">Browser automation with AI that builds workflows from natural language descriptions.</p>
-                <div class="tool-footer">
-                    <span class="pricing-badge freemium">Freemium</span>
-                    <div class="rating">★ 4.5</div>
-                </div>
-            </div>
-
-            <div class="tool-card" onclick="navigateTo('detail')">
-                <div class="tool-header">
-                    <div class="tool-icon automate">🔧</div>
-                    <div class="tool-title-group">
-                        <h3>Microsoft Power Automate</h3>
-                        <div class="category">Automation · Enterprise</div>
-                    </div>
-                </div>
-                <p class="tool-description">Enterprise-grade automation platform with deep Microsoft 365 and Azure integration.</p>
-                <div class="tool-footer">
-                    <span class="pricing-badge paid">Paid</span>
-                    <div class="rating">★ 4.3</div>
-                </div>
-            </div>
-
-            <div class="tool-card" onclick="navigateTo('detail')">
-                <div class="tool-header">
-                    <div class="tool-icon chatgpt">💬</div>
-                    <div class="tool-title-group">
-                        <h3>ChatGPT</h3>
-                        <div class="category">AI Writing · Chatbot</div>
-                    </div>
-                </div>
-                <p class="tool-description">Versatile AI assistant for writing, coding, research, and brainstorming.</p>
-                <div class="tool-footer">
-                    <span class="pricing-badge free">Free plan</span>
-                    <div class="rating">★ 4.8</div>
-                </div>
-            </div>
-
-            <div class="tool-card" onclick="navigateTo('detail')">
-                <div class="tool-header">
-                    <div class="tool-icon cursor">⚡</div>
-                    <div class="tool-title-group">
-                        <h3>Cursor</h3>
-                        <div class="category">AI Coding</div>
-                    </div>
-                </div>
-                <p class="tool-description">AI-native code editor that understands your entire codebase.</p>
-                <div class="tool-footer">
-                    <span class="pricing-badge freemium">Freemium</span>
-                    <div class="rating">★ 4.7</div>
-                </div>
-            </div>
-
-            <div class="tool-card" onclick="navigateTo('detail')">
-                <div class="tool-header">
-                    <div class="tool-icon perplexity">🔍</div>
-                    <div class="tool-title-group">
-                        <h3>Perplexity</h3>
-                        <div class="category">AI Search</div>
-                    </div>
-                </div>
-                <p class="tool-description">AI-powered search engine with real-time web access and citations.</p>
-                <div class="tool-footer">
-                    <span class="pricing-badge free">Free plan</span>
-                    <div class="rating">★ 4.6</div>
-                </div>
-            </div>
-
-            <div class="tool-card" onclick="navigateTo('detail')">
-                <div class="tool-header">
-                    <div class="tool-icon claude">✨</div>
-                    <div class="tool-title-group">
-                        <h3>Claude</h3>
-                        <div class="category">AI Writing · Assistant</div>
-                    </div>
-                </div>
-                <p class="tool-description">Anthropic's AI assistant with exceptional reasoning and writing capabilities.</p>
-                <div class="tool-footer">
-                    <span class="pricing-badge free">Free plan</span>
-                    <div class="rating">★ 4.9</div>
-                </div>
-            </div>
-
-            <div class="tool-card" onclick="navigateTo('detail')">
-                <div class="tool-header">
-                    <div class="tool-icon notion">📝</div>
-                    <div class="tool-title-group">
-                        <h3>Notion AI</h3>
-                        <div class="category">Productivity · Writing</div>
-                    </div>
-                </div>
-                <p class="tool-description">AI-powered workspace for notes, docs, and team collaboration.</p>
-                <div class="tool-footer">
-                    <span class="pricing-badge freemium">Freemium</span>
-                    <div class="rating">★ 4.5</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ✅ ADD 2 of 3: Live news feed section — placed after tools-grid, still inside page-home -->
-        <h2 class="news-section-heading">🔥 Latest AI Tool News</h2>
-        <div id="ai-news"></div>
-
+<nav class="navbar">
+  <div class="nav-container">
+    <a class="logo" onclick="navigateTo('home')">
+      <div class="logo-icon">🤖</div>
+      AI<span>Tools</span>.directory
+    </a>
+    <div class="nav-center">
+      <ul class="nav-links">
+        <li><a id="nav-tools" class="active" onclick="navigateTo('home')">Tools</a></li>
+        <li><a id="nav-compare" onclick="navigateTo('compare')">Compare</a></li>
+        <li><a href="https://jquan096-sys.github.io/ToolsDirectory.dev.io/" target="_blank">Live Site ↗</a></li>
+      </ul>
     </div>
-
-    <!-- Page 2: Tool Detail -->
-    <div id="page-detail" class="page">
-        <div class="concept-label">Concept 2 — Tool Detail Page (/tools/chatgpt)</div>
-
-        <div class="detail-header">
-            <div class="detail-title-group">
-                <div class="tool-icon chatgpt">💬</div>
-                <div>
-                    <h1>ChatGPT</h1>
-                    <p class="subtitle">The world's most popular AI assistant for writing, coding, research, and analysis.</p>
-                    <div class="detail-tags">
-                        <span class="tag">Writing</span>
-                        <span class="tag">Coding</span>
-                        <span class="tag">Chatbot</span>
-                        <span class="tag">OpenAI</span>
-                    </div>
-                </div>
-            </div>
-            <div class="detail-actions">
-                <button class="btn-primary">Try free ↗</button>
-                <p class="price-note">From $20/mo</p>
-            </div>
-        </div>
-
-        <div class="detail-grid">
-            <div class="detail-left">
-                <div class="detail-section">
-                    <h3>Key Features</h3>
-                    <ul class="feature-list">
-                        <li>GPT-4o multimodal model</li>
-                        <li>Web browsing & real-time data</li>
-                        <li>Image generation (DALL-E)</li>
-                        <li>Custom GPTs & plugins</li>
-                        <li>Code interpreter</li>
-                    </ul>
-                </div>
-                <div class="detail-section">
-                    <h3>Pros & Cons</h3>
-                    <div class="pros-cons">
-                        <span class="pro-con-tag pro">✓ Best ecosystem</span>
-                        <span class="pro-con-tag pro">✓ Free tier</span>
-                        <span class="pro-con-tag pro">✓ Huge community</span>
-                        <span class="pro-con-tag con">✕ Can hallucinate</span>
-                        <span class="pro-con-tag con">✕ Rate limits</span>
-                    </div>
-                </div>
-            </div>
-            <div class="detail-right">
-                <div class="detail-section">
-                    <h3>Pricing</h3>
-                    <div class="pricing-table">
-                        <div class="pricing-row"><span class="tier">Free</span><span class="price">$0/mo</span></div>
-                        <div class="pricing-row"><span class="tier">Plus</span><span class="price">$20/mo</span></div>
-                        <div class="pricing-row"><span class="tier">Team</span><span class="price">$25/user</span></div>
-                        <div class="pricing-row"><span class="tier">Enterprise</span><span class="price">Custom</span></div>
-                    </div>
-                </div>
-                <div class="detail-section">
-                    <h3>Best For</h3>
-                    <p class="best-for-text">Students, marketers, developers, and anyone needing a general-purpose AI assistant for everyday tasks.</p>
-                </div>
-            </div>
-        </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+        <span id="theme-icon">🌙</span>
+      </button>
+      <button class="btn-submit">+ Submit a Tool</button>
     </div>
+  </div>
+</nav>
 
-    <!-- Page 3: Comparison -->
-    <div id="page-compare" class="page">
-        <div class="concept-label">Concept 3 — Comparison Page (/compare/chatgpt-vs-claude)</div>
-
-        <div class="compare-header">
-            <h1>ChatGPT vs Claude</h1>
-            <p class="subtitle">Side-by-side comparison · last updated June 2025</p>
-        </div>
-
-        <div class="compare-grid">
-            <div class="compare-card">
-                <div class="compare-card-header">
-                    <div class="tool-icon chatgpt">💬</div>
-                    <div><h3>ChatGPT</h3><div class="byline">by OpenAI</div></div>
-                </div>
-                <div class="metric">
-                    <div class="metric-label"><span>Ease of use</span><span>9.0</span></div>
-                    <div class="metric-bar"><div class="metric-bar-fill chatgpt" data-width="90"></div></div>
-                </div>
-                <div class="metric">
-                    <div class="metric-label"><span>Writing quality</span><span>8.2</span></div>
-                    <div class="metric-bar"><div class="metric-bar-fill chatgpt" data-width="82"></div></div>
-                </div>
-                <div class="metric">
-                    <div class="metric-label"><span>Coding</span><span>8.8</span></div>
-                    <div class="metric-bar"><div class="metric-bar-fill chatgpt" data-width="88"></div></div>
-                </div>
-                <div class="metric">
-                    <div class="metric-label"><span>Value</span><span>8.0</span></div>
-                    <div class="metric-bar"><div class="metric-bar-fill chatgpt" data-width="80"></div></div>
-                </div>
-            </div>
-
-            <div class="compare-card winner">
-                <div class="editor-pick">Editor's pick</div>
-                <div class="compare-card-header">
-                    <div class="tool-icon claude">✨</div>
-                    <div><h3>Claude</h3><div class="byline">by Anthropic</div></div>
-                </div>
-                <div class="metric">
-                    <div class="metric-label"><span>Ease of use</span><span>8.8</span></div>
-                    <div class="metric-bar"><div class="metric-bar-fill claude" data-width="88"></div></div>
-                </div>
-                <div class="metric">
-                    <div class="metric-label"><span>Writing quality</span><span>9.5</span></div>
-                    <div class="metric-bar"><div class="metric-bar-fill claude" data-width="95"></div></div>
-                </div>
-                <div class="metric">
-                    <div class="metric-label"><span>Coding</span><span>9.0</span></div>
-                    <div class="metric-bar"><div class="metric-bar-fill claude" data-width="90"></div></div>
-                </div>
-                <div class="metric">
-                    <div class="metric-label"><span>Value</span><span>8.5</span></div>
-                    <div class="metric-bar"><div class="metric-bar-fill claude" data-width="85"></div></div>
-                </div>
-            </div>
-        </div>
+<!-- HOME PAGE -->
+<div id="page-home" class="page">
+  <div class="hero">
+    <h1>Find the Right AI Tool for Every Job</h1>
+    <p class="hero-subtitle">1,000+ tools reviewed · updated weekly · honest comparisons</p>
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="search-input" placeholder="Search tools, categories, use cases…" oninput="filterTools()">
     </div>
+    <div class="categories">
+      <div class="category-pill active" onclick="filterByCategory('all',this)">All</div>
+      <div class="category-pill" onclick="filterByCategory('writing',this)">Writing</div>
+      <div class="category-pill" onclick="filterByCategory('coding',this)">Coding</div>
+      <div class="category-pill" onclick="filterByCategory('video',this)">Video</div>
+      <div class="category-pill" onclick="filterByCategory('automation',this)">Automation</div>
+      <div class="category-pill" onclick="filterByCategory('marketing',this)">Marketing</div>
+      <div class="category-pill" onclick="filterByCategory('design',this)">Design</div>
+    </div>
+  </div>
 
-    <!-- ✅ ADD 3 of 3: Load news-loader.js just before </body> -->
-    <script src="news-loader.js"></script>
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-number" id="stat-tools">42</div>
+      <div class="stat-label">Tools Listed</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">12</div>
+      <div class="stat-label">Categories</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" id="stat-news">0</div>
+      <div class="stat-label">News Items</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">Weekly</div>
+      <div class="stat-label">Updates</div>
+    </div>
+  </div>
 
-    <script>
-        function initTheme() {
-            const savedTheme = localStorage.getItem('theme') || 'light';
-            document.documentElement.setAttribute('data-theme', savedTheme);
-            updateThemeIcon(savedTheme);
-        }
+  <div class="section-header">
+    <h2 class="section-title">🔥 Featured AI Tools</h2>
+    <a class="view-all">View all →</a>
+  </div>
 
-        function toggleTheme() {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateThemeIcon(newTheme);
-        }
+  <div class="tools-grid" id="tools-grid">
+    <div class="tool-card" data-category="writing coding" onclick="navigateTo('detail')">
+      <div class="tool-card-header">
+        <div class="tool-icon chatgpt">💬</div>
+        <div><div class="tool-name">ChatGPT</div><div class="tool-category">AI Writing · Chatbot</div></div>
+      </div>
+      <p class="tool-description">Versatile AI assistant for writing, coding, research, and brainstorming tasks.</p>
+      <div class="tool-footer">
+        <span class="pricing-badge free">Free plan</span>
+        <div class="rating">★ 4.8</div>
+      </div>
+    </div>
+    <div class="tool-card" data-category="writing" onclick="navigateTo('detail')">
+      <div class="tool-card-header">
+        <div class="tool-icon claude">✨</div>
+        <div><div class="tool-name">Claude</div><div class="tool-category">AI Writing · Analysis</div></div>
+      </div>
+      <p class="tool-description">Anthropic's AI assistant excelling at long-form writing, analysis, and nuanced reasoning.</p>
+      <div class="tool-footer">
+        <span class="pricing-badge free">Free plan</span>
+        <div class="rating">★ 4.9</div>
+      </div>
+    </div>
+    <div class="tool-card" data-category="coding" onclick="navigateTo('detail')">
+      <div class="tool-card-header">
+        <div class="tool-icon cursor">💻</div>
+        <div><div class="tool-name">Cursor</div><div class="tool-category">AI Coding</div></div>
+      </div>
+      <p class="tool-description">AI-native code editor that understands your entire codebase for smarter completions.</p>
+      <div class="tool-footer">
+        <span class="pricing-badge freemium">Freemium</span>
+        <div class="rating">★ 4.7</div>
+      </div>
+    </div>
+    <div class="tool-card" data-category="writing coding" onclick="navigateTo('detail')">
+      <div class="tool-card-header">
+        <div class="tool-icon perplexity">🔍</div>
+        <div><div class="tool-name">Perplexity</div><div class="tool-category">AI Search</div></div>
+      </div>
+      <p class="tool-description">AI-powered search engine with real-time web access and cited answers.</p>
+      <div class="tool-footer">
+        <span class="pricing-badge free">Free plan</span>
+        <div class="rating">★ 4.6</div>
+      </div>
+    </div>
+    <div class="tool-card" data-category="design" onclick="navigateTo('detail')">
+      <div class="tool-card-header">
+        <div class="tool-icon midjourney">🎨</div>
+        <div><div class="tool-name">Midjourney</div><div class="tool-category">AI Design · Image</div></div>
+      </div>
+      <p class="tool-description">Industry-leading AI image generator for stunning art and commercial visuals.</p>
+      <div class="tool-footer">
+        <span class="pricing-badge paid">Paid</span>
+        <div class="rating">★ 4.8</div>
+      </div>
+    </div>
+    <div class="tool-card" data-category="automation writing" onclick="navigateTo('detail')">
+      <div class="tool-card-header">
+        <div class="tool-icon notion">📝</div>
+        <div><div class="tool-name">Notion AI</div><div class="tool-category">Productivity · Automation</div></div>
+      </div>
+      <p class="tool-description">AI-powered workspace for notes, docs, and team collaboration with smart automation.</p>
+      <div class="tool-footer">
+        <span class="pricing-badge freemium">Freemium</span>
+        <div class="rating">★ 4.5</div>
+      </div>
+    </div>
+  </div>
 
-        function updateThemeIcon(theme) {
-            document.getElementById('theme-icon').textContent = theme === 'dark' ? '☀️' : '🌙';
-        }
+  <!-- LIVE NEWS SECTION — populated by news-loader.js reading data/news.json -->
+  <h2 class="news-section-heading">📡 Latest AI Tool News</h2>
+  <div id="ai-news"><div class="news-loading">Loading latest news…</div></div>
+  <div id="last-updated" class="last-updated"></div>
+</div>
 
-        function navigateTo(page) {
-            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-            document.getElementById('page-' + page).classList.add('active');
-            document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
-            if (page === 'home' || page === 'detail') {
-                document.getElementById('nav-tools').classList.add('active');
-            } else if (page === 'compare') {
-                document.getElementById('nav-compare').classList.add('active');
-            }
-            window.scrollTo(0, 0);
-            if (page === 'compare') setTimeout(animateMetricBars, 100);
-        }
+<!-- TOOL DETAIL PAGE -->
+<div id="page-detail" class="page">
+  <div class="detail-header">
+    <div class="detail-title-group">
+      <div class="tool-icon chatgpt">💬</div>
+      <div>
+        <h1>ChatGPT</h1>
+        <p class="subtitle">The world's most popular AI assistant for writing, coding, research, and analysis.</p>
+        <div class="detail-tags">
+          <span class="tag">Writing</span><span class="tag">Coding</span>
+          <span class="tag">Chatbot</span><span class="tag">OpenAI</span>
+        </div>
+      </div>
+    </div>
+    <div class="detail-actions">
+      <button class="btn-primary" onclick="window.open('https://chatgpt.com','_blank')">Try free ↗</button>
+      <p class="price-note">From $20/mo</p>
+    </div>
+  </div>
+  <div class="detail-grid">
+    <div class="detail-left">
+      <div class="detail-section">
+        <h3>Key Features</h3>
+        <ul class="feature-list">
+          <li>GPT-4o multimodal model</li>
+          <li>Web browsing & real-time data</li>
+          <li>Image generation (DALL-E)</li>
+          <li>Custom GPTs & plugins</li>
+          <li>Code interpreter</li>
+        </ul>
+      </div>
+      <div class="detail-section">
+        <h3>Pros & Cons</h3>
+        <div class="pros-cons">
+          <span class="pro-con-tag pro">✓ Best ecosystem</span>
+          <span class="pro-con-tag pro">✓ Free tier</span>
+          <span class="pro-con-tag pro">✓ Huge community</span>
+          <span class="pro-con-tag con">✕ Can hallucinate</span>
+          <span class="pro-con-tag con">✕ Rate limits</span>
+        </div>
+      </div>
+    </div>
+    <div class="detail-right">
+      <div class="detail-section">
+        <h3>Pricing</h3>
+        <div class="pricing-table">
+          <div class="pricing-row"><span class="tier">Free</span><span class="price">$0/mo</span></div>
+          <div class="pricing-row"><span class="tier">Plus</span><span class="price">$20/mo</span></div>
+          <div class="pricing-row"><span class="tier">Team</span><span class="price">$25/user</span></div>
+          <div class="pricing-row"><span class="tier">Enterprise</span><span class="price">Custom</span></div>
+        </div>
+      </div>
+      <div class="detail-section">
+        <h3>Best For</h3>
+        <p class="best-for-text">Students, marketers, developers, and anyone needing a general-purpose AI assistant for everyday tasks.</p>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:1rem;">
+    <button class="btn-submit" onclick="navigateTo('home')" style="padding:.75rem 2rem;">← Back to directory</button>
+  </div>
+</div>
 
-        function animateMetricBars() {
-            document.querySelectorAll('.metric-bar-fill').forEach(bar => {
-                const width = bar.getAttribute('data-width');
-                bar.style.width = '0%';
-                setTimeout(() => { bar.style.width = width + '%'; }, 50);
-            });
-        }
+<!-- COMPARE PAGE -->
+<div id="page-compare" class="page">
+  <div class="compare-header">
+    <h1>ChatGPT vs Claude</h1>
+    <p class="subtitle">Side-by-side comparison · updated June 2025</p>
+  </div>
+  <div class="compare-grid">
+    <div class="compare-card">
+      <div class="compare-card-header">
+        <div class="tool-icon chatgpt">💬</div>
+        <div><h3>ChatGPT</h3><div class="byline">by OpenAI</div></div>
+      </div>
+      <div class="metric"><div class="metric-label"><span>Ease of use</span><span>9.0</span></div><div class="metric-bar"><div class="metric-bar-fill chatgpt" data-width="90"></div></div></div>
+      <div class="metric"><div class="metric-label"><span>Writing quality</span><span>8.2</span></div><div class="metric-bar"><div class="metric-bar-fill chatgpt" data-width="82"></div></div></div>
+      <div class="metric"><div class="metric-label"><span>Coding</span><span>8.8</span></div><div class="metric-bar"><div class="metric-bar-fill chatgpt" data-width="88"></div></div></div>
+      <div class="metric"><div class="metric-label"><span>Value</span><span>8.0</span></div><div class="metric-bar"><div class="metric-bar-fill chatgpt" data-width="80"></div></div></div>
+    </div>
+    <div class="compare-card winner">
+      <div class="editor-pick">Editor's pick</div>
+      <div class="compare-card-header">
+        <div class="tool-icon claude">✨</div>
+        <div><h3>Claude</h3><div class="byline">by Anthropic</div></div>
+      </div>
+      <div class="metric"><div class="metric-label"><span>Ease of use</span><span>8.8</span></div><div class="metric-bar"><div class="metric-bar-fill claude" data-width="88"></div></div></div>
+      <div class="metric"><div class="metric-label"><span>Writing quality</span><span>9.5</span></div><div class="metric-bar"><div class="metric-bar-fill claude" data-width="95"></div></div></div>
+      <div class="metric"><div class="metric-label"><span>Coding</span><span>9.0</span></div><div class="metric-bar"><div class="metric-bar-fill claude" data-width="90"></div></div></div>
+      <div class="metric"><div class="metric-label"><span>Value</span><span>8.5</span></div><div class="metric-bar"><div class="metric-bar-fill claude" data-width="85"></div></div></div>
+    </div>
+  </div>
+  <div class="verdict-box">
+    <div class="verdict-icon">🏆</div>
+    <div class="verdict-text"><strong>Verdict:</strong> Claude edges ahead for long-form writing and nuanced analysis. ChatGPT is better for plugin integrations and image generation. Choose Claude for quality; choose ChatGPT for ecosystem breadth.</div>
+  </div>
+</div>
 
-        document.querySelectorAll('.category-pill').forEach(pill => {
-            pill.addEventListener('click', function() {
-                document.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active'));
-                this.classList.add('active');
-            });
-        });
+<footer>
+  <p>© 2025 AITools.directory · Built with ❤️ · 
+    <a href="https://jquan096-sys.github.io/ToolsDirectory.dev.io/" target="_blank">Live Site</a> · 
+    Auto-updated by AI agent daily
+  </p>
+</footer>
 
-        initTheme();
-        navigateTo('home');
-    </script>
+<script>
+// ── THEME ──────────────────────────────────────────────────────────────────
+function initTheme() {
+  const t = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', t);
+  document.getElementById('theme-icon').textContent = t === 'dark' ? '☀️' : '🌙';
+}
+function toggleTheme() {
+  const t = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', t);
+  localStorage.setItem('theme', t);
+  document.getElementById('theme-icon').textContent = t === 'dark' ? '☀️' : '🌙';
+}
 
+// ── NAVIGATION ─────────────────────────────────────────────────────────────
+function navigateTo(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  document.querySelectorAll('.nav-links a').forEach(l => l.classList.remove('active'));
+  if (page === 'home' || page === 'detail') document.getElementById('nav-tools').classList.add('active');
+  else if (page === 'compare') document.getElementById('nav-compare').classList.add('active');
+  window.scrollTo(0,0);
+  if (page === 'compare') setTimeout(animateMetricBars, 100);
+}
+
+function animateMetricBars() {
+  document.querySelectorAll('.metric-bar-fill').forEach(bar => {
+    const w = bar.getAttribute('data-width');
+    bar.style.width = '0%';
+    setTimeout(() => { bar.style.width = w + '%'; }, 50);
+  });
+}
+
+// ── FILTER / SEARCH ────────────────────────────────────────────────────────
+let activeCategory = 'all';
+
+function filterTools() {
+  const q = document.getElementById('search-input').value.toLowerCase();
+  document.querySelectorAll('#tools-grid .tool-card').forEach(card => {
+    const text = card.textContent.toLowerCase();
+    const cat = card.dataset.category || '';
+    const matchQ = !q || text.includes(q);
+    const matchC = activeCategory === 'all' || cat.includes(activeCategory);
+    card.style.display = matchQ && matchC ? '' : 'none';
+  });
+}
+
+function filterByCategory(cat, el) {
+  activeCategory = cat;
+  document.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  filterTools();
+}
+
+// ── NEWS LOADER ────────────────────────────────────────────────────────────
+// Reads data/news.json written by agent_update.py via GitHub Actions
+async function loadNews() {
+  const container = document.getElementById('ai-news');
+  const updatedEl = document.getElementById('last-updated');
+  try {
+    // Load meta first
+    const metaRes = await fetch('data/meta.json?cb=' + Date.now());
+    if (metaRes.ok) {
+      const meta = await metaRes.json();
+      const d = new Date(meta.last_updated);
+      updatedEl.textContent = 'Last updated: ' + d.toLocaleString() + ' · ' + meta.total_news + ' items · engine: ' + meta.ai_engine;
+      document.getElementById('stat-news').textContent = meta.total_news || '0';
+    }
+
+    // Load news items
+    const res = await fetch('data/news.json?cb=' + Date.now());
+    if (!res.ok) throw new Error('news.json not found (HTTP ' + res.status + ')');
+    const items = await res.json();
+    if (!items || items.length === 0) {
+      container.innerHTML = '<div class="news-empty">No news items yet. Run the agent to populate.</div>';
+      return;
+    }
+
+    container.innerHTML = items.slice(0, 12).map(item => {
+      const src = (item.source || 'Other').toLowerCase().replace(/\s/g,'');
+      const srcClass = ['hackernews','devto','producthunt'].includes(src) ? src : 'default';
+      const title = escHtml(item.title || 'Untitled');
+      const summary = escHtml(item.summary || '');
+      const url = item.url || '#';
+      const date = item.date || '';
+      const cat = escHtml(item.category || 'Other');
+      return `<div class="news-card">
+        <span class="news-source ${srcClass}">${escHtml(item.source || 'Other')}</span>
+        <h4>${title}</h4>
+        ${summary ? `<p>${summary}</p>` : ''}
+        <div class="news-meta">
+          <span>${cat} · ${date}</span>
+          <a href="${escHtml(url)}" target="_blank" rel="noopener">Read →</a>
+        </div>
+      </div>`;
+    }).join('');
+
+  } catch (err) {
+    container.innerHTML = `<div class="news-empty">
+      📭 News feed not loaded yet.<br>
+      <small>Run the GitHub Action to populate <code>data/news.json</code>.<br>Error: ${err.message}</small>
+    </div>`;
+    console.warn('loadNews:', err);
+  }
+}
+
+function escHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ── INIT ───────────────────────────────────────────────────────────────────
+initTheme();
+navigateTo('home');
+loadNews();
+</script>
 </body>
 </html>
 HTMLEOF
+echo "index.html written: $(wc -l < /home/claude/toolsdir/index.html) lines"
