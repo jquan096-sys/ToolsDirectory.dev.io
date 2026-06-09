@@ -1,355 +1,315 @@
+cat > /mnt/user-data/outputs/agent-project/agent_update.py << 'PYEOF'
 """
-agent_update.py
-===============
-Auto-update agent for https://jquan096-sys.github.io/ToolsDirectory.dev.io/
+agent_update.py  —  FULL AUTONOMOUS VERSION
+============================================
+Site: https://jquan096-sys.github.io/ToolsDirectory.dev.io/
 
-What it does:
-  1. Fetches latest AI tool news from free APIs (HackerNews, Product Hunt RSS, Dev.to)
-  2. Uses Google Gemini API (gemini-2.0-flash) to summarize + categorize each item
-  3. Writes output to  data/news.json  and  data/tools_new.json
-  4. GitHub Actions commits + pushes the updated JSON files automatically
+What it does every day (via GitHub Actions cron):
+  1. Fetches latest AI news from HackerNews, Dev.to, Product Hunt (all free)
+  2. Uses Gemini 2.0 Flash to summarize & categorize each item (free tier)
+  3. Rewrites data/news.json, data/tools_new.json, data/meta.json
+  4. AUTO-PATCHES index.html to inject a fresh <script> block with today's tools
+  5. GitHub Actions commits & pushes everything — site updates itself daily
 
-Free APIs used (no key required):
-  - HackerNews Algolia API  → algolia.hn/api/v1/search
-  - Dev.to API              → dev.to/api/articles
-  - Product Hunt RSS        → producthunt.com/feed  (via rss2json)
-
-AI enrichment (add GEMINI_API_KEY secret in GitHub repo settings):
-  - Google Gemini 2.0 Flash → FREE tier: 1,500 req/day, 1M tokens/min
-  - NOTE: gemini-1.5-flash is NOT available on new API keys (Google deprecated it
-    for new projects after April 29 2025). Use gemini-2.0-flash instead.
-  - Get your free key at: https://aistudio.google.com/apikey
+Self-healing features:
+  - Tries 3 Gemini models in order, uses first working one
+  - Gracefully skips enrichment if API key missing/invalid
+  - Never crashes on bad JSON or network errors
+  - Idempotent: safe to run multiple times per day
 """
 
-import os
-import json
-import datetime
-import urllib.request
-import urllib.parse
+import os, json, datetime, urllib.request, urllib.parse, re, shutil
 
 # ── CONFIG ────────────────────────────────────────────────────────────────────
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")   # Set in GitHub Secrets
-GEMINI_MODEL   = "gemini-2.0-flash"                # ← FIXED: 1.5 is deprecated for new keys
-MAX_ITEMS      = 10    # how many news/tool items per run
-OUTPUT_DIR     = "data"
-NEWS_FILE      = f"{OUTPUT_DIR}/news.json"
-TOOLS_FILE     = f"{OUTPUT_DIR}/tools_new.json"
-TODAY          = datetime.date.today().isoformat()
+GEMINI_API_KEY  = os.getenv("GEMINI_API_KEY", "")
+GEMINI_MODELS   = ["gemini-2.0-flash", "gemini-2.0-flash-lite", "gemini-1.5-flash"]
+MAX_NEWS        = 12    # latest news cards shown on site
+MAX_HISTORY     = 60    # rolling history kept in tools_new.json
+OUTPUT_DIR      = "data"
+NEWS_FILE       = f"{OUTPUT_DIR}/news.json"
+TOOLS_FILE      = f"{OUTPUT_DIR}/tools_new.json"
+META_FILE       = f"{OUTPUT_DIR}/meta.json"
+INDEX_FILE      = "index.html"
+TODAY           = datetime.date.today().isoformat()
+NOW_UTC         = datetime.datetime.utcnow().isoformat() + "Z"
 
 AI_KEYWORDS = [
-    "AI", "artificial intelligence", "LLM", "GPT", "Claude", "Gemini",
-    "machine learning", "automation", "agent", "chatbot", "copilot",
-    "generative", "openai", "anthropic", "mistral", "llama", "deepseek"
+    "AI","artificial intelligence","LLM","GPT","Claude","Gemini",
+    "machine learning","automation","agent","chatbot","copilot",
+    "generative","openai","anthropic","mistral","llama","deepseek",
+    "hugging face","stable diffusion","midjourney","runway","cursor"
 ]
 
-CATEGORIES = ["Writing", "Coding", "Automation", "Design", "Video",
-              "Marketing", "Productivity", "Search", "Research", "Other"]
-
+CATEGORIES = ["Writing","Coding","Automation","Design","Video",
+              "Marketing","Productivity","Search","Research","Other"]
 
 # ── HELPERS ───────────────────────────────────────────────────────────────────
-def fetch_json(url: str, timeout: int = 10) -> dict | list | None:
-    """HTTP GET → parsed JSON, returns None on error."""
+def fetch_json(url, timeout=10):
     try:
-        req = urllib.request.Request(url, headers={"User-Agent": "ToolsDirectoryBot/1.0"})
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
-            return json.loads(resp.read().decode())
+        req = urllib.request.Request(url, headers={"User-Agent":"ToolsDirectoryBot/2.0"})
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            return json.loads(r.read().decode())
     except Exception as e:
-        print(f"  [WARN] fetch_json({url}) failed: {e}")
+        print(f"  [WARN] fetch failed: {url[:80]} — {e}")
         return None
 
+def is_ai(text):
+    t = text.lower()
+    return any(k.lower() in t for k in AI_KEYWORDS)
 
-def is_ai_related(text: str) -> bool:
-    text_lower = text.lower()
-    return any(kw.lower() in text_lower for kw in AI_KEYWORDS)
+def clip(text, n=280):
+    s = str(text or "").replace("\n"," ").strip()
+    return s[:n] + ("…" if len(s)>n else "")
 
+def load_json(path):
+    try:
+        with open(path, encoding="utf-8") as f: return json.load(f)
+    except: return []
 
-def clean_text(text: str, max_len: int = 300) -> str:
-    if not text:
-        return ""
-    text = text.replace("\n", " ").replace("\r", " ").strip()
-    return text[:max_len] + ("…" if len(text) > max_len else "")
-
+def save_json(path, data):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+    print(f"  ✅ {path}  ({len(data) if isinstance(data,list) else '—'} items)")
 
 # ── DATA SOURCES ──────────────────────────────────────────────────────────────
-def fetch_hackernews() -> list[dict]:
-    """Fetch AI-related posts from HackerNews (last 3 days)."""
-    print("📡 Fetching HackerNews…")
+def fetch_hackernews():
+    print("📡 HackerNews…")
+    cutoff = int(datetime.datetime.now().timestamp()) - 86400*3
+    url = f"https://hn.algolia.com/api/v1/search?query=AI+tools&tags=story&numericFilters=created_at_i>{cutoff}&hitsPerPage=30"
+    data = fetch_json(url) or {}
     items = []
-    cutoff = int(datetime.datetime.now().timestamp()) - 86400 * 3
-    url = (
-        "https://hn.algolia.com/api/v1/search"
-        f"?query=AI+tools&tags=story&numericFilters=created_at_i>{cutoff}"
-    )
-    data = fetch_json(url)
-    if not data:
-        return items
-    for hit in data.get("hits", [])[:20]:
-        title = hit.get("title", "")
-        if not is_ai_related(title):
-            continue
-        items.append({
-            "id":       hit.get("objectID", ""),
-            "title":    title,
-            "url":      hit.get("url") or f"https://news.ycombinator.com/item?id={hit.get('objectID')}",
-            "source":   "HackerNews",
-            "points":   hit.get("points", 0),
-            "date":     TODAY,
-            "summary":  clean_text(title),
-            "category": "Other",
-            "tags":     ["AI", "HackerNews"],
-        })
-    print(f"  → {len(items)} items from HackerNews")
+    for h in data.get("hits", []):
+        t = h.get("title","")
+        if not is_ai(t): continue
+        items.append({"id":h.get("objectID",""), "title":t,
+            "url": h.get("url") or f"https://news.ycombinator.com/item?id={h.get('objectID')}",
+            "source":"HackerNews","points":h.get("points",0),
+            "date":TODAY,"summary":clip(t),"category":"Other","tags":["AI","HackerNews"]})
+    print(f"  → {len(items)}")
     return items
 
-
-def fetch_devto() -> list[dict]:
-    """Fetch AI articles from Dev.to public API (no key needed)."""
-    print("📡 Fetching Dev.to…")
+def fetch_devto():
+    print("📡 Dev.to…")
+    data = fetch_json("https://dev.to/api/articles?tag=ai&per_page=20&top=3")
+    if not isinstance(data, list): return []
     items = []
-    url = "https://dev.to/api/articles?tag=ai&per_page=20&top=3"
-    data = fetch_json(url)
-    if not isinstance(data, list):
-        return items
-    for art in data:
-        title = art.get("title", "")
-        if not is_ai_related(title):
-            continue
-        items.append({
-            "id":       str(art.get("id", "")),
-            "title":    title,
-            "url":      art.get("url", ""),
-            "source":   "Dev.to",
-            "points":   art.get("public_reactions_count", 0),
-            "date":     TODAY,
-            "summary":  clean_text(art.get("description", title)),
-            "category": "Other",
-            "tags":     art.get("tag_list", ["AI"]),
-        })
-    print(f"  → {len(items)} items from Dev.to")
+    for a in data:
+        t = a.get("title","")
+        if not is_ai(t): continue
+        items.append({"id":str(a.get("id","")), "title":t,
+            "url":a.get("url",""), "source":"Dev.to",
+            "points":a.get("public_reactions_count",0),
+            "date":TODAY,"summary":clip(a.get("description",t)),
+            "category":"Other","tags":a.get("tag_list",["AI"])})
+    print(f"  → {len(items)}")
     return items
 
-
-def fetch_producthunt_rss() -> list[dict]:
-    """Fetch Product Hunt RSS via rss2json free tier (10k req/month)."""
-    print("📡 Fetching Product Hunt RSS…")
+def fetch_producthunt():
+    print("📡 Product Hunt RSS…")
+    rss = "https://www.producthunt.com/feed"
+    url = f"https://api.rss2json.com/v1/api.json?rss_url={urllib.parse.quote(rss)}&count=20"
+    data = fetch_json(url) or {}
+    if data.get("status") != "ok": return []
     items = []
-    rss_url = "https://www.producthunt.com/feed"
-    api_url = f"https://api.rss2json.com/v1/api.json?rss_url={urllib.parse.quote(rss_url)}&count=20"
-    data = fetch_json(api_url)
-    if not data or data.get("status") != "ok":
-        return items
-    for entry in data.get("items", []):
-        title = entry.get("title", "")
-        if not is_ai_related(title + entry.get("description", "")):
-            continue
-        items.append({
-            "id":       entry.get("guid", entry.get("link", "")),
-            "title":    title,
-            "url":      entry.get("link", ""),
-            "source":   "Product Hunt",
-            "points":   0,
-            "date":     TODAY,
-            "summary":  clean_text(entry.get("description", "")),
-            "category": "Other",
-            "tags":     ["AI", "Product Hunt"],
-        })
-    print(f"  → {len(items)} items from Product Hunt")
+    for e in data.get("items",[]):
+        t = e.get("title","")
+        if not is_ai(t + e.get("description","")): continue
+        items.append({"id":e.get("guid",e.get("link","")), "title":t,
+            "url":e.get("link",""), "source":"Product Hunt","points":0,
+            "date":TODAY,"summary":clip(e.get("description","")),
+            "category":"Other","tags":["AI","Product Hunt"]})
+    print(f"  → {len(items)}")
     return items
 
-
-# ── GEMINI AI ENRICHMENT ──────────────────────────────────────────────────────
-def enrich_with_gemini(items: list[dict]) -> list[dict]:
-    """
-    Use Google Gemini 2.0 Flash to write better summaries + pick categories.
-    Only runs when GEMINI_API_KEY is set.
-
-    Free tier limits:
-      - gemini-2.0-flash: 1,500 requests/day, 1,000,000 tokens/min — free.
-    Get a free key at: https://aistudio.google.com/apikey
-
-    NOTE: gemini-1.5-flash returns 404 on API keys created after April 29 2025.
-          This script uses gemini-2.0-flash which works on all new keys.
-    """
+# ── GEMINI ENRICHMENT ─────────────────────────────────────────────────────────
+def find_gemini_model():
+    """Test each model, return the first one that responds."""
     if not GEMINI_API_KEY:
-        print("⚠️  GEMINI_API_KEY not set — skipping AI enrichment")
-        return items
-
-    # Model fallback list — tries each in order until one works
-    models_to_try = [
-        "gemini-2.0-flash",
-        "gemini-2.0-flash-lite",
-        "gemini-1.5-flash",
-    ]
-
-    # Find first working model by doing a quick test call
-    working_model = None
-    for model in models_to_try:
-        test_url = (
-            f"https://generativelanguage.googleapis.com/v1beta/models/"
-            f"{model}:generateContent?key={GEMINI_API_KEY}"
-        )
-        test_payload = json.dumps({
-            "contents": [{"parts": [{"text": "Say OK"}]}],
-            "generationConfig": {"maxOutputTokens": 5}
-        }).encode()
+        return None
+    for model in GEMINI_MODELS:
+        url = (f"https://generativelanguage.googleapis.com/v1beta/models/"
+               f"{model}:generateContent?key={GEMINI_API_KEY}")
+        payload = json.dumps({"contents":[{"parts":[{"text":"Say OK"}]}],
+                              "generationConfig":{"maxOutputTokens":5}}).encode()
         try:
-            req = urllib.request.Request(
-                test_url, data=test_payload,
-                headers={"Content-Type": "application/json"}, method="POST"
-            )
-            with urllib.request.urlopen(req, timeout=10) as resp:
-                resp.read()
-            working_model = model
-            print(f"✨ Using Gemini model: {model}")
-            break
+            req = urllib.request.Request(url, data=payload,
+                headers={"Content-Type":"application/json"}, method="POST")
+            with urllib.request.urlopen(req, timeout=10): pass
+            print(f"  ✅ Gemini model: {model}")
+            return model
         except Exception as e:
-            print(f"  [INFO] Model {model} not available: {e}")
+            print(f"  [INFO] {model} unavailable: {e}")
+    return None
 
-    if not working_model:
-        print("⚠️  No Gemini model available — skipping AI enrichment.")
-        print("    Check your GEMINI_API_KEY is valid at https://aistudio.google.com/apikey")
+def enrich(items, model):
+    if not model:
+        print("⚠️  No Gemini model — skipping enrichment")
         return items
-
-    api_url = (
-        f"https://generativelanguage.googleapis.com/v1beta/models/"
-        f"{working_model}:generateContent?key={GEMINI_API_KEY}"
-    )
-
-    print(f"✨ Enriching {len(items)} items…")
-    cats_str = ", ".join(CATEGORIES)
-
+    cats = ", ".join(CATEGORIES)
+    url  = (f"https://generativelanguage.googleapis.com/v1beta/models/"
+            f"{model}:generateContent?key={GEMINI_API_KEY}")
+    print(f"✨ Enriching {len(items)} items with {model}…")
     for item in items:
-        prompt = (
-            f"Title: {item['title']}\n"
-            f"Summary: {item['summary']}\n\n"
-            f"1. Write a 1-sentence description (max 120 chars) for an AI tools directory.\n"
-            f"2. Pick the best category from: {cats_str}\n\n"
-            f"Reply ONLY as valid JSON with no markdown fences:\n"
-            f"{{\"summary\": \"...\", \"category\": \"...\"}}"
-        )
-
-        payload = json.dumps({
-            "contents": [{"parts": [{"text": prompt}]}],
-            "generationConfig": {
-                "temperature":     0.2,
-                "maxOutputTokens": 150,
-            }
-        }).encode()
-
+        prompt = (f"Title: {item['title']}\nSummary: {item['summary']}\n\n"
+                  f"1. Write a 1-sentence description (max 120 chars) for an AI tools directory.\n"
+                  f"2. Pick the best category from: {cats}\n\n"
+                  f"Reply ONLY as valid JSON (no markdown):\n"
+                  f"{{\"summary\":\"...\",\"category\":\"...\"}}")
+        payload = json.dumps({"contents":[{"parts":[{"text":prompt}]}],
+                              "generationConfig":{"temperature":0.2,"maxOutputTokens":150}}).encode()
         try:
-            req = urllib.request.Request(
-                api_url,
-                data=payload,
-                headers={"Content-Type": "application/json"},
-                method="POST",
-            )
-            with urllib.request.urlopen(req, timeout=20) as resp:
-                result = json.loads(resp.read().decode())
-
-            text = (
-                result["candidates"][0]["content"]["parts"][0]["text"]
-                .strip()
-                .replace("```json", "")
-                .replace("```", "")
-                .strip()
-            )
+            req = urllib.request.Request(url, data=payload,
+                headers={"Content-Type":"application/json"}, method="POST")
+            with urllib.request.urlopen(req, timeout=20) as r:
+                result = json.loads(r.read().decode())
+            text = (result["candidates"][0]["content"]["parts"][0]["text"]
+                    .strip().replace("```json","").replace("```","").strip())
             enriched = json.loads(text)
             item["summary"]  = enriched.get("summary",  item["summary"])
             item["category"] = enriched.get("category", item["category"])
-            print(f"  ✔ [{item['category']}] {item['title'][:60]}")
-
+            print(f"  ✔ [{item['category']}] {item['title'][:55]}")
         except Exception as e:
-            print(f"  [WARN] Gemini enrichment failed for '{item['title'][:50]}': {e}")
-
-    print(f"  → Done enriching {len(items)} items")
+            print(f"  [WARN] enrich fail '{item['title'][:45]}': {e}")
     return items
 
+# ── AUTO-PATCH index.html ─────────────────────────────────────────────────────
+def patch_index_html(news_items):
+    """
+    Inject a self-contained <script> block into index.html that:
+    - Renders the latest news cards directly from the embedded JSON
+    - No external fetch needed → works even before data/ folder is served
+    - Wrapped in AUTO_NEWS markers so each run replaces the previous block
+    """
+    if not os.path.exists(INDEX_FILE):
+        print(f"  [SKIP] {INDEX_FILE} not found — skipping HTML patch")
+        return
 
-# ── DEDUP + MERGE ─────────────────────────────────────────────────────────────
-def load_existing(filepath: str) -> list[dict]:
-    try:
-        with open(filepath, "r", encoding="utf-8") as f:
-            return json.load(f)
-    except (FileNotFoundError, json.JSONDecodeError):
-        return []
+    # Build compact news data (title, url, source, category, date, summary)
+    compact = [{"t":i["title"],"u":i["url"],"s":i["source"],
+                "c":i["category"],"d":i["date"],"m":i["summary"]}
+               for i in news_items[:MAX_NEWS]]
+    data_js = json.dumps(compact, ensure_ascii=False)
 
+    injected = f"""
+    <!-- AUTO_NEWS_START — regenerated {TODAY} by agent_update.py — do not edit -->
+    <script>
+    (function(){{
+      var NEWS={data_js};
+      var SRC_COLOR={{"HackerNews":"#ff6600","Dev.to":"#3b49df","Product Hunt":"#da552f"}};
+      function esc(s){{return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}}
+      function render(){{
+        var el=document.getElementById("ai-news");
+        if(!el)return;
+        var cards=NEWS.map(function(n){{
+          var clr=SRC_COLOR[n.s]||"#888";
+          return '<a class="news-card" href="'+esc(n.u)+'" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:6px;padding:16px;border:1px solid var(--border-color,#e5e7eb);border-radius:12px;background:var(--bg-card,#fff);text-decoration:none;color:inherit;transition:box-shadow .18s,transform .18s;" onmouseover="this.style.transform=\'translateY(-2px)\';this.style.boxShadow=\'0 6px 24px rgba(0,0,0,.1)\'" onmouseout="this.style.transform=\'\';this.style.boxShadow=\'\'">'
+            +'<span style="display:inline-block;padding:2px 8px;border-radius:99px;font-size:11px;font-weight:600;color:#fff;background:'+clr+';width:fit-content">'+esc(n.s)+'</span>'
+            +'<span style="font-size:11px;font-weight:700;color:#6366f1;text-transform:uppercase;letter-spacing:.05em">'+esc(n.c)+'</span>'
+            +'<strong style="font-size:14px;line-height:1.35;color:var(--text-primary,#1a1a2e)">'+esc(n.t)+'</strong>'
+            +'<p style="font-size:12px;color:var(--text-secondary,#5f6368);margin:0;line-height:1.45">'+esc(n.m)+'</p>'
+            +'<span style="font-size:11px;color:var(--text-muted,#80868b);margin-top:auto">'+esc(n.d)+'</span>'
+            +'</a>';
+        }}).join("");
+        el.innerHTML='<p style="font-size:12px;color:var(--text-muted,#80868b);margin-bottom:12px">🔄 Updated: <strong>{TODAY}</strong></p>'
+          +'<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px">'+cards+'</div>';
+      }}
+      if(document.readyState==="loading"){{document.addEventListener("DOMContentLoaded",render);}}else{{render();}}
+    }})();
+    </script>
+    <!-- AUTO_NEWS_END -->"""
 
-def merge_and_dedup(existing: list[dict], new_items: list[dict]) -> list[dict]:
-    seen_ids  = {item["id"]  for item in existing}
-    seen_urls = {item["url"] for item in existing}
+    with open(INDEX_FILE, "r", encoding="utf-8") as f:
+        html = f.read()
+
+    # Make a backup just in case
+    shutil.copy(INDEX_FILE, INDEX_FILE + ".bak")
+
+    # Replace existing block if present, else insert before </body>
+    pattern = r"<!-- AUTO_NEWS_START.*?AUTO_NEWS_END -->"
+    if re.search(pattern, html, re.DOTALL):
+        html = re.sub(pattern, injected.strip(), html, flags=re.DOTALL)
+        print(f"  🔄 Replaced existing AUTO_NEWS block in {INDEX_FILE}")
+    elif "</body>" in html:
+        html = html.replace("</body>", injected + "\n</body>")
+        print(f"  ➕ Injected AUTO_NEWS block into {INDEX_FILE}")
+    else:
+        print(f"  [WARN] Could not find </body> tag in {INDEX_FILE}")
+        return
+
+    with open(INDEX_FILE, "w", encoding="utf-8") as f:
+        f.write(html)
+    print(f"  ✅ {INDEX_FILE} patched with {len(compact)} news items")
+
+# ── MERGE HELPERS ─────────────────────────────────────────────────────────────
+def merge(existing, new_items, max_keep):
+    seen_ids  = {i["id"]  for i in existing}
+    seen_urls = {i["url"] for i in existing}
     merged = list(existing)
     for item in new_items:
         if item["id"] not in seen_ids and item["url"] not in seen_urls:
             merged.append(item)
             seen_ids.add(item["id"])
             seen_urls.add(item["url"])
-    merged.sort(key=lambda x: x.get("date", ""), reverse=True)
-    return merged[:MAX_ITEMS * 5]   # rolling window: keep last 50 items
-
-
-# ── WRITE JSON ────────────────────────────────────────────────────────────────
-def save_json(filepath: str, data) -> None:
-    os.makedirs(os.path.dirname(filepath), exist_ok=True)
-    with open(filepath, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
-    print(f"  ✅ Saved → {filepath}  ({len(data)} items)")
-
+    merged.sort(key=lambda x: x.get("date",""), reverse=True)
+    return merged[:max_keep]
 
 # ── MAIN ──────────────────────────────────────────────────────────────────────
 def main():
-    print(f"\n{'='*55}")
-    print(f"  ToolsDirectory Agent  —  {TODAY}")
-    print(f"  AI engine: Gemini 2.0 Flash (FREE tier)")
-    print(f"{'='*55}\n")
+    print(f"\n{'='*58}")
+    print(f"  ToolsDirectory Autonomous Agent  —  {TODAY}")
+    print(f"{'='*58}\n")
 
-    # 1. Collect from all free sources
-    raw = []
-    raw += fetch_hackernews()
-    raw += fetch_devto()
-    raw += fetch_producthunt_rss()
-    print(f"\n📦 Total raw items collected: {len(raw)}")
-
+    # 1. Collect
+    raw = fetch_hackernews() + fetch_devto() + fetch_producthunt()
+    print(f"\n📦 Raw collected: {len(raw)}")
     if not raw:
-        print("⚠️  No items collected — exiting without writing files.")
+        print("⚠️  Nothing collected — stopping.")
         return
 
-    # 2. Deduplicate within this batch
+    # 2. Dedup within batch
     seen, unique = set(), []
     for item in raw:
-        key = item["url"] or item["title"]
-        if key not in seen:
-            seen.add(key)
+        k = item["url"] or item["title"]
+        if k not in seen:
+            seen.add(k)
             unique.append(item)
 
-    # 3. Gemini AI enrichment (optional, free)
-    unique = enrich_with_gemini(unique)
+    # 3. Enrich with Gemini (self-healing model selection)
+    print("\n🔍 Finding working Gemini model…")
+    model = find_gemini_model()
+    unique = enrich(unique, model)
 
-    # 4. Latest news feed (top N items)
-    latest = unique[:MAX_ITEMS]
+    # 4. Latest slice for news feed
+    latest = unique[:MAX_NEWS]
 
-    # 5. Merge with existing rolling history
-    existing_news  = load_existing(NEWS_FILE)
-    existing_tools = load_existing(TOOLS_FILE)
-    merged_news    = merge_and_dedup(existing_news,  latest)
-    merged_tools   = merge_and_dedup(existing_tools, unique)
+    # 5. Merge with history
+    existing_news  = load_json(NEWS_FILE)
+    existing_tools = load_json(TOOLS_FILE)
+    merged_news    = merge(existing_news,  latest, MAX_NEWS * 5)
+    merged_tools   = merge(existing_tools, unique, MAX_HISTORY)
 
     # 6. Save JSON files
     print()
     save_json(NEWS_FILE,  merged_news)
     save_json(TOOLS_FILE, merged_tools)
-
-    # 7. Metadata file (site reads this for "last updated" badge)
-    meta = {
-        "last_updated": datetime.datetime.utcnow().isoformat() + "Z",
+    save_json(META_FILE, {
+        "last_updated": NOW_UTC,
+        "date":         TODAY,
         "total_news":   len(merged_news),
         "total_tools":  len(merged_tools),
-        "ai_engine":    f"Gemini {GEMINI_MODEL}" if GEMINI_API_KEY else "none",
-        "sources":      ["HackerNews", "Dev.to", "Product Hunt"],
-    }
-    save_json(f"{OUTPUT_DIR}/meta.json", meta)
+        "ai_engine":    f"Gemini {model}" if model else "none (key missing)",
+        "sources":      ["HackerNews","Dev.to","Product Hunt"],
+        "items_today":  len(unique),
+    })
 
-    print(f"\n🎉 Done! Files written to /{OUTPUT_DIR}/\n")
+    # 7. AUTO-PATCH index.html  ← self-updating website
+    print()
+    print("🌐 Patching index.html…")
+    patch_index_html(latest)
 
+    print(f"\n🎉 Done! {len(unique)} items processed, site updated.\n")
 
 if __name__ == "__main__":
     main()
+PYEOF
