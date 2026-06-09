@@ -5,7 +5,7 @@ Auto-update agent for https://jquan096-sys.github.io/ToolsDirectory.dev.io/
 
 What it does:
   1. Fetches latest AI tool news from free APIs (HackerNews, Product Hunt RSS, Dev.to)
-  2. Uses Google Gemini API (gemini-1.5-flash) to summarize + categorize each item
+  2. Uses Google Gemini API (gemini-2.0-flash) to summarize + categorize each item
   3. Writes output to  data/news.json  and  data/tools_new.json
   4. GitHub Actions commits + pushes the updated JSON files automatically
 
@@ -15,7 +15,9 @@ Free APIs used (no key required):
   - Product Hunt RSS        → producthunt.com/feed  (via rss2json)
 
 AI enrichment (add GEMINI_API_KEY secret in GitHub repo settings):
-  - Google Gemini 1.5 Flash → FREE tier: 1,500 req/day, 1M tokens/min
+  - Google Gemini 2.0 Flash → FREE tier: 1,500 req/day, 1M tokens/min
+  - NOTE: gemini-1.5-flash is NOT available on new API keys (Google deprecated it
+    for new projects after April 29 2025). Use gemini-2.0-flash instead.
   - Get your free key at: https://aistudio.google.com/apikey
 """
 
@@ -27,7 +29,7 @@ import urllib.parse
 
 # ── CONFIG ────────────────────────────────────────────────────────────────────
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")   # Set in GitHub Secrets
-GEMINI_MODEL   = "gemini-1.5-flash"                # Free tier model
+GEMINI_MODEL   = "gemini-2.0-flash"                # ← FIXED: 1.5 is deprecated for new keys
 MAX_ITEMS      = 10    # how many news/tool items per run
 OUTPUT_DIR     = "data"
 NEWS_FILE      = f"{OUTPUT_DIR}/news.json"
@@ -158,25 +160,63 @@ def fetch_producthunt_rss() -> list[dict]:
 # ── GEMINI AI ENRICHMENT ──────────────────────────────────────────────────────
 def enrich_with_gemini(items: list[dict]) -> list[dict]:
     """
-    Use Google Gemini 1.5 Flash to write better summaries + pick categories.
+    Use Google Gemini 2.0 Flash to write better summaries + pick categories.
     Only runs when GEMINI_API_KEY is set.
 
-    Free tier limits (as of 2025):
-      - gemini-1.5-flash: 1,500 requests/day, 1,000,000 tokens/min — more than enough.
+    Free tier limits:
+      - gemini-2.0-flash: 1,500 requests/day, 1,000,000 tokens/min — free.
     Get a free key at: https://aistudio.google.com/apikey
+
+    NOTE: gemini-1.5-flash returns 404 on API keys created after April 29 2025.
+          This script uses gemini-2.0-flash which works on all new keys.
     """
     if not GEMINI_API_KEY:
         print("⚠️  GEMINI_API_KEY not set — skipping AI enrichment")
         return items
 
-    print(f"✨ Enriching {len(items)} items with Gemini 1.5 Flash…")
-    cats_str = ", ".join(CATEGORIES)
+    # Model fallback list — tries each in order until one works
+    models_to_try = [
+        "gemini-2.0-flash",
+        "gemini-2.0-flash-lite",
+        "gemini-1.5-flash",
+    ]
 
-    # Gemini REST endpoint
+    # Find first working model by doing a quick test call
+    working_model = None
+    for model in models_to_try:
+        test_url = (
+            f"https://generativelanguage.googleapis.com/v1beta/models/"
+            f"{model}:generateContent?key={GEMINI_API_KEY}"
+        )
+        test_payload = json.dumps({
+            "contents": [{"parts": [{"text": "Say OK"}]}],
+            "generationConfig": {"maxOutputTokens": 5}
+        }).encode()
+        try:
+            req = urllib.request.Request(
+                test_url, data=test_payload,
+                headers={"Content-Type": "application/json"}, method="POST"
+            )
+            with urllib.request.urlopen(req, timeout=10) as resp:
+                resp.read()
+            working_model = model
+            print(f"✨ Using Gemini model: {model}")
+            break
+        except Exception as e:
+            print(f"  [INFO] Model {model} not available: {e}")
+
+    if not working_model:
+        print("⚠️  No Gemini model available — skipping AI enrichment.")
+        print("    Check your GEMINI_API_KEY is valid at https://aistudio.google.com/apikey")
+        return items
+
     api_url = (
         f"https://generativelanguage.googleapis.com/v1beta/models/"
-        f"{GEMINI_MODEL}:generateContent?key={GEMINI_API_KEY}"
+        f"{working_model}:generateContent?key={GEMINI_API_KEY}"
     )
+
+    print(f"✨ Enriching {len(items)} items…")
+    cats_str = ", ".join(CATEGORIES)
 
     for item in items:
         prompt = (
@@ -191,7 +231,7 @@ def enrich_with_gemini(items: list[dict]) -> list[dict]:
         payload = json.dumps({
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {
-                "temperature":    0.2,
+                "temperature":     0.2,
                 "maxOutputTokens": 150,
             }
         }).encode()
@@ -206,7 +246,6 @@ def enrich_with_gemini(items: list[dict]) -> list[dict]:
             with urllib.request.urlopen(req, timeout=20) as resp:
                 result = json.loads(resp.read().decode())
 
-            # Extract text from Gemini response structure
             text = (
                 result["candidates"][0]["content"]["parts"][0]["text"]
                 .strip()
@@ -260,7 +299,7 @@ def save_json(filepath: str, data) -> None:
 def main():
     print(f"\n{'='*55}")
     print(f"  ToolsDirectory Agent  —  {TODAY}")
-    print(f"  AI engine: Gemini 1.5 Flash (FREE tier)")
+    print(f"  AI engine: Gemini 2.0 Flash (FREE tier)")
     print(f"{'='*55}\n")
 
     # 1. Collect from all free sources
