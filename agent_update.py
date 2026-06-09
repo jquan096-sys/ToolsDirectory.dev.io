@@ -1,4 +1,4 @@
-cat > /mnt/user-data/outputs/agent-project/agent_update.py << 'PYEOF'
+
 """
 agent_update.py  —  FULL AUTONOMOUS VERSION
 ============================================
