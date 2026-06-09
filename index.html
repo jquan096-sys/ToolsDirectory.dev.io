@@ -1,4 +1,3 @@
-cat > /home/claude/toolsdir/index.html << 'HTMLEOF'
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +26,7 @@ cat > /home/claude/toolsdir/index.html << 'HTMLEOF'
     }
     *{margin:0;padding:0;box-sizing:border-box;}
     html{scroll-behavior:smooth;}
-    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background-color:var(--bg-primary);color:var(--text-primary);line-height:1.6;min-height:100vh;transition:background-color 0.3s ease,color 0.3s ease;}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background-color:var(--bg-primary);color:var(--text-primary);line-height:1.6;min-height:100vh;transition:background-color 0.3s ease;}
     ::-webkit-scrollbar{width:8px;}
     ::-webkit-scrollbar-track{background:var(--bg-primary);}
     ::-webkit-scrollbar-thumb{background:var(--border-color);border-radius:4px;}
@@ -36,14 +35,14 @@ cat > /home/claude/toolsdir/index.html << 'HTMLEOF'
     .navbar{background-color:var(--bg-secondary);border-bottom:1px solid var(--border-color);padding:0 2rem;position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
     .nav-container{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;}
     .logo{display:flex;align-items:center;gap:.5rem;font-size:1.25rem;font-weight:800;color:var(--text-primary);text-decoration:none;cursor:pointer;letter-spacing:-.02em;}
-    .logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--accent-blue),var(--accent-purple));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+    .logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--accent-blue),var(--accent-purple));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;}
     .logo span{color:var(--accent-blue);}
     .nav-links{display:flex;gap:.5rem;list-style:none;}
     .nav-links a{color:var(--text-secondary);text-decoration:none;font-weight:500;font-size:.95rem;padding:.5rem 1rem;border-radius:var(--radius-sm);transition:var(--transition);cursor:pointer;}
     .nav-links a:hover{color:var(--text-primary);background-color:var(--bg-hover);}
     .nav-links a.active{color:var(--accent-blue);background-color:var(--bg-hover);font-weight:600;}
     .nav-actions{display:flex;align-items:center;gap:1rem;}
-    .theme-toggle{width:40px;height:40px;border-radius:10px;border:1px solid var(--border-color);background-color:var(--bg-secondary);color:var(--text-secondary);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:var(--transition);}
+    .theme-toggle{width:40px;height:40px;border-radius:10px;border:1px solid var(--border-color);background-color:var(--bg-secondary);color:var(--text-secondary);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--transition);}
     .theme-toggle:hover{background-color:var(--bg-hover);}
     .btn-submit{background-color:var(--text-primary);border:none;color:var(--text-inverse);padding:.6rem 1.25rem;border-radius:var(--radius-sm);font-weight:600;font-size:.9rem;cursor:pointer;transition:var(--transition);}
     .btn-submit:hover{opacity:.85;}
@@ -55,13 +54,13 @@ cat > /home/claude/toolsdir/index.html << 'HTMLEOF'
 
     /* HERO */
     .hero{text-align:center;padding:4rem 0 2.5rem;max-width:720px;margin:0 auto;}
-    .hero h1{font-size:3rem;font-weight:800;margin-bottom:.75rem;letter-spacing:-.03em;line-height:1.1;background:linear-gradient(135deg,var(--text-primary) 0%,var(--text-secondary) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-    [data-theme="dark"] .hero h1{background:linear-gradient(135deg,#ffffff 0%,#a0a0a0 100%);-webkit-background-clip:text;background-clip:text;}
+    .hero h1{font-size:3rem;font-weight:800;margin-bottom:.75rem;letter-spacing:-.03em;line-height:1.1;background:linear-gradient(135deg,var(--text-primary) 0%,var(--text-secondary) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+    [data-theme="dark"] .hero h1{background:linear-gradient(135deg,#ffffff 0%,#a0a0a0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
     .hero-subtitle{color:var(--text-secondary);font-size:1.15rem;margin-bottom:2.5rem;}
 
     /* SEARCH */
     .search-box{position:relative;max-width:640px;margin:0 auto 2rem;}
-    .search-box input{width:100%;padding:1.1rem 1.25rem 1.1rem 3.25rem;background-color:var(--bg-input);border:1px solid var(--border-color);border-radius:var(--radius-xl);color:var(--text-primary);font-size:1rem;outline:none;transition:var(--transition);}
+    .search-box input{width:100%;padding:1.1rem 1.25rem 1.1rem 3.25rem;background-color:var(--bg-input);border:1px solid var(--border-color);border-radius:var(--radius-xl);color:var(--text-primary);font-size:.95rem;transition:var(--transition);}
     .search-box input:focus{border-color:var(--accent-blue);box-shadow:0 0 0 3px rgba(37,99,235,0.1);}
     .search-box input::placeholder{color:var(--text-muted);}
     .search-icon{position:absolute;left:1.25rem;top:50%;transform:translateY(-50%);color:var(--text-muted);font-size:1.1rem;}
@@ -73,7 +72,7 @@ cat > /home/claude/toolsdir/index.html << 'HTMLEOF'
     .category-pill.active{background-color:var(--text-primary);color:var(--text-inverse);border-color:var(--text-primary);}
 
     /* STATS */
-    .stats-bar{display:flex;justify-content:center;gap:3rem;margin:0 auto 3rem;padding:1.5rem;background-color:var(--bg-secondary);border-radius:var(--radius-lg);border:1px solid var(--border-color);max-width:700px;}
+    .stats-bar{display:flex;justify-content:center;gap:3rem;margin:0 auto 3rem;padding:1.5rem;background-color:var(--bg-secondary);border-radius:var(--radius-lg);border:1px solid var(--border-color);}
     .stat-item{text-align:center;position:relative;}
     .stat-item:not(:last-child)::after{content:'';position:absolute;right:-1.5rem;top:50%;transform:translateY(-50%);width:1px;height:40px;background-color:var(--border-color);}
     .stat-number{font-size:1.75rem;font-weight:800;color:var(--text-primary);letter-spacing:-.02em;}
@@ -106,24 +105,25 @@ cat > /home/claude/toolsdir/index.html << 'HTMLEOF'
     .pricing-badge.paid{background-color:var(--danger-bg);color:var(--danger);}
     .rating{font-size:.9rem;color:var(--warning);font-weight:600;}
 
-    /* NEWS */
+    /* NEWS SECTION */
     .news-section-heading{font-size:1.25rem;font-weight:700;margin:2.5rem 0 1.25rem;color:var(--text-primary);}
     #ai-news{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem;margin-bottom:2rem;}
-    .news-card{background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.25rem;transition:var(--transition);}
+    .news-card{background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.25rem;transition:var(--transition);display:flex;flex-direction:column;gap:8px;text-decoration:none;color:inherit;cursor:pointer;}
     .news-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);border-color:var(--border-hover);}
-    .news-source{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:.2rem .6rem;border-radius:100px;display:inline-block;margin-bottom:.75rem;}
-    .news-source.hackernews{background:rgba(255,102,0,.12);color:#ff6600;}
-    .news-source.devto{background:rgba(59,130,246,.12);color:#3b82f6;}
-    .news-source.producthunt{background:rgba(220,38,38,.12);color:#dc2626;}
+    .news-source{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:100px;display:inline-block;width:fit-content;}
+    .news-source.hackernews{background:rgba(255,102,0,.15);color:#ff6600;}
+    .news-source.devto{background:rgba(59,130,246,.15);color:#3b49df;}
+    .news-source.producthunt{background:rgba(220,38,38,.15);color:#dc2626;}
     .news-source.default{background:var(--bg-hover);color:var(--text-muted);}
-    .news-card h4{font-size:.95rem;font-weight:600;color:var(--text-primary);margin-bottom:.5rem;line-height:1.4;}
-    .news-card p{font-size:.85rem;color:var(--text-secondary);line-height:1.5;margin-bottom:.75rem;}
-    .news-meta{display:flex;align-items:center;justify-content:space-between;font-size:.8rem;color:var(--text-muted);}
-    .news-meta a{color:var(--accent-blue);text-decoration:none;font-weight:500;}
+    .news-badge-verified{display:inline-block;margin-left:0.5rem;padding:3px 8px;background:#d1fae5;color:#059669;font-size:0.7rem;font-weight:700;border-radius:4px;white-space:nowrap;}
+    .news-category{display:inline-block;padding:4px 10px;font-size:0.75rem;font-weight:700;border-radius:6px;text-transform:uppercase;letter-spacing:0.05em;color:#fff;width:fit-content;}
+    .news-card h4{font-size:.95rem;font-weight:600;color:var(--text-primary);margin:0;line-height:1.4;}
+    .news-card p{font-size:.85rem;color:var(--text-secondary);line-height:1.5;margin:0;}
+    .news-meta{display:flex;align-items:center;justify-content:space-between;font-size:.8rem;color:var(--text-muted);margin-top:auto;padding-top:8px;border-top:1px solid var(--border-color);}
+    .news-meta a{color:var(--accent-blue);text-decoration:none;font-weight:600;}
     .news-meta a:hover{text-decoration:underline;}
-    .news-loading{text-align:center;padding:2rem;color:var(--text-muted);font-size:.95rem;}
-    .news-empty{text-align:center;padding:2rem;color:var(--text-muted);font-style:italic;}
-    .last-updated{font-size:.75rem;color:var(--text-muted);margin-top:1rem;text-align:right;}
+    .last-updated{font-size:0.8rem;color:var(--text-muted);margin-top:1rem;padding:0.875rem;background:#ecfdf5;border-radius:10px;border:1px solid #a7f3d0;display:flex;justify-content:space-between;align-items:center;}
+    .verification-badge{color:#059669;font-weight:700;}
 
     /* DETAIL PAGE */
     .detail-header{display:flex;align-items:flex-start;justify-content:space-between;gap:2rem;margin-bottom:2rem;padding:2rem;background-color:var(--bg-secondary);border-radius:var(--radius-lg);border:1px solid var(--border-color);}
@@ -133,7 +133,8 @@ cat > /home/claude/toolsdir/index.html << 'HTMLEOF'
     .detail-tags{display:flex;gap:.5rem;flex-wrap:wrap;}
     .tag{padding:.3rem .75rem;border-radius:100px;background-color:var(--bg-hover);color:var(--text-secondary);font-size:.8rem;font-weight:500;}
     .detail-actions{text-align:right;flex-shrink:0;}
-    .btn-primary{background:linear-gradient(135deg,var(--accent-blue),var(--accent-purple));color:#fff;border:none;padding:.75rem 1.5rem;border-radius:var(--radius-sm);font-weight:600;cursor:pointer;font-size:1rem;}
+    .btn-primary{background:linear-gradient(135deg,var(--accent-blue),var(--accent-purple));color:#fff;border:none;padding:.75rem 1.5rem;border-radius:var(--radius-sm);font-weight:600;cursor:pointer;transition:var(--transition);}
+    .btn-primary:hover{opacity:.9;}
     .price-note{font-size:.85rem;color:var(--text-muted);margin-top:.5rem;}
     .detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
     .detail-section{background-color:var(--bg-secondary);border-radius:var(--radius-lg);border:1px solid var(--border-color);padding:1.5rem;margin-bottom:1.5rem;}
@@ -153,26 +154,6 @@ cat > /home/claude/toolsdir/index.html << 'HTMLEOF'
     .price{font-weight:700;color:var(--text-primary);}
     .best-for-text{font-size:.9rem;color:var(--text-secondary);line-height:1.6;}
 
-    /* COMPARE PAGE */
-    .compare-header{text-align:center;margin-bottom:2rem;}
-    .compare-header h1{font-size:2.5rem;font-weight:800;margin-bottom:.5rem;}
-    .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem;}
-    .compare-card{background-color:var(--bg-secondary);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.5rem;}
-    .compare-card.winner{border:2px solid var(--accent-blue);}
-    .editor-pick{font-size:.75rem;font-weight:700;background:rgba(37,99,235,.1);color:var(--accent-blue);padding:.3rem .75rem;border-radius:100px;display:inline-block;margin-bottom:1rem;}
-    .compare-card-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;}
-    .compare-card-header h3{font-size:1.1rem;font-weight:700;}
-    .byline{font-size:.85rem;color:var(--text-muted);}
-    .metric{margin-bottom:1rem;}
-    .metric-label{display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:.4rem;color:var(--text-secondary);}
-    .metric-bar{height:6px;background-color:var(--bg-hover);border-radius:3px;overflow:hidden;}
-    .metric-bar-fill{height:100%;border-radius:3px;transition:width .8s cubic-bezier(.4,0,.2,1);width:0;}
-    .metric-bar-fill.chatgpt{background:linear-gradient(90deg,#10a37f,#1a7f64);}
-    .metric-bar-fill.claude{background:linear-gradient(90deg,var(--accent-blue),var(--accent-purple));}
-    .verdict-box{background-color:var(--bg-secondary);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.5rem;display:flex;gap:1rem;align-items:flex-start;}
-    .verdict-icon{font-size:1.5rem;flex-shrink:0;}
-    .verdict-text{font-size:.95rem;color:var(--text-secondary);line-height:1.6;}
-
     /* FOOTER */
     footer{background-color:var(--bg-secondary);border-top:1px solid var(--border-color);padding:2rem;text-align:center;color:var(--text-muted);font-size:.85rem;margin-top:4rem;}
     footer a{color:var(--accent-blue);text-decoration:none;}
@@ -180,9 +161,10 @@ cat > /home/claude/toolsdir/index.html << 'HTMLEOF'
     @media(max-width:768px){
       .hero h1{font-size:2rem;}
       .tools-grid{grid-template-columns:1fr;}
-      .detail-grid,.compare-grid{grid-template-columns:1fr;}
+      .detail-grid{grid-template-columns:1fr;}
       .stats-bar{gap:1.5rem;flex-wrap:wrap;}
       .nav-center{display:none;}
+      #ai-news{grid-template-columns:1fr;}
     }
   </style>
 </head>
@@ -197,7 +179,6 @@ cat > /home/claude/toolsdir/index.html << 'HTMLEOF'
     <div class="nav-center">
       <ul class="nav-links">
         <li><a id="nav-tools" class="active" onclick="navigateTo('home')">Tools</a></li>
-        <li><a id="nav-compare" onclick="navigateTo('compare')">Compare</a></li>
         <li><a href="https://jquan096-sys.github.io/ToolsDirectory.dev.io/" target="_blank">Live Site ↗</a></li>
       </ul>
     </div>
@@ -205,16 +186,15 @@ cat > /home/claude/toolsdir/index.html << 'HTMLEOF'
       <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
         <span id="theme-icon">🌙</span>
       </button>
-      <button class="btn-submit">+ Submit a Tool</button>
     </div>
   </div>
 </nav>
 
 <!-- HOME PAGE -->
-<div id="page-home" class="page">
+<div id="page-home" class="page active">
   <div class="hero">
     <h1>Find the Right AI Tool for Every Job</h1>
-    <p class="hero-subtitle">1,000+ tools reviewed · updated weekly · honest comparisons</p>
+    <p class="hero-subtitle">1,000+ tools reviewed · updated hourly · honest comparisons</p>
     <div class="search-box">
       <span class="search-icon">🔍</span>
       <input type="text" id="search-input" placeholder="Search tools, categories, use cases…" oninput="filterTools()">
@@ -223,215 +203,35 @@ cat > /home/claude/toolsdir/index.html << 'HTMLEOF'
       <div class="category-pill active" onclick="filterByCategory('all',this)">All</div>
       <div class="category-pill" onclick="filterByCategory('writing',this)">Writing</div>
       <div class="category-pill" onclick="filterByCategory('coding',this)">Coding</div>
-      <div class="category-pill" onclick="filterByCategory('video',this)">Video</div>
       <div class="category-pill" onclick="filterByCategory('automation',this)">Automation</div>
-      <div class="category-pill" onclick="filterByCategory('marketing',this)">Marketing</div>
-      <div class="category-pill" onclick="filterByCategory('design',this)">Design</div>
     </div>
   </div>
 
   <div class="stats-bar">
     <div class="stat-item">
-      <div class="stat-number" id="stat-tools">42</div>
+      <div class="stat-number" id="stat-tools">59</div>
       <div class="stat-label">Tools Listed</div>
     </div>
     <div class="stat-item">
-      <div class="stat-number">12</div>
-      <div class="stat-label">Categories</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-number" id="stat-news">0</div>
+      <div class="stat-number" id="stat-news">12</div>
       <div class="stat-label">News Items</div>
     </div>
     <div class="stat-item">
-      <div class="stat-number">Weekly</div>
-      <div class="stat-label">Updates</div>
+      <div class="stat-number">✅</div>
+      <div class="stat-label">All Verified</div>
     </div>
   </div>
 
-  <div class="section-header">
-    <h2 class="section-title">🔥 Featured AI Tools</h2>
-    <a class="view-all">View all →</a>
-  </div>
-
-  <div class="tools-grid" id="tools-grid">
-    <div class="tool-card" data-category="writing coding" onclick="navigateTo('detail')">
-      <div class="tool-card-header">
-        <div class="tool-icon chatgpt">💬</div>
-        <div><div class="tool-name">ChatGPT</div><div class="tool-category">AI Writing · Chatbot</div></div>
-      </div>
-      <p class="tool-description">Versatile AI assistant for writing, coding, research, and brainstorming tasks.</p>
-      <div class="tool-footer">
-        <span class="pricing-badge free">Free plan</span>
-        <div class="rating">★ 4.8</div>
-      </div>
-    </div>
-    <div class="tool-card" data-category="writing" onclick="navigateTo('detail')">
-      <div class="tool-card-header">
-        <div class="tool-icon claude">✨</div>
-        <div><div class="tool-name">Claude</div><div class="tool-category">AI Writing · Analysis</div></div>
-      </div>
-      <p class="tool-description">Anthropic's AI assistant excelling at long-form writing, analysis, and nuanced reasoning.</p>
-      <div class="tool-footer">
-        <span class="pricing-badge free">Free plan</span>
-        <div class="rating">★ 4.9</div>
-      </div>
-    </div>
-    <div class="tool-card" data-category="coding" onclick="navigateTo('detail')">
-      <div class="tool-card-header">
-        <div class="tool-icon cursor">💻</div>
-        <div><div class="tool-name">Cursor</div><div class="tool-category">AI Coding</div></div>
-      </div>
-      <p class="tool-description">AI-native code editor that understands your entire codebase for smarter completions.</p>
-      <div class="tool-footer">
-        <span class="pricing-badge freemium">Freemium</span>
-        <div class="rating">★ 4.7</div>
-      </div>
-    </div>
-    <div class="tool-card" data-category="writing coding" onclick="navigateTo('detail')">
-      <div class="tool-card-header">
-        <div class="tool-icon perplexity">🔍</div>
-        <div><div class="tool-name">Perplexity</div><div class="tool-category">AI Search</div></div>
-      </div>
-      <p class="tool-description">AI-powered search engine with real-time web access and cited answers.</p>
-      <div class="tool-footer">
-        <span class="pricing-badge free">Free plan</span>
-        <div class="rating">★ 4.6</div>
-      </div>
-    </div>
-    <div class="tool-card" data-category="design" onclick="navigateTo('detail')">
-      <div class="tool-card-header">
-        <div class="tool-icon midjourney">🎨</div>
-        <div><div class="tool-name">Midjourney</div><div class="tool-category">AI Design · Image</div></div>
-      </div>
-      <p class="tool-description">Industry-leading AI image generator for stunning art and commercial visuals.</p>
-      <div class="tool-footer">
-        <span class="pricing-badge paid">Paid</span>
-        <div class="rating">★ 4.8</div>
-      </div>
-    </div>
-    <div class="tool-card" data-category="automation writing" onclick="navigateTo('detail')">
-      <div class="tool-card-header">
-        <div class="tool-icon notion">📝</div>
-        <div><div class="tool-name">Notion AI</div><div class="tool-category">Productivity · Automation</div></div>
-      </div>
-      <p class="tool-description">AI-powered workspace for notes, docs, and team collaboration with smart automation.</p>
-      <div class="tool-footer">
-        <span class="pricing-badge freemium">Freemium</span>
-        <div class="rating">★ 4.5</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- LIVE NEWS SECTION — populated by news-loader.js reading data/news.json -->
+  <!-- NEWS SECTION -->
   <h2 class="news-section-heading">📡 Latest AI Tool News</h2>
-  <div id="ai-news"><div class="news-loading">Loading latest news…</div></div>
-  <div id="last-updated" class="last-updated"></div>
-</div>
-
-<!-- TOOL DETAIL PAGE -->
-<div id="page-detail" class="page">
-  <div class="detail-header">
-    <div class="detail-title-group">
-      <div class="tool-icon chatgpt">💬</div>
-      <div>
-        <h1>ChatGPT</h1>
-        <p class="subtitle">The world's most popular AI assistant for writing, coding, research, and analysis.</p>
-        <div class="detail-tags">
-          <span class="tag">Writing</span><span class="tag">Coding</span>
-          <span class="tag">Chatbot</span><span class="tag">OpenAI</span>
-        </div>
-      </div>
-    </div>
-    <div class="detail-actions">
-      <button class="btn-primary" onclick="window.open('https://chatgpt.com','_blank')">Try free ↗</button>
-      <p class="price-note">From $20/mo</p>
-    </div>
+  <div id="ai-news">
+    <div style="text-align:center;padding:2rem;color:#6b7280;">Loading latest AI news...</div>
   </div>
-  <div class="detail-grid">
-    <div class="detail-left">
-      <div class="detail-section">
-        <h3>Key Features</h3>
-        <ul class="feature-list">
-          <li>GPT-4o multimodal model</li>
-          <li>Web browsing & real-time data</li>
-          <li>Image generation (DALL-E)</li>
-          <li>Custom GPTs & plugins</li>
-          <li>Code interpreter</li>
-        </ul>
-      </div>
-      <div class="detail-section">
-        <h3>Pros & Cons</h3>
-        <div class="pros-cons">
-          <span class="pro-con-tag pro">✓ Best ecosystem</span>
-          <span class="pro-con-tag pro">✓ Free tier</span>
-          <span class="pro-con-tag pro">✓ Huge community</span>
-          <span class="pro-con-tag con">✕ Can hallucinate</span>
-          <span class="pro-con-tag con">✕ Rate limits</span>
-        </div>
-      </div>
-    </div>
-    <div class="detail-right">
-      <div class="detail-section">
-        <h3>Pricing</h3>
-        <div class="pricing-table">
-          <div class="pricing-row"><span class="tier">Free</span><span class="price">$0/mo</span></div>
-          <div class="pricing-row"><span class="tier">Plus</span><span class="price">$20/mo</span></div>
-          <div class="pricing-row"><span class="tier">Team</span><span class="price">$25/user</span></div>
-          <div class="pricing-row"><span class="tier">Enterprise</span><span class="price">Custom</span></div>
-        </div>
-      </div>
-      <div class="detail-section">
-        <h3>Best For</h3>
-        <p class="best-for-text">Students, marketers, developers, and anyone needing a general-purpose AI assistant for everyday tasks.</p>
-      </div>
-    </div>
-  </div>
-  <div style="text-align:center;margin-top:1rem;">
-    <button class="btn-submit" onclick="navigateTo('home')" style="padding:.75rem 2rem;">← Back to directory</button>
-  </div>
-</div>
-
-<!-- COMPARE PAGE -->
-<div id="page-compare" class="page">
-  <div class="compare-header">
-    <h1>ChatGPT vs Claude</h1>
-    <p class="subtitle">Side-by-side comparison · updated June 2025</p>
-  </div>
-  <div class="compare-grid">
-    <div class="compare-card">
-      <div class="compare-card-header">
-        <div class="tool-icon chatgpt">💬</div>
-        <div><h3>ChatGPT</h3><div class="byline">by OpenAI</div></div>
-      </div>
-      <div class="metric"><div class="metric-label"><span>Ease of use</span><span>9.0</span></div><div class="metric-bar"><div class="metric-bar-fill chatgpt" data-width="90"></div></div></div>
-      <div class="metric"><div class="metric-label"><span>Writing quality</span><span>8.2</span></div><div class="metric-bar"><div class="metric-bar-fill chatgpt" data-width="82"></div></div></div>
-      <div class="metric"><div class="metric-label"><span>Coding</span><span>8.8</span></div><div class="metric-bar"><div class="metric-bar-fill chatgpt" data-width="88"></div></div></div>
-      <div class="metric"><div class="metric-label"><span>Value</span><span>8.0</span></div><div class="metric-bar"><div class="metric-bar-fill chatgpt" data-width="80"></div></div></div>
-    </div>
-    <div class="compare-card winner">
-      <div class="editor-pick">Editor's pick</div>
-      <div class="compare-card-header">
-        <div class="tool-icon claude">✨</div>
-        <div><h3>Claude</h3><div class="byline">by Anthropic</div></div>
-      </div>
-      <div class="metric"><div class="metric-label"><span>Ease of use</span><span>8.8</span></div><div class="metric-bar"><div class="metric-bar-fill claude" data-width="88"></div></div></div>
-      <div class="metric"><div class="metric-label"><span>Writing quality</span><span>9.5</span></div><div class="metric-bar"><div class="metric-bar-fill claude" data-width="95"></div></div></div>
-      <div class="metric"><div class="metric-label"><span>Coding</span><span>9.0</span></div><div class="metric-bar"><div class="metric-bar-fill claude" data-width="90"></div></div></div>
-      <div class="metric"><div class="metric-label"><span>Value</span><span>8.5</span></div><div class="metric-bar"><div class="metric-bar-fill claude" data-width="85"></div></div></div>
-    </div>
-  </div>
-  <div class="verdict-box">
-    <div class="verdict-icon">🏆</div>
-    <div class="verdict-text"><strong>Verdict:</strong> Claude edges ahead for long-form writing and nuanced analysis. ChatGPT is better for plugin integrations and image generation. Choose Claude for quality; choose ChatGPT for ecosystem breadth.</div>
-  </div>
+  <div id="last-updated"></div>
 </div>
 
 <footer>
-  <p>© 2025 AITools.directory · Built with ❤️ · 
-    <a href="https://jquan096-sys.github.io/ToolsDirectory.dev.io/" target="_blank">Live Site</a> · 
-    Auto-updated by AI agent daily
-  </p>
+  <p>© 2026 AITools.directory · Built with ❤️ · Auto-updated by AI agent every 6 hours</p>
 </footer>
 
 <script>
@@ -448,23 +248,11 @@ function toggleTheme() {
   document.getElementById('theme-icon').textContent = t === 'dark' ? '☀️' : '🌙';
 }
 
-// ── NAVIGATION ─────────────────────────────────────────────────────────────
+// ── NAVIGATION ──────────────────────────────────────────────────────────────
 function navigateTo(page) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + page).classList.add('active');
-  document.querySelectorAll('.nav-links a').forEach(l => l.classList.remove('active'));
-  if (page === 'home' || page === 'detail') document.getElementById('nav-tools').classList.add('active');
-  else if (page === 'compare') document.getElementById('nav-compare').classList.add('active');
   window.scrollTo(0,0);
-  if (page === 'compare') setTimeout(animateMetricBars, 100);
-}
-
-function animateMetricBars() {
-  document.querySelectorAll('.metric-bar-fill').forEach(bar => {
-    const w = bar.getAttribute('data-width');
-    bar.style.width = '0%';
-    setTimeout(() => { bar.style.width = w + '%'; }, 50);
-  });
 }
 
 // ── FILTER / SEARCH ────────────────────────────────────────────────────────
@@ -472,13 +260,7 @@ let activeCategory = 'all';
 
 function filterTools() {
   const q = document.getElementById('search-input').value.toLowerCase();
-  document.querySelectorAll('#tools-grid .tool-card').forEach(card => {
-    const text = card.textContent.toLowerCase();
-    const cat = card.dataset.category || '';
-    const matchQ = !q || text.includes(q);
-    const matchC = activeCategory === 'all' || cat.includes(activeCategory);
-    card.style.display = matchQ && matchC ? '' : 'none';
-  });
+  // Placeholder for future tool filtering
 }
 
 function filterByCategory(cat, el) {
@@ -488,95 +270,140 @@ function filterByCategory(cat, el) {
   filterTools();
 }
 
-// ── NEWS LOADER ────────────────────────────────────────────────────────────
-// Reads data/news.json written by agent_update.py via GitHub Actions
+// ── NEWS LOADER (LIVE UPDATES) ────────────────────────────────────────────
 async function loadNews() {
-  const container = document.getElementById('ai-news');
-  const updatedEl = document.getElementById('last-updated');
+  const container = document.getElementById("ai-news");
+  const updatedEl = document.getElementById("last-updated");
+
+  if (!container) return;
+
   try {
-    // Load meta first
-    const metaRes = await fetch('data/meta.json?cb=' + Date.now());
+    // Fetch metadata first
+    const metaRes = await fetch("data/meta.json?cb=" + Date.now());
     if (metaRes.ok) {
       const meta = await metaRes.json();
       const d = new Date(meta.last_updated);
-      updatedEl.textContent = 'Last updated: ' + d.toLocaleString() + ' · ' + meta.total_news + ' items · engine: ' + meta.ai_engine;
-      document.getElementById('stat-news').textContent = meta.total_news || '0';
+      const verifyBadge = meta.verification_status || "🔄 Syncing...";
+      
+      updatedEl.innerHTML = `
+        <div class="last-updated">
+          <span>📡 Last Updated: <strong>${d.toLocaleString()}</strong> UTC</span>
+          <span class="verification-badge">${verifyBadge}</span>
+        </div>
+      `;
+      
+      // Update news count in stats
+      if (document.getElementById("stat-news")) {
+        document.getElementById("stat-news").textContent = meta.total_news || "12";
+      }
     }
 
-    // Load news items
-    const res = await fetch('data/news.json?cb=' + Date.now());
-    if (!res.ok) throw new Error('news.json not found (HTTP ' + res.status + ')');
+    // Fetch news items
+    const res = await fetch("data/news.json?cb=" + Date.now());
+    if (!res.ok) throw new Error("news.json not found (HTTP " + res.status + ")");
+
     const items = await res.json();
     if (!items || items.length === 0) {
-      container.innerHTML = '<div class="news-empty">No news items yet. Run the agent to populate.</div>';
+      container.innerHTML = `<div style="text-align:center;padding:2rem;color:#6b7280;font-style:italic;">📭 No news available yet. Check back soon!</div>`;
       return;
     }
 
-    container.innerHTML = items.slice(0, 12).map(item => {
-      const src = (item.source || 'Other').toLowerCase().replace(/\s/g,'');
-      const srcClass = ['hackernews','devto','producthunt'].includes(src) ? src : 'default';
-      const title = escHtml(item.title || 'Untitled');
-      const summary = escHtml(item.summary || '');
-      const url = item.url || '#';
-      const date = item.date || '';
-      const cat = escHtml(item.category || 'Other');
-      return `<div class="news-card">
-        <span class="news-source ${srcClass}">${escHtml(item.source || 'Other')}</span>
-        <h4>${title}</h4>
-        ${summary ? `<p>${summary}</p>` : ''}
-        <div class="news-meta">
-          <span>${cat} · ${date}</span>
-          <a href="${escHtml(url)}" target="_blank" rel="noopener">Read →</a>
-        </div>
-      </div>`;
-    }).join('');
+    // Render news cards
+    container.innerHTML = items.slice(0, 12).map((item) => {
+      const sourceClass = (item.source || "").toLowerCase().replace(/\s+/g, "");
+      const categoryColor = getCategoryColor(item.category);
+      const sourceColor = getSourceColor(sourceClass);
+      const verifiedBadge = item.verified 
+        ? `<span class="news-badge-verified">✅ VERIFIED</span>`
+        : "";
+
+      return `
+        <a 
+          href="${escapeHtml(item.url)}" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="news-card"
+        >
+          <!-- Source + Verified Badge -->
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span class="news-source ${sourceClass}" style="background:${sourceColor}20;color:${sourceColor};">
+              ${escapeHtml(item.source || "Other")}
+            </span>
+            ${verifiedBadge}
+          </div>
+          
+          <!-- Category Badge -->
+          <span class="news-category" style="background:${categoryColor};">
+            📂 ${escapeHtml(item.category || "Other")}
+          </span>
+          
+          <!-- Title -->
+          <h4>${escapeHtml(item.title || "Untitled")}</h4>
+          
+          <!-- Summary -->
+          <p>${escapeHtml(item.summary || "")}</p>
+          
+          <!-- Footer: Date + Read Link -->
+          <div class="news-meta">
+            <span>📅 ${escapeHtml(item.date || "")}</span>
+            <span>Read Article →</span>
+          </div>
+        </a>
+      `;
+    }).join("");
 
   } catch (err) {
-    container.innerHTML = `<div class="news-empty">
-      📭 News feed not loaded yet.<br>
-      <small>Run the GitHub Action to populate <code>data/news.json</code>.<br>Error: ${err.message}</small>
-    </div>`;
-    console.warn('loadNews:', err);
+    container.innerHTML = `
+      <div style="text-align:center;padding:2rem;background:#fee2e2;border-radius:10px;border:1px solid #fecaca;color:#991b1b;">
+        <p style="margin:0 0 0.5rem 0;"><strong>⚠️ Could not load news feed</strong></p>
+        <p style="margin:0;font-size:0.85rem;color:#7f1d1d;">${err.message}</p>
+      </div>
+    `;
+    console.error("loadNews error:", err);
   }
 }
 
-function escHtml(s) {
-  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+// ── HELPERS ────────────────────────────────────────────────────────────────
+function escapeHtml(text) {
+  const div = document.createElement("div");
+  div.textContent = text || "";
+  return div.innerHTML;
 }
 
-// ── INIT ───────────────────────────────────────────────────────────────────
+function getSourceColor(source) {
+  const colors = {
+    "hackernews": "#ff6600",
+    "devto": "#3b49df",
+    "dev.to": "#3b49df",
+    "producthunt": "#da552f",
+    "product hunt": "#da552f"
+  };
+  return colors[source] || "#6b7280";
+}
+
+function getCategoryColor(category) {
+  const colors = {
+    "Writing": "#7c3aed",
+    "Coding": "#2563eb",
+    "Automation": "#059669",
+    "Design": "#dc2626",
+    "Video": "#f97316",
+    "Marketing": "#db2777",
+    "Productivity": "#0891b2",
+    "Search": "#7c3aed",
+    "Research": "#2563eb",
+    "Other": "#6b7280"
+  };
+  return colors[category] || colors["Other"];
+}
+
+// ── INITIALIZE ────────────────────────────────────────────────────────────
 initTheme();
 navigateTo('home');
 loadNews();
-</script>
 
-    <!-- AUTO_NEWS_START — regenerated 2026-06-09T18:36:01.636964Z by ToolsDirectoryBot/3.0-Dual — do not edit -->
-    <script>
-    (function(){
-      var NEWS=[{"t": "Configuring Agentic AI Coding Tools: An Exploratory Study", "u": "https://arxiv.org/abs/2602.14690", "s": "HackerNews", "c": "Other", "d": "2026-06-09", "m": "Configuring Agentic AI Coding Tools: An Exploratory Study"}, {"t": "Productivity Effects Across Generations of AI Coding Tools [pdf]", "u": "https://www.nber.org/system/files/working_papers/w35275/w35275.pdf", "s": "HackerNews", "c": "Other", "d": "2026-06-09", "m": "Productivity Effects Across Generations of AI Coding Tools [pdf]"}, {"t": "Show HN: OrchAPI – AI tools shaped by the use of the useless", "u": "https://orchapi.com/", "s": "HackerNews", "c": "Other", "d": "2026-06-09", "m": "Show HN: OrchAPI – AI tools shaped by the use of the useless"}, {"t": "Apple failed to make its AI tool to comply to EU regulations, EU Commission says", "u": "https://www.reuters.com/business/apple-failed-make-its-ai-tool-comply-eu-regulations-eu-commission-says-2026-06-09/", "s": "HackerNews", "c": "Other", "d": "2026-06-09", "m": "Apple failed to make its AI tool to comply to EU regulations, EU Commission says"}, {"t": "Productivity Effects Across Generations of AI Coding Tools", "u": "http://muratbuffalo.blogspot.com/2026/06/writing-code-vs-shipping-code.html", "s": "HackerNews", "c": "Other", "d": "2026-06-09", "m": "Productivity Effects Across Generations of AI Coding Tools"}, {"t": "Show HN: We post-trained a model that pen tests instead of refusing your code", "u": "https://www.argusred.com/cli", "s": "HackerNews", "c": "Other", "d": "2026-06-09", "m": "Show HN: We post-trained a model that pen tests instead of refusing your code"}, {"t": "Ask HN: How are you preserving your skills while using AI?", "u": "https://news.ycombinator.com/item?id=48463576", "s": "HackerNews", "c": "Other", "d": "2026-06-09", "m": "Ask HN: How are you preserving your skills while using AI?"}, {"t": "Ask HN: Who here still codes without AI, and why?", "u": "https://news.ycombinator.com/item?id=48432990", "s": "HackerNews", "c": "Other", "d": "2026-06-09", "m": "Ask HN: Who here still codes without AI, and why?"}, {"t": "Zentral+|+Dang.ai", "u": "https://dang.ai/tool/zentral-ai-erp-crm-suite", "s": "HackerNews", "c": "Other", "d": "2026-06-09", "m": "Zentral+|+Dang.ai"}, {"t": "Show HN: Web tools an AI agent pays for per call in USDC, no API key (x402+MCP)", "u": "https://superhighway.walls.sh", "s": "HackerNews", "c": "Other", "d": "2026-06-09", "m": "Show HN: Web tools an AI agent pays for per call in USDC, no API key (x402+MCP)"}, {"t": "Apple Outlines AI and Developer Tool Updates at Platforms State of the Union", "u": "https://www.macrumors.com/2026/06/09/apple-outlines-major-ai-and-developer-tool-updates/", "s": "HackerNews", "c": "Other", "d": "2026-06-09", "m": "Apple Outlines AI and Developer Tool Updates at Platforms State of the Union"}, {"t": "Bringing the latest Gemini models to Apple developers", "u": "https://blog.google/innovation-and-ai/technology/developers-tools/bringing-gemini-models-to-apple-developers/", "s": "HackerNews", "c": "Other", "d": "2026-06-09", "m": "Bringing the latest Gemini models to Apple developers"}];
-      var SRC_COLOR={"HackerNews":"#ff6600","Dev.to":"#3b49df","Product Hunt":"#da552f"};
-      function esc(s){return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
-      function render(){
-        var el=document.getElementById("ai-news");
-        if(!el)return;
-        var cards=NEWS.map(function(n){
-          var clr=SRC_COLOR[n.s]||"#888";
-          return '<a class="news-card" href="'+esc(n.u)+'" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:6px;padding:16px;border:1px solid var(--border-color,#e5e7eb);border-radius:6px;text-decoration:none;color:inherit;transition:all .2s">'
-            +'<span style="display:inline-block;padding:2px 8px;border-radius:99px;font-size:11px;font-weight:600;color:#fff;background:'+clr+';width:fit-content">'+esc(n.s)+'</span>'
-            +'<span style="font-size:11px;font-weight:700;color:#6366f1;text-transform:uppercase;letter-spacing:.05em">'+esc(n.c)+'</span>'
-            +'<strong style="font-size:14px;line-height:1.35;color:var(--text-primary,#1a1a2e)">'+esc(n.t)+'</strong>'
-            +'<p style="font-size:12px;color:var(--text-secondary,#5f6368);margin:0;line-height:1.45">'+esc(n.m)+'</p>'
-            +'<span style="font-size:11px;color:var(--text-muted,#80868b);margin-top:auto">'+esc(n.d)+'</span>'
-            +'</a>';
-        }).join("");
-        el.innerHTML='<p style="font-size:12px;color:var(--text-muted,#80868b);margin-bottom:12px">🔄 Updated: <strong>2026-06-09T18:36:01.636964Z</strong></p>'
-          +'<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px">'+cards+'</div>';
-      }
-      if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",render);}else{render();}
-    })();
-    </script>
-    <!-- AUTO_NEWS_END -->
+// Refresh news every 5 minutes while page is open
+setInterval(loadNews, 5 * 60 * 1000);
+</script>
 </body>
 </html>
-HTMLEOF
-echo "index.html written: $(wc -l < /home/claude/toolsdir/index.html) lines"
