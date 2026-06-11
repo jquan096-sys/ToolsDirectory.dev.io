@@ -358,6 +358,143 @@
     ]
   },
   {
+    "id": "48492741",
+    "title": "Which AI prototyping tools can export a self-contained HTML file?",
+    "url": "https://productnow.ai/blogs/extracting-html-from-ai-prototyping-tools",
+    "source": "HackerNews",
+    "points": 2,
+    "date": "2026-06-11",
+    "summary": "Which AI prototyping tools can export a self-contained HTML file?",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48491836",
+    "title": "Show HN: In-browser real LLM token counter and cost estimation",
+    "url": "https://holaclaw.ai/tools/token-studio",
+    "source": "HackerNews",
+    "points": 2,
+    "date": "2026-06-11",
+    "summary": "Show HN: In-browser real LLM token counter and cost estimation",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48493764",
+    "title": "Viscribe – OSS image analysis tools for AI agents",
+    "url": "https://github.com/itsperini/viscribe",
+    "source": "HackerNews",
+    "points": 4,
+    "date": "2026-06-11",
+    "summary": "Viscribe – OSS image analysis tools for AI agents",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "3876565",
+    "title": "Your Vibe-Coded App Works. Is It Any Good?",
+    "url": "https://dev.to/mlh/your-vibe-coded-app-works-is-it-any-good-28co",
+    "source": "Dev.to",
+    "points": 7,
+    "date": "2026-06-11",
+    "summary": "TL;DR - Getting an app to run is now the easy part. AI is very good at producing something that...",
+    "category": "Other",
+    "tags": [
+      "vibecoding",
+      "ai",
+      "firstyearincode"
+    ]
+  },
+  {
+    "id": "3876616",
+    "title": "How I Added Goose as an External Agent to Entire",
+    "url": "https://dev.to/entire/how-i-added-goose-as-an-external-agent-to-entire-6gf",
+    "source": "Dev.to",
+    "points": 4,
+    "date": "2026-06-11",
+    "summary": "I just opened a PR to add support for Goose to Entire. Goose is an open source coding agent under the...",
+    "category": "Other",
+    "tags": [
+      "ai",
+      "agents",
+      "goose",
+      "entire"
+    ]
+  },
+  {
+    "id": "3870378",
+    "title": "Google ADK Security: 5 Layers That Defend AI Agents From Prompt Injection",
+    "url": "https://dev.to/gde/google-adk-security-5-layers-that-defend-ai-agents-from-prompt-injection-1ped",
+    "source": "Dev.to",
+    "points": 7,
+    "date": "2026-06-11",
+    "summary": "A $3,000 refund just went out. No human approved it. Your AI agent read a poisoned tool response and...",
+    "category": "Other",
+    "tags": [
+      "ai",
+      "security",
+      "llm",
+      "googlecloud"
+    ]
+  },
+  {
+    "id": "3850870",
+    "title": "Sovereign Synapse: The Local Brain",
+    "url": "https://dev.to/kenwalger/sovereign-synapse-the-local-brain-51j9",
+    "source": "Dev.to",
+    "points": 5,
+    "date": "2026-06-11",
+    "summary": "A vault of 3,150 Markdown files is just a very organized digital attic. It’s a repository of every...",
+    "category": "Other",
+    "tags": [
+      "python",
+      "ai",
+      "vectordatabase",
+      "localfirst"
+    ]
+  },
+  {
+    "id": "3868889",
+    "title": "The Real AI Coding Breakthrough Is Not More Context. It Is Better Diagnostics.",
+    "url": "https://dev.to/scarab-systems/the-real-ai-coding-breakthrough-is-not-more-context-it-is-better-diagnostics-1b3d",
+    "source": "Dev.to",
+    "points": 7,
+    "date": "2026-06-11",
+    "summary": "When I started building what became Scarab Diagnostic Suite, I was not trying to create a theory of...",
+    "category": "Other",
+    "tags": [
+      "ai",
+      "programming",
+      "devops",
+      "discuss"
+    ]
+  },
+  {
+    "id": "3868891",
+    "title": "Permission Is Not Purpose: The Next Failure Mode in Agent Memory (CLAIM-29)",
+    "url": "https://dev.to/zep1997/permission-is-not-purpose-the-next-failure-mode-in-agent-memory-claim-29-39fk",
+    "source": "Dev.to",
+    "points": 4,
+    "date": "2026-06-11",
+    "summary": "The instruction was authorized. The grant was fresh. The recipient was internal. The action had the...",
+    "category": "Other",
+    "tags": [
+      "ai",
+      "agents",
+      "machinelearning",
+      "security"
+    ]
+  },
+  {
     "id": "48455519",
     "title": "Configuring Agentic AI Coding Tools: An Exploratory Study",
     "url": "https://arxiv.org/abs/2602.14690",
@@ -601,138 +738,6 @@
       "opensource",
       "rag",
       "productivity"
-    ]
-  },
-  {
-    "id": "3844964",
-    "title": "My company packaged 12 years of my experience into an AI Skill, then laid me off. When it crashed, the CTO called at 5x my salary.",
-    "url": "https://dev.to/xulingfeng/my-company-packaged-12-years-of-my-experience-into-an-ai-skill-then-laid-me-off-when-it-crashed-4b3e",
-    "source": "Dev.to",
-    "points": 44,
-    "date": "2026-06-09",
-    "summary": "A story about knowledge extraction, Kafka consumer rebalance, and what happens when a company...",
-    "category": "Other",
-    "tags": [
-      "ai",
-      "career",
-      "discuss",
-      "programming"
-    ]
-  },
-  {
-    "id": "3844423",
-    "title": "🛡️ My Neighbour's ₹2 Lakh Insurance Claim Was Rejected. I Built an AI to Make Sure It Never Happens Again.",
-    "url": "https://dev.to/sharma-sugurthi/my-neighbours-2-lakh-insurance-claim-was-rejected-i-built-an-ai-to-make-sure-it-never-happens-go4",
-    "source": "Dev.to",
-    "points": 6,
-    "date": "2026-06-09",
-    "summary": "This is a submission for the GitHub Finish-Up-A-Thon Challenge           What I Built   SecureShield...",
-    "category": "Other",
-    "tags": [
-      "devchallenge",
-      "githubchallenge",
-      "ai",
-      "webdev"
-    ]
-  },
-  {
-    "id": "3696340",
-    "title": "🎥AI Chat, AI Cheering Messages, and Animation Editor Hyper (AI Avatar v10: VS Code and Chrome Extension)",
-    "url": "https://dev.to/webdeveloperhyper/ai-chat-ai-cheering-messages-and-animation-editor-hyper-ai-avatar-v10-vs-code-and-chrome-1noo",
-    "source": "Dev.to",
-    "points": 53,
-    "date": "2026-06-09",
-    "summary": "Intro   AI Avatar is a completely free app that lets your VRoid (VRM) 3D avatar animate in...",
-    "category": "Other",
-    "tags": [
-      "ai",
-      "webdev",
-      "productivity",
-      "discuss"
-    ]
-  },
-  {
-    "id": "48443961",
-    "title": "Show HN: OrchAPI – AI tools shaped by the use of the useless",
-    "url": "https://orchapi.com/",
-    "source": "HackerNews",
-    "points": 2,
-    "date": "2026-06-09",
-    "summary": "Show HN: OrchAPI – AI tools shaped by the use of the useless",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48457830",
-    "title": "Microsoft's open source tools were hacked to steal passwords of AI developers",
-    "url": "https://techcrunch.com/2026/06/08/microsofts-open-source-tools-were-hacked-to-steal-passwords-of-ai-developers/",
-    "source": "HackerNews",
-    "points": 456,
-    "date": "2026-06-09",
-    "summary": "Microsoft's open source tools were hacked to steal passwords of AI developers",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48449187",
-    "title": "Ask HN: What are tools you have made for yourself since the advent of AI?",
-    "url": "https://news.ycombinator.com/item?id=48449187",
-    "source": "HackerNews",
-    "points": 398,
-    "date": "2026-06-09",
-    "summary": "Ask HN: What are tools you have made for yourself since the advent of AI?",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48453002",
-    "title": "Show HN: Command Center, the AI coding env for people who care about quality",
-    "url": "https://www.cc.dev/",
-    "source": "HackerNews",
-    "points": 56,
-    "date": "2026-06-09",
-    "summary": "Show HN: Command Center, the AI coding env for people who care about quality",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48461287",
-    "title": "Show HN: Sandbox AI-app lifecycle, from build to run",
-    "url": "https://capakit.com/",
-    "source": "HackerNews",
-    "points": 4,
-    "date": "2026-06-09",
-    "summary": "Show HN: Sandbox AI-app lifecycle, from build to run",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48464452",
-    "title": "Show HN: Joka.work – AI-native ticketmaxxing to replace Jira in the agentic era",
-    "url": "https://joka.work",
-    "source": "HackerNews",
-    "points": 1,
-    "date": "2026-06-09",
-    "summary": "Show HN: Joka.work – AI-native ticketmaxxing to replace Jira in the agentic era",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
     ]
   }
 ]
