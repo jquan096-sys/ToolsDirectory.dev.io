@@ -1,19 +1,12 @@
 {
-  "last_updated": "2026-06-09T19:03:00Z",
-  "date": "2026-06-09",
-  "total_news": 12,
-  "total_tools": 59,
-  "ai_engine": "Gemini 2.0 Flash",
-  "agent": "ToolsDirectoryBot/3.0-Dual",
+  "last_updated": "2026-06-11T14:22:56.720395+00:00Z",
+  "total_news": 21,
+  "total_tools": 50,
+  "ai_engine": "Gemini gemini-1.5-flash",
   "sources": [
     "HackerNews",
     "Dev.to",
     "Product Hunt"
   ],
-  "items_today": 12,
-  "verification_status": "✅ All 12 links verified and safe",
-  "update_frequency": "Every 6 hours",
-  "categories": ["Writing", "Coding", "Automation", "Design", "Video", "Marketing", "Productivity", "Search", "Research", "Other"],
-  "next_update": "2026-06-10T01:03:00Z",
-  "status": "🟢 LIVE"
+  "status": "ok"
 }

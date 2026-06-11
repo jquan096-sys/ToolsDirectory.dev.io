@@ -1,5 +1,131 @@
 [
   {
+    "id": "48455519",
+    "title": "Configuring Agentic AI Coding Tools: An Exploratory Study",
+    "url": "https://arxiv.org/abs/2602.14690",
+    "source": "HackerNews",
+    "points": 3,
+    "date": "2026-06-11",
+    "summary": "Configuring Agentic AI Coding Tools: An Exploratory Study",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48488713",
+    "title": "Show HN: Offsend – local Mac app that masks secrets before AI tools see them",
+    "url": "https://github.com/Offsend/Offsend",
+    "source": "HackerNews",
+    "points": 2,
+    "date": "2026-06-11",
+    "summary": "Show HN: Offsend – local Mac app that masks secrets before AI tools see them",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48481349",
+    "title": "If you build apps with AI tools, this is .uh concerning",
+    "url": "https://substack.com/profile/173863161-dan-cochran/note/c-274040959",
+    "source": "HackerNews",
+    "points": 2,
+    "date": "2026-06-11",
+    "summary": "If you build apps with AI tools, this is .uh concerning",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48459561",
+    "title": "Apple failed to make its AI tool to comply to EU regulations, EU Commission says",
+    "url": "https://www.reuters.com/business/apple-failed-make-its-ai-tool-comply-eu-regulations-eu-commission-says-2026-06-09/",
+    "source": "HackerNews",
+    "points": 1,
+    "date": "2026-06-11",
+    "summary": "Apple failed to make its AI tool to comply to EU regulations, EU Commission says",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48457151",
+    "title": "Productivity Effects Across Generations of AI Coding Tools",
+    "url": "http://muratbuffalo.blogspot.com/2026/06/writing-code-vs-shipping-code.html",
+    "source": "HackerNews",
+    "points": 1,
+    "date": "2026-06-11",
+    "summary": "Productivity Effects Across Generations of AI Coding Tools",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48463576",
+    "title": "Ask HN: How are you preserving your skills while using AI?",
+    "url": "https://news.ycombinator.com/item?id=48463576",
+    "source": "HackerNews",
+    "points": 9,
+    "date": "2026-06-11",
+    "summary": "Ask HN: How are you preserving your skills while using AI?",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48475992",
+    "title": "Show HN: I generated 235 system docs in a day using GPT-5.5",
+    "url": "https://www.paxerp.com/docs",
+    "source": "HackerNews",
+    "points": 4,
+    "date": "2026-06-11",
+    "summary": "Show HN: I generated 235 system docs in a day using GPT-5.5",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48490591",
+    "title": "Show HN: Brooks-Lint – AI code reviews grounded in 12 classic engineering books",
+    "url": "https://github.com/hyhmrright/brooks-lint",
+    "source": "HackerNews",
+    "points": 1,
+    "date": "2026-06-11",
+    "summary": "Show HN: Brooks-Lint – AI code reviews grounded in 12 classic engineering books",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48460584",
+    "title": "Zentral+|+Dang.ai",
+    "url": "https://dang.ai/tool/zentral-ai-erp-crm-suite",
+    "source": "HackerNews",
+    "points": 1,
+    "date": "2026-06-11",
+    "summary": "Zentral+|+Dang.ai",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
     "id": "48460210",
     "title": "We post-trained a model that pen tests instead of refusing your code",
     "url": "https://www.argusred.com/cli",
@@ -8,7 +134,11 @@
     "date": "2026-06-09",
     "summary": "AI security tool for penetration testing code vulnerabilities automatically.",
     "category": "Coding",
-    "tags": ["AI", "Security", "HackerNews"],
+    "tags": [
+      "AI",
+      "Security",
+      "HackerNews"
+    ],
     "verified": true
   },
   {
@@ -20,7 +150,11 @@
     "date": "2026-06-09",
     "summary": "Professional AI coding environment with quality assurance and code review.",
     "category": "Coding",
-    "tags": ["AI", "Development", "HackerNews"],
+    "tags": [
+      "AI",
+      "Development",
+      "HackerNews"
+    ],
     "verified": true
   },
   {
@@ -32,7 +166,11 @@
     "date": "2026-06-09",
     "summary": "Browser automation platform for building reliable web scraping and testing workflows.",
     "category": "Automation",
-    "tags": ["AI", "Automation", "HackerNews"],
+    "tags": [
+      "AI",
+      "Automation",
+      "HackerNews"
+    ],
     "verified": true
   },
   {
@@ -44,7 +182,11 @@
     "date": "2026-06-09",
     "summary": "Real-world story about AI knowledge extraction and workforce automation challenges.",
     "category": "Other",
-    "tags": ["AI", "Career", "Dev.to"],
+    "tags": [
+      "AI",
+      "Career",
+      "Dev.to"
+    ],
     "verified": true
   },
   {
@@ -56,7 +198,11 @@
     "date": "2026-06-09",
     "summary": "Solution to prevent AI bot traffic from inflating hosting costs on WordPress.",
     "category": "Automation",
-    "tags": ["AI", "Hosting", "Dev.to"],
+    "tags": [
+      "AI",
+      "Hosting",
+      "Dev.to"
+    ],
     "verified": true
   },
   {
@@ -68,7 +214,11 @@
     "date": "2026-06-09",
     "summary": "AI tool for automatic code repository analysis and documentation generation.",
     "category": "Coding",
-    "tags": ["AI", "Development", "Dev.to"],
+    "tags": [
+      "AI",
+      "Development",
+      "Dev.to"
+    ],
     "verified": true
   },
   {
@@ -80,7 +230,11 @@
     "date": "2026-06-09",
     "summary": "Free AI avatar application with animation, chat, and browser extensions.",
     "category": "Design",
-    "tags": ["AI", "Avatar", "Dev.to"],
+    "tags": [
+      "AI",
+      "Avatar",
+      "Dev.to"
+    ],
     "verified": true
   },
   {
@@ -92,7 +246,11 @@
     "date": "2026-06-08",
     "summary": "Community discussion on best AI tools and workflows for software development.",
     "category": "Productivity",
-    "tags": ["AI", "Tools", "HackerNews"],
+    "tags": [
+      "AI",
+      "Tools",
+      "HackerNews"
+    ],
     "verified": true
   },
   {
@@ -104,7 +262,11 @@
     "date": "2026-06-08",
     "summary": "Community discussion on concerns about AI adoption and limitations.",
     "category": "Other",
-    "tags": ["AI", "Discussion", "HackerNews"],
+    "tags": [
+      "AI",
+      "Discussion",
+      "HackerNews"
+    ],
     "verified": true
   },
   {
@@ -116,7 +278,11 @@
     "date": "2026-06-08",
     "summary": "Real case study about AI system decision-making failures and security costs.",
     "category": "Other",
-    "tags": ["AI", "Security", "Dev.to"],
+    "tags": [
+      "AI",
+      "Security",
+      "Dev.to"
+    ],
     "verified": true
   },
   {
@@ -128,7 +294,11 @@
     "date": "2026-06-08",
     "summary": "Guide on protecting AI API endpoints from abuse and inference theft attacks.",
     "category": "Other",
-    "tags": ["AI", "Security", "Dev.to"],
+    "tags": [
+      "AI",
+      "Security",
+      "Dev.to"
+    ],
     "verified": true
   },
   {
@@ -140,7 +310,11 @@
     "date": "2026-06-08",
     "summary": "Open-source AI Site Reliability Engineer for monitoring and alerting.",
     "category": "Automation",
-    "tags": ["AI", "DevOps", "HackerNews"],
+    "tags": [
+      "AI",
+      "DevOps",
+      "HackerNews"
+    ],
     "verified": true
   }
 ]
