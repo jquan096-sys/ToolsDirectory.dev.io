@@ -1,66 +1,43 @@
-name: 🤖 Auto-Update AI Tools News (Gemini + DeepSeek)
+name: Auto-Update AI Tools News
 
 on:
   schedule:
-    - cron: "0 * * * *"  # Run every hour
-  workflow_dispatch:     # Manual trigger option
+    - cron: "0 */6 * * *"   # every 6 hours
+  workflow_dispatch:          # manual trigger button in GitHub UI
 
 permissions:
-  contents: write
+  contents: write             # allow pushing data/*.json back to repo
 
 jobs:
-  update-tools:
+  update:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 10
 
     steps:
-      - name: ⬇️ Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
 
-      - name: 🐍 Set up Python 3.11
+      - name: Set up Python 3.11
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: 🔍 Check API Keys
+      - name: Run agent_update.py
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-        run: |
-          echo "Checking available API keys..."
-          if [ -z "$GEMINI_API_KEY" ]; then
-            echo "⚠️  GEMINI_API_KEY not set"
-          else
-            echo "✅ GEMINI_API_KEY configured"
-          fi
-          if [ -z "$DEEPSEEK_API_KEY" ]; then
-            echo "⚠️  DEEPSEEK_API_KEY not set"
-          else
-            echo "✅ DEEPSEEK_API_KEY configured"
-          fi
-
-      - name: 🚀 Run agent_update.py
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-          AGENT_NAME: "ToolsDirectoryBot/3.0-Dual"
         run: python agent_update.py
 
-      - name: 💾 Commit and push data files
+      - name: Commit and push data files
         run: |
-          git config --global user.name "tools-bot"
-          git config --global user.email "tools-bot@users.noreply.github.com"
-          git add -A data/ index.html 2>/dev/null || true
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/news.json data/tools_new.json data/meta.json
+          # Only commit if there are actual changes
           if git diff --cached --quiet; then
-            echo "✅ No changes — nothing to commit."
-            exit 0
+            echo "No changes to commit."
           else
-            ENGINE="Dual (Gemini+DeepSeek)"
-            TIMESTAMP=$(date -u '+%Y-%m-%d %H:%M UTC')
-            git commit -m "🤖 Auto-update [Hourly]: $TIMESTAMP [$ENGINE]"
+            git commit -m "chore: auto-update news data [$(date -u '+%Y-%m-%d %H:%M UTC')]"
             git push
-            echo "✅ Pushed updated data to repo."
-            exit 0
           fi
