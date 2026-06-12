@@ -157,6 +157,122 @@
     ]
   },
   {
+    "id": "48506545",
+    "title": "Launch HN: BitBoard (YC P25) – Analytics Workspace for Agents",
+    "url": "https://bitboard.work/",
+    "source": "HackerNews",
+    "points": 30,
+    "date": "2026-06-12",
+    "summary": "Launch HN: BitBoard (YC P25) – Analytics Workspace for Agents",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48506986",
+    "title": "Laid off from Meta, so a few of us built the safest AI-assisted cheating tool",
+    "url": "https://aceloop.ai/",
+    "source": "HackerNews",
+    "points": 2,
+    "date": "2026-06-12",
+    "summary": "Laid off from Meta, so a few of us built the safest AI-assisted cheating tool",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48489842",
+    "title": "Show HN: Run production AI in your cloud in 5 mins",
+    "url": "https://github.com/dagploy/dax",
+    "source": "HackerNews",
+    "points": 2,
+    "date": "2026-06-12",
+    "summary": "Show HN: Run production AI in your cloud in 5 mins",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48507696",
+    "title": "Ask HN: What happens when AI-voice becomes good enough?",
+    "url": "https://news.ycombinator.com/item?id=48507696",
+    "source": "HackerNews",
+    "points": 1,
+    "date": "2026-06-12",
+    "summary": "Ask HN: What happens when AI-voice becomes good enough?",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48509761",
+    "title": "I created an AI agent that finds investors that and does reachouts to investors",
+    "url": "https://news.ycombinator.com/item?id=48509761",
+    "source": "HackerNews",
+    "points": 1,
+    "date": "2026-06-12",
+    "summary": "I created an AI agent that finds investors that and does reachouts to investors",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48497154",
+    "title": "Show HN: Vera – open-source tool to self-audit smart contracts with AI",
+    "url": "https://vera.apostro.xyz/",
+    "source": "HackerNews",
+    "points": 1,
+    "date": "2026-06-12",
+    "summary": "Show HN: Vera – open-source tool to self-audit smart contracts with AI",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "3884520",
+    "title": "I Switched to the Agent Toolkit for AWS. Here's Why.",
+    "url": "https://dev.to/aws/i-switched-to-the-agent-toolkit-for-aws-heres-why-5hf",
+    "source": "Dev.to",
+    "points": 12,
+    "date": "2026-06-12",
+    "summary": "A hands-on look at the official Agent Toolkit for AWS: what it is, why I switched from the old MCP server, and how to set it up.",
+    "category": "Other",
+    "tags": [
+      "aws",
+      "mcp",
+      "ai",
+      "devtools"
+    ]
+  },
+  {
+    "id": "3835466",
+    "title": "The Most Dangerous Bias of Your AI Assistant Is That It Agrees With You",
+    "url": "https://dev.to/ben-witt/the-most-dangerous-bias-of-your-ai-assistant-is-that-it-agrees-with-you-4fhc",
+    "source": "Dev.to",
+    "points": 6,
+    "date": "2026-06-12",
+    "summary": "We talk a lot about hallucinations. But there is another failure mode we should take just as...",
+    "category": "Other",
+    "tags": [
+      "ai",
+      "llm",
+      "machinelearning",
+      "productivity"
+    ]
+  },
+  {
     "id": "48488713",
     "title": "Show HN: Offsend – local Mac app that masks secrets before AI tools see them",
     "url": "https://github.com/Offsend/Offsend",
@@ -617,122 +733,6 @@
       "ai",
       "vectordatabase",
       "localfirst"
-    ]
-  },
-  {
-    "id": "3868889",
-    "title": "The Real AI Coding Breakthrough Is Not More Context. It Is Better Diagnostics.",
-    "url": "https://dev.to/scarab-systems/the-real-ai-coding-breakthrough-is-not-more-context-it-is-better-diagnostics-1b3d",
-    "source": "Dev.to",
-    "points": 7,
-    "date": "2026-06-11",
-    "summary": "When I started building what became Scarab Diagnostic Suite, I was not trying to create a theory of...",
-    "category": "Other",
-    "tags": [
-      "ai",
-      "programming",
-      "devops",
-      "discuss"
-    ]
-  },
-  {
-    "id": "3868891",
-    "title": "Permission Is Not Purpose: The Next Failure Mode in Agent Memory (CLAIM-29)",
-    "url": "https://dev.to/zep1997/permission-is-not-purpose-the-next-failure-mode-in-agent-memory-claim-29-39fk",
-    "source": "Dev.to",
-    "points": 4,
-    "date": "2026-06-11",
-    "summary": "The instruction was authorized. The grant was fresh. The recipient was internal. The action had the...",
-    "category": "Other",
-    "tags": [
-      "ai",
-      "agents",
-      "machinelearning",
-      "security"
-    ]
-  },
-  {
-    "id": "48455519",
-    "title": "Configuring Agentic AI Coding Tools: An Exploratory Study",
-    "url": "https://arxiv.org/abs/2602.14690",
-    "source": "HackerNews",
-    "points": 3,
-    "date": "2026-06-09",
-    "summary": "Configuring Agentic AI Coding Tools: An Exploratory Study",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48459561",
-    "title": "Apple failed to make its AI tool to comply to EU regulations, EU Commission says",
-    "url": "https://www.reuters.com/business/apple-failed-make-its-ai-tool-comply-eu-regulations-eu-commission-says-2026-06-09/",
-    "source": "HackerNews",
-    "points": 1,
-    "date": "2026-06-09",
-    "summary": "Apple failed to make its AI tool to comply to EU regulations, EU Commission says",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48457151",
-    "title": "Productivity Effects Across Generations of AI Coding Tools",
-    "url": "http://muratbuffalo.blogspot.com/2026/06/writing-code-vs-shipping-code.html",
-    "source": "HackerNews",
-    "points": 1,
-    "date": "2026-06-09",
-    "summary": "Productivity Effects Across Generations of AI Coding Tools",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48460210",
-    "title": "Show HN: We post-trained a model that pen tests instead of refusing your code",
-    "url": "https://www.argusred.com/cli",
-    "source": "HackerNews",
-    "points": 9,
-    "date": "2026-06-09",
-    "summary": "Show HN: We post-trained a model that pen tests instead of refusing your code",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48463576",
-    "title": "Ask HN: How are you preserving your skills while using AI?",
-    "url": "https://news.ycombinator.com/item?id=48463576",
-    "source": "HackerNews",
-    "points": 3,
-    "date": "2026-06-09",
-    "summary": "Ask HN: How are you preserving your skills while using AI?",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48460584",
-    "title": "Zentral+|+Dang.ai",
-    "url": "https://dang.ai/tool/zentral-ai-erp-crm-suite",
-    "source": "HackerNews",
-    "points": 1,
-    "date": "2026-06-09",
-    "summary": "Zentral+|+Dang.ai",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
     ]
   }
 ]
