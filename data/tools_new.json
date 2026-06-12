@@ -1,5 +1,162 @@
 [
   {
+    "id": "48498766",
+    "title": "Ask HN: What computer are you using for AI coding tools?",
+    "url": "https://news.ycombinator.com/item?id=48498766",
+    "source": "HackerNews",
+    "points": 1,
+    "date": "2026-06-12",
+    "summary": "Ask HN: What computer are you using for AI coding tools?",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48502402",
+    "title": "I made a zero cost browser-use tool – let AI click and type on webpages for you",
+    "url": "https://github.com/pdufour/browser-use-wasm",
+    "source": "HackerNews",
+    "points": 1,
+    "date": "2026-06-12",
+    "summary": "I made a zero cost browser-use tool – let AI click and type on webpages for you",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48501067",
+    "title": "Deezer's new tool can identify AI music from Spotify, Apple Music, and others",
+    "url": "https://techcrunch.com/2026/06/11/deezers-new-tool-can-identify-ai-music-from-spotify-apple-music-and-others/",
+    "source": "HackerNews",
+    "points": 1,
+    "date": "2026-06-12",
+    "summary": "Deezer's new tool can identify AI music from Spotify, Apple Music, and others",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48472867",
+    "title": "Show HN: Eatmydata.ai – Local-First Question-to-SQL-to-Dashboard AI",
+    "url": "https://eatmydata.ai/",
+    "source": "HackerNews",
+    "points": 7,
+    "date": "2026-06-12",
+    "summary": "Show HN: Eatmydata.ai – Local-First Question-to-SQL-to-Dashboard AI",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48461287",
+    "title": "Show HN: Sandbox AI-app lifecycle, from build to run",
+    "url": "https://capakit.com/",
+    "source": "HackerNews",
+    "points": 6,
+    "date": "2026-06-12",
+    "summary": "Show HN: Sandbox AI-app lifecycle, from build to run",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48478454",
+    "title": "Show HN: AI watched my screen for a year. Weather beat sleep",
+    "url": "https://donethat.ai/blog/dogfooding-donethat",
+    "source": "HackerNews",
+    "points": 4,
+    "date": "2026-06-12",
+    "summary": "Show HN: AI watched my screen for a year. Weather beat sleep",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48469332",
+    "title": "Why the AI race misses the point",
+    "url": "https://autonomousagents19.com/blog/organizational-intelligence/tool-that-executes-vs-system-that-learns",
+    "source": "HackerNews",
+    "points": 3,
+    "date": "2026-06-12",
+    "summary": "Why the AI race misses the point",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48499532",
+    "title": "Show HN: MandoCode – local-first AI coding agent (.NET and Ollama)",
+    "url": "https://github.com/DevMando/MandoCode",
+    "source": "HackerNews",
+    "points": 2,
+    "date": "2026-06-12",
+    "summary": "Show HN: MandoCode – local-first AI coding agent (.NET and Ollama)",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48492034",
+    "title": "Show HN: Kikubot – Each AI agent is an inbox",
+    "url": "https://github.com/mxaiorg/kikubot",
+    "source": "HackerNews",
+    "points": 2,
+    "date": "2026-06-12",
+    "summary": "Show HN: Kikubot – Each AI agent is an inbox",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "3876280",
+    "title": "How Senior Software Engineers Use AI",
+    "url": "https://dev.to/octave_nkurunziza_afb0512/how-senior-software-engineers-use-ai-3enc",
+    "source": "Dev.to",
+    "points": 4,
+    "date": "2026-06-12",
+    "summary": "Let me start like this: you are here because you’re wondering whether you’re using AI the right way....",
+    "category": "Other",
+    "tags": [
+      "ai",
+      "softwareengineering",
+      "programming"
+    ]
+  },
+  {
+    "id": "3876015",
+    "title": "You Fixed the Rate Limits. Now Your Agent Fails Quietly.",
+    "url": "https://dev.to/p0rt/you-fixed-the-rate-limits-now-your-agent-fails-quietly-3keo",
+    "source": "Dev.to",
+    "points": 10,
+    "date": "2026-06-12",
+    "summary": "Every capacity fix - retries, fallbacks, caching - buys availability by acting on output it didn't freshly earn. Why uptime and correct uptime are different SLOs, and how to engineer the second one.",
+    "category": "Other",
+    "tags": [
+      "ai",
+      "llm",
+      "devops",
+      "machinelearning"
+    ]
+  },
+  {
     "id": "48488713",
     "title": "Show HN: Offsend – local Mac app that masks secrets before AI tools see them",
     "url": "https://github.com/Offsend/Offsend",
@@ -576,168 +733,6 @@
     "tags": [
       "AI",
       "HackerNews"
-    ]
-  },
-  {
-    "id": "48454470",
-    "title": "Show HN: Web tools an AI agent pays for per call in USDC, no API key (x402+MCP)",
-    "url": "https://superhighway.walls.sh",
-    "source": "HackerNews",
-    "points": 4,
-    "date": "2026-06-09",
-    "summary": "Show HN: Web tools an AI agent pays for per call in USDC, no API key (x402+MCP)",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48459824",
-    "title": "Apple Outlines AI and Developer Tool Updates at Platforms State of the Union",
-    "url": "https://www.macrumors.com/2026/06/09/apple-outlines-major-ai-and-developer-tool-updates/",
-    "source": "HackerNews",
-    "points": 1,
-    "date": "2026-06-09",
-    "summary": "Apple Outlines AI and Developer Tool Updates at Platforms State of the Union",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48455479",
-    "title": "Bringing the latest Gemini models to Apple developers",
-    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/bringing-gemini-models-to-apple-developers/",
-    "source": "HackerNews",
-    "points": 2,
-    "date": "2026-06-09",
-    "summary": "Bringing the latest Gemini models to Apple developers",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48462964",
-    "title": "Show HN: Tool to extract AI-generated fonts from image sheets into TTFs",
-    "url": "https://github.com/wyattmattoe/Image-to-font-extractor",
-    "source": "HackerNews",
-    "points": 1,
-    "date": "2026-06-09",
-    "summary": "Show HN: Tool to extract AI-generated fonts from image sheets into TTFs",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48457516",
-    "title": "Show HN: CalmSEO – Keyword and Google Search Console Tools for Your AI Agent",
-    "url": "https://calmseo.com/",
-    "source": "HackerNews",
-    "points": 1,
-    "date": "2026-06-09",
-    "summary": "Show HN: CalmSEO – Keyword and Google Search Console Tools for Your AI Agent",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48448467",
-    "title": "A Git/LFS-backed unified tool-output format for AI agents, with 95% token cut",
-    "url": "https://old.reddit.com/r/codex/comments/1u0amqg/a_gitlfsbacked_unified_format_of_tool_output_for/",
-    "source": "HackerNews",
-    "points": 2,
-    "date": "2026-06-09",
-    "summary": "A Git/LFS-backed unified tool-output format for AI agents, with 95% token cut",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "3856985",
-    "title": "Build a Realtime Translation App with Gemini Live API, LiveKit, & Google Cloud Run",
-    "url": "https://dev.to/googleai/build-a-realtime-translation-app-with-gemini-live-api-livekit-google-cloud-run-5474",
-    "source": "Dev.to",
-    "points": 20,
-    "date": "2026-06-09",
-    "summary": "Imagine speaking in English, and having listeners from all over the world hear you translated into...",
-    "category": "Other",
-    "tags": [
-      "ai",
-      "gemini",
-      "nextjs",
-      "tutorial"
-    ]
-  },
-  {
-    "id": "3845336",
-    "title": "Skill, MCP, Plugin, or just a CLI: how I pick a Claude Code extension, lightest first",
-    "url": "https://dev.to/rapls/skill-mcp-plugin-or-just-a-cli-how-i-pick-a-claude-code-extension-lightest-first-3hon",
-    "source": "Dev.to",
-    "points": 13,
-    "date": "2026-06-09",
-    "summary": "I was building a plugin release with Claude Code, and the changelog draft came together nicely. Pull...",
-    "category": "Other",
-    "tags": [
-      "claudecode",
-      "ai",
-      "productivity",
-      "mcp"
-    ]
-  },
-  {
-    "id": "3857930",
-    "title": "AI Bots Are Driving Up Your Hosting Bill. I have a WordPress fix",
-    "url": "https://dev.to/phalkmin/ai-bots-are-driving-up-your-hosting-bill-i-have-a-wordpress-fix-7ih",
-    "source": "Dev.to",
-    "points": 4,
-    "date": "2026-06-09",
-    "summary": "A client called me last month, half panicked, after getting an email from his hosting provider. The...",
-    "category": "Other",
-    "tags": [
-      "wordpress",
-      "ai"
-    ]
-  },
-  {
-    "id": "3853825",
-    "title": "Stop Feeding Agents Raw Data",
-    "url": "https://dev.to/copyleftdev/stop-feeding-agents-raw-data-2kif",
-    "source": "Dev.to",
-    "points": 3,
-    "date": "2026-06-09",
-    "summary": "I used to think the problem was the agent.  I would hand it a large JSON export and ask a reasonable...",
-    "category": "Other",
-    "tags": [
-      "ai",
-      "rust",
-      "agents",
-      "data"
-    ]
-  },
-  {
-    "id": "3849672",
-    "title": "I Got Tired of Reading Strangers’ Codebases, So I Built an AI That Reads Them For Me",
-    "url": "https://dev.to/nithiin7/i-got-tired-of-reading-strangers-codebases-so-i-built-an-ai-that-reads-them-for-me-3l3d",
-    "source": "Dev.to",
-    "points": 5,
-    "date": "2026-06-09",
-    "summary": "Every developer knows this feeling: you open a repo you've never seen before — maybe for a new job, a...",
-    "category": "Other",
-    "tags": [
-      "ai",
-      "opensource",
-      "rag",
-      "productivity"
     ]
   }
 ]

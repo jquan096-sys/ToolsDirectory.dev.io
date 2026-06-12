@@ -1,5 +1,47 @@
 [
   {
+    "id": "48498766",
+    "title": "Ask HN: What computer are you using for AI coding tools?",
+    "url": "https://news.ycombinator.com/item?id=48498766",
+    "source": "HackerNews",
+    "points": 1,
+    "date": "2026-06-12",
+    "summary": "Ask HN: What computer are you using for AI coding tools?",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48491836",
+    "title": "Show HN: In-browser real LLM token counter and cost estimation",
+    "url": "https://holaclaw.ai/tools/token-studio",
+    "source": "HackerNews",
+    "points": 3,
+    "date": "2026-06-12",
+    "summary": "Show HN: In-browser real LLM token counter and cost estimation",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48493764",
+    "title": "Viscribe – OSS image analysis tools for AI agents",
+    "url": "https://github.com/itsperini/viscribe",
+    "source": "HackerNews",
+    "points": 4,
+    "date": "2026-06-12",
+    "summary": "Viscribe – OSS image analysis tools for AI agents",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
     "id": "48455519",
     "title": "Configuring Agentic AI Coding Tools: An Exploratory Study",
     "url": "https://arxiv.org/abs/2602.14690",
