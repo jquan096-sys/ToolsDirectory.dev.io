@@ -227,6 +227,129 @@
     ]
   },
   {
+    "id": "48519350",
+    "title": "I built a one click installer on token compression engine for AI tools",
+    "url": "https://news.ycombinator.com/item?id=48519350",
+    "source": "HackerNews",
+    "points": 1,
+    "date": "2026-06-13",
+    "summary": "I built a one click installer on token compression engine for AI tools",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48488753",
+    "title": "Show HN: Claumon – forecasting Claude Code usage limits with a Gamma process",
+    "url": "https://github.com/fabioconcina/claumon",
+    "source": "HackerNews",
+    "points": 7,
+    "date": "2026-06-13",
+    "summary": "Show HN: Claumon – forecasting Claude Code usage limits with a Gamma process",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "3868709",
+    "title": "How to Make Coding Agents Remember Past Solutions",
+    "url": "https://dev.to/entire/how-to-make-coding-agents-remember-past-solutions-4a71",
+    "source": "Dev.to",
+    "points": 14,
+    "date": "2026-06-13",
+    "summary": "Some engineering problems are only painful because they happen so rarely. Even with a coding agent,...",
+    "category": "Other",
+    "tags": [
+      "ai",
+      "agents",
+      "entire",
+      "agentmemory"
+    ]
+  },
+  {
+    "id": "3872255",
+    "title": "Micro Context Switching",
+    "url": "https://dev.to/tracygjg/micro-context-switching-5658",
+    "source": "Dev.to",
+    "points": 6,
+    "date": "2026-06-13",
+    "summary": "NB, These are the mental rambling of an aged software engineer and AI-sceptic. Writing computer code...",
+    "category": "Other",
+    "tags": [
+      "discuss",
+      "ai",
+      "softwaredevelopment"
+    ]
+  },
+  {
+    "id": "3889945",
+    "title": "I expected the cheaper model to be cheaper. It cost 8.6 more.",
+    "url": "https://dev.to/yogesh23012001/i-expected-the-cheaper-model-to-be-cheaper-it-cost-86x-more-5cph",
+    "source": "Dev.to",
+    "points": 9,
+    "date": "2026-06-13",
+    "summary": "I'd routed the same one-word prompt to Claude Haiku and to Gemini 2.5 Flash. Flash has the lower...",
+    "category": "Other",
+    "tags": [
+      "ai",
+      "software",
+      "distributedsystems",
+      "llm"
+    ]
+  },
+  {
+    "id": "3875839",
+    "title": "I Made Two AI Models Fight Each Other. They Agreed Way Too Much.",
+    "url": "https://dev.to/ggle_in/i-made-two-ai-models-fight-each-other-they-agreed-way-too-much-4jb5",
+    "source": "Dev.to",
+    "points": 5,
+    "date": "2026-06-13",
+    "summary": "Or: How I learned that \"independent validators\" are like siblings – they share the same...",
+    "category": "Other",
+    "tags": [
+      "ai",
+      "llm",
+      "security",
+      "testing"
+    ]
+  },
+  {
+    "id": "3884200",
+    "title": "Flutter Agent Skills: How to Make Your AI Agent Actually Good at Flutter",
+    "url": "https://dev.to/sayed_ali_alkamel/flutter-agent-skills-how-to-make-your-ai-agent-actually-good-at-flutter-3831",
+    "source": "Dev.to",
+    "points": 5,
+    "date": "2026-06-13",
+    "summary": "TL;DR: Your AI coding assistant is a generalist. It writes Flutter that looks right but quietly...",
+    "category": "Other",
+    "tags": [
+      "flutter",
+      "dart",
+      "ai",
+      "programming"
+    ]
+  },
+  {
+    "id": "3884671",
+    "title": "Every Step Was Allowed. The Sequence Was the Attack. (AI Memory Judgment, CLAIM-30)",
+    "url": "https://dev.to/zep1997/every-step-was-allowed-the-sequence-was-the-attack-ai-memory-judgment-claim-30-4ehc",
+    "source": "Dev.to",
+    "points": 6,
+    "date": "2026-06-13",
+    "summary": "Earlier this week I published CLAIM-29: permission is not purpose. An instruction can be fully...",
+    "category": "Other",
+    "tags": [
+      "ai",
+      "agents",
+      "machinelearning",
+      "security"
+    ]
+  },
+  {
     "id": "48498766",
     "title": "Ask HN: What computer are you using for AI coding tools?",
     "url": "https://news.ycombinator.com/item?id=48498766",
@@ -609,125 +732,6 @@
     "tags": [
       "AI",
       "HackerNews"
-    ]
-  },
-  {
-    "id": "48489383",
-    "title": "Show HN: Fundamentalio – open-source AI-powered stock analysis tool",
-    "url": "https://github.com/DjNero11/fundamentalio",
-    "source": "HackerNews",
-    "points": 1,
-    "date": "2026-06-11",
-    "summary": "Show HN: Fundamentalio – open-source AI-powered stock analysis tool",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48488132",
-    "title": "Show HN: SpadeBox – Sandboxed tools and JavaScript runtime for AI agents",
-    "url": "https://github.com/CharlyCst/spadebox",
-    "source": "HackerNews",
-    "points": 2,
-    "date": "2026-06-11",
-    "summary": "Show HN: SpadeBox – Sandboxed tools and JavaScript runtime for AI agents",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48484306",
-    "title": "AI: Equalizer or Divider?",
-    "url": "https://news.ycombinator.com/item?id=48484306",
-    "source": "HackerNews",
-    "points": 2,
-    "date": "2026-06-11",
-    "summary": "AI: Equalizer or Divider?",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48469352",
-    "title": "Show HN: The agent that builds and operates its own SaaS tools",
-    "url": "https://craftbot.live",
-    "source": "HackerNews",
-    "points": 11,
-    "date": "2026-06-11",
-    "summary": "Show HN: The agent that builds and operates its own SaaS tools",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "3861043",
-    "title": "The Code Works. What Could Possibly Go Wrong?",
-    "url": "https://dev.to/sylwia-lask/the-code-works-what-could-possibly-go-wrong-5hbm",
-    "source": "Dev.to",
-    "points": 70,
-    "date": "2026-06-11",
-    "summary": "Would you treat a serious illness without seeing a doctor, relying only on whatever your favorite AI...",
-    "category": "Other",
-    "tags": [
-      "ai",
-      "webdev",
-      "discuss"
-    ]
-  },
-  {
-    "id": "3862070",
-    "title": "How we built AIventure, an AI-Powered Retro Dungeon",
-    "url": "https://dev.to/googleai/how-we-built-aiventure-an-ai-powered-retro-dungeon-2f54",
-    "source": "Dev.to",
-    "points": 25,
-    "date": "2026-06-11",
-    "summary": "Grab a refreshing slice of cold watermelon (because it’s summer in Tokyo and I love it!), and let me...",
-    "category": "Other",
-    "tags": [
-      "gamedev",
-      "gemini",
-      "gemma",
-      "ai"
-    ]
-  },
-  {
-    "id": "3865236",
-    "title": "CSS – only a Nerdy Hobby?",
-    "url": "https://dev.to/ingosteinke/css-only-a-nerdy-hobby-17hf",
-    "source": "Dev.to",
-    "points": 26,
-    "date": "2026-06-11",
-    "summary": "In times when people believe that \"AI can code a website in 2 days\" (see: how to leverage AI as a...",
-    "category": "Other",
-    "tags": [
-      "ai",
-      "css",
-      "webdev",
-      "watercooler"
-    ]
-  },
-  {
-    "id": "3856153",
-    "title": "The 'Prompt' Is Not a Skill — And We Need to Stop Pretending",
-    "url": "https://dev.to/harsh2644/the-prompt-is-not-a-skill-and-we-need-to-stop-pretending-3m18",
-    "source": "Dev.to",
-    "points": 56,
-    "date": "2026-06-11",
-    "summary": "Writing a prompt isn't engineering. It's typing. You type what you want. The AI figures out the rest...",
-    "category": "Other",
-    "tags": [
-      "ai",
-      "career",
-      "programming",
-      "discuss"
     ]
   }
 ]
