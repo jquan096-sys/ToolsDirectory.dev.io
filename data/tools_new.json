@@ -139,6 +139,94 @@
     ]
   },
   {
+    "id": "48516504",
+    "title": "AI OSS tool repo goes archived over night after raising $7.3M Seed",
+    "url": "https://github.com/tensorzero/tensorzero",
+    "source": "HackerNews",
+    "points": 9,
+    "date": "2026-06-13",
+    "summary": "AI OSS tool repo goes archived over night after raising $7.3M Seed",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48492741",
+    "title": "Which AI prototyping tools can export a self-contained HTML file?",
+    "url": "https://productnow.ai/blogs/extracting-html-from-ai-prototyping-tools",
+    "source": "HackerNews",
+    "points": 2,
+    "date": "2026-06-13",
+    "summary": "Which AI prototyping tools can export a self-contained HTML file?",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48491836",
+    "title": "Show HN: In-browser real LLM token counter and cost estimation",
+    "url": "https://holaclaw.ai/tools/token-studio",
+    "source": "HackerNews",
+    "points": 3,
+    "date": "2026-06-13",
+    "summary": "Show HN: In-browser real LLM token counter and cost estimation",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48493764",
+    "title": "Viscribe – OSS image analysis tools for AI agents",
+    "url": "https://github.com/itsperini/viscribe",
+    "source": "HackerNews",
+    "points": 4,
+    "date": "2026-06-13",
+    "summary": "Viscribe – OSS image analysis tools for AI agents",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "3870284",
+    "title": "I Built a Free, Fully Local AI Resume Builder — No Subscriptions, No Cloud, No Catch",
+    "url": "https://dev.to/nithiin7/i-built-a-free-fully-local-ai-resume-builder-no-subscriptions-no-cloud-no-catch-m1h",
+    "source": "Dev.to",
+    "points": 10,
+    "date": "2026-06-13",
+    "summary": "If you've ever tried to use an AI resume builder, you've probably hit the same wall I did. You sign...",
+    "category": "Other",
+    "tags": [
+      "ai",
+      "career",
+      "opensource",
+      "productivity"
+    ]
+  },
+  {
+    "id": "3868166",
+    "title": "I Built an Offline AI Crop Disease Identifier for Smart India Hackathon",
+    "url": "https://dev.to/dev48v/i-built-an-offline-ai-crop-disease-identifier-for-smart-india-hackathon-2a8l",
+    "source": "Dev.to",
+    "points": 2,
+    "date": "2026-06-13",
+    "summary": "SIH brief - 35% of Indian crop losses come from undiagnosed disease. Build an Android app where the farmer photographs a leaf, AI returns the disease + Hindi remedy. Runs offline. 3.5 MB model.",
+    "category": "Other",
+    "tags": [
+      "ai",
+      "python",
+      "beginners",
+      "hackathon"
+    ]
+  },
+  {
     "id": "48498766",
     "title": "Ask HN: What computer are you using for AI coding tools?",
     "url": "https://news.ycombinator.com/item?id=48498766",
@@ -640,101 +728,6 @@
       "career",
       "programming",
       "discuss"
-    ]
-  },
-  {
-    "id": "3846240",
-    "title": "The Loop Is Not the Product",
-    "url": "https://dev.to/dannwaneri/the-loop-is-not-the-product-466d",
-    "source": "Dev.to",
-    "points": 18,
-    "date": "2026-06-11",
-    "summary": "A tweet landed on my timeline from Peter Steinberger — OpenClaw founder, now at OpenAI: \"Here's...",
-    "category": "Other",
-    "tags": [
-      "ai",
-      "webdev",
-      "discuss",
-      "productivity"
-    ]
-  },
-  {
-    "id": "3866794",
-    "title": "CLI over MCP: a small Chrome DevTools experiment in Copilot CLI",
-    "url": "https://dev.to/maximsaplin/cli-over-mcp-a-small-chrome-devtools-experiment-in-copilot-cli-5gpi",
-    "source": "Dev.to",
-    "points": 11,
-    "date": "2026-06-11",
-    "summary": "I ran the same browser smoke task through two paths: direct Chrome DevTools MCP and a custom CLI...",
-    "category": "Other",
-    "tags": [
-      "ai",
-      "programming",
-      "mcp",
-      "agents"
-    ]
-  },
-  {
-    "id": "3868709",
-    "title": "How to Make Coding Agents Remember Past Solutions",
-    "url": "https://dev.to/entire/how-to-make-coding-agents-remember-past-solutions-4a71",
-    "source": "Dev.to",
-    "points": 7,
-    "date": "2026-06-11",
-    "summary": "Some engineering problems are only painful because they happen so rarely. Even with a coding agent,...",
-    "category": "Other",
-    "tags": [
-      "ai",
-      "agents",
-      "entire",
-      "agentmemory"
-    ]
-  },
-  {
-    "id": "3858155",
-    "title": "MCP Is the USB-C of AI. So Why Are You Plugging Everything In?",
-    "url": "https://dev.to/kenwalger/mcp-is-the-usb-c-of-ai-so-why-are-you-plugging-everything-in-37jn",
-    "source": "Dev.to",
-    "points": 7,
-    "date": "2026-06-11",
-    "summary": "Where this fits: This article extends the Zero-Glue series. If you haven't read The End of Glue Code:...",
-    "category": "Other",
-    "tags": [
-      "mcp",
-      "ai",
-      "security",
-      "systemdesign"
-    ]
-  },
-  {
-    "id": "3872255",
-    "title": "Micro Context Switching",
-    "url": "https://dev.to/tracygjg/micro-context-switching-5658",
-    "source": "Dev.to",
-    "points": 4,
-    "date": "2026-06-11",
-    "summary": "NB, These are the mental rambling of an aged software engineer and AI-sceptic. Writing computer code...",
-    "category": "Other",
-    "tags": [
-      "discuss",
-      "ai",
-      "softwaredevelopment"
-    ]
-  },
-  {
-    "id": "3865337",
-    "title": "When Prompt Batching Made My LLM App More Expensive",
-    "url": "https://dev.to/ahikmah/when-prompt-batching-made-my-llm-app-more-expensive-5gf5",
-    "source": "Dev.to",
-    "points": 12,
-    "date": "2026-06-11",
-    "summary": "I was working on cost optimization for an LLM-based document translation pipeline. At that point,...",
-    "category": "Other",
-    "tags": [
-      "ai",
-      "llm",
-      "optimization",
-      "programming"
     ]
   }
 ]
