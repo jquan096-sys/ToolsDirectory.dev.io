@@ -1,5 +1,67 @@
 [
   {
+    "id": "48489664",
+    "title": "Show HN: Spanly - See what AI agents do inside your MCP server",
+    "url": "https://spanly.com/",
+    "source": "HackerNews",
+    "points": 1,
+    "date": "2026-06-13",
+    "summary": "Show HN: Spanly - See what AI agents do inside your MCP server",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "3868889",
+    "title": "The Real AI Coding Breakthrough Is Not More Context. It Is Better Diagnostics.",
+    "url": "https://dev.to/scarab-systems/the-real-ai-coding-breakthrough-is-not-more-context-it-is-better-diagnostics-1b3d",
+    "source": "Dev.to",
+    "points": 9,
+    "date": "2026-06-13",
+    "summary": "When I started building what became Scarab Diagnostic Suite, I was not trying to create a theory of...",
+    "category": "Other",
+    "tags": [
+      "ai",
+      "programming",
+      "devops",
+      "discuss"
+    ]
+  },
+  {
+    "id": "3868891",
+    "title": "Permission Is Not Purpose: The Next Failure Mode in Agent Memory (CLAIM-29)",
+    "url": "https://dev.to/zep1997/permission-is-not-purpose-the-next-failure-mode-in-agent-memory-claim-29-39fk",
+    "source": "Dev.to",
+    "points": 4,
+    "date": "2026-06-13",
+    "summary": "The instruction was authorized. The grant was fresh. The recipient was internal. The action had the...",
+    "category": "Other",
+    "tags": [
+      "ai",
+      "agents",
+      "machinelearning",
+      "security"
+    ]
+  },
+  {
+    "id": "3886576",
+    "title": "The Remote Already Exists: What \"Click\" Got Right About Agentic AI",
+    "url": "https://dev.to/alexmercedcoder/the-remote-already-exists-what-click-got-right-about-agentic-ai-1d97",
+    "source": "Dev.to",
+    "points": 0,
+    "date": "2026-06-13",
+    "summary": "I rewatched \"Click\" recently, the 2006 Adam Sandler movie that everyone remembers as a dumb comedy...",
+    "category": "Other",
+    "tags": [
+      "agents",
+      "ai",
+      "discuss",
+      "productivity"
+    ]
+  },
+  {
     "id": "48498766",
     "title": "Ask HN: What computer are you using for AI coding tools?",
     "url": "https://news.ycombinator.com/item?id=48498766",
@@ -670,69 +732,6 @@
     "tags": [
       "AI",
       "HackerNews"
-    ]
-  },
-  {
-    "id": "3876565",
-    "title": "Your Vibe-Coded App Works. Is It Any Good?",
-    "url": "https://dev.to/mlh/your-vibe-coded-app-works-is-it-any-good-28co",
-    "source": "Dev.to",
-    "points": 7,
-    "date": "2026-06-11",
-    "summary": "TL;DR - Getting an app to run is now the easy part. AI is very good at producing something that...",
-    "category": "Other",
-    "tags": [
-      "vibecoding",
-      "ai",
-      "firstyearincode"
-    ]
-  },
-  {
-    "id": "3876616",
-    "title": "How I Added Goose as an External Agent to Entire",
-    "url": "https://dev.to/entire/how-i-added-goose-as-an-external-agent-to-entire-6gf",
-    "source": "Dev.to",
-    "points": 4,
-    "date": "2026-06-11",
-    "summary": "I just opened a PR to add support for Goose to Entire. Goose is an open source coding agent under the...",
-    "category": "Other",
-    "tags": [
-      "ai",
-      "agents",
-      "goose",
-      "entire"
-    ]
-  },
-  {
-    "id": "3870378",
-    "title": "Google ADK Security: 5 Layers That Defend AI Agents From Prompt Injection",
-    "url": "https://dev.to/gde/google-adk-security-5-layers-that-defend-ai-agents-from-prompt-injection-1ped",
-    "source": "Dev.to",
-    "points": 7,
-    "date": "2026-06-11",
-    "summary": "A $3,000 refund just went out. No human approved it. Your AI agent read a poisoned tool response and...",
-    "category": "Other",
-    "tags": [
-      "ai",
-      "security",
-      "llm",
-      "googlecloud"
-    ]
-  },
-  {
-    "id": "3850870",
-    "title": "Sovereign Synapse: The Local Brain",
-    "url": "https://dev.to/kenwalger/sovereign-synapse-the-local-brain-51j9",
-    "source": "Dev.to",
-    "points": 5,
-    "date": "2026-06-11",
-    "summary": "A vault of 3,150 Markdown files is just a very organized digital attic. It’s a repository of every...",
-    "category": "Other",
-    "tags": [
-      "python",
-      "ai",
-      "vectordatabase",
-      "localfirst"
     ]
   }
 ]
