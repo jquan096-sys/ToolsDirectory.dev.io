@@ -129,6 +129,110 @@
     ]
   },
   {
+    "id": "48488713",
+    "title": "Show HN: Offsend – local Mac app that masks secrets before AI tools see them",
+    "url": "https://github.com/Offsend/Offsend",
+    "source": "HackerNews",
+    "points": 2,
+    "date": "2026-06-14",
+    "summary": "Show HN: Offsend – local Mac app that masks secrets before AI tools see them",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48490591",
+    "title": "Show HN: Brooks-Lint – AI code reviews grounded in 12 classic engineering books",
+    "url": "https://github.com/hyhmrright/brooks-lint",
+    "source": "HackerNews",
+    "points": 6,
+    "date": "2026-06-14",
+    "summary": "Show HN: Brooks-Lint – AI code reviews grounded in 12 classic engineering books",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48524387",
+    "title": "Story of How Im Running an Unlimited $6/Month AI Provider on 4x RTX 3090s",
+    "url": "https://news.ycombinator.com/item?id=48524387",
+    "source": "HackerNews",
+    "points": 4,
+    "date": "2026-06-14",
+    "summary": "Story of How Im Running an Unlimited $6/Month AI Provider on 4x RTX 3090s",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48520757",
+    "title": "Show HN: I am running 3 coding agents non-stop over the last 3 days. Here is how",
+    "url": "https://news.ycombinator.com/item?id=48520757",
+    "source": "HackerNews",
+    "points": 4,
+    "date": "2026-06-14",
+    "summary": "Show HN: I am running 3 coding agents non-stop over the last 3 days. Here is how",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "3891493",
+    "title": "Claude Fable 5 lasted three days. Then the US government pulled it.",
+    "url": "https://dev.to/rapls/claude-fable-5-lasted-three-days-then-the-us-government-pulled-it-4ojk",
+    "source": "Dev.to",
+    "points": 4,
+    "date": "2026-06-14",
+    "summary": "On Tuesday this week I was reading launch coverage that told me to try Claude Fable 5 soon. By Friday...",
+    "category": "Other",
+    "tags": [
+      "ai",
+      "claude",
+      "security",
+      "news"
+    ]
+  },
+  {
+    "id": "3887796",
+    "title": "I rebuilt Zo Computer's seven subsystems in 800 lines of Python — here's the architecture, the tradeoffs, and what I cut",
+    "url": "https://dev.to/aman_sachan_126d19c4a2773/i-rebuilt-zo-computers-seven-subsystems-in-800-lines-of-python-heres-the-architecture-the-2757",
+    "source": "Dev.to",
+    "points": 1,
+    "date": "2026-06-14",
+    "summary": "ZoClone is a single-user Python clone of the agent manager, skills system, memory engine, compute pool, scheduler, BYOK client, and browser automation that power a hosted AI computer. Here's the layout.",
+    "category": "Other",
+    "tags": [
+      "python",
+      "opensource",
+      "ai",
+      "showdev"
+    ]
+  },
+  {
+    "id": "3889355",
+    "title": "AI Didn't Replace Junior Developers. It Replaced Safe Places To Be One.",
+    "url": "https://dev.to/bradleymatera/ai-didnt-replace-junior-developers-it-replaced-safe-places-to-be-one-d91",
+    "source": "Dev.to",
+    "points": 0,
+    "date": "2026-06-14",
+    "summary": "Every few weeks, another article lands in my inbox with a headline like \"AI is Eliminating Junior...",
+    "category": "Other",
+    "tags": [
+      "ai",
+      "beginners",
+      "productivity",
+      "programming"
+    ]
+  },
+  {
     "id": "48489664",
     "title": "Show HN: Spanly - See what AI agents do inside your MCP server",
     "url": "https://spanly.com/",
@@ -633,106 +737,6 @@
       "llm",
       "devops",
       "machinelearning"
-    ]
-  },
-  {
-    "id": "48506545",
-    "title": "Launch HN: BitBoard (YC P25) – Analytics Workspace for Agents",
-    "url": "https://bitboard.work/",
-    "source": "HackerNews",
-    "points": 30,
-    "date": "2026-06-12",
-    "summary": "Launch HN: BitBoard (YC P25) – Analytics Workspace for Agents",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48506986",
-    "title": "Laid off from Meta, so a few of us built the safest AI-assisted cheating tool",
-    "url": "https://aceloop.ai/",
-    "source": "HackerNews",
-    "points": 2,
-    "date": "2026-06-12",
-    "summary": "Laid off from Meta, so a few of us built the safest AI-assisted cheating tool",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48489842",
-    "title": "Show HN: Run production AI in your cloud in 5 mins",
-    "url": "https://github.com/dagploy/dax",
-    "source": "HackerNews",
-    "points": 2,
-    "date": "2026-06-12",
-    "summary": "Show HN: Run production AI in your cloud in 5 mins",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48507696",
-    "title": "Ask HN: What happens when AI-voice becomes good enough?",
-    "url": "https://news.ycombinator.com/item?id=48507696",
-    "source": "HackerNews",
-    "points": 1,
-    "date": "2026-06-12",
-    "summary": "Ask HN: What happens when AI-voice becomes good enough?",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48509761",
-    "title": "I created an AI agent that finds investors that and does reachouts to investors",
-    "url": "https://news.ycombinator.com/item?id=48509761",
-    "source": "HackerNews",
-    "points": 1,
-    "date": "2026-06-12",
-    "summary": "I created an AI agent that finds investors that and does reachouts to investors",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48497154",
-    "title": "Show HN: Vera – open-source tool to self-audit smart contracts with AI",
-    "url": "https://vera.apostro.xyz/",
-    "source": "HackerNews",
-    "points": 1,
-    "date": "2026-06-12",
-    "summary": "Show HN: Vera – open-source tool to self-audit smart contracts with AI",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "3884520",
-    "title": "I Switched to the Agent Toolkit for AWS. Here's Why.",
-    "url": "https://dev.to/aws/i-switched-to-the-agent-toolkit-for-aws-heres-why-5hf",
-    "source": "Dev.to",
-    "points": 12,
-    "date": "2026-06-12",
-    "summary": "A hands-on look at the official Agent Toolkit for AWS: what it is, why I switched from the old MCP server, and how to set it up.",
-    "category": "Other",
-    "tags": [
-      "aws",
-      "mcp",
-      "ai",
-      "devtools"
     ]
   }
 ]
