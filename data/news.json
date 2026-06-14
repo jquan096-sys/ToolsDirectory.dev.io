@@ -1,5 +1,33 @@
 [
   {
+    "id": "48521211",
+    "title": "Anthropic suspends new AI tools over US Government security concerns",
+    "url": "https://www.bbc.com/news/articles/c932g3v3e13o",
+    "source": "HackerNews",
+    "points": 6,
+    "date": "2026-06-14",
+    "summary": "Anthropic suspends new AI tools over US Government security concerns",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48521226",
+    "title": "Engram: Offline MCP memory server for AI coding tools to share memory",
+    "url": "https://github.com/dgr8akki/engram",
+    "source": "HackerNews",
+    "points": 3,
+    "date": "2026-06-14",
+    "summary": "Engram: Offline MCP memory server for AI coding tools to share memory",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
     "id": "48511828",
     "title": "Tell HN: I'm making 1K USD per hour with AI",
     "url": "https://news.ycombinator.com/item?id=48511828",

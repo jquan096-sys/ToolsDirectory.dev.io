@@ -1,5 +1,134 @@
 [
   {
+    "id": "48521211",
+    "title": "Anthropic suspends new AI tools over US Government security concerns",
+    "url": "https://www.bbc.com/news/articles/c932g3v3e13o",
+    "source": "HackerNews",
+    "points": 6,
+    "date": "2026-06-14",
+    "summary": "Anthropic suspends new AI tools over US Government security concerns",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48521226",
+    "title": "Engram: Offline MCP memory server for AI coding tools to share memory",
+    "url": "https://github.com/dgr8akki/engram",
+    "source": "HackerNews",
+    "points": 3,
+    "date": "2026-06-14",
+    "summary": "Engram: Offline MCP memory server for AI coding tools to share memory",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48489383",
+    "title": "Show HN: Fundamentalio – open-source AI-powered stock analysis tool",
+    "url": "https://github.com/DjNero11/fundamentalio",
+    "source": "HackerNews",
+    "points": 1,
+    "date": "2026-06-14",
+    "summary": "Show HN: Fundamentalio – open-source AI-powered stock analysis tool",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48488132",
+    "title": "Show HN: SpadeBox – Sandboxed tools and JavaScript runtime for AI agents",
+    "url": "https://github.com/CharlyCst/spadebox",
+    "source": "HackerNews",
+    "points": 3,
+    "date": "2026-06-14",
+    "summary": "Show HN: SpadeBox – Sandboxed tools and JavaScript runtime for AI agents",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "48521381",
+    "title": "Show HN: Open-Sourced Approxima, Our Agentic QA Tool to Catch Breakages Faster",
+    "url": "https://github.com/Approxima-AI/Approxima-OSS",
+    "source": "HackerNews",
+    "points": 2,
+    "date": "2026-06-14",
+    "summary": "Show HN: Open-Sourced Approxima, Our Agentic QA Tool to Catch Breakages Faster",
+    "category": "Other",
+    "tags": [
+      "AI",
+      "HackerNews"
+    ]
+  },
+  {
+    "id": "3892801",
+    "title": "Teach Your Agent to Forget (On Purpose)",
+    "url": "https://dev.to/lovestaco/teach-your-agent-to-forget-on-purpose-38dh",
+    "source": "Dev.to",
+    "points": 10,
+    "date": "2026-06-14",
+    "summary": "Hello, I'm Maneshwar. I'm building git-lrc, a Micro AI code reviewer that runs on every commit. It is...",
+    "category": "Other",
+    "tags": [
+      "ai",
+      "programming",
+      "beginners",
+      "machinelearning"
+    ]
+  },
+  {
+    "id": "3891311",
+    "title": "HeadLess BAI",
+    "url": "https://dev.to/akshit_sharma_321b0b789a4/headless-bai-4o0p",
+    "source": "Dev.to",
+    "points": 5,
+    "date": "2026-06-14",
+    "summary": "I Compiled a Custom Chromium Binary to Make AI Fix Bad UIs — Here's How It Works Most UI...",
+    "category": "Other",
+    "tags": [
+      "ai",
+      "machinelearning",
+      "ux",
+      "webdev"
+    ]
+  },
+  {
+    "id": "3890617",
+    "title": "System Architect vs. AI Solution Architect: An Anatomy of Roles",
+    "url": "https://dev.to/merbayerp/system-architect-vs-ai-solution-architect-an-anatomy-of-roles-26i4",
+    "source": "Dev.to",
+    "points": 8,
+    "date": "2026-06-14",
+    "summary": "I've observed fundamental differences between struggling with the overall stability and performance...",
+    "category": "Other",
+    "tags": [
+      "sistemmimarisi",
+      "ai"
+    ]
+  },
+  {
+    "id": "3880143",
+    "title": "One good example beat every AI writing rule I wrote",
+    "url": "https://dev.to/michaeltruong/one-good-example-beat-every-ai-writing-rule-i-wrote-7oo",
+    "source": "Dev.to",
+    "points": 2,
+    "date": "2026-06-14",
+    "summary": "I've been building an AI-assisted content pipeline around Codenames AI — field reports from the repo,...",
+    "category": "Other",
+    "tags": [
+      "ai"
+    ]
+  },
+  {
     "id": "48489664",
     "title": "Show HN: Spanly - See what AI agents do inside your MCP server",
     "url": "https://spanly.com/",
@@ -604,134 +733,6 @@
       "mcp",
       "ai",
       "devtools"
-    ]
-  },
-  {
-    "id": "3835466",
-    "title": "The Most Dangerous Bias of Your AI Assistant Is That It Agrees With You",
-    "url": "https://dev.to/ben-witt/the-most-dangerous-bias-of-your-ai-assistant-is-that-it-agrees-with-you-4fhc",
-    "source": "Dev.to",
-    "points": 6,
-    "date": "2026-06-12",
-    "summary": "We talk a lot about hallucinations. But there is another failure mode we should take just as...",
-    "category": "Other",
-    "tags": [
-      "ai",
-      "llm",
-      "machinelearning",
-      "productivity"
-    ]
-  },
-  {
-    "id": "48488713",
-    "title": "Show HN: Offsend – local Mac app that masks secrets before AI tools see them",
-    "url": "https://github.com/Offsend/Offsend",
-    "source": "HackerNews",
-    "points": 2,
-    "date": "2026-06-11",
-    "summary": "Show HN: Offsend – local Mac app that masks secrets before AI tools see them",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48481349",
-    "title": "If you build apps with AI tools, this is .uh concerning",
-    "url": "https://substack.com/profile/173863161-dan-cochran/note/c-274040959",
-    "source": "HackerNews",
-    "points": 2,
-    "date": "2026-06-11",
-    "summary": "If you build apps with AI tools, this is .uh concerning",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48475992",
-    "title": "Show HN: I generated 235 system docs in a day using GPT-5.5",
-    "url": "https://www.paxerp.com/docs",
-    "source": "HackerNews",
-    "points": 4,
-    "date": "2026-06-11",
-    "summary": "Show HN: I generated 235 system docs in a day using GPT-5.5",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48490591",
-    "title": "Show HN: Brooks-Lint – AI code reviews grounded in 12 classic engineering books",
-    "url": "https://github.com/hyhmrright/brooks-lint",
-    "source": "HackerNews",
-    "points": 1,
-    "date": "2026-06-11",
-    "summary": "Show HN: Brooks-Lint – AI code reviews grounded in 12 classic engineering books",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48487078",
-    "title": "Show HN: Remove Anything – AI Background Removal Tool",
-    "url": "https://www.remove-anything.com",
-    "source": "HackerNews",
-    "points": 2,
-    "date": "2026-06-11",
-    "summary": "Show HN: Remove Anything – AI Background Removal Tool",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48479290",
-    "title": "Safe Vibes: Open-source governed workspace for AI-built internal tools",
-    "url": "https://github.com/tanner49/safe_vibes",
-    "source": "HackerNews",
-    "points": 2,
-    "date": "2026-06-11",
-    "summary": "Safe Vibes: Open-source governed workspace for AI-built internal tools",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48487791",
-    "title": "Show HN: SynCodeLive – code and talk with your team along with AI, live",
-    "url": "https://syncodelive.com/",
-    "source": "HackerNews",
-    "points": 1,
-    "date": "2026-06-11",
-    "summary": "Show HN: SynCodeLive – code and talk with your team along with AI, live",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
-    ]
-  },
-  {
-    "id": "48478471",
-    "title": "DiffusionGemma: 4x Faster Text Generation",
-    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/",
-    "source": "HackerNews",
-    "points": 312,
-    "date": "2026-06-11",
-    "summary": "DiffusionGemma: 4x Faster Text Generation",
-    "category": "Other",
-    "tags": [
-      "AI",
-      "HackerNews"
     ]
   }
 ]
